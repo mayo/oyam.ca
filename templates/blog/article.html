@@ -1,0 +1,51 @@
+{% extends "../grid.html" %}
+
+{% block content %}
+{% set extra_classes = "" %}
+{% if type == "quote" and contents != "" %}
+  {% set extra_classes = "extended" %}
+{% endif %}
+<article class="{{ type }} {{ extra_classes }}">
+  <header>
+    <time class="post-time" datetime="{{ created|date('l, F d, Y') }}">{{ created|date('l, F d, Y') }}</time>
+    <h1>{{ title|safe }}</h1>
+  </header>
+  <div class="content">
+    {% if type == "photo" %}
+      <figure>
+        <img src="/media/images/photos/{{ created|date('Y/m') }}/{{ photo }}" title="{{ title }}" width="900"/>
+        <figcaption>{{ caption }} &copy; {{ author.name }}</figcaption>
+      </figure>
+    {% else %}
+      {{ contents }}
+    {% endif %}
+  </div>
+
+  {% if type == "link" %}
+  <footer>
+    <a class="extlink" href="{{ href }}"><span class="fa fa-external-link"></span>{{ href }}</a>
+    {% if source %}
+    <a class="extlink" href="{{ source_link }}"><span class="fa fa-external-link"></span>{{ source }}</a>
+    {% endif %}
+  </footer>
+  {% endif %}
+  {% if type == "quote" %}
+  <footer>
+    <p class="author">&mdash; {{ author }}</p>
+  </footer>
+  {% endif %}
+</article>
+
+<div class="blognav font-small">
+  <ul>
+    {% if previous -%}
+    <li><span class="fa fa-arrow-circle-o-left"></span><a class="small" href="/{{ previous.path }}">{{ previous.title }}</a></li>
+    {%- endif %}
+    {% if next -%}
+    <li><span class="fa fa-arrow-circle-o-right"></span><a href="/{{ next.path }}">{{ next.title }}</a></li>
+    {%- endif %}
+  </ul>
+</div>
+
+{% endblock %}
+

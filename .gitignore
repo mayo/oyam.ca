@@ -1,0 +1,5 @@
+node_modules
+deploy
+old
+*.swp
+.DS_Store

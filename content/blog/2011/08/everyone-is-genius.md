@@ -1,0 +1,6 @@
+---
+type: quote
+title: Everyone is a genius. But if you judge a fish on its ability to climb a tree, it will live its whole life believing that it is stupid.
+author: Albert Einstein
+created: !!timestamp '2011-08-26 00:00:00'
+---

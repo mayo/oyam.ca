@@ -1,0 +1,56 @@
+{% extends "../grid.html" %}
+
+{% block content %}
+  <h1>{{ title }}</h1>
+
+  <div class="article-list">
+  {% set lastDate = None %}
+  {% for post in collections.articles %}
+    {% if !list_limit or loop.index0 < list_limit %}
+
+    {% set extra_classes = "" %}
+    {% if post.type == "quote" and post.contents != "" %}
+      {% set extra_classes = "extended" %}
+    {% endif %}
+
+    {% if lastDate|date('F Y') != post.created|date('F Y') %}
+    <div class="date-threshold">{{ post.created|date('F Y') }}</div>
+      {% set lastDate = post.created %}
+    {% endif %}
+
+    <article class="{{ post.type }} {{ extra_classes }}">
+      <header>
+        {% set post_link = "/" + post.path %}
+        {% if post.type == "link" %}
+          {% set post_link = post.href %}
+        {% endif %}
+        {% set post_title = post.title %}
+        <h2><a href="{{ post_link }}">{{ post_title }}</a></h2>
+      </header>
+      <div class="excerpt">
+        <a class="readmore" href="{{ post_link }}">{{ post.excerpt }}</a>
+      </div>
+      {% if post.type == "link" %}
+      <footer>
+        <a class="permalink" href="/{{ post.path }}"><span class="fa fa-bookmark-o"></span></a>
+        <a class="extlink" href="{{ post.href }}"><span class="fa fa-external-link"></span>{{ post.href }}</a>
+        {% if post.source %}
+        <a class="extlink" href="{{ post.source_link }}"><span class="fa fa-external-link"></span>{{ post.source }}</a>
+        {% endif %}
+      </footer>
+      {% endif %}
+      {% if post.type == "quote" %}
+      <footer>
+        <p class="author">&mdash; {{ post.author }}</p>
+      </footer>
+      {% endif %}
+    </article>
+    {% endif %}
+  {% endfor %}
+
+  {% if !archive %}
+    <p class="morearchive">More in <a href="/blog/archive.html">archive</a>.</p>
+  {% endif %}
+  </div>
+
+{% endblock %}

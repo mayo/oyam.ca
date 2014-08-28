@@ -1,0 +1,241 @@
+/* @override http://localhost:8080/media/css/handheld.css */
+
+/*
+@media handheld, only screen and (max-device-width: 30em) {
+
+  body {
+    font-size: 1.7em;
+  }
+
+  .body-wrapper {
+    margin: 2em auto;
+  }
+
+}
+*/
+
+@media screen and (max-width: 767px) {
+  
+  /*new stuff */
+  
+  html {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+  }
+  
+  body {
+    font-size: 1em;
+  }
+
+  .grid-container {
+    max-width: 100%;
+  }
+
+/* @group Site navigation header */
+
+  header {
+	margin-top: 0;
+  }
+  
+  header.grid-container {
+	padding: 0;
+  }
+  
+  header .navmenu {
+    padding: 0;
+  }
+
+/* @end */
+  
+  nav.sitenav:target {
+	margin-bottom: 5em;
+  }
+  
+  nav.sitenav .navhead {
+	height: 4.9em;
+	background-color: transparent;
+	padding-top: 1em;
+  }
+  
+  .dark-bg nav.sitenav .navhead {
+	background-color: transparent;
+  }
+  
+  nav.sitenav:target .navhead {
+	background-color: black;
+  }
+
+  .dark-bg nav.sitenav:target .navhead {
+	background-color: white;
+  }
+
+  nav.sitenav:target .navhead .logo .logotype {
+	color: white;
+  }
+
+  .dark-bg nav.sitenav:target .navhead .logo .logotype {
+	color: black;
+  }
+
+  
+  nav.sitenav .mobilemenu {
+    display: inline-block;
+    font-size: 1.5em;
+    
+    position: absolute;
+    top: .9em;
+    right: .8em;
+  }
+  
+  nav.sitenav .mobilemenu a {
+    color: black;
+    text-decoration: none;
+    text-indent: -9999px;
+    display: none;
+    text-align: left;
+    width: .8em;
+    height: .8em;
+  }
+  
+  .dark-bg nav.sitenav .mobilemenu a {
+    color: white;
+  }
+
+  nav.sitenav:target .mobilemenu a.hide,
+  nav.sitenav:not(:target) .mobilemenu a.show {
+	display: block;
+  }
+
+  nav.sitenav:target .mobilemenu a.hide,
+  .dark-bg nav.sitenav:not(:target) .mobilemenu a.show {
+	color: white;
+  }
+
+  .dark-bg nav.sitenav:target .mobilemenu a.hide,
+  nav.sitenav:not(:target) .mobilemenu a.show {
+	color: black;
+  }
+  
+  nav.sitenav .mobilemenu a .navicon {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	text-indent: 0;
+  }
+  
+  nav.sitenav .menu {
+	display: none;
+	margin-top: 1px;
+	text-align: left;
+    font-size: 1.5em;
+    padding-top: 0;
+  }
+
+  nav.sitenav:target .menu {
+	display: block;
+  }
+  
+  nav.sitenav .menu a {
+    color: white;
+  }
+
+  .dark-bg nav.sitenav .menu a {
+    color: black;
+  }
+  
+  nav.sitenav .menu > li {
+    margin: 0;
+  }
+  
+  nav.sitenav .menu > li .menuitem {
+    background-color: rgba(0,0,0,.9);
+    display: block;	
+    margin: 0;
+    padding: .8em;
+    padding-left: 1.4em;
+  }
+  
+  .dark-bg nav.sitenav .menu > li .menuitem {
+	background-color: rgba(255,255,255,.9);
+  }
+
+  nav.sitenav .menu > li .menuitem:active,
+  .dark-bg nav.sitenav .menu > li .menuitem:active {
+	color: red;
+  }
+
+  nav.sitenav .menu .folder {
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav.sitenav .menu .folder:before {
+    content: none;
+  }
+
+  nav.sitenav .menu li .menuitem,
+  nav.sitenav .menu li .menuitem:hover {
+	border-bottom: none;
+  }
+
+  nav.sitenav .menu .folder > .menuitem:before {
+    speak: none;
+    content: "+";
+    margin-left: -.8em;
+    margin-right: .25em;
+  }
+  
+  nav.sitenav .menu .folder .submenu-wrapper {
+    position: relative;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: block;
+    background-color: transparent;
+    
+    display: block; /* TODO: for open menu */
+    display: none;
+  }
+  
+  nav.sitenav .menu .folder .submenu-wrapper .submenu,
+  .dark-bg nav.sitenav .menu .folder .submenu-wrapper .submenu {
+    padding: 0;
+    position: relative;
+    display: block;
+    box-shadow: none;
+    font-weight: normal;
+    background: transparent;
+  }
+  
+  nav.sitenav .menu .folder .submenu li {
+    background-color: rgba(0,0,0,.8);
+    margin: 0; /* reset margin */
+  }
+
+  .dark-bg nav.sitenav .menu .folder .submenu li {
+    background-color: rgba(255,255,255,.7);
+  }
+  
+  nav.sitenav .menu .folder .submenu li a {
+    padding: .8em;
+    padding-left: 1.4em;
+	margin: 0;
+	width: 100%;
+	color: white;
+  }
+  
+  .dark-bg nav.sitenav .menu .folder .submenu li a {
+    color: black;
+  }
+
+  nav.sitenav .menu .folder .submenu-wrapper .submenu:before {
+	display: none;
+  }
+  
+  nav.sitenav .menu .folder .submenu li,
+  nav.sitenav .menu > li .menuitem {
+	margin: 0 0 1px 0;
+  }
+  
+}

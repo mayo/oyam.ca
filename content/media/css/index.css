@@ -1,0 +1,147 @@
+/* @override http://localhost:8080/media/css/index.css */
+
+div.test1 {
+  -webkit-font-smoothing: subpixel-antialiased;
+
+  display: block;
+  left: 0px;
+  opacity: 1;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  position: absolute;
+  top: 0px;
+  z-index: -1;
+
+  background-image: url('/media/images/front.jpg');
+  background-image: url('/media/images/IMG_3384.jpg');
+  background-size: cover;
+  background-position: bottom;
+}
+
+/* iphone retina - portrait */
+@media only screen and (max-width: 480px) {
+  div.test1 {
+    height: 460px;
+    width: 320px;
+
+    background-image: url("/media/images/photos/2013/01/vancouver-sunrise.jpg");
+    background-position: -112px 0;
+  }
+
+  div.test1 img {
+    width: 692px;
+    height: 460px;
+    top: 0px;
+    left: -212px; 
+
+    content: url("/media/images/photos/2013/01/vancouver-sunrise.jpg");
+  }
+
+}
+
+/* iphone retina - landscape */
+/* ipad, ipad retina - portrait */
+@media only screen and (max-width: 768px) and (min-width: 481px) {
+  div.test1 {
+    height: 460px;
+    width: 768px;
+
+    background-image: url("/media/images/photos/2013/01/black-tusk-sunset.jpg");
+  }
+
+  div.test1 img {
+    width: 768px;
+    height: 460px;
+    top: 0px;
+    left: 0px; 
+    content: url("/media/images/photos/2013/01/black-tusk-sunset.jpg");
+  }
+
+}
+
+/* ipad, ipad retina - landscape */
+@media only screen and (max-width: 1024px) and (min-width: 769px) {
+  div.test1 {
+    height: 460px;
+    width: 320px;
+  }
+
+  div.test1 img {
+    width: 692px;
+    height: 460px;
+    top: 0px;
+    right: 0px; 
+
+    content: url("/media/images/photos/2013/03/vancouver.jpg");
+  }
+
+}
+
+/* new stuff */
+
+.caption {
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
+  font-family: "aktiv-grotesk-std", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: .8em;
+  
+  -webkit-font-smoothing: antialiased;
+  color: black;
+}
+
+.caption .icon {
+  opacity: 0.5;
+}
+
+.caption .description {
+  position: absolute;
+  bottom: .1em;
+  right: 0;
+  width: 20em;
+  opacity: 0;
+  text-align: right;
+  margin-right: 2em;
+}
+
+.caption .description,
+.caption .icon {
+  transition: opacity 0.2s ease-in-out;
+}
+
+.caption:hover .description,
+.caption:hover .icon {
+  opacity: 1;
+}
+
+.dark-bg .caption {
+  color: white;
+}
+
+.caption:hover {
+  opacity: 1;
+}
+
+/* slideshow */
+
+.slideshow .slide .main {
+  position: absolute;
+  top: 5em;
+  right: 3em;
+  margin-left: 3em; /* for mobile devices */
+  max-width: 30em; /* max-width instead of width for mobile devices */
+  
+  font-family: "aktiv-grotesk-std", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: right;
+  
+  color: black;
+}
+
+.slideshow .slide .main h1 {
+  font-weight: 100;
+}
+
+.slideshow .slide .main p {
+  font-weight: 300;	
+}

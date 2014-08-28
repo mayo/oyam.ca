@@ -1,0 +1,958 @@
+/* @override http://localhost:8080/media/css/default.css */
+
+html {
+  /* 62.5 = 10px; */
+  font-size: 62.5%;
+}
+
+body {
+  /* Berling T is preferred, but not available on TypeKit */
+  font-family: "adobe-garamond-pro", serif;
+  background-color: rgb(249,249,249);
+  margin: 0;
+  padding: 0;
+
+  font-size: 1.9rem;
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+body.dark-bg {
+  background-color: rgb(10,10,10);
+  color: white;
+}
+
+h1, h2, h3, h4, h5, h6,
+footer,
+.post-time,
+.date-threshold,
+figcaption,
+div.archive,
+div.blognav,
+.quote,
+.link {
+  font-family: "aktiv-grotesk-std", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+pre,
+code {
+  font-family: "anonymous-pro", Monaco, "Bitstream Vera Sans Mono", "Lucida Console", "Courier New", monospace;
+}
+
+h1, h2, h3, h4 {
+  line-height: 1.2;
+  margin: 1.414em 0 0.5em;
+}
+
+h1 {
+  margin-top: 0;
+  font-weight: 100;
+  font-size: 5rem;
+}
+
+h2 {
+  font-size: 3.1rem;
+}
+
+h3 {
+  font-size: 2.4rem;
+}
+
+p {
+/*
+  margin: .7em auto;
+  */
+  margin-bottom: 1.3em;
+}
+
+a {
+  color: red;
+}
+
+body > footer,
+article footer,
+small,
+.font-small {
+  font-size: 1.5rem;
+}
+
+.grid-container,
+.grid-container.normal {
+  max-width: 38.7rem; /* 618px - original site width */
+  max-width: 60rem; /* 960px */
+  max-width: 96rem; /* 960px */
+  
+}
+
+.grid-container.full {
+  max-width: 100%;
+}
+
+li {
+  list-style-type: disc;
+}
+
+ul {
+  padding-left: 1.2em;
+}
+
+.column img {
+  width: 100%;
+  height: auto;
+  border-radius: .25em;
+}
+
+body > header {
+  padding-top: .5em;
+}
+
+body > footer {
+  margin: 6em 0 2em 0;
+  color: rgb(180,180,180);
+  font-weight: 200;
+}
+
+/* @group Nav */
+
+nav.sitenav {
+  display: inline-block;
+  font-family: "aktiv-grotesk-std";
+  width: 100%;
+  
+  font-size: .6em;
+  color: black;
+}
+
+nav.sitenav a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.dark-bg nav.sitenav {
+  color: white;
+}
+
+nav.sitenav .logo {
+  margin: 0;
+  padding: 0;
+}
+
+nav.sitenav .logo a {
+  margin: 0;
+  padding: 0;
+}
+
+nav.sitenav .logo img {
+  background-color: rgba(255,255,255,1);
+  margin: 0;
+  padding: 0;
+  vertical-align: -.2em;
+  margin-right: .5em;
+}
+
+nav.sitenav .logo .logotype {
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1;
+
+  text-transform: lowercase;
+  letter-spacing: -.08em;
+  word-spacing: -.2em;
+
+  color: black;
+  
+  font-size: 1.75em; /* sizes better on mobile. 1.75em ~= 2rem */
+}
+
+.dark-bg nav.sitenav .logo .logotype {
+  color: white;
+}
+
+nav.sitenav .logo .logotype .lastname {
+  font-weight: 500;
+}
+
+nav.sitenav .mobilemenu {
+  display: none;
+}
+
+nav.sitenav .menu {
+  font-size: 1em;
+  text-transform: uppercase;
+  text-align: right;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  
+  padding-top: .5em;
+}
+
+nav.sitenav .menu li {
+  border-bottom: 0;
+  list-style-type: none;
+}
+
+nav.sitenav .menu a {
+  text-decoration: none;
+  color: black;
+}
+
+.dark-bg nav.sitenav .menu a {
+  color: white;	
+}
+
+nav.sitenav .menu > li {
+  display: inline;
+  margin: 0 0 0 2em;
+  padding-bottom: .5em;
+}
+
+
+nav.sitenav .menu li .menuitem {
+  border-bottom: 1px solid transparent;
+  cursor: pointer;
+  font-weight: bold;
+
+  -webkit-transition: border-bottom-color 0.4s ease-in-out;
+  -moz-transition: border-bottom-color 0.4s ease-in-out;
+  -o-transition: border-bottom-color 0.4s ease-in-out;
+  transition: border-bottom-color 0.4s ease-in-out;
+  
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.dark-bg nav.sitenav .menu li .menuitem {
+  -webkit-font-smoothing: antialiased;
+}
+
+nav.sitenav .menu li .menuitem:hover {
+  border-bottom-color: black;
+}
+
+.dark-bg nav.sitenav .menu li .menuitem:hover {
+  border-bottom-color: white;
+}
+
+nav.sitenav .menu .folder {
+  box-sizing: border-box;
+  position: relative;
+  font-weight: bold;
+}
+
+nav.sitenav .menu .folder:before {
+  speak: none;
+  content: "+";
+}
+
+nav.sitenav .menu .folder .submenu-wrapper {
+  position: absolute;
+  width: 180px;
+  padding-top: 18px;
+  display: none;
+  margin-left: -1.6em;
+  left: 0;  
+}
+
+nav.sitenav .menu .folder .submenu-wrapper .submenu {
+  padding: 1.8em;
+  position: relative;
+  display: none;
+  text-align: left;
+  box-shadow: 1px 1px 1px rgba(30,30,30,.4);
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  background: black;
+}
+
+.dark-bg nav.sitenav .menu .folder .submenu-wrapper .submenu {
+  -webkit-font-smoothing: subpixel-antialiased;
+  background: white;
+}
+
+nav.sitenav .menu .folder .submenu-wrapper .submenu:before {
+  content: '';
+  display: block;
+  border-width: 0 0 10px;
+  border-style: solid;
+  border-right: solid 10px transparent;
+  border-left: solid 10px transparent;
+  position: absolute;
+  top: -10px;
+  width: 0;
+  height: 0;
+  left: 0;
+  margin-left: 2.2em;
+}
+
+nav.sitenav .menu .folder:hover .submenu-wrapper,
+nav.sitenav .menu .folder:hover .submenu-wrapper .submenu,
+nav.sitenav .menu .folder .submenu-wrapper:hover,
+nav.sitenav .menu .folder .submenu-wrapper:hover .submenu {
+  display: block;
+  z-index: 233; /* fibonacci for no reason */
+}
+
+nav.sitenav .menu .folder .submenu li a {
+  color: #bbb;
+  transition: color 0.2s ease-in-out;
+  padding: .5em 0; /* should match li margin */
+  padding-left: .5em;
+  display: inline-block;
+  -webkit-font-smoothing: subpixel-antialiased;
+  
+  width: 100%;
+}
+
+.dark-bg nav.sitenav .menu .folder .submenu li a {
+  color: #333;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+nav.sitenav .menu .folder .submenu li a:hover,
+nav.sitenav .menu .folder .submenu li a:active {
+  color: red;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), 
+       (min-resolution: 192dpi) { 
+  .logoimg {
+	content: url(/favicon32.png);
+	width: 16px;
+	height: 16px;
+  }
+}
+
+/* @end Nav */
+
+main > .grid-container:first-child {
+  margin-top: 2em;
+}
+
+main .banner {
+  position: relative;
+  height: 500px;
+}
+
+main .banner img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+
+footer {
+  margin-top: 2em;
+}
+
+footer ul {
+  margin: 0;
+  padding: 0;
+}
+
+footer ul,
+footer ul + p {
+  display: inline-block;
+}
+
+footer .social li {
+  display: inline-block;
+  list-style-type: none;
+}
+
+footer .rss li {
+  display: inline-block;
+  list-style-type: none;
+}
+
+section {
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
+figure {
+  margin: 1em 0 1em 0;
+  padding: 0;
+  margin-top: 1em;
+}
+
+figure img {
+  width: 100%;
+  height: auto;
+}
+
+figure figcaption {
+  font-size: .7em;
+  text-align: right;
+  color: rgb(105,105,105);
+}
+
+blockquote {
+  border-left: .6rem solid rgb(125,125,125);
+  font-size: 1.5rem;
+  margin-left: .4rem;
+  
+  padding: .2em 0 .3em 1em;
+}
+
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+pre {
+  margin: 0 0 1em 0;
+}
+
+pre,
+code,
+pre code {
+  font-size: 1.5rem;
+}
+
+/* old stuff */
+
+/*
+.post-time {
+  display: block;
+}
+
+.wide-content {
+  width: 100%;
+  margin: auto auto;
+}
+
+#content .wide-content:first-child {
+  margin-top: 0;
+}
+
+.wide-content img {
+  border-radius: .5em;
+  
+  width: 100%;
+  height: auto;
+}
+
+img {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: rgb(255,0,0);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  font-weight: 200;
+}
+
+.permalink,
+.permalink a {
+  text-decoration: none;
+  font-size: .9em;
+  color: rgb(255,26,0);
+  font-weight: bold;
+}
+
+.archive {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.archive > li {
+  list-style-type: none;
+}
+
+article .permalink {
+  display: none;
+}
+
+article:hover .permalink {
+  display: inline;
+}
+
+article.quote .content p {
+  font-size: .8em;
+  color: rgb(190,190,190);
+}
+
+article.quote .extended {
+  font-size: 1.2em;
+  font-weight: 200;
+  line-height: 1.3em;
+}
+
+article.link a:hover {
+  color: rgb(255,26,0);
+}
+
+.archive .post .title a,
+article.post h1 a,
+.archive .photo .title a,
+article.photo h1 a {
+  text-decoration: none;
+  color: rgb(0,0,0);
+}
+
+.content-container.post a {
+  color: rgb(0,0,0);
+}
+
+.content-container.post a:hover,
+.content-container.photo a:hover,
+.archive .post .title a
+.archive .photo .title a {
+  color: rgb(255,26,0);
+  text-decoration: underline;
+}
+
+.archive .link .title,
+article.link h1 {
+  margin-bottom: 0em;
+}
+
+article.link .content p {
+  margin-top: .4em;
+}
+
+h1 {
+  font-size: 1.8em;
+  font-weight: 200;
+}
+
+h2 {
+  font-size: 1.3em;
+  font-weight: 500;
+}
+
+.archive .quote {
+  max-width: 30em;
+}
+
+.archive .quote .title,
+.quote h1,
+.quote .extended {
+  font-weight: 200;
+}
+
+.quote .extended {
+  font-size: 1.2em;
+}
+
+.archive .quote .title a {
+  text-decoration: none;
+}
+
+article.link h1 {
+  font-weight: 200;
+  font-size: 1.1em;
+}
+
+article.link {
+  font-size: .9em;
+  margin-bottom: 2em;
+}
+
+.content-container .post-time,
+.date-threshold {
+  color: rgb(200,200,200);
+}
+
+.date-threshold {
+  margin-top: 5em;
+  margin-bottom: 0;
+  text-align: right;
+  border-bottom: .0em solid rgb(230,230,230);
+  font-weight: 200;
+  font-size: .8em;
+}
+*/
+
+/* after date threshold, reduce margin, as the threshold introduces margin on it's own */
+/*
+.date-threshold + * {
+  margin-top: 1em;
+}
+
+.archive .date-threshold {
+  text-align: left;
+  padding: 0;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  font-size: 1em;
+}
+
+.archive .post .title {
+  font-size: 1.4em;
+}
+
+.archive .post,
+.archive .photo,
+.archive .quote {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.archive .quote {
+  font-size: .8em;
+}
+
+.archive .quote .title {
+  font-size: 1.4em;
+}
+
+.archive .link {
+  margin-bottom: 1em;
+  font-size: .8em;
+}
+*/
+
+/* adobe gammond only has bold
+.archive .post .title {
+  font-weight: 100;
+}
+*/
+/*
+.archive .quote a:hover {
+  text-decoration: underline;
+}
+
+nav.blog {
+  font-size: .8em;
+  margin-top: 4em;
+}
+
+nav.blog,
+nav.blog a {
+  font-weight: 200;
+  color: rgb(150,150,150);
+}
+
+nav.blog a:hover {
+  color: rgb(79,79,79);
+}
+
+nav.blog li {
+  list-style-type: none;
+}
+
+nav.blog ul {
+  margin: 0;
+  padding: 0;
+}
+
+.archive .post .title a,
+.archive .photo .title a,
+.archive .quote .title a {
+  color: rgb(0,0,0);
+}
+
+.archive .link .title a {
+  color: rgb(255,26,0);
+}
+
+.content-container .post-time {
+  font-size: .8em;
+}
+
+.quote .author {
+  padding-left: 2em;
+  margin-top: .8em;
+  margin-bottom: 4em;
+}
+
+.logo .firstname {
+  font-weight: 200;
+  letter-spacing: 0;
+}
+
+.logo .lastname {
+  font-weight: 200;
+}
+
+footer .bottomnav {
+  font-size: .8em;
+  margin-top: 8em;
+  margin-bottom: 2em;
+}
+
+.logo {
+  margin-top: 1.0em;
+  margin-bottom: 1.6em;
+}
+
+footer .bottomnav .menu {
+  font-size: 1em;
+}
+
+footer .bottomnav .menu li {
+  font-size: 1em;
+}
+
+footer .bottomnav .menu a {
+  text-decoration: none;
+}
+
+footer a {
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  color: rgb(150,150,150);
+  
+}
+
+footer .bottomnav,
+footer .bottomnav .menu a {
+  color: rgb(0,0,0);
+}
+
+footer .bottomnav .menu li,
+footer .bottomnav .menu li.divider {
+  border-bottom: .3em solid;
+}
+
+footer .bottomnav .menu a:hover {
+  color: rgb(255,26,0);
+  text-decoration: none;
+}
+
+footer .bottomnav .menu li.active,
+footer .bottomnav .menu li.active {
+  border-color: rgb(255,26,0);
+}
+*/
+/* simplifying for new styles
+.logo .firstname {
+  color: rgb(79,79,79);
+}
+*/
+/*
+footer .bottomnav .menu li.spacer {
+  border-bottom: 0px;
+}
+
+footer .bottomnav .menu {
+  margin: 0;
+  padding: 0;
+}
+
+footer .bottomnav .menu li {
+  display: inline;
+  padding: 0 .7em 0 .7em;
+  margin: 0 .1em 0 0;
+}
+
+footer .bottomnav .menu li.divider {
+  padding: 0 0 0 0;
+  width: .3em;
+}
+
+footer .bottomnav .menu li,
+footer .bottomnav .menu li.divider {
+  padding-bottom: .3em;
+}
+
+footer .bottomnav .menu li .spacer {
+  width: 6.9em;
+}
+
+figure figcaption {
+  margin-right: .2em;
+}
+
+
+*/
+/* this affects multiple articles listed end to end */
+/* todo, what about next to date-threshold? */
+/*
+article + article.content-container {
+  margin-top: 6em;
+  margin-bottom: 2.6em;
+}
+
+article.link + article {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+*/
+
+.banner .image {
+  -webkit-font-smoothing: subpixel-antialiased;
+
+  display: block;
+  opacity: 1;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  z-index: -1;
+  
+  position: absolute;
+  left: 0px;
+  top: 0px;
+
+  width:100%;
+  height: 100%;
+
+  
+  background-image: url('/media/images/about.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+
+.banner {
+  position: relative;
+  height: 500px;
+}
+
+.banner .head-title {
+  position: relative;
+  height: 100%;
+}
+
+.banner .head-title .title {
+  position: absolute;
+  bottom: 2rem;
+}
+
+.banner .head-title h1 {
+  margin-bottom: 0;
+}
+
+.grid-container .sidebar {
+  color: #777;
+  font-size: .9em;
+}
+
+/* @group Blog */
+
+div.blognav {
+  margin-top: 4em;
+}
+
+div.blognav li {
+  list-style-type: none;
+}
+
+div.blognav ul {
+  padding: 0;
+}
+
+div.blognav .fa {
+  margin-right: .4em;
+}
+
+div.blognav .fa,
+div.blognav a {
+  color: #666;
+}
+
+.article-list .date-threshold,
+article .post-time {
+  display: inline-block;
+  color: rgb(200,200,200);
+  font-weight: 100;
+}
+
+.article-list article h2 {
+  margin-top: 0;
+}
+
+.article-list article + article {
+  margin-top: 4em;
+}
+
+.article-list .date-threshold {
+  margin: 3em 0 1em 0;
+}
+
+.article-list article h2 {
+  font-weight: 600;
+}
+
+.article-list article a.readmore {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.article-list article.quote h2 {
+  font-weight: 200;
+}
+
+.article-list article.quote h2 a {
+  text-decoration: none;
+}
+
+.article-list article.link footer a {
+  display: block;
+}
+
+.article-list .morearchive {
+  margin-top: 3em;
+}
+
+article {
+  margin-top: 0em;
+}
+
+article h1 a,
+article h2 a {
+  color: inherit;
+}
+
+article .post-time {
+  font-size: .8em;
+}
+
+article h1 {
+  margin-bottom: 1em;
+}
+
+article.quote:not(.extended) h1:before,
+article.quote.extended .content p:first-child:before,
+article.quote:not(.extended) h2:before,
+article.quote.extended .excerpt p:last-child:before {
+  content: open-quote;
+}
+
+article.quote:not(.extended) h1:after,
+article.quote .content p:last-child:after,
+article.quote:not(.extended) h2:after,
+article.quote.extended .excerpt p:last-child:after {
+  content: close-quote;
+}
+
+
+article.post .content {
+  font-family: "adobe-garamond-pro", serif;
+  font-weight: 400;
+
+}
+
+article footer .permalink {
+  display: block;
+  float: right;
+}
+
+article.link footer .extlink {
+  color: #aaa;
+}
+article.link footer .extlink .fa {
+  margin-right: .4em;
+}
+
+article.link footer .author {
+  color: black;
+}
+
+/* @end Blog */

@@ -1,0 +1,35 @@
+{
+  "name": "oyam.ca",
+  "description": "Mayo Jordanov's website",
+  "version": "0.1.0",
+  "homepage": "http://oyam.ca",
+  "author": {
+    "name": "Mayo Jordanov",
+    "url": "http://oyam.ca"
+  },
+
+  "private": true,
+
+  "dependencies": {
+    "metalsmith": "segmentio/metalsmith",
+    "swig": "",
+    "normalize.css": "",
+
+    "metalsmith-templates": "segmentio/metalsmith-templates",
+    "metalsmith-markdown": "segmentio/metalsmith-markdown",
+    "metalsmith-permalinks": "mayo/metalsmith-permalinks",
+    "metalsmith-drafts": "segmentio/metalsmith-drafts",
+    "metalsmith-watch": "FWeinb/metalsmith-watch",
+    "metalsmith-collections": "segmentio/metalsmith-collections",
+    "metalsmith-branch": "ericgj/metalsmith-branch",
+    "metalsmith-title": "OzzyCzech/metalsmith-title",
+    "metalsmith-excerpts": "segmentio/metalsmith-excerpts",
+    "metalsmith-static": "thehydroimpulse/metalsmith-static",
+
+    "metalsmith-ignore": "segmentio/metalsmith-ignore",
+    "metalsmith-debug": "mahnunchik/metalsmith-debug",
+    "metalsmith-beautify": "boushley/metalsmith-beautify"
+
+  }
+}
+

@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block body_container %}
+  {% block header_wrapper %}
+  <header class="grid-container {{ grid_container_class }}">
+  {% block header_content %}
+    {% include '_sitenav.html' %}
+  {% endblock header_content %}
+  </header>
+  {% endblock %}
+
+<!--
+  <main class="grid-container {{ grid_container_class }}">
+-->
+  <main>
+  {% block main_content %}
+    <div class="grid-container {{ grid_container_class }}">
+      <div class="grid-100">
+        {% block content %}{% endblock %}
+      </div>
+    </div>
+  {% endblock %}
+  </main>
+
+  {% block footer_wrapper %}
+  <footer class="new grid-container {{ grid_container_class }}">
+    {% block footer %}
+
+      {% block footer_nav %}
+      {% endblock %}
+
+    <div class="grid-100">
+      {% block footer_content %}
+      <ul class="social">
+        <li><span class="fa fa-facebook-square"></span></li>
+        <li><span class="fa fa-instagram"></span></li>
+        <li><span class="fa fa-twitter-square"></span></li>
+        <li><span class="fa fa-flickr"></span></li>
+        <li><span class="fa fa-github-square"></span></li>
+        <li><span class="fa fa-linkedin-square"></span></li>
+
+        <li><span class="fa fa-google-plus-square"></span></li>
+        <li><span class="fa fa-bitbucket-square"></span></li>
+      </ul>
+      <ul class="rss">
+        <li><span class="fa fa-rss"></span></li>
+      </ul>
+      <p class="copyright">Copyright &copy;{{ now|date("Y") }} {{ author.name }}</p>
+      {% endblock %}
+    </div>
+    {% endblock %}
+  </footer>
+  {% endblock %}
+
+{% endblock %}
