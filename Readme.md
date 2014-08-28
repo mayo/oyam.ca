@@ -1,6 +1,3 @@
+Mayo Jordanov's website.
 
-# static-site
-
-This example uses Metalsmith to make a static site. To test it out yourself just run:
-
-    $ make build
+Hand crafted and forged using Metalsmith. All images in this repository, unless otherwise stated, are Copyright Mayo Jordanov.
