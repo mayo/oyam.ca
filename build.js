@@ -12,10 +12,11 @@ var title = require('metalsmith-title');
 var ignore = require('metalsmith-ignore');
 var excerpts = require('metalsmith-excerpts');
 var asset = require('metalsmith-static');
+var debug = require('metalsmith-debug');
+var beautify = require('metalsmith-beautify');
 
 // metalsmith-clean-css
 // metalsmith-uglify
-// "metalsmith-metadata": "segmentio/metalsmith-metadata",
 
 /**
  * Build.
@@ -27,8 +28,7 @@ metalsmith
   .source("./content")
   .destination("./deploy")
 
-  //TODO: temporarily disabled because it breaks python simple server
-  .clean(false)
+  .clean(true)
 
   //set global metadata
   .metadata({
@@ -51,7 +51,8 @@ metalsmith
   //load normalize.css from module to keep it up to date more easily
   .use(asset({
     "src": "node_modules/normalize.css/normalize.css",
-    "dest": "media/css/normalize.css"
+    "dest": "media/css/normalize.css",
+    "createDest": true
   }))
 
   //ignore temp files
@@ -91,26 +92,19 @@ metalsmith
     "autoescape": false
 //      inPlace: true
   }))
-  ;
 
-
-var beautify = require('metalsmith-beautify');
-
-metalsmith
   .use(beautify({
     "indent_size": 2,
     "indent_char": " "
-  }));
+  }))
 
-var debug = require('metalsmith-debug');
+  .use(debug())
+  ;
 
-metalsmith
-  .use(debug());
-
-if (process.env.BUILD_LIVE) {
+if (process.env.WATCH) {
   metalsmith
     .use(watch({
-      "livereload": true,
+      livereload: false
     }));
 }
 
@@ -119,8 +113,6 @@ metalsmith
   .build(function(err){
     if (err) throw err;
   });
-
-//  .use(concat)
 
 function setMetadata(options) {
   /**
@@ -139,31 +131,5 @@ function setMetadata(options) {
 
     done();
   }
-}
-
-/**
- * Concat plugin.
- *
- * @param {Object} files
- * @param {Metalsmith} metalsmith
- * @param {Function} done
- */
-
-function concat(files, metalsmith, done){
-  var css = '';
-
-  for (var file in files) {
-    if ('.css' != extname(file)) continue;
-    css += files[file].contents.toString();
-    delete files[file];
-  }
-
-  css = myth(css);
-
-  files['index.css'] = {
-    contents: new Buffer(css)
-  };
-
-  done();
 }
 

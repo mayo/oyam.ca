@@ -3,10 +3,16 @@
   "description": "Mayo Jordanov's website",
   "version": "0.1.0",
   "homepage": "http://oyam.ca",
+
   "author": {
     "name": "Mayo Jordanov",
     "url": "http://oyam.ca"
   },
+
+  "repository": {
+    "type" : "git",
+    "url" : "http://github.com/mayo/oyam.ca.git"
+  }
 
   "private": true,
 
@@ -25,11 +31,9 @@
     "metalsmith-title": "OzzyCzech/metalsmith-title",
     "metalsmith-excerpts": "segmentio/metalsmith-excerpts",
     "metalsmith-static": "mayo/metalsmith-static",
-
     "metalsmith-ignore": "segmentio/metalsmith-ignore",
     "metalsmith-debug": "mahnunchik/metalsmith-debug",
     "metalsmith-beautify": "boushley/metalsmith-beautify"
-
   }
 }
 
