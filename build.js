@@ -90,7 +90,6 @@ metalsmith
     "engine": "swig",
     "directory": "templates",
     "autoescape": false
-//      inPlace: true
   }))
 
   .use(beautify({

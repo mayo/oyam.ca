@@ -17,9 +17,9 @@
   "private": true,
 
   "dependencies": {
-    "metalsmith": "segmentio/metalsmith",
-    "swig": "",
-    "normalize.css": "",
+    "metalsmith": "mayo/metalsmith",
+    "swig": "*",
+    "normalize.css": "*",
 
     "metalsmith-templates": "segmentio/metalsmith-templates",
     "metalsmith-markdown": "segmentio/metalsmith-markdown",
