@@ -24,7 +24,7 @@
     "metalsmith-branch": "ericgj/metalsmith-branch",
     "metalsmith-title": "OzzyCzech/metalsmith-title",
     "metalsmith-excerpts": "segmentio/metalsmith-excerpts",
-    "metalsmith-static": "thehydroimpulse/metalsmith-static",
+    "metalsmith-static": "mayo/metalsmith-static",
 
     "metalsmith-ignore": "segmentio/metalsmith-ignore",
     "metalsmith-debug": "mahnunchik/metalsmith-debug",
