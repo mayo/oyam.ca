@@ -328,19 +328,6 @@ main > .grid-container:first-child {
   margin-top: 2em;
 }
 
-main .banner {
-  position: relative;
-  height: 500px;
-}
-
-main .banner img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-}
 
 footer {
   margin-top: 2em;
@@ -787,6 +774,7 @@ article.link + article {
 
 */
 
+.fullpage .image,
 .banner .image {
   -webkit-font-smoothing: subpixel-antialiased;
 
@@ -803,10 +791,7 @@ article.link + article {
   width:100%;
   height: 100%;
 
-  
-  background-image: url('/media/images/about.jpg');
   background-size: cover;
-  background-position: center;
 }
 
 
