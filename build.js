@@ -89,7 +89,11 @@ metalsmith
   .use(templates({
     "engine": "swig",
     "directory": "templates",
-    "autoescape": false
+
+    "autoescape": false,
+
+    "extendsPattern": '{% extends "%s" %}',
+    "blockPattern": [ '{% block %s %}', '{% endblock %}' ]
   }))
 
   .use(beautify({
