@@ -82,7 +82,7 @@ div.test1 {
 .caption {
   position: absolute;
   bottom: 1em;
-  right: 1em;
+  left: 1em;
   font-family: "aktiv-grotesk-std", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
   font-size: .8em;
@@ -98,11 +98,10 @@ div.test1 {
 .caption .description {
   position: absolute;
   bottom: .1em;
-  right: 0;
+  left: 2em;
   width: 20em;
   opacity: 0;
-  text-align: right;
-  margin-right: 2em;
+  text-align: left;
 }
 
 .caption .description,
@@ -115,7 +114,8 @@ div.test1 {
   opacity: 1;
 }
 
-.dark-bg .caption {
+.dark-bg .caption,
+.dark-bg.caption {
   color: white;
 }
 
@@ -144,4 +144,22 @@ div.test1 {
 
 .slideshow .slide .main p {
   font-weight: 300;	
+}
+
+.slideshow .controls {
+  position: absolute;
+  bottom: .8em;
+  right: .8em;
+  
+  opacity: 0.5;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.slideshow .controls:hover {
+  opacity: 1;
+}
+
+.slideshow .dark-bg .controls,
+.slideshow .dark-bg.controls {
+  color: white;
 }

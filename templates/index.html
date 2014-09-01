@@ -7,6 +7,11 @@ background_class: dark-bg
 <link rel="stylesheet" type="text/css" href="/media/css/index.css" />
 {% endblock %}
 
+{% block js %}
+  {% parent %}
+  <script src="/media/js/index.js"></script>
+{% endblock %}
+
 {% block main_content %}
   {{ contents }}
 {% endblock %}

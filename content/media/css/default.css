@@ -164,7 +164,8 @@ nav.sitenav .logo .logotype {
   font-size: 1.75em; /* sizes better on mobile. 1.75em ~= 2rem */
 }
 
-.dark-bg nav.sitenav .logo .logotype {
+.dark-bg nav.sitenav .logo .logotype,
+nav.sitenav .dark-bg .logo .logotype {
   color: white;
 }
 
@@ -197,7 +198,8 @@ nav.sitenav .menu a {
   color: black;
 }
 
-.dark-bg nav.sitenav .menu a {
+.dark-bg nav.sitenav .menu a,
+nav.sitenav .dark-bg .menu a {
   color: white;	
 }
 
@@ -221,7 +223,8 @@ nav.sitenav .menu li .menuitem {
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
-.dark-bg nav.sitenav .menu li .menuitem {
+.dark-bg nav.sitenav .menu li .menuitem,
+nav.sitenav .dark-bg .menu li .menuitem {
   -webkit-font-smoothing: antialiased;
 }
 
@@ -229,7 +232,8 @@ nav.sitenav .menu li .menuitem:hover {
   border-bottom-color: black;
 }
 
-.dark-bg nav.sitenav .menu li .menuitem:hover {
+.dark-bg nav.sitenav .menu li .menuitem:hover,
+nav.sitenav .dark-bg .menu li .menuitem:hover {
   border-bottom-color: white;
 }
 
@@ -264,7 +268,8 @@ nav.sitenav .menu .folder .submenu-wrapper .submenu {
   background: black;
 }
 
-.dark-bg nav.sitenav .menu .folder .submenu-wrapper .submenu {
+.dark-bg nav.sitenav .menu .folder .submenu-wrapper .submenu,
+nav.sitenav .dark-bg .menu .folder .submenu-wrapper .submenu {
   -webkit-font-smoothing: subpixel-antialiased;
   background: white;
 }
@@ -303,7 +308,8 @@ nav.sitenav .menu .folder .submenu li a {
   width: 100%;
 }
 
-.dark-bg nav.sitenav .menu .folder .submenu li a {
+.dark-bg nav.sitenav .menu .folder .submenu li a,
+nav.sitenav .dark-bg .menu .folder .submenu li a {
   color: #333;
   -webkit-font-smoothing: subpixel-antialiased;
 }
@@ -817,6 +823,32 @@ article.link + article {
 .grid-container .sidebar {
   color: #777;
   font-size: .9em;
+}
+
+.slideshow .slide.hidden {
+  visibility: hidden;	
+}
+
+.slideshow .controls button {
+  border: 0;
+  background: inherit;
+  padding: 0;
+  height: 1em;
+}
+
+.slideshow .controls button + button {
+  margin-left: .1em;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
 }
 
 /* @group Blog */
