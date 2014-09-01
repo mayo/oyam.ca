@@ -1,7 +1,6 @@
 
 function Slideshow(selector) {
   //fire up some events
-  smokesignals.convert(this);
 
   this.slides = document.querySelectorAll(selector);
   this.currentSlide = 0
@@ -14,12 +13,11 @@ function Slideshow(selector) {
 
       if (i == index) {
         slide.classList.remove("hidden");
+        this.trigger('advance', slide);
       } else {
         slide.classList.add("hidden");
       }
     }
-
-    this.emit('advance');
   }
 
   this.activeSlide = function() {
@@ -47,20 +45,22 @@ function Slideshow(selector) {
   this.showSlide(this.currentSlide);
 }
 
+MicroEvent.mixin(Slideshow);
+
 var s;
 
 document.addEventListener('DOMContentLoaded', function() {
 
   s = new Slideshow("#frontpage-slideshow .slide");
 
-  var callback = function() {
-    var slide = s.activeSlide();
+  var callback = function(slide) {
     var darkbg = slide.hasAttribute('data-darkbg');
+    var bodyTag = document.querySelector('html > body');
 
     if (darkbg) {
-      document.querySelector('html > body').classList.add('dark-bg');
+      bodyTag.classList.add('dark-bg');
     } else {
-      document.querySelector('html > body').classList.remove('dark-bg');
+      bodyTag.classList.remove('dark-bg');
     }
 
     var areas = [ "topleft", "topright", "bottomleft", "bottomright" ];
@@ -80,10 +80,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  s.on('advance', callback);
+  s.bind('advance', callback);
 
   //offset for setting the first slide in constructor, which we can't catch the event for
-  callback();
+  callback(s.activeSlide());
 
   document.querySelector('#frontpage-slideshow .controls .previous')
     .addEventListener('click', function(e) {

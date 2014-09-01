@@ -19,7 +19,6 @@
   "dependencies": {
     "metalsmith": "mayo/metalsmith",
     "swig": "*",
-    "normalize.css": "*",
 
     "metalsmith-templates": "mayo/metalsmith-templates",
     "metalsmith-markdown": "segmentio/metalsmith-markdown",
@@ -33,7 +32,10 @@
     "metalsmith-static": "mayo/metalsmith-static",
     "metalsmith-ignore": "segmentio/metalsmith-ignore",
     "metalsmith-debug": "mahnunchik/metalsmith-debug",
-    "metalsmith-beautify": "boushley/metalsmith-beautify"
+    "metalsmith-beautify": "boushley/metalsmith-beautify",
+
+    "normalize.css": "*",
+    "microevent": "*"
   }
 }
 

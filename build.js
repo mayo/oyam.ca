@@ -48,12 +48,18 @@ metalsmith
     "production": process.env.PRODUCTION == 1
   })
 
-  //load normalize.css from module to keep it up to date more easily
-  .use(asset({
-    "src": "node_modules/normalize.css/normalize.css",
-    "dest": "media/css/normalize.css",
-    "createDest": true
-  }))
+  .use(asset([
+    //load normalize.css from module to keep it up to date more easily
+    {
+      "src": "node_modules/normalize.css/normalize.css",
+      "dest": "media/css/normalize.css"
+    },
+    //microevent for slideshow
+    {
+      "src": "node_modules/microevent/microevent.js",
+      "dest": "media/js/microevent.js"
+    }
+  ]))
 
   //ignore temp files
   .use(ignore([
