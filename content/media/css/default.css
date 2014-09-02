@@ -207,8 +207,11 @@ nav.sitenav .menu > li {
   display: inline;
   margin: 0 0 0 2em;
   padding-bottom: .5em;
+  box-sizing: border-box;
+  position: relative;
+  font-weight: bold;  
+  z-index: 533;
 }
-
 
 nav.sitenav .menu li .menuitem {
   border-bottom: 1px solid transparent;
@@ -235,12 +238,6 @@ nav.sitenav .menu li .menuitem:hover {
 .dark-bg nav.sitenav .menu li .menuitem:hover,
 nav.sitenav .dark-bg .menu li .menuitem:hover {
   border-bottom-color: white;
-}
-
-nav.sitenav .menu .folder {
-  box-sizing: border-box;
-  position: relative;
-  font-weight: bold;
 }
 
 nav.sitenav .menu .folder:before {
@@ -294,7 +291,6 @@ nav.sitenav .menu .folder:hover .submenu-wrapper .submenu,
 nav.sitenav .menu .folder .submenu-wrapper:hover,
 nav.sitenav .menu .folder .submenu-wrapper:hover .submenu {
   display: block;
-  z-index: 233; /* fibonacci for no reason */
 }
 
 nav.sitenav .menu .folder .submenu li a {

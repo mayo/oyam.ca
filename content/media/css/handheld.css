@@ -145,6 +145,8 @@
   
   nav.sitenav .menu > li {
     margin: 0;
+    padding: 0;
+    display: block;
   }
   
   nav.sitenav .menu > li .menuitem {
@@ -162,11 +164,6 @@
   nav.sitenav .menu > li .menuitem:active,
   .dark-bg nav.sitenav .menu > li .menuitem:active {
 	color: red;
-  }
-
-  nav.sitenav .menu .folder {
-    margin: 0;
-    padding: 0;
   }
   
   nav.sitenav .menu .folder:before {
