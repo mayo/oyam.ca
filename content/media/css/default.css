@@ -818,6 +818,10 @@ article.link + article {
   margin-bottom: 0;
 }
 
+.banner + .grid-container p:first-child {
+  margin-top: 3em;
+}
+
 .grid-container .sidebar {
   color: #777;
   font-size: .9em;
