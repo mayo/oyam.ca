@@ -40,7 +40,7 @@
     <script src="http://osvaldas.info/examples/drop-down-navigation-touch-friendly-and-responsive/doubletaptogo.js"></script>
 -->
   </head>
-  <body class="{{background_class}}">
+  <body class="{{background_class}}" {% if page_id -%}id="{{ page_id }}"{%- endif %}>
     {% block body_container %}
     {% endblock %}
 

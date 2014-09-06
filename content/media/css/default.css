@@ -79,13 +79,15 @@ small,
 .grid-container,
 .grid-container.normal {
   max-width: 38.7rem; /* 618px - original site width */
-  max-width: 60rem; /* 960px */
   max-width: 96rem; /* 960px */
-  
 }
 
 .grid-container.full {
   max-width: 100%;
+}
+
+#blog main .grid-container {
+  max-width: 60rem; /* 960px */
 }
 
 li {
