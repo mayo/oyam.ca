@@ -1,23 +1,5 @@
 /* @override http://localhost:8080/media/css/index.css */
 
-div.test1 {
-  -webkit-font-smoothing: subpixel-antialiased;
-
-  display: block;
-  left: 0px;
-  opacity: 1;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  position: absolute;
-  top: 0px;
-  z-index: -1;
-
-  background-image: url('/media/images/front.jpg');
-  background-image: url('/media/images/IMG_3384.jpg');
-  background-size: cover;
-  background-position: bottom;
-}
-
 /* iphone retina - portrait */
 @media only screen and (max-width: 480px) {
   div.test1 {
@@ -136,6 +118,11 @@ div.test1 {
   text-align: right;
   
   color: black;
+}
+
+.dark-bg .slideshow .slide .main,
+.dark-bg .slideshow .slide .main h1 {
+  color: white;
 }
 
 .slideshow .slide .main h1 {
