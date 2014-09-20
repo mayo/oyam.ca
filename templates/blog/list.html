@@ -27,9 +27,20 @@
         {% set post_title = post.title %}
         <h2><a href="{{ post_link }}">{{ post_title }}</a></h2>
       </header>
+      {% if post.type == "photo" %}
+      <div class="excerpt">
+        <a class="readmore" href="{{ post_link }}">
+          <figure>
+            <img src="/media/images/photos/{{ post.created|date('Y/m') }}/{{ post.photo }}" title="{{ title }}" width="900"/>
+            <figcaption>{{ post.caption }} &copy; {{ author.name }}</figcaption>
+          </figure>
+        </a>
+      </div>
+      {% else %}
       <div class="excerpt">
         <a class="readmore" href="{{ post_link }}">{{ post.excerpt }}</a>
       </div>
+      {% endif %}
       {% if post.type == "link" %}
       <footer>
         <a class="permalink" href="/{{ post.path }}"><span class="fa fa-bookmark-o"></span></a>

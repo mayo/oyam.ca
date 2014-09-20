@@ -364,7 +364,7 @@ section {
 }
 
 figure {
-  margin: 1em 0 1em 0;
+  margin: 0;
   padding: 0;
   margin-top: 1em;
 }
@@ -375,6 +375,7 @@ figure img {
 }
 
 figure figcaption {
+  margin-top: -.5em;
   font-size: .7em;
   text-align: right;
   color: rgb(105,105,105);
