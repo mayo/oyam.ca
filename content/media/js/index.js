@@ -85,10 +85,14 @@ s
 
   s.bind('advance', callback);
 
-  var hash = window.location.hash.substr(1);
-  var requestedSlide = hash.substring(hash.indexOf("slide") + 5);
+  function getSelectedSlide() {
+    var hash = window.location.hash.substr(1);
+    var requestedSlide = hash.substring(hash.indexOf("slide") + 5);
 
-  s.showSlide(requestedSlide || 0);
+    return requestedSlide || 0;
+  }
+
+  s.showSlide(getSelectedSlide());
 
   //offset for setting the first slide in constructor, which we can't catch the event for
   callback(s.activeSlide());
@@ -104,5 +108,9 @@ s
       s.next();
       e.preventDefault();
     }, false);
+
+  window.addEventListener("hashchange", function(e) {
+    s.showSlide(getSelectedSlide());
+  }, false);
 
 }, false);
