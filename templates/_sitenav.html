@@ -19,8 +19,9 @@
         <a href="/" class="menuitem">showing</a>
         <div class="submenu-wrapper">
           <ul class="submenu">
-            <li><a href="/blog">Manhattan Beach</a></li>
-            <li><a href="/archive">Vancouver Sunset</a></li>
+            {% for slide in slides %}
+            <li><a href="#slide{{ loop.index0 }}">{{ slide.title }}</a></li>
+            {% endfor %}
           </ul>
         </div>
       </li>

@@ -33,6 +33,7 @@
     "metalsmith-ignore": "segmentio/metalsmith-ignore",
     "metalsmith-debug": "mahnunchik/metalsmith-debug",
     "metalsmith-beautify": "boushley/metalsmith-beautify",
+    "metalsmith-metadata": "segmentio/metalsmith-metadata",
 
     "normalize.css": "*",
     "microevent": "*"

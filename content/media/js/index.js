@@ -6,6 +6,8 @@ function Slideshow(selector) {
   this.currentSlide = 0
 
   this.showSlide = function(index) {
+    index = index < 0 ? 0 : index;
+    index = index >= this.slides.length ? this.slides.length - 1 : index;
     this.currentSlide = index;
 
     for (var i = 0; i < this.slides.length; i++) {
@@ -66,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var areas = [ "topleft", "topright", "bottomleft", "bottomright" ];
     areas.forEach(function(area) {
       var def = slide.hasAttribute('data-darkbg-' + area);
-
+s
       var tags = document.querySelectorAll("." + area);
       for (var i = 0; i < tags.length; i++) {
         var tag = tags[i];
@@ -78,9 +80,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       }
     });
+
   }
 
   s.bind('advance', callback);
+
+  var hash = window.location.hash.substr(1);
+  var requestedSlide = hash.substring(hash.indexOf("slide") + 5);
+
+  s.showSlide(requestedSlide || 0);
 
   //offset for setting the first slide in constructor, which we can't catch the event for
   callback(s.activeSlide());

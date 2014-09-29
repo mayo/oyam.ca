@@ -1,0 +1,36 @@
+[
+  {
+    "title": "Star Gazer",
+    "content": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Mauris dui turpis, porttitor id, elementum a, rhoncus a, felis. Cras malesuada placerat est. Suspendisse iaculis ornare magna. Aliquam risus eros, gravida vitae, fringilla in, iaculis at, nibh. Sed et est. Phasellus rhoncus vestibulum diam.",
+    "caption": "Tantalus Range, near Squamish, British Columbia",
+    "link": "/blog/2014/09/tantalus/",
+    "hide_content": true,
+    "image": "/media/images/tantalus.jpg",
+    "image_position": "bottom",
+    "dark_bg": true
+  },
+
+  {
+    "title": "Yosemite Summer",
+    "content": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Mauris dui turpis, porttitor id, elementum a, rhoncus a, felis. Cras malesuada placerat est. Suspendisse iaculis ornare magna. Aliquam risus eros, gravida vitae, fringilla in, iaculis at, nibh. Sed et est. Phasellus rhoncus vestibulum diam.",
+    "caption": "This is a test caption",
+    "image": "/media/images/IMG_3384.jpg",
+    "image_position": "bottom",
+    "dark_bg_quadrants": {
+      "topleft": true,
+      "topright": false,
+      "bottomleft": true,
+      "bottomright": true
+    }
+  },
+
+  {
+    "title": "iPhone Macro Photography",
+    "content": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Mauris dui turpis, porttitor id, elementum a, rhoncus a, felis. Cras malesuada placerat est. Suspendisse iaculis ornare magna. Aliquam risus eros, gravida vitae, fringilla in, iaculis at, nibh. Sed et est. Phasellus rhoncus vestibulum diam.",
+    "caption": "This is a test caption",
+    "image": "/media/images/front.jpg",
+    "image_position": "bottom",
+    "dark_bg": true
+  }
+
+]

@@ -14,6 +14,7 @@ var excerpts = require('metalsmith-excerpts');
 var asset = require('metalsmith-static');
 var debug = require('metalsmith-debug');
 var beautify = require('metalsmith-beautify');
+var metadata = require('metalsmith-metadata');
 
 // metalsmith-clean-css
 // metalsmith-uglify
@@ -66,6 +67,10 @@ metalsmith
     '**/.*.swp',
     '**/.DS_Store',
   ]))
+
+  .use(metadata({
+    "slides": "slides.json"
+  }))
 
   .use(title())
 
