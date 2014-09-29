@@ -34,6 +34,7 @@
     "metalsmith-debug": "mahnunchik/metalsmith-debug",
     "metalsmith-beautify": "boushley/metalsmith-beautify",
     "metalsmith-metadata": "segmentio/metalsmith-metadata",
+    "metalsmith-autoprefixer": "esundahl/metalsmith-autoprefixer",
 
     "normalize.css": "*",
     "microevent": "*"

@@ -15,6 +15,7 @@ var asset = require('metalsmith-static');
 var debug = require('metalsmith-debug');
 var beautify = require('metalsmith-beautify');
 var metadata = require('metalsmith-metadata');
+var autoprefixer = require('metalsmith-autoprefixer');
 
 // metalsmith-clean-css
 // metalsmith-uglify
@@ -106,6 +107,8 @@ metalsmith
     "extendsPattern": '{% extends "%s" %}',
     "blockPattern": [ '{% block %s %}', '{% endblock %}' ]
   }))
+
+  .use(autoprefixer())
 
   .use(beautify({
     "indent_size": 2,
