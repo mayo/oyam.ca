@@ -24,6 +24,17 @@ var autoprefixer = require('metalsmith-autoprefixer');
  * Build.
  */
 
+var buildEnv = function() {
+  this.PRODUCTION = "production";
+  this.DEVELOPMENT = "development";
+
+  this.isProduction = process.env.ENVIRONMENT == this.PRODUCTION;
+  this.isDevelopment = process.env.ENVIRONMENT =! this.PRODUCTION;
+  this.watch = process.env.WATCH;
+
+  return this;
+}();
+
 var metalsmith = Metalsmith(__dirname);
 
 metalsmith
@@ -47,7 +58,7 @@ metalsmith
 
     "now": new Date(),
 
-    "production": process.env.PRODUCTION == 1
+    "production": buildEnv.isProduction
   })
 
   .use(asset([
@@ -69,6 +80,7 @@ metalsmith
     '**/.DS_Store',
   ]))
 
+  //load up slideshow
   .use(metadata({
     "slides": "slides.json"
   }))
@@ -109,20 +121,25 @@ metalsmith
   }))
 
   .use(autoprefixer())
+;
 
-  .use(beautify({
-    "indent_size": 2,
-    "indent_char": " "
-  }))
+if (!buildEnv.isProduction) {
+  metalsmith
+    .use(beautify({
+      "indent_size": 2,
+      "indent_char": " "
+    }))
 
-  .use(debug())
+    .use(debug())
   ;
+}
 
-if (process.env.WATCH) {
+if (!buildEnv.isProduction && buildEnv.watch) {
   metalsmith
     .use(watch({
       livereload: false
-    }));
+    }))
+  ;
 }
 
 
