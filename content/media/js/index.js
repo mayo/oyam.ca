@@ -3,7 +3,7 @@ function Slideshow(selector) {
   //fire up some events
 
   this.slides = document.querySelectorAll(selector);
-  this.currentSlide = 0
+  this.currentSlide = 0;
 
   this.showSlide = function(index) {
     index = index < 0 ? 0 : index;
@@ -89,13 +89,10 @@ s
     var hash = window.location.hash.substr(1);
     var requestedSlide = hash.substring(hash.indexOf("slide") + 5);
 
-    return requestedSlide || 0;
+    return requestedSlide || s.currentSlide;
   }
 
   s.showSlide(getSelectedSlide());
-
-  //offset for setting the first slide in constructor, which we can't catch the event for
-  callback(s.activeSlide());
 
   document.querySelector('#frontpage-slideshow .controls .previous')
     .addEventListener('click', function(e) {
