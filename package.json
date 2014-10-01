@@ -11,7 +11,7 @@
 
   "repository": {
     "type" : "git",
-    "url" : "http://github.com/mayo/oyam.ca.git"
+    "url" : "https://github.com/mayo/oyam.ca"
   },
 
   "private": true,
