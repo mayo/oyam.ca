@@ -5,4 +5,7 @@ build: node_modules
 node_modules: package.json
 	npm install
 
+serve:
+	@$(MAKE) build SERVE=1
+
 .PHONY: build

@@ -35,6 +35,7 @@
     "metalsmith-beautify": "boushley/metalsmith-beautify",
     "metalsmith-metadata": "segmentio/metalsmith-metadata",
     "metalsmith-autoprefixer": "esundahl/metalsmith-autoprefixer",
+    "metalsmith-serve": "mayo/metalsmith-serve",
 
     "normalize.css": "*",
     "microevent": "*"

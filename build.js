@@ -6,6 +6,7 @@ var permalinks = require('metalsmith-permalinks');
 var templates = require('metalsmith-templates');
 var drafts = require('metalsmith-drafts');
 var watch = require('metalsmith-watch');
+var serve = require('metalsmith-serve');
 var branch = require('metalsmith-branch');
 var collections = require('metalsmith-collections');
 var title = require('metalsmith-title');
@@ -31,6 +32,7 @@ var buildEnv = function() {
   this.isProduction = process.env.ENVIRONMENT == this.PRODUCTION;
   this.isDevelopment = process.env.ENVIRONMENT =! this.PRODUCTION;
   this.watch = process.env.WATCH;
+  this.serve = process.env.SERVE;
 
   return this;
 }();
@@ -142,11 +144,22 @@ if (!buildEnv.isProduction && buildEnv.watch) {
   ;
 }
 
+if (!buildEnv.isProduction && buildEnv.serve) {
+  metalsmith
+    .use(serve({
+      port: 8080,
+      verbose: true
+    }))
+  ;
+}
 
 metalsmith
   .build(function(err){
     if (err) throw err;
+    console.log("Build complete!");
   });
+
+
 
 function setMetadata(options) {
   /**
