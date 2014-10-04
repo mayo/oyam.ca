@@ -17,24 +17,25 @@
   "private": true,
 
   "dependencies": {
-    "metalsmith": "mayo/metalsmith",
+    "metalsmith": "segmentio/metalsmith",
     "swig": "*",
 
     "metalsmith-templates": "mayo/metalsmith-templates",
     "metalsmith-markdown": "segmentio/metalsmith-markdown",
     "metalsmith-permalinks": "mayo/metalsmith-permalinks",
     "metalsmith-drafts": "segmentio/metalsmith-drafts",
-    "metalsmith-watch": "FWeinb/metalsmith-watch",
     "metalsmith-collections": "segmentio/metalsmith-collections",
     "metalsmith-branch": "ericgj/metalsmith-branch",
     "metalsmith-title": "OzzyCzech/metalsmith-title",
     "metalsmith-excerpts": "segmentio/metalsmith-excerpts",
-    "metalsmith-static": "mayo/metalsmith-static",
+    "metalsmith-static": "thehydroimpulse/metalsmith-static",
     "metalsmith-ignore": "segmentio/metalsmith-ignore",
-    "metalsmith-debug": "mahnunchik/metalsmith-debug",
-    "metalsmith-beautify": "boushley/metalsmith-beautify",
     "metalsmith-metadata": "segmentio/metalsmith-metadata",
     "metalsmith-autoprefixer": "esundahl/metalsmith-autoprefixer",
+
+    "metalsmith-beautify": "boushley/metalsmith-beautify",
+    "metalsmith-watch": "FWeinb/metalsmith-watch",
+    "metalsmith-debug": "mahnunchik/metalsmith-debug",
     "metalsmith-serve": "mayo/metalsmith-serve",
 
     "normalize.css": "*",
