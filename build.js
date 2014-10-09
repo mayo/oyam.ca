@@ -18,7 +18,10 @@ var beautify = require('metalsmith-beautify');
 var metadata = require('metalsmith-metadata');
 var autoprefixer = require('metalsmith-autoprefixer');
 
-// metalsmith-clean-css
+var minify_css = require('metalsmith-clean-css');
+//var minify_js = require('metalsmith-uglify');
+//var minify_html = require('metalsmith-html-minifier');
+
 // metalsmith-uglify
 
 /**
@@ -72,7 +75,8 @@ metalsmith
     //microevent for slideshow
     {
       "src": "node_modules/microevent/microevent.js",
-      "dest": "media/js/microevent.js"
+      "dest": "media/js/microevent.js",
+      metalsmith: true
     }
   ]))
 
@@ -150,6 +154,18 @@ if (!buildEnv.isProduction && buildEnv.serve) {
       port: 8080,
       verbose: true
     }))
+  ;
+}
+
+if (buildEnv.isProduction) {
+  metalsmith
+  //TODO: this breaks metalsmith-templates
+//    .use(minify_html())
+
+  //TODO: generates .min.js files, which is not exactly useful without rewriting the source files
+//    .use(minify_js({}))
+
+    .use(minify_css())
   ;
 }
 

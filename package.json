@@ -28,10 +28,14 @@
     "metalsmith-branch": "ericgj/metalsmith-branch",
     "metalsmith-title": "OzzyCzech/metalsmith-title",
     "metalsmith-excerpts": "segmentio/metalsmith-excerpts",
-    "metalsmith-static": "thehydroimpulse/metalsmith-static",
+    "metalsmith-static": "mayo/metalsmith-static",
     "metalsmith-ignore": "segmentio/metalsmith-ignore",
     "metalsmith-metadata": "segmentio/metalsmith-metadata",
     "metalsmith-autoprefixer": "esundahl/metalsmith-autoprefixer",
+
+    "metalsmith-clean-css": "aymericbeaumet/metalsmith-clean-css",
+    "metalsmith-uglify": "ksmithut/metalsmith-uglify",
+    "metalsmith-html-minifier": "whymarrh/metalsmith-html-minifier",
 
     "metalsmith-beautify": "boushley/metalsmith-beautify",
     "metalsmith-watch": "FWeinb/metalsmith-watch",
