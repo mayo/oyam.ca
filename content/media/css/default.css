@@ -162,13 +162,11 @@ nav.sitenav .logo .logotype {
   -webkit-font-smoothing: antialiased;
   line-height: 1;
 
-  text-transform: lowercase;
-  letter-spacing: -.08em;
-  word-spacing: -.2em;
+  text-transform: uppercase;
 
   color: black;
   
-  font-size: 1.75em; /* sizes better on mobile. 1.75em ~= 2rem */
+  font-size: 1.2em
 }
 
 .dark-bg nav.sitenav .logo .logotype,
@@ -177,7 +175,7 @@ nav.sitenav .dark-bg .logo .logotype {
 }
 
 nav.sitenav .logo .logotype .lastname {
-  font-weight: 500;
+  padding-left: .3em;
 }
 
 nav.sitenav .mobilemenu {
