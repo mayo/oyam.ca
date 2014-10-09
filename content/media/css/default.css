@@ -87,8 +87,8 @@ small,
   max-width: 100%;
 }
 
-#blog main .grid-container {
-  max-width: 60rem; /* 960px */
+#blog .grid-container {
+  max-width: 70rem;
 }
 
 li {
@@ -333,6 +333,9 @@ main > .grid-container:first-child {
   margin-top: 2em;
 }
 
+#blog main > .grid-container:first-child {
+  margin-top: 5em;
+}
 
 footer {
   margin-top: 2em;
