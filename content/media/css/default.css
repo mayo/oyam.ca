@@ -879,6 +879,25 @@ article.link + article {
 
 /* @group Blog */
 
+#blog nav.sitenav .logotype,
+#blog nav.sitenav .menuitem,
+#blog nav.sitenav .menu li {
+  color: rgb(200,200,200);	
+}
+
+#blog nav.sitenav .menu > li {
+  font-weight: normal;
+}
+
+#blog nav.sitenav .menu > li {
+  margin: 0;
+}
+
+#blog nav.sitenav .menu > li:not(:last-child):after {
+  content: "/";
+  margin: 0 .2em;
+}
+
 div.blognav {
   margin-top: 4em;
 }
