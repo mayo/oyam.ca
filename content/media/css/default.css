@@ -8,13 +8,17 @@ html {
 body {
   margin: 0;
   padding: 0;
-  /* Berling T is preferred, but not available on TypeKit */
-  font-family: "adobe-garamond-pro", serif;
   font-size: 1.9rem;
   font-weight: 400;
   line-height: 1.45;
   background-color: rgb(245,246,246);
   color: rgb(60,60,60);
+}
+  
+body,
+article.post .content {
+  /* Berling T is preferred, but not available on TypeKit */
+  font-family: "adobe-garamond-pro", serif;
 }
 
 body.dark-bg {
@@ -30,7 +34,8 @@ figcaption,
 div.archive,
 div.blognav,
 .quote,
-.link {
+.link,
+nav.sitenav {
   font-family: "aktiv-grotesk-std", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -119,7 +124,6 @@ body > footer {
 
 nav.sitenav {
   display: inline-block;
-  font-family: "aktiv-grotesk-std";
   width: 100%;
   
   font-size: .6em;
@@ -979,9 +983,7 @@ article.quote.extended .excerpt p:last-child:after {
 
 
 article.post .content {
-  font-family: "adobe-garamond-pro", serif;
   font-weight: 400;
-
 }
 
 article footer .permalink {
