@@ -67,6 +67,15 @@ metalsmith
   })
 
   .use(asset([
+    //font-awesome.io
+    {
+      "src": "node_modules/font-awesome/css/font-awesome.min.css",
+      "dest": "media/css/font-awesome.min.css"
+    },
+    {
+      "src": "node_modules/font-awesome/fonts",
+      "dest": "media/fonts"
+    },
     //load normalize.css from module to keep it up to date more easily
     {
       "src": "node_modules/normalize.css/normalize.css",

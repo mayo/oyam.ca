@@ -43,7 +43,8 @@
     "metalsmith-serve": "mayo/metalsmith-serve",
 
     "normalize.css": "*",
-    "microevent": "*"
+    "microevent": "*",
+    "font-awesome": "*"
   }
 }
 
