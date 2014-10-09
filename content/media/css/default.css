@@ -410,6 +410,23 @@ pre code {
   font-size: 1.5rem;
 }
 
+pre {
+  border: 1px dotted rgb(220,220,220);
+  padding: .7rem 1rem;
+  overflow: auto;
+}
+
+pre::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+    height: 7px;
+}
+
+pre::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0,0,0,.5);
+}
+
 /* old stuff */
 
 /*
