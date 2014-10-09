@@ -221,11 +221,7 @@ nav.sitenav .menu > li {
 nav.sitenav .menu li .menuitem {
   border-bottom: 1px solid transparent;
   cursor: pointer;
-  font-weight: bold;
 
-  -webkit-transition: border-bottom-color 0.4s ease-in-out;
-  -moz-transition: border-bottom-color 0.4s ease-in-out;
-  -o-transition: border-bottom-color 0.4s ease-in-out;
   transition: border-bottom-color 0.4s ease-in-out;
   
   -webkit-font-smoothing: subpixel-antialiased;
