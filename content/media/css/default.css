@@ -940,7 +940,7 @@ article .post-time {
 }
 
 .article-list .date-threshold {
-  margin: 3em 0 1em 0;
+  margin: 4em 0 2em 0;
 }
 
 .article-list article h2 {
@@ -958,6 +958,15 @@ article .post-time {
 
 .article-list article.quote h2 a {
   text-decoration: none;
+}
+
+.article-list article.quote footer,
+.article-list article.quote footer p {
+  margin-top: 0;
+}
+
+.article-list article.quote footer {
+  padding-left: 1.5em;
 }
 
 .article-list article.link footer a {
@@ -1018,6 +1027,10 @@ article.link footer .extlink .fa {
 
 article.link footer .author {
   color: black;
+}
+
+.article-list  article.link footer {
+  margin-top: 0;
 }
 
 /* @end Blog */
