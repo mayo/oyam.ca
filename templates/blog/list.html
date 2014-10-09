@@ -19,14 +19,17 @@
     {% endif %}
 
     <article class="{{ post.type }} {{ extra_classes }}">
+      {% set post_link = "/" + post.path %}
+      {% if post.type == "link" %}
+        {% set post_link = post.href %}
+      {% endif %}
+      {% set post_title = post.title %}
+
+      {% if post.type != "photo" %}
       <header>
-        {% set post_link = "/" + post.path %}
-        {% if post.type == "link" %}
-          {% set post_link = post.href %}
-        {% endif %}
-        {% set post_title = post.title %}
         <h2><a href="{{ post_link }}">{{ post_title }}</a></h2>
       </header>
+      {% endif %}
       {% if post.type == "photo" %}
       <div class="excerpt">
         <a class="readmore" href="{{ post_link }}">
