@@ -46,11 +46,13 @@
       {% endif %}
       {% if post.type == "link" %}
       <footer>
-        <a class="permalink" href="/{{ post.path }}"><span class="fa fa-bookmark-o"></span></a>
-        <a class="extlink" href="{{ post.href }}"><span class="fa fa-external-link"></span>{{ post.href }}</a>
+        <ul class="fa-ul">
+          <li><i class="fa-li fa fa-bookmark-o"></i><a class="permalink" href="/{{ post.path }}">Permalink</a></li>
+          <li><i class="fa-li fa fa-external-link"></i><a class="extlink" href="{{ post.href }}">{{ post.href }}</a></li>
         {% if post.source %}
-        <a class="extlink" href="{{ post.source_link }}"><span class="fa fa-external-link"></span>{{ post.source }}</a>
+          <li><i class="fa-li fa external-link"></i><a class="extlink" href="{{ post.source_link }}">{{ post.source }}</a></li>
         {% endif %}
+        </ul>
       </footer>
       {% endif %}
       {% if post.type == "quote" %}
@@ -63,7 +65,11 @@
   {% endfor %}
 
   {% if !archive %}
-    <p class="morearchive">More in <a href="/blog/archive.html">archive</a>.</p>
+    <div class="blognav font-small">
+      <ul class="fa-ul">
+        <li><i class="fa fa-li fa-archive"></i>More in <a class="small" href="/blog/archive.html">archive</a></li>
+      </ul>
+    </div>
   {% endif %}
   </div>
 
