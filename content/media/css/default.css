@@ -326,8 +326,9 @@ nav.sitenav .menu .folder .submenu li a:active {
 
 /* @end Nav */
 
+/* This specific selector reuired because of pages with banner images */
 main > .grid-container:first-child {
-  margin-top: 2em;
+  margin-top: 3em;
 }
 
 #blog main > .grid-container:first-child {
