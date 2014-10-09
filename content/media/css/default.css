@@ -942,7 +942,7 @@ article .post-time {
   margin-top: 4em;
 }
 
-.article-list .date-threshold {
+.article-list .date-threshold:not(:first-child) {
   margin: 4em 0 2em 0;
 }
 
