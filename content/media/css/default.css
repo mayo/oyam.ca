@@ -888,6 +888,10 @@ article.link + article {
   margin-bottom: .5em;
 }
 
+#about .contact-list a {
+  color: inherit;
+}
+
 /* @end About */
 
 /* @group Blog */
