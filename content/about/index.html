@@ -1,6 +1,7 @@
 ---
 template: page.html
 title: About
+page_id: about
 ---
 <div class="banner">
   <div class="image" style="background-image: url('/media/images/about.jpg'); background-position: center;"></div>
@@ -15,93 +16,44 @@ title: About
 
 <div class="grid-container {{ grid_container_class }}">
 
-    <!--
-  <div class="grid-100 column" style="margin-bottom:2em;">
-    <img src="/media/images/about.jpg" title=""/>
+  <div class="grid-65 mobile-grid-100">
+
+    <p>I like challenges. Where others see a problem, I see a challenge in need of a solution. It taunts me, begging to be solved, and it’s personal. Some can be solved by writing code, some by clever design, others by talking to people. Most require creative thinking, but the best kind requires learning of new skills or applying knowledge in new and unexpected ways. </p>
+
+    <p>My background is software development and system administration, but through the varied nature of my work I gained experience in other areas of tech and creative fields. Web applications, database design, network administration, building automation, and web design are just some of the areas I had an opportunity to gain experience in.</p>
+
+    <p>As a naturally curious person I’m driven to explore the unknown, and the great outdoors is my playground. With snow on ground, I take my skis to explore the mountains around me. When the air gets warmer, I like to climb rocks, hike up mountains, or ride around on a bike. I run when I can, trying to keep in shape for the next long distance race or adventure. All these activities help me escape the daily bustle and enjoy serene outdoors that not everyone gets to see.</p>
+
+    <p>Photography is my creative outlet and reflects my passion for outdoors. I try to enjoy the moments on my adventures, and capture them as they happen, so other can share the experience and feel as if they were there.</p>
+
+    <h2>Website</h2>
+
+    <p>This website is hand crafted, forged with <a href="http://metalsmith.io">Metalsmith</a>, and source managed at <a href="https://github.com">GitHub</a>. You can view the sources and build scripts in the <a href="https://github.com/mayo/oyam.ca">mayo/oyam.ca</a> repository.</p>
+
   </div>
--->
 
-    <!--
-  <section class="grid-100 grid-parent">
--->
-      <!--
-    <div class="grid-100">
-      <h1>Mayo Jordanov</h1>
-    </div>
--->
+  <div class="grid-35 mobile-grid-100 sidebar">
+    <p>
+      <ul class="contact-list">
+        <li>pic</li>
+        <li>Mayo Jordanov<br/>Creative Solutions</li>
+        <li>Vancouver, BC</li>
+        <li>mayo@oyam.ca<br/>+1.604.484.9845</li>
+        <li>PGP key: <code>0xDDCAFEE6</code></li>
+        <li>
+          <span class="fa fa-twitter-square"></span>
+          <span class="fa fa-google-plus-square"></span>
+          <span class="fa fa-facebook-square"></span>
+          <span class="fa fa-linkedin-square"></span>
+          <span class="fa fa-flickr"></span>
+        </li>
+      </ul>
+    </p>
 
-    <div class="grid-65 mobile-grid-100">
-      <p>Since I was about five, I was interested in programming. I briefly dabbled with desktop development, but network programming and web development captured my interest. This interest compelled me to obtain my Bachelor of Science at SFU in 2006. From here, web development became my specialty.</p>
+    <p>I'm available to work on software/IT or photography projects. Please call or email for more information or to chat about the details.</p>
 
-      <p>I'm a programmer and enthusiast based out of Vancouver, British Columbia. Mayo is currently working as a programmer for a company specializing in electrical grid optimization solutions. On side, he dabbles with photography, design, servers, and various web technologies.</p>
+    <p>Any comments or suggestions are appreciated. It's not always possible to respond to all of them, so please don't take it personally if it takes me longer to respond or I don't reply at all.</p>
+  </div>
 
-      <p>As a naturally curious person, my career has led me to branch into various areas of computing including web design, system administration, network administration, and even visual communication design. Despite the tangents, I have always come back to programming and no matter what I worked on, I have always had some sort of software project on the go, whether it be professional or as a hobby.</p>
-
-      <p>outdoors/aports/adventures</p>
-
-      <h2>Website</h2>
-      <p>This website is hand crafted, forged with <a href="http://metalsmith.io/">Metalsmith</a>, and source managed at <a href="https://github.com/mayo/oyam.ca/">GitHub</a>.</p>
-
-      <h2>Standards</h2>
-      <p>Powered by <a href="http://mercurial.selenic.com/">Mercurial</a> and <a href="https://github.com/hyde/hyde">Hyde</a> static site generator.</p>
-    </div>
-
-    <div class="grid-35 mobile-grid-100 sidebar">
-      <p>
-        <ul>
-          <li>pic</li>
-          <li>Mayo Jordanov</li>
-          <li>Vancouver, BC</li>
-          <li>+1 604 484 9845</li>
-          <li>PGP key: <code>0xDDCAFEE6</code></li>
-          <li>
-            <span class="fa fa-facebook-square"></span>
-            <span class="fa fa-twitter-square"></span>
-            <span class="fa fa-linkedin-square"></span>
-          </li>
-          <li>twitter, g+, facebook, flickr, 500px, ...</li>
-        </ul>
-      </p>
-
-      <p>{{ site.meta.author }} is a computer programmer and enthusiast based out of Vancouver, British Columbia. Mayo is currently working as a programmer for a company specializing in electrical grid optimization solutions. On side, he dabbles with photography, design, servers, and various web technologies.</p>
-      <p class="contact">Comments? Tweet <a href="http://twitter.com/{{ tweet_via }}">@{{ tweet_via }}</a>{% if resource.meta.short %} with <a href="http://twitter.com/#search?q=%23mj_{{ resource.meta.hashtag }}">#mj_{{ resource.meta.hashtag }}</a> hashtag{% endif %}, or email <a href="mailto:mayo@...">mayo@&hellip;</a> PGP key: 0xDDCAFEE6.</p>
-    </div>
-    <!--
-  </section>
-
-  <section class="grid-100 mobile-grid-100 grid-parent">
--->
-    <!--
-    <div class="grid-100">
-      <h2>Website</h2>
-    </div>
--->
-
-    <div class="grid-65 mobile-grid-100">
-      <h2>Website</h2>
-      <p>This website is hand crafted, forged with <a href="http://metalsmith.io/">Metalsmith</a>, and source managed at <a href="https://github.com/mayo/oyam.ca/">GitHub</a>.</p>
-    </div>
-
-    <div class="grid-35 mobile-grid-100">
-      <p>asdf</p>
-    </div>
-    <!--
-  </section>
-
-  <section class="grid-100 grid-parent">
-    <div class="clear"></div>
--->
-
-    <div class="grid-65 mobile-grid-100">
-      <h2>Standards</h2>
-      <p>Powered by <a href="http://mercurial.selenic.com/">Mercurial</a> and <a href="https://github.com/hyde/hyde">Hyde</a> static site generator.</p>
-    </div>
-
-    <div class="grid-35 mobile-grid-100">
-      <p>asdf</p>
-    </div>
-    <!--
-  </section>
--->
 </div>
 

@@ -877,6 +877,19 @@ article.link + article {
   border: 0;
 }
 
+/* @group About */
+
+#about .contact-list {
+  padding: 0;
+}
+
+#about .contact-list li {
+  list-style-type: none;
+  margin-bottom: .5em;
+}
+
+/* @end About */
+
 /* @group Blog */
 
 #blog nav.sitenav .logotype,
