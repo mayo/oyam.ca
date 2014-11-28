@@ -1,8 +1,9 @@
 ---
-template: page.html
+extends: grid.html
 title: About
 page_id: about
 ---
+{% block main_content %}
 <div class="banner">
   <div class="image" style="background-image: url('/media/images/about.jpg'); background-position: center;"></div>
 
@@ -41,11 +42,10 @@ page_id: about
         <li>mayo@oyam.ca<br/>+1.604.484.9845</li>
         <li>PGP key: <code>0xDDCAFEE6</code></li>
         <li>
-          <span class="fa fa-twitter-square"></span>
-          <span class="fa fa-google-plus-square"></span>
-          <span class="fa fa-facebook-square"></span>
-          <span class="fa fa-linkedin-square"></span>
-          <span class="fa fa-flickr"></span>
+          <a href="{{ links.twitter }}"><i class="fa fa-twitter-square"></i></a>
+          <a href="{{ links.facebook }}"><i class="fa fa-facebook-square"></i></a>
+          <a href="{{ links.linkedin }}"><i class="fa fa-linkedin-square"></i></a>
+          <a href="{{ links.flickr }}"><i class="fa fa-flickr"></i></a>
         </li>
       </ul>
     </p>
@@ -56,4 +56,4 @@ page_id: about
   </div>
 
 </div>
-
+{% endblock %}

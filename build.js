@@ -97,7 +97,8 @@ metalsmith
 
   //load up slideshow
   .use(metadata({
-    "slides": "slides.json"
+    "slides": "slides.json",
+    "links": "links.json"
   }))
 
   .use(title())
