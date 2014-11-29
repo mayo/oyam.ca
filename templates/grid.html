@@ -32,18 +32,17 @@
     <div class="grid-100">
       {% block footer_content %}
       <ul class="social">
-        <li><span class="fa fa-facebook-square"></span></li>
-        <li><span class="fa fa-instagram"></span></li>
-        <li><span class="fa fa-twitter-square"></span></li>
-        <li><span class="fa fa-flickr"></span></li>
-        <li><span class="fa fa-github-square"></span></li>
-        <li><span class="fa fa-linkedin-square"></span></li>
+        <li><a href="{{ links.facebook }}"><i class="fa fa-facebook-square"></i></a></li>
+        <li><a href="{{ links.instagram }}"><i class="fa fa-instagram"></i></a></li>
+        <li><a href="{{ links.twitter }}"><i class="fa fa-twitter-square"></i></a></li>
+        <li><a href="{{ links.flickr }}"><i class="fa fa-flickr"></i></a></li>
+        <li><a href="{{ links.linkedin }}"><i class="fa fa-linkedin-square"></i></a></li>
 
-        <li><span class="fa fa-google-plus-square"></span></li>
-        <li><span class="fa fa-bitbucket-square"></span></li>
+        <li><a href="{{ links.github }}"><i class="fa fa-github-square"></i></a></li>
+        <li><a href="{{ links.bitbucket }}"><i class="fa fa-bitbucket-square"></i></a></li>
       </ul>
       <ul class="rss">
-        <li><span class="fa fa-rss"></span></li>
+        <li><a href="/feed/atom.xml"><i class="fa fa-rss"></i></a></li>
       </ul>
       <p class="copyright">Copyright &copy;{{ now|date("Y") }} {{ author.name }}</p>
       {% endblock %}
