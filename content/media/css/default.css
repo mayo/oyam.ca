@@ -892,6 +892,10 @@ article.link + article {
   color: inherit;
 }
 
+#about img.me {
+  margin-top: -8em;
+}
+
 /* @end About */
 
 /* @group Blog */
