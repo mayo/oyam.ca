@@ -4,9 +4,9 @@ node_js:
 deploy:
   provider: s3
   access_key_id:
-    secure: oNsRAlEEyMR5B5mOUM5TkJfmTglTn+M7hooexGgQPiEuRhcIk2dOP7t0ijDNrUHOOwhtPPYENYitOSPDFhwZna1RePZiyGRH9PBAbRUBu/ViBC+xZ06TnWTHkNJygKrL1NQpqSiMg1c9bg8zcMMkg7MPYIKEWhyguC7Zh7WW3aY=
+    secure: YPzJ2ZTPGNM6BYi2HIH8VmaBjo2bb9dHi6kX8bR21sy+0hXtTALUvdF10O/Exor/+pY9VKhsZRB5qR4Z6FgaZcHZCe4ANfIAXiQhPB3OLsSoblTRQXlRBMuMIfKvk9/JxLQobaM35gg4voNospDZ/Mr9Qeomuz0iZtfMRYvXPeM=
   secret_access_key:
-    secure: ieOBf0VlvtePQCtModrcnRO6XTL6zTZPUYEpPRo/8dLwXROEhvoTB2zAMz62nk/GVdrNnrtqqqKczSNiQxxEh4sYhvSqV4tdRu2y/WtOprFUh8GbHxlF73vdcP3U/IByqNeSsvqngj3h0VZiHNXF1rtSnFJhgakhu+0LgKO3hCQ=
+    secure: Intclmdbwg0nGqcGSEVMqJHa4BrtqzsfzlqOo12+e4sVHT8c3ZRf9NlQb68m+029jlCK3caQoMtt1aP90WVgYfRRvL48mme+xAGPIBZJ5xDESpVMHJ3d8numnBOd9/Gqwh49PL9DUBRJOibbHeVGRELweUZpp+CerNDKcvUrd+Q=
   bucket: oyam.ca
   endpoint: oyam.ca.s3-website-us-east-1.amazonaws.com
   region: us-east-1
