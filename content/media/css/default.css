@@ -113,10 +113,22 @@ body > header {
   padding-top: .5em;
 }
 
+body > footer i.fa {
+  font-size: 1.1em;
+}
+
 body > footer {
   margin: 6em 0 2em 0;
   color: rgb(180,180,180);
   font-weight: 200;
+}
+
+body > footer a {
+  color: inherit;
+}
+
+body > footer a:hover {
+  color: rgb(0,0,0);
 }
 
 /* @group Nav */
@@ -890,6 +902,10 @@ article.link + article {
 
 #about .contact-list a {
   color: inherit;
+}
+
+#about .contact-list a:hover {
+  color: rgb(0,0,0);
 }
 
 #about img.me {
