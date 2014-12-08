@@ -16,6 +16,10 @@
 
   "private": true,
 
+  "scripts": {
+    "test": "node build.js"
+  },
+
   "dependencies": {
     "metalsmith": "segmentio/metalsmith",
     "swig": "*",
