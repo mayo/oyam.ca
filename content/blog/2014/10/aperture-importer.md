@@ -18,5 +18,7 @@ For the best results, I recommend running Aperture Library First Aid on the libr
 
 If you are using the option of Aperture Importer that copies previews of adjusted images, you should consider regenerating some (or all) of the Aperture previews. The default in Aperture is an OK quality meant for previews, but after importing to Lightroom these will become your reference for all the adjustments. I changed the preview settings in Aperture preferences to "Photo Preview: Don't limit", and "Photo Preview Quality: 12" (highest setting), and then selected only the images I really cared about and regenerated previews for those. You can do this for all images (select all photos, right click, and Regenerate), but be prepared to get one huge Aperture library.
 
+After the import, it's worth looking at the `LibraryImport.txt` file the importer generates in case of issues, as well as `LibraryImporter.log`, which is always created. The log file contains more details about errors during the import, like skipped preview imports (if you chose that option) when they aren't up-to-date in Aperture. I get a number of those, but I haven't found a reliable way of forcing Aperture to regenerate the previews. Right clicking on photo in Aperture and choosing Regenerate Preview (or Option click and Generate Preview) will work most of the time, but not in all cases. For these, I export versions of the photos manually, and import and group with photos in Lightroom.
+
 <script src="https://gist.github.com/mayo/ce524ed1205e67cb5945.js"></script>
 
