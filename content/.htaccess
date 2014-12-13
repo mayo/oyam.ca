@@ -1,0 +1,23 @@
+
+ErrorDocument 404 /404.html
+
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{HTTP:CF-Visitor} '"scheme":"https"'
+RewriteRule ^(index.html)?$ https://oyam.ca/blog/index.html [R=302,L]
+
+RewriteRule ^(index.html)?$ /blog/index.html [R=302,L]
+
+RewriteRule ^rss/index.xml  /feed/atom  [R=301,L]
+RewriteRule ^rss  /feed/atom  [R=301,L]
+RewriteRule ^feed.xml  /feed/atom  [R=301,L]
+
+RewriteRule ^(articles|past)/(2007/02/15/)?complex.criteria.with.smart.mailboxes(.html)? http://static.oyam.ca/archive/ozero/articles/complex-criteria-with-smart-mailboxes.html [R=301,L]
+RewriteRule ^(articles|past)/(2008/02/01/)?leopard.syslog.and.asl(.html)? http://static.oyam.ca/archive/ozero/articles/leopard-syslog-and-asl.html [R=301,L]
+RewriteRule ^(articles|past)/(2008/02/07/)?postgresql.foreign.key.support.for.datamapper(.html)? http://static.oyam.ca/archive/ozero/articles/postgresql-foreign-key-support-for-datamapper.html [R=301,L]
+RewriteRule ^(articles|past)/(2008/07/30/)?activesync.doesnt.sync(.html)? http://static.oyam.ca/archive/ozero/articles/activesync-doesnt-sync.html [R=301,L]
+
+RewriteRule ^articles(/index.html)? /blog/archive.html [R=301,L]
+RewriteRule ^(articles|past)/(2007/08/15/)?decoding.magellan.imi.files(.html)? /blog/2012/12/magellan-imi-files.html [R=301,L]
+RewriteRule ^(articles|past)/(2008/.?1/31/)?windows.vpn.from.freebsd(.html)? /blog/2008/01/windows-vpn-freebsd.html [R=301,L]
