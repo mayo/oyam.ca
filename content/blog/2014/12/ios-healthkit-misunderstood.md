@@ -3,7 +3,7 @@ type: post
 title: "iOS HealthKit: Misunderstood"
 created: !!timestamp '2014-12-04 23:57:00'
 ---
-I’ve seen a few discussions about iOS HealthKit recently, and most seem to miss the point of the app. There seems to be a notion that HealthKit is trying to compete with apps that do data visualization, that it somehow wants to take over managing all the wearable sensors, or even push Apple’s wearable fitness tech. While I don’t know what Apple’s intentions, all these assumptions don’t seem right and miss a major reason for HalthKit’s existence – to be an information broker.
+I’ve seen a few discussions about iOS HealthKit recently, and most seem to miss the point of the app. There seems to be a notion that HealthKit is trying to compete with apps that do data visualization, that it somehow wants to take over managing all the wearable sensors, or even push Apple’s wearable fitness tech. While I don’t know what Apple’s intentions, all these assumptions don’t seem right and miss a major reason for HealthKit’s existence – to be an information broker.
 
 There are different apps for tracking different stats – sleep, nutrition, exercise, steps, and so on. The problem is that the apps can’t easily share this data. As a user, there is no easy way for me to correlate all data and get more indepth view of the data. This is an obvious hole in the fitness app ecosystem, and Apple came up with a solution: HealthKit. It acts as a data repository where each app can share the data it collects, as well as retrieve data it may need, but is not capable of collecting. With access to extra data, apps can then use the new data for better visualization or metrics it otherwise would not be able to show.
 
