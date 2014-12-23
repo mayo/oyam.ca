@@ -14,7 +14,7 @@
     {% if type == "photo" %}
       <figure>
         <img src="/media/images/photos/{{ created|date('Y/m') }}/{{ photo }}" title="{{ title }}" width="900"/>
-        <figcaption>{{ caption }} &copy; {{ author.name }}</figcaption>
+        <figcaption>{{ caption }}</figcaption>
       </figure>
     {% else %}
       {{ contents }}
