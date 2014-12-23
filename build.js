@@ -61,6 +61,12 @@ metalsmith
       "keywords": "mayo jordanov software development photography adventure explore climbing running hiking consulting tech javascript design",
     },
 
+    "analytics": {
+      "google": {
+        "id": "UA-803388-1"
+      }
+    },
+
     "now": new Date(),
 
     "production": buildEnv.isProduction
