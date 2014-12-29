@@ -2,6 +2,12 @@
 type: post
 title: "Pacific Coast Highway: First timer's 101 to the 101"
 created: !!timestamp '2012-12-15 00:00:00'
+
+collection:
+  - travel
+header_image: /media/images/photos/2012/12/pacific-coast-highway/long-beach.jpg
+header_image_pos: "0 -130px"
+header_color: white
 ---
 I've previously driven to specific spots or short sections of the coast, but never as a whole. After years of wanting to do the full length of it, I finally got around to driving it all in the fall.
 

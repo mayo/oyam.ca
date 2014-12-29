@@ -263,7 +263,7 @@ nav.sitenav .menu .folder .submenu-wrapper {
   padding-top: 18px;
   display: none;
   margin-left: -1.6em;
-  left: 0;  
+  left: 0;
 }
 
 nav.sitenav .menu .folder .submenu-wrapper .submenu {
@@ -1092,3 +1092,23 @@ article.link footer .author {
 }
 
 /* @end Blog */
+
+/* @group Travel */
+
+#travel article header {
+  position: relative;
+  min-height: 15em;
+  background-size: cover;
+}
+
+#travel article header h2 {
+  position: absolute;
+  bottom: 0;
+  padding: 0 .5em;
+}
+
+#travel article header h2 {
+  font-weight: 100;
+}
+
+/* @end */

@@ -129,6 +129,11 @@ metalsmith
       "pattern": "blog/*/**",
       "sortBy": 'created',
       reverse: true
+    },
+
+    "travel": {
+      "sortBy": 'created',
+      reverse: true
     }
   }))
 
