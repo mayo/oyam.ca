@@ -194,9 +194,14 @@ metalsmith
 
 
 
-function setMetadata(options) {
+function setMetadata(meta, force) {
+  force = (typeof force !== 'undefined') ? force : false;
+
   /**
    * Set Metadata plugin.
+   *
+   * Sets specified metadata on given files. Optionally, force is given to
+   * force overwriting of existing metadata keys.
    *
    * @param {Object} files
    * @param {Metalsmith} metalsmith
@@ -204,8 +209,10 @@ function setMetadata(options) {
    */
   return function(files, metalsmith, done){
     Object.keys(files).forEach(function(file) {
-      Object.keys(options).forEach(function(key) {
-        files[file][key] = options[key];
+      Object.keys(meta).forEach(function(key) {
+        if (force || !files[file][key]) {
+          files[file][key] = meta[key];
+        }
       })
     })
 
