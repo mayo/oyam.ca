@@ -1,4 +1,3 @@
-var extname = require('path').extname;
 var Metalsmith = require('metalsmith');
 
 var markdown = require('metalsmith-markdown');
@@ -21,8 +20,6 @@ var autoprefixer = require('metalsmith-autoprefixer');
 var minify_css = require('metalsmith-clean-css');
 //var minify_js = require('metalsmith-uglify');
 //var minify_html = require('metalsmith-html-minifier');
-
-// metalsmith-uglify
 
 /**
  * Build.
@@ -90,8 +87,7 @@ metalsmith
     //microevent for slideshow
     {
       "src": "node_modules/microevent/microevent.js",
-      "dest": "media/js/microevent.js",
-      metalsmith: true
+      "dest": "media/js/microevent.js"
     }
   ]))
 
