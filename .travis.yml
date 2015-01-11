@@ -17,4 +17,4 @@ deploy:
   on:
     repo: mayo/oyam.ca
     branch: master
-    node: '0.10.x'
+    node: '0.10.35'
