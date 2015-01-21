@@ -7,8 +7,10 @@
 {% endif %}
 <article class="{{ type }} {{ extra_classes }}">
   <header>
-    <time class="post-time" datetime="{{ created|date('l, F d, Y') }}">{{ created|date('l, F d, Y') }}</time>
     <h1>{{ title|safe }}</h1>
+    {% if type != "quote" %}
+    <time class="post-time" datetime="{{ created|date('l, F d, Y') }}">{{ created|date('l, F d, Y') }}</time>
+    {% endif %}
   </header>
   <div class="content">
     {% if type == "photo" %}
@@ -32,6 +34,7 @@
   {% if type == "quote" %}
   <footer>
     <p class="author">&mdash; {{ author }}</p>
+    <time class="post-time" datetime="{{ created|date('l, F d, Y') }}">{{ created|date('l, F d, Y') }}</time>
   </footer>
   {% endif %}
 </article>

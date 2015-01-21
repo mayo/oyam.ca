@@ -1027,11 +1027,15 @@ article .post-time {
 }
 
 article h1 {
-  margin-bottom: 1.5em;
+  margin-bottom: 0;
 }
 
-article.quote h1 {
-  margin-bottom: 1em;
+article header {
+  margin-bottom: 4em;
+}
+
+.article-list article header {
+  margin-bottom: inherit;
 }
 
 article.quote:not(.extended) h1:before,
