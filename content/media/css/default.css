@@ -35,7 +35,8 @@ div.archive,
 div.blognav,
 .quote,
 .link,
-nav.sitenav {
+nav.sitenav,
+#about .sidebar {
   font-family: "aktiv-grotesk-std", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -858,8 +859,21 @@ article.link + article {
 }
 
 .grid-container .sidebar {
-  color: #777;
-  font-size: .9em;
+  color: #888;
+  font-size: .72em;
+}
+
+.grid-container .sidebar .inline.fa {
+  width: 1em;
+  margin-right: .4em;
+}
+
+.grid-container .sidebar a {
+  color: inherit;
+}
+
+.grid-container .sidebar a:hover {
+  color: rgb(0,0,0);
 }
 
 .slideshow .slide.hidden {
@@ -899,16 +913,44 @@ article.link + article {
   margin-bottom: .5em;
 }
 
-#about .contact-list a {
-  color: inherit;
-}
-
-#about .contact-list a:hover {
-  color: rgb(0,0,0);
-}
-
-#about img.me {
+#about div.me {
+  background-color: rgb(245,246,246);
+  border-radius: 10px;
   margin-top: -8em;
+  height: 0;
+    
+  width: 80%;
+  padding-bottom: 80%;
+  
+  position: relative;
+}
+
+#about div.me img {
+  display: block;
+  width: 80%;
+  
+  position: absolute;
+  
+  top: 50%;
+  left: 50%;
+  margin: -40% 0 0 -40%;  
+}
+
+#about .sidebar .name {
+  font-weight: 600;
+  font-size: 1.3em;
+  display: block;
+  color: #777;
+}
+
+#about .sidebar .tag {
+  display: block;
+  font-style: italic;
+  margin-top: -1.6em;
+}
+
+#about .sidebar .social {
+  font-size: 1.34em;
 }
 
 /* @end About */
