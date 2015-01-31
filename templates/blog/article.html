@@ -23,10 +23,12 @@
 
   {% if type == "link" %}
   <footer>
-    <a class="extlink" href="{{ href }}"><span class="fa fa-external-link"></span>{{ href }}</a>
-    {% if source %}
-    <a class="extlink" href="{{ source_link }}"><span class="fa fa-external-link"></span>{{ source }}</a>
+    <ul class="fa-ul">
+      <li><i class="fa-li fa fa-external-link"></i><a class="extlink" href="{{ href }}">{{ href }}</a></li>
+    {% if post.source %}
+      <li><i class="fa-li fa fa-external-link"></i><a class="extlink" href="{{ source_link }}">{{ source }}</a></li>
     {% endif %}
+    </ul>
   </footer>
   {% endif %}
   {% if type == "quote" %}
