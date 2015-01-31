@@ -39,6 +39,8 @@
           </figure>
         </a>
       </div>
+      {% elif post.type == "link" %}
+        {{ post.contents }}
       {% else %}
       <div class="excerpt">
         <a class="readmore" href="{{ post_link }}">{{ post.excerpt }}</a>
