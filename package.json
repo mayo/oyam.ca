@@ -24,7 +24,7 @@
     "metalsmith": "segmentio/metalsmith",
     "swig": "*",
 
-    "metalsmith-templates": "mayo/metalsmith-templates",
+    "metalsmith-stencils": "mayo/metalsmith-stencils#metalsmith-templates",
     "metalsmith-markdown": "segmentio/metalsmith-markdown",
     "metalsmith-permalinks": "mayo/metalsmith-permalinks",
     "metalsmith-drafts": "segmentio/metalsmith-drafts",
