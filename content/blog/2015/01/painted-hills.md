@@ -4,6 +4,7 @@ title: "Exploring Oregon: Painted Hills"
 created: !!timestamp '2015-01-31 18:57:00'
 
 collection:
+  - articles
   - travel
 header_image: /media/images/photos/2015/01/painted-hills/sunrise.jpg
 header_image_pos: "0 -220px"
