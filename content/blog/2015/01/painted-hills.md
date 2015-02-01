@@ -2,6 +2,12 @@
 type: post
 title: "Exploring Oregon: Painted Hills"
 created: !!timestamp '2015-01-31 18:57:00'
+
+collection:
+  - travel
+header_image: /media/images/photos/2015/01/painted-hills/sunrise.jpg
+header_image_pos: "0 -220px"
+header_color: white
 ---
 After running the Oregon Coast 50k in late October, I had a few days to spare before taking off to Argentina, and I took a little detour on the way home. From Florence, I drove east towards Eugene and Sisters, taking the McKenzie Highway (OR 242) to see Dee Wright Observatory, and then the ultimate destination – Painted Hills unit of John Day Fossil Beds National Monument, near Mitchell.
 
