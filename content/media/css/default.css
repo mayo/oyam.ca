@@ -1021,8 +1021,12 @@ article .post-time {
   margin-top: 4em;
 }
 
-.article-list .date-threshold:not(:first-child) {
+.article-list .date-threshold {
   margin: 4em 0 2em 0;
+}
+
+.article-list .date-threshold:first-child {
+  margin-top: 2em;
 }
 
 .article-list article h2 {
