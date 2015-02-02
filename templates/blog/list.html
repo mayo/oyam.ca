@@ -8,61 +8,14 @@
   {% for post in collections.articles %}
     {% if !list_limit or loop.index0 < list_limit %}
 
-    {% set extra_classes = "" %}
-    {% if post.type == "quote" and post.contents != "" %}
-      {% set extra_classes = "extended" %}
-    {% endif %}
+      {% if lastDate|date('F Y') != post.created|date('F Y') %}
+      <div class="date-threshold">{{ post.created|date('F Y') }}</div>
+        {% set lastDate = post.created %}
+      {% endif %}
+  
+      {% set article_context="list" %}
+      {% include "_article.html" with post %}
 
-    {% if lastDate|date('F Y') != post.created|date('F Y') %}
-    <div class="date-threshold">{{ post.created|date('F Y') }}</div>
-      {% set lastDate = post.created %}
-    {% endif %}
-
-    <article class="{{ post.type }} {{ extra_classes }}">
-      {% set post_link = "/" + post.path %}
-      {% if post.type == "link" %}
-        {% set post_link = post.href %}
-      {% endif %}
-      {% set post_title = post.title %}
-
-      {% if post.type != "photo" %}
-      <header>
-        <h2><a href="{{ post_link }}">{{ post_title }}</a></h2>
-      </header>
-      {% endif %}
-      {% if post.type == "photo" %}
-      <div class="excerpt">
-        <a class="readmore" href="{{ post_link }}">
-          <figure>
-            <img src="/media/images/photos/{{ post.created|date('Y/m') }}/{{ post.photo }}" title="{{ title }}" width="900"/>
-            <figcaption>{{ post.caption }}</figcaption>
-          </figure>
-        </a>
-      </div>
-      {% elif post.type == "link" %}
-        {{ post.contents }}
-      {% else %}
-      <div class="excerpt">
-        <a class="readmore" href="{{ post_link }}">{{ post.excerpt }}</a>
-      </div>
-      {% endif %}
-      {% if post.type == "link" %}
-      <footer>
-        <ul class="fa-ul">
-          <li><i class="fa-li fa fa-bookmark-o"></i><a class="permalink" href="/{{ post.path }}">Permalink</a></li>
-          <li><i class="fa-li fa fa-external-link"></i><a class="extlink" href="{{ post.href }}">{{ post.href }}</a></li>
-        {% if post.source %}
-          <li><i class="fa-li fa fa-external-link"></i><a class="extlink" href="{{ post.source_link }}">{{ post.source }}</a></li>
-        {% endif %}
-        </ul>
-      </footer>
-      {% endif %}
-      {% if post.type == "quote" %}
-      <footer>
-        <p class="author">&mdash; {{ post.author }}</p>
-      </footer>
-      {% endif %}
-    </article>
     {% endif %}
   {% endfor %}
 

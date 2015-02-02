@@ -1059,6 +1059,14 @@ article .post-time {
   display: block;
 }
 
+.article-list article .post-time {
+  display: none;	
+}
+
+.article-list article.photo header {
+  display: none;	
+}
+
 article {
   margin-top: 0em;
 }
