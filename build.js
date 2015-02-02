@@ -121,16 +121,18 @@ metalsmith
   )
 
   .use(collections({
+    "travel": {
+      "sortBy": 'created',
+      reverse: true
+    },
+
+    //The last collection defines article's previous/next links
     "articles": {
       "pattern": "blog/*/**",
       "sortBy": 'created',
       reverse: true
     },
 
-    "travel": {
-      "sortBy": 'created',
-      reverse: true
-    }
   }))
 
   .use(templates({
