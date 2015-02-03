@@ -984,6 +984,16 @@ div.blognav {
   border-top: 1px solid rgb(230,230,230);
 }
 
+div.blognav .feedback,
+div.blognav .feedback a {
+  color: #999;
+}
+
+div.blognav .feedback {
+  font-style: italic;
+  font-size: .8em;
+}
+
 div.blognav li {
   list-style-type: none;
 }

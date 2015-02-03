@@ -38,9 +38,9 @@ var buildEnv = function() {
 }();
 
 var metalsmith = Metalsmith(__dirname);
-
+var sourceDir = "content";
 metalsmith
-  .source("./content")
+  .source(sourceDir)
   .destination("./deploy")
 
   .clean(true)
@@ -56,6 +56,13 @@ metalsmith
     "site": {
       "description": "Mayo Jordanov; software developer, photographer, climber, runner, hiker, adventurer, explorer",
       "keywords": "mayo jordanov software development photography adventure explore climbing running hiking consulting tech javascript design",
+
+      "source_dir": sourceDir
+    },
+
+    "github": {
+      "base": "https://github.com/mayo/oyam.ca",
+      "edit": "/edit/master"
     },
 
     "analytics": {
@@ -102,6 +109,8 @@ metalsmith
     "slides": "slides.json",
     "links": "links.json"
   }))
+
+  .use(storeSource())
 
   .use(title())
 
@@ -216,6 +225,27 @@ function setMetadata(meta, force) {
           files[file][key] = meta[key];
         }
       })
+    })
+
+    done();
+  }
+}
+
+/*
+ * Stores the source file in metadata. Optional argument defines the metadata key
+ * to store the information in, defaults to 'source_file'
+ */
+function storeSource(key) {
+  var key = (typeof key !== 'undefined') ? key : 'source_file';
+
+  /**
+   * @param {Object} files
+   * @param {Metalsmith} metalsmith
+   * @param {Function} done
+   */
+  return function(files, metalsmith, done){
+    Object.keys(files).forEach(function(file) {
+      files[file][key] = file
     })
 
     done();
