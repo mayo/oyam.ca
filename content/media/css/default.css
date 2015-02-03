@@ -1067,20 +1067,11 @@ article .post-time {
   display: none;	
 }
 
-.article-list article header.header-image {
-  position: relative;
-  min-height: 11em;
+.article-list article div.header-image {
+  height: 11em;
   background-size: cover;
   overflow: hidden;
-  margin: 0 -.8em;
-  padding: 0 .8em;
-
-}
-
-.article-list article header.header-image h2 {
-  position: absolute;
-  bottom: 0;
-  font-weight: 100;
+  content: "";
 }
 
 article {

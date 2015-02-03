@@ -4,25 +4,14 @@
 {% endif %}
 
 <article class="{{ type }} {{ extra_classes }}">
-
-  {% if article_context == "list" %}
-    {% set header_style = "" %}
-    {% if header_image %}
-      {% set header_style += "background-image: url('" + header_image + "');" %}
-    {% endif %}
-    {% if header_image_pos %}
-      {% set header_style += "background-position: " + header_image_pos + ";" %}
-    {% endif %}
-  {% endif %}
-  <header {% if header_style %} class="header-image" style="{{ header_style }}"{% endif %}>
+  <header>
     {% set post_link = "/" + path %}
     {% if type == "link" %}
       {% set post_link = href %}
     {% endif %}
 
     {% if article_context == "list" %}
-      <h2 {% if header_color %}style="color: {{ header_color }}"{% endif %}><a href="{{ post_link }}">{{ title|safe }}</a></h2>
-
+      <h2><a href="{{ post_link }}">{{ title|safe }}</a></h2>
     {% else %}
       <h1>{{ title|safe }}</h1>
     {% endif %}
@@ -48,6 +37,19 @@
 
     {% else %}
       {% if article_context == "list" and type != "link" %}
+
+        {% set header_style = "" %}
+        {% if header_image %}
+          {% set header_style += "background-image: url('" + header_image + "');" %}
+        {% endif %}
+        {% if header_image_pos %}
+          {% set header_style += "background-position: " + header_image_pos + ";" %}
+        {% endif %}
+
+        {% if header_style %}
+        <div class="header-image" style="{{ header_style }}"></div>
+        {% endif %}
+
         {{ excerpt|safe }}
       {% else %}
         {{ contents|safe }}
