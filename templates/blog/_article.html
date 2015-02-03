@@ -19,10 +19,9 @@
     {% if type == "link" %}
       {% set post_link = href %}
     {% endif %}
-    {% set post_title = title %}
 
     {% if article_context == "list" %}
-      <h2 {% if header_color %}style="color: {{ header_color }}"{% endif %}><a href="{{ post_link }}">{{ post_title }}</a></h2>
+      <h2 {% if header_color %}style="color: {{ header_color }}"{% endif %}><a href="{{ post_link }}">{{ title|safe }}</a></h2>
 
     {% else %}
       <h1>{{ title|safe }}</h1>
