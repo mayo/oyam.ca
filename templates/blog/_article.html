@@ -4,7 +4,17 @@
 {% endif %}
 
 <article class="{{ type }} {{ extra_classes }}">
-  <header>
+
+  {% if article_context == "list" %}
+    {% set header_style = "" %}
+    {% if header_image %}
+      {% set header_style += "background-image: url('" + header_image + "');" %}
+    {% endif %}
+    {% if header_image_pos %}
+      {% set header_style += "background-position: " + header_image_pos + ";" %}
+    {% endif %}
+  {% endif %}
+  <header {% if header_style %} class="header-image" style="{{ header_style }}"{% endif %}>
     {% set post_link = "/" + path %}
     {% if type == "link" %}
       {% set post_link = href %}
@@ -12,9 +22,10 @@
     {% set post_title = title %}
 
     {% if article_context == "list" %}
-    <h2><a href="{{ post_link }}">{{ post_title }}</a></h2>
+      <h2 {% if header_color %}style="color: {{ header_color }}"{% endif %}><a href="{{ post_link }}">{{ post_title }}</a></h2>
+
     {% else %}
-    <h1>{{ title|safe }}</h1>
+      <h1>{{ title|safe }}</h1>
     {% endif %}
 
     {% if type != "quote" %}
