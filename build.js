@@ -2,7 +2,7 @@ var Metalsmith = require('metalsmith');
 
 var markdown = require('metalsmith-markdownit');
 var permalinks = require('metalsmith-permalinks');
-var templates = require('metalsmith-templates');
+var stencils = require('metalsmith-stencils');
 var drafts = require('metalsmith-drafts');
 var watch = require('metalsmith-watch');
 var serve = require('metalsmith-serve');
@@ -140,7 +140,7 @@ metalsmith
 
   }))
 
-  .use(templates({
+  .use(stencils({
     "engine": "swig",
     "directory": "templates",
 
