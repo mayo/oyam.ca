@@ -6,6 +6,6 @@ node_modules: package.json
 	npm install
 
 serve:
-	@$(MAKE) build SERVE=1
+	@$(MAKE) build SERVE=1 WATCH=1
 
 .PHONY: build
