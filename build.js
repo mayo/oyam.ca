@@ -14,7 +14,6 @@ var excerpts = require('metalsmith-excerpts');
 var asset = require('metalsmith-static');
 var debug = require('metalsmith-debug');
 var beautify = require('metalsmith-beautify');
-var metadata = require('metalsmith-metadata');
 var autoprefixer = require('metalsmith-autoprefixer');
 
 var minify_css = require('metalsmith-clean-css');
@@ -73,7 +72,10 @@ metalsmith
 
     "now": new Date(),
 
-    "production": buildEnv.isProduction
+    "production": buildEnv.isProduction,
+
+    "slides": require("./metadata/slides.json"),
+    "links": require("./metadata/links.json")
   })
 
   .use(asset([
@@ -103,12 +105,6 @@ metalsmith
     '**/.*.swp',
     '**/.DS_Store',
   ]))
-
-  //load up slideshow
-  .use(metadata({
-    "slides": "slides.json",
-    "links": "links.json"
-  }))
 
   .use(storeSource())
 

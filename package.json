@@ -34,7 +34,6 @@
     "metalsmith-excerpts": "segmentio/metalsmith-excerpts",
     "metalsmith-static": "mayo/metalsmith-static",
     "metalsmith-ignore": "segmentio/metalsmith-ignore",
-    "metalsmith-metadata": "segmentio/metalsmith-metadata",
     "metalsmith-autoprefixer": "esundahl/metalsmith-autoprefixer",
 
     "metalsmith-clean-css": "aymericbeaumet/metalsmith-clean-css",
