@@ -36,6 +36,7 @@
     "metalsmith-ignore": "segmentio/metalsmith-ignore",
     "metalsmith-metadata": "segmentio/metalsmith-metadata",
     "metalsmith-autoprefixer": "esundahl/metalsmith-autoprefixer",
+    "autoprefixer": "*",
 
     "metalsmith-clean-css": "aymericbeaumet/metalsmith-clean-css",
     "metalsmith-uglify": "ksmithut/metalsmith-uglify",
