@@ -30,7 +30,7 @@
     "metalsmith-drafts": "segmentio/metalsmith-drafts",
     "metalsmith-collections": "segmentio/metalsmith-collections",
     "metalsmith-branch": "ericgj/metalsmith-branch",
-    "metalsmith-title": "OzzyCzech/metalsmith-title",
+    "metalsmith-title": "mayo/metalsmith-title",
     "metalsmith-excerpts": "segmentio/metalsmith-excerpts",
     "metalsmith-static": "mayo/metalsmith-static",
     "metalsmith-ignore": "segmentio/metalsmith-ignore",
