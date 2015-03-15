@@ -1,6 +1,6 @@
 var Metalsmith = require('metalsmith');
 
-var markdown = require('metalsmith-markdownit');
+var markdown = require('metalsmith-markdown');
 var permalinks = require('metalsmith-permalinks');
 var stencils = require('metalsmith-stencils');
 var drafts = require('metalsmith-drafts');
@@ -110,7 +110,7 @@ metalsmith
 
   .use(drafts())
 
-  .use(markdown({ html: true }))
+  .use(markdown())
 
   .use(branch("blog/*/**")
 
