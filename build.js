@@ -108,8 +108,6 @@ metalsmith
 
   .use(storeSource())
 
-  .use(title())
-
   .use(drafts())
 
   .use(markdown({ html: true }))
@@ -118,12 +116,17 @@ metalsmith
 
     .use(setMetadata({ 'template': 'blog/article.html' }))
 
+    .use(title({ remove: true }))
+
     .use(excerpts())
 
     .use(permalinks({
       'relative': false
     }))
   )
+
+  //process titles for normal pages after blog, because blog is treated differently
+  .use(title())
 
   .use(collections({
     "travel": {
