@@ -2,6 +2,7 @@ language: node_js
 sudo: false
 node_js:
 - '0.10'
+- '0.11'
 deploy:
   provider: s3
   access_key_id:
@@ -17,3 +18,4 @@ deploy:
   on:
     repo: mayo/oyam.ca
     branch: master
+    on: 0.10
