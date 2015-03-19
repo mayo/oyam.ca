@@ -1,0 +1,82 @@
+==================================================================
+https://keybase.io/mayo
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://oyam.ca
+  * I am mayo (https://keybase.io/mayo) on keybase.
+  * I have a public key with fingerprint 50FE C3A3 64B5 9BEE 734D  0E9B 56A3 789C ED4D 2DD7
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "client": {
+            "name": "keybase.io node.js client",
+            "version": "0.7.7"
+        },
+        "key": {
+            "fingerprint": "50fec3a364b59bee734d0e9b56a3789ced4d2dd7",
+            "host": "keybase.io",
+            "key_id": "56A3789CED4D2DD7",
+            "uid": "74831bf043c2f48a337f1ed5dd585b19",
+            "username": "mayo"
+        },
+        "merkle_root": {
+            "ctime": 1426782159,
+            "hash": "cb7e65a389d5964d03585098bbbd6fcb001ff7aff02e27352ed4709a8b5c00e5b2304ffb8648bb0bfaa24ab4f77aac624b86e081bbb34fad0087a1aa15a53043",
+            "seqno": 179567
+        },
+        "service": {
+            "hostname": "oyam.ca",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1426782266,
+    "expire_in": 157680000,
+    "prev": "9d6546cdbca5d6f3229b22f6a17438f4ad96dde0f550d0d8f451915c3abc8500",
+    "seqno": 3,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+
+owFVUntQVFUcXvCB4YjUkFNUxFxgdAKW+zr3gYgYLCQq2hRMo+h2zr3nwgV277K7
+rCyvHHOInFF8MBVoOgWNlhWUjsDk6CiRoNkDIUxCqVQkX1MW4hDSuQxNef65557f
+933n+37nt2PeDEtgQE5j6d5bq+L7A86OIEt28FhiOYUM1U+Rr1KkY6fX3DmhA1OJ
+VCH2I+jBVt2IdBoqthZ4IqcxcZQPuz264SQo2ipaRaoyzoSbZE135mG3y62bWhSg
+NaxwkBN4BGSEscjxKo1lBATIiZKsYJVXWVUViWS+4fE+dCs1pWnXVVNHWGbiU21p
+fBqblmbiS6YKIi9xDNJonlNYjZcgx4kag1WgqkACiJFNoAe7pyM5oN8wvTqwu7AI
+292GMRVY8epmmeFZQZRYBsjEDfTkE4KCRCwAyEmyCmSBeOeILC1LCCFV0BRE04ym
+iVDTaBazIgdYEkikZSghoNA0BojlaF7TkCTwhEMjDUKWh4jXRBFCRWB5UsG0xBA9
+jtegStOSCBkIGQABYXLEvgcXOw1iTpSBIFaa/26frmDTt9my6WSGHzqsCiR4l9vw
+GopRRA7zvV6XJ9EM7PW7TNRGjOzTfPsHSHeq5LH+/5oMgT7cDFYQ4ihc6tLd2K6b
+CCAKEk2WeRH2EU1ZFQAvKCpSICA94VhWRiyrCZAReU7SeKjKgqpiWgOAVmmVnABG
+ZgCZCqSQXtL/ReSIT5hHJD16nhN6S9yYqnwz8OmZloBAy+xZgea4WoIfCf13hvGp
++ZPpicFJX0R3WW/EZ9AVa8azjxXX2Uop6+hES/j9IyFdH0/q5Z13ura2jc4PiosH
+S0+0ZYJl+9+3RrWuWHBpIvr6gGXF+WuP9Yb11H+eHP38rtzFOy8mauH+0eykWzPT
+y9+OOneKOtTcfqb7bJ/nlXou63rjhQ9tV9EvP6Uc69tQ61vQZl+0z1fRoQzaEhZe
+jR24ubyl4uvR4tqiJZtnXwlpSjlf/HpY276WkPWHf1tTNcdRy/eW8e+GPcf26znp
+PTuHVndsGbzdMIdJaQrOsmaOV2txNQFD1T9XKdcKvh+5nfdETk7gubsJBb2Rb4Tc
+FEeOv5w52r6e9nUWrxseCUzp7itDG7oP1BwtqrlTU/W7cTcSxDT+GfPRM1rxAZYZ
+uLP2nR9ivuoJXyINPdmc4To8fty18RNbvKXtivQgK0hqvPfdNn/GRG3PQYAtmxZa
+Dw642OZdz67siN8f0cIOHZkbeskWB5IaBkpKg0+NFaX/9db2u79erg/ZMquwliur
+Cj02EVHd+g3lGC+3xwQdGY3Yem+8IXbpvLzlda09USg/tq5x8w7a8e3liqN/LBy+
+sOc0rF8cnzd35MXhH8c/W3r0KXcUd61/UfL9zrXrfIN/5854beXKpqDJ3PdsD5JX
+dKx6Ad56dHXGycfHjp84Y794Y9OX2w+9NJy6d2T3gt0n3Ymvfrqsnao/HdOdsCd1
+z7Z/AA==
+=sqtc
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/mayo
+
+==================================================================
+
