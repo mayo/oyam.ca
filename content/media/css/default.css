@@ -908,6 +908,10 @@ article.link + article {
   color: rgb(0,0,0);
 }
 
+#about .contact-list .pgp-fingerprint span {
+  margin-right: .3em;
+}
+
 #about img.me {
   margin-top: -8em;
 }
