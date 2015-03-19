@@ -26,7 +26,7 @@
 
     "metalsmith-stencils": "mayo/metalsmith-stencils",
     "metalsmith-markdown": "segmentio/metalsmith-markdown",
-    "metalsmith-permalinks": "mayo/metalsmith-permalinks",
+    "metalsmith-permalinks": "segmentio/metalsmith-permalinks",
     "metalsmith-drafts": "segmentio/metalsmith-drafts",
     "metalsmith-collections": "segmentio/metalsmith-collections",
     "metalsmith-branch": "ericgj/metalsmith-branch",
