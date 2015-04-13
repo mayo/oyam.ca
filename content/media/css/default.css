@@ -913,6 +913,11 @@ article.link + article {
   margin-bottom: .5em;
 }
 
+#about .contact-list .pgp-fingerprint span {
+  margin-right: .3em;
+}
+
+
 #about div.me {
   background-color: rgb(245,246,246);
   border-radius: 10px;
