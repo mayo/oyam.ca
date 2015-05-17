@@ -105,34 +105,8 @@
   opacity: 1;
 }
 
-/* slideshow */
 
-.slideshow .slide .main {
-  position: absolute;
-  top: 5em;
-  right: 3em;
-  margin-left: 3em; /* for mobile devices */
-  max-width: 30em; /* max-width instead of width for mobile devices */
-  
-  font-family: "aktiv-grotesk-std", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-align: right;
-  
-  color: black;
-}
-
-.dark-bg .slideshow .slide .main,
-.dark-bg .slideshow .slide .main h1 {
-  color: white;
-}
-
-.slideshow .slide .main h1 {
-  font-weight: 100;
-}
-
-.slideshow .slide .main p {
-  font-weight: 300;	
-}
-
+/* page specific */
 .slideshow .controls {
   position: absolute;
   bottom: .8em;
@@ -142,11 +116,4 @@
   transition: opacity 0.2s ease-in-out;
 }
 
-.slideshow .controls:hover {
-  opacity: 1;
-}
 
-.slideshow .dark-bg .controls,
-.slideshow .dark-bg.controls {
-  color: white;
-}

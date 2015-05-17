@@ -1,0 +1,42 @@
+<div class="slideshow">
+  <div class="controls bottomright">
+    <button class="previous fa fa-lg fa-chevron-circle-left"><span class="sr-only">previous</span></button>
+    <button class="next fa fa-lg fa-chevron-circle-right"><span class="sr-only">next</span></button>
+  </div>
+
+  <div class="slides">
+    {% for slide in slides %}
+
+      {% set quadrants = "" %}
+
+      {% if slide.dark_bg %}
+        {% set quadrants = "data-darkbg" %}
+      {% endif %}
+
+      {% if slide.dark_bg_quadrants %}
+        {% for q in slide.dark_bg_quadrants %}
+          {% if q == true %}
+            {% set quadrants = quadrants + " data-darkbg-" + loop.key %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+
+      <div class="slide fullpage" {{ quadrants }}>
+        <div class="image" style="background-image: url('{{ slide.image }}'); background-position: {{ slide.image_position }};"></div>
+
+        {% if !slide.hide_content %}
+        <div class="main">
+          <h1>{{ slide.title }}</h1>
+          <p>{{ slide.content }}</p>
+        </div>
+        {% endif %}
+
+        <div class="caption bottomleft">
+          <div class="icon"><span class="fa fa-camera"></span></div>
+          <div class="description">{{ slide.caption }}</div>
+        </div>
+
+      </div>
+    {% endfor %}
+  </div>
+</div>

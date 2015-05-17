@@ -105,6 +105,7 @@ ul {
   padding-left: 1.2em;
 }
 
+/* TODO: this is not needed - used in WIP/demo pages */
 .column img {
   width: 100%;
   height: auto;
@@ -876,8 +877,21 @@ article.link + article {
   color: rgb(0,0,0);
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+/* @group Slideshow */
+
 .slideshow .slide.hidden {
-  visibility: hidden;	
+  display: none;
 }
 
 .slideshow .controls button {
@@ -891,16 +905,42 @@ article.link + article {
   margin-left: .1em;
 }
 
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0,0,0,0);
-  border: 0;
+.slideshow .controls:hover {
+  opacity: 1;
 }
+
+.slideshow .dark-bg .controls,
+.slideshow .dark-bg.controls {
+  color: white;
+}
+
+.slideshow .slide .main {
+  position: absolute;
+  top: 5em;
+  right: 3em;
+  margin-left: 3em; /* for mobile devices */
+  max-width: 30em; /* max-width instead of width for mobile devices */
+  
+  font-family: "aktiv-grotesk-std", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: right;
+  
+  color: black;
+}
+
+.dark-bg .slideshow .slide .main,
+.dark-bg .slideshow .slide .main h1 {
+  color: white;
+}
+
+.slideshow .slide .main h1 {
+  font-weight: 100;
+}
+
+.slideshow .slide .main p {
+  font-weight: 300;	
+}
+
+/* @end */
 
 /* @group About */
 
