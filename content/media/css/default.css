@@ -104,6 +104,7 @@ ul {
   padding-left: 1.2em;
 }
 
+/* potentially not needed */
 .column img {
   width: 100%;
   height: auto;
@@ -382,6 +383,7 @@ figure {
   margin-top: 1em;
 }
 
+img.fullwidth,
 figure img {
   width: 100%;
   height: auto;
