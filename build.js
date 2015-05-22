@@ -25,7 +25,7 @@ var minify_css = require('metalsmith-clean-css');
 // metalsmith-uglify
 
 /**
- * Build.
+ * Environment helper
  */
 
 var buildEnv = function() {
@@ -34,11 +34,20 @@ var buildEnv = function() {
 
   this.isProduction = process.env.ENVIRONMENT == this.PRODUCTION;
   this.isDevelopment = process.env.ENVIRONMENT =! this.PRODUCTION;
+
+  this.environment = (this.isProduction) ? this.PRODUCTION : this.DEVELOPMENT;
+
   this.watch = process.env.WATCH;
   this.serve = process.env.SERVE;
 
   return this;
 }();
+
+console.log("Build environment: " + buildEnv.environment );
+
+/**
+ * Build.
+ */
 
 var metalsmith = Metalsmith(__dirname);
 
