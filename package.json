@@ -43,7 +43,7 @@
     "metalsmith-html-minifier": "whymarrh/metalsmith-html-minifier",
 
     "metalsmith-beautify": "boushley/metalsmith-beautify",
-    "metalsmith-watch": "FWeinb/metalsmith-watch",
+    "metalsmith-watch": "*",
     "metalsmith-debug": "mahnunchik/metalsmith-debug",
     "metalsmith-serve": "mayo/metalsmith-serve",
 
