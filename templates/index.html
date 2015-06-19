@@ -15,7 +15,7 @@ background_class: dark-bg
 {% endblock %}
 
 {% block main_content %}
-  {% include '_slideshow.html' %}
+  {% include '_slideshow.html' with { 'slides': slides } only %}
 {% endblock %}
 
 {% block footer %}
