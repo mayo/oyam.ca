@@ -16,7 +16,8 @@ body {
 }
   
 body,
-article.post .content {
+article.post .content,
+#gallery-page .grid-container.gallery .meta h1 {
   /* Berling T is preferred, but not available on TypeKit */
   font-family: "adobe-garamond-pro", serif;
 }
@@ -36,7 +37,7 @@ div.blognav,
 .quote,
 .link,
 nav.sitenav,
-#about .sidebar {
+.grid-container .sidebar {
   font-family: "aktiv-grotesk-std", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -862,6 +863,7 @@ article.link + article {
 .grid-container .sidebar {
   color: #888;
   font-size: .72em;
+  line-height: 1.6em;
 }
 
 .grid-container .sidebar .inline.fa {
@@ -1228,6 +1230,99 @@ article.link footer .author {
 
 #travel article header h2 {
   font-weight: 100;
+}
+
+/* @end */
+
+/* @group Gallery */
+
+#gallery-page nav.sitenav .menuitem,
+#gallery-page nav.sitenav .menu .folder:before,
+#gallery-page nav.sitenav .menu > li:after {
+  color: rgb(200,200,200);	
+}
+
+#gallery-page nav.sitenav .logotype,
+#gallery-page .grid-container.gallery .meta * {
+  color: #444;
+}
+
+#gallery-page .grid-container.gallery .imageset {
+  margin-bottom: 3em;
+}
+
+#gallery-page .slideshow .slide div.image {
+  /* Make all images appear the same size. With "contain", the full images are shown, but show shorter or narrower than the slideshow  viewport. This looks odd. All images in a gallery should be the same aspect ratio and the gallery aspect ratio should be adjusted to the images, showing full image regardless of "cover" or "contain" setting. */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left bottom !important;	
+}
+
+  /* @group image frame */
+  
+  /* Fluid constant aspect ratio scaling frame. Create a frame that spans 100% of it's container (grid, screen, etc)... */
+#gallery-page .slideshow {
+  width: 100%;
+  position: relative;
+  display: inline-block;
+}
+
+  /* ... but restrict the aspect ratio ... */
+  /* padding-top:
+  16:9  => 56.25%
+  4:5 => 80.0
+  5:7 => 71.42
+  2:3 => 66.66
+  */
+  /* controls after comes here to pick up the same height, and it needs to create block for height 100% to work correctly */
+#gallery-page .slideshow .controls::after,
+#gallery-page .slideshow::after {
+  display: block;
+  content: '';
+  padding-top: 66.66%;
+}
+
+
+  /* @end */
+
+/* position the controls over the slides */
+#gallery-page .slideshow .controls {
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  color: #fff;
+}
+
+#gallery-page .slideshow .controls button {
+  position: absolute;
+  display: block;
+  width: 50%;
+  height: 100%;
+  
+  opacity:  0;
+  text-shadow: 0 0px 4px rgba(0,0,0,.5);
+  transition: opacity 0.6s ease-in-out;
+}
+
+#gallery-page .slideshow .controls button:hover {
+  opacity: 1;
+}
+
+#gallery-page .slideshow .controls button.previous {
+  left: 0;
+  padding-right: 30%;
+}
+
+#gallery-page .slideshow .controls button.next {
+  right: 0;
+  padding-left: 30%;
+}
+
+/* hide extra content */
+
+#gallery-page .slideshow .slide .main,
+#gallery-page .slideshow .slide .caption {
+  display: none;
 }
 
 /* @end */
