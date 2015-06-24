@@ -179,7 +179,12 @@ if (!buildEnv.isProduction) {
 if (!buildEnv.isProduction && buildEnv.watch) {
   metalsmith
     .use(watch({
-      livereload: false
+      livereload: false,
+      paths: {
+        "${source}/**/*": true,
+        "templates/**/*": "**/*",
+        "metadata/**/*": "**/*"
+      }
     }))
   ;
 }
