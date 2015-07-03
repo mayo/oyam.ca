@@ -2,8 +2,9 @@
 type: post
 title: "Gear Review: Altra Superior 2.0"
 created: !!timestamp '2015-06-07 21:16:00'
+updated: !!timestamp '2015-06-24 22:02:00'
 ---
-Altra Lone Peak 1.5 has been my shoe of choice for some time, but now that the supplies are close to non-existent and my own stash is dwindling, it is time to look for a replacement shoe. Lone Peak 2.0 would be the obvious choice, but I didn’t feel as comfortable in them as I did in the 1.5 (the toe-off doesn’t feel right). I decided to try out the Superior 2.0, as I’ve used Superior 1.5 for “everything” shoe including some short runs, and generally liked it, aside from the lack of any sort of lugs. Heads up: As a big Lone Peak 1.5 fan, my review might be a little biased and somewhat of a comparison between the two shoes.
+*Updated June 24, 2015.* Altra Lone Peak 1.5 has been my shoe of choice for some time, but now that the supplies are close to non-existent and my own stash is dwindling, it is time to look for a replacement shoe. Lone Peak 2.0 would be the obvious choice, but I didn’t feel as comfortable in them as I did in the 1.5 (the toe-off doesn’t feel right). I decided to try out the Superior 2.0, as I’ve used Superior 1.5 for “everything” shoe including some short runs, and generally liked it, aside from the lack of any sort of lugs. Heads up: As a big Lone Peak 1.5 fan, my review might be a little biased and somewhat of a comparison between the two shoes. 
 
 <figure>
   <img src="/media/images/blog/2015/06/altra-superior-2/forest-view.jpg" title="Altra Superior 2.0" width="900"/>
@@ -52,14 +53,22 @@ Last but not least, I’ve never liked the “rudder” and always cut it off, a
 
 Overall, this is a great upgrade to the Superior line, and the shoe feels much more like Lone Peak 1.5 than the previous Superior. While a few things need to be addressed, I feel like this will be my next go-to shoe and I’ll start mixing it in as my fleet of Lone Peak 1.5 slowly disintegrates.
 
+***June 24, 2015 Update***
+
+Having ran more technical trails in the shoes, the rudder has to go. On multiple occasions, it caught on roots enough to pull the shoe off my foot; not very cool. In the previous incarnation of the shoe, and on the Lone Peak 1.5, the rudder was more flexible, so in cases like these it would just bend. Now that it’s stiffer, it holds.
+
+I also have wonder about the toe bumpers. The softer and more stickier rubber is exposed here and the toes catch a little more than I’d like. The painted on bumper (light gray) isn’t very durable, doesn’t seem to do much, and is already wearing off. Here is a detail shot of the toes on Lone Peak 1.5 after about 600+km vs. toes on Superior 2.0 after about 150 km.
+
+<figure>
+  <img src="/media/images/blog/2015/06/altra-superior-2/toe-closeup.jpg" title="Toe closeup of Altra Superior 2.0 and Lone Peak 1.5" width="900"/>
+</figure>
+
 <figure>
   <img src="/media/images/blog/2015/06/altra-superior-2/top.jpg" title="Top view of Altra Superior 2.0" width="900"/>
-  <figcaption>Top view of Altra Superior 2.0</figcaption>
 </figure>
 
 <figure>
   <img src="/media/images/blog/2015/06/altra-superior-2/front-trail.jpg" title="Altra Superior 2.0" width="900"/>
-  <figcaption>Trail ready</figcaption>
 </figure>
 
 
