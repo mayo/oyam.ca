@@ -1,21 +1,41 @@
 [
   {
+    "title": "Faint memories of the Milky Way",
+    "content": "",
+    "caption": "Faint outline of Milky Way over the Tantalus Range, with cloud filled Squamish Valley, BC.",
+    "image": "/media/images/photos/showing/faint-memories-tantalus.jpg",
+    "image_position": "top",
+    "hide_content": true,
+    "dark_bg": true
+  },
+
+  {
+    "title": "Sky Pilot Sunrise",
+    "content": "I was reluctant to get out of the sleeping bag at 4am and face the onslaught of mosquitoes, but it was well worth it.\n\nWatching the sun rise over the Coast Mountains of BC, from under the Sky Pilot mountain near Squamish, BC.",
+    "caption": "Sunrise over the Coast Mountains of BC",
+    "image": "/media/images/photos/showing/sky-pilot-sunrise.jpg",
+    "image_position": "top",
+    "dark_bg": true
+  },
+
+  {
     "title": "Star Gazer",
-    "content": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Mauris dui turpis, porttitor id, elementum a, rhoncus a, felis. Cras malesuada placerat est. Suspendisse iaculis ornare magna. Aliquam risus eros, gravida vitae, fringilla in, iaculis at, nibh. Sed et est. Phasellus rhoncus vestibulum diam.",
+    "content": "",
     "caption": "Tantalus Range, near Squamish, British Columbia",
     "link": "/blog/2014/09/tantalus/",
-    "hide_content": true,
-    "image": "/media/images/tantalus.jpg",
+    "image": "/media/images/photos/showing/tantalus.jpg",
     "image_position": "bottom",
+    "hide_content": true,
     "dark_bg": true
   },
 
   {
     "title": "Yosemite Summer",
-    "content": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Mauris dui turpis, porttitor id, elementum a, rhoncus a, felis. Cras malesuada placerat est. Suspendisse iaculis ornare magna. Aliquam risus eros, gravida vitae, fringilla in, iaculis at, nibh. Sed et est. Phasellus rhoncus vestibulum diam.",
-    "caption": "This is a test caption",
-    "image": "/media/images/IMG_3384.jpg",
+    "content": "",
+    "caption": "Summer evening glow in the Yosemite Valley",
+    "image": "/media/images/photos/showing/yosemite.jpg",
     "image_position": "bottom",
+    "hide_content": true,
     "dark_bg_quadrants": {
       "topleft": true,
       "topright": false,
@@ -26,10 +46,11 @@
 
   {
     "title": "iPhone Macro Photography",
-    "content": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Mauris dui turpis, porttitor id, elementum a, rhoncus a, felis. Cras malesuada placerat est. Suspendisse iaculis ornare magna. Aliquam risus eros, gravida vitae, fringilla in, iaculis at, nibh. Sed et est. Phasellus rhoncus vestibulum diam.",
-    "caption": "This is a test caption",
-    "image": "/media/images/front.jpg",
+    "content": "",
+    "caption": "Playing with a new macro lens for the iPhone",
+    "image": "/media/images/photos/showing/macro.jpg",
     "image_position": "bottom",
+    "hide_content": true,
     "dark_bg": true
   }
 
