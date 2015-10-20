@@ -910,6 +910,10 @@ article.link + article {
   content: " – ";
 }
 
+#error .article-list .current + .archived {
+  margin-top: 2em;
+}
+
 #error .article-list h1 a {
   color: red;
 }
