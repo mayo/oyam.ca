@@ -890,6 +890,32 @@ article.link + article {
   border: 0;
 }
 
+/* @group Error */
+
+#error .article-list article {
+  margin: 0;
+  margin-bottom: .6em;
+}
+
+#error .article-list h1,
+#error .article-list p {
+  display: inline;
+}
+
+#error .article-list h1 {
+  font-size: 1em;
+}
+
+#error .article-list h1::after {
+  content: " – ";
+}
+
+#error .article-list h1 a {
+  color: red;
+}
+
+/* @end */
+
 /* @group Slideshow */
 
 .slideshow .slide.hidden {
