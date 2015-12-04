@@ -48,7 +48,8 @@
 
     "normalize.css": "*",
     "microevent": "*",
-    "font-awesome": "*"
+    "font-awesome": "*",
+    "unsemantic": "nathansmith/unsemantic"
   }
 }
 

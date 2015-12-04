@@ -102,6 +102,11 @@ metalsmith
       "src": "node_modules/normalize.css/normalize.css",
       "dest": "media/css/normalize.css"
     },
+    //unsemantic fluid layout
+    {
+      "src": "node_modules/unsemantic/assets/stylesheets/unsemantic-grid-responsive-no-ie7.css",
+      "dest": "media/css/unsemantic-grid-responsive-no-ie7.css"
+    },
     //microevent for slideshow
     {
       "src": "node_modules/microevent/microevent.js",
