@@ -37,6 +37,8 @@
     "metalsmith-autoprefixer": "esundahl/metalsmith-autoprefixer",
     "autoprefixer": "*",
 
+    "markdown-it-implicit-figures": "*",
+
     "metalsmith-clean-css": "aymericbeaumet/metalsmith-clean-css",
     "metalsmith-uglify": "ksmithut/metalsmith-uglify",
     "metalsmith-html-minifier": "whymarrh/metalsmith-html-minifier",

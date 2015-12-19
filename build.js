@@ -1,6 +1,5 @@
 var Metalsmith = require('metalsmith');
 
-var markdown = require('metalsmith-markdownit');
 var permalinks = require('metalsmith-permalinks');
 var stencils = require('metalsmith-stencils');
 var drafts = require('metalsmith-drafts');
@@ -15,6 +14,9 @@ var asset = require('metalsmith-static');
 var debug = require('metalsmith-debug');
 var beautify = require('metalsmith-beautify');
 var autoprefixer = require('metalsmith-autoprefixer');
+
+var markdown = require('metalsmith-markdownit');
+var md_implicit_figures = require('markdown-it-implicit-figures')
 
 var minify_css = require('metalsmith-clean-css');
 //var minify_js = require('metalsmith-uglify');
@@ -127,6 +129,9 @@ metalsmith
   .use(markdown('default', {
       html: true,
       typographer: true
+    }).use(md_implicit_figures, {
+        dataType: true,
+        figcaption: true
     })
   )
 
