@@ -3,17 +3,32 @@ sudo: false
 node_js:
 - '4.1'
 deploy:
-  provider: s3
-  access_key_id:
-    secure: YPzJ2ZTPGNM6BYi2HIH8VmaBjo2bb9dHi6kX8bR21sy+0hXtTALUvdF10O/Exor/+pY9VKhsZRB5qR4Z6FgaZcHZCe4ANfIAXiQhPB3OLsSoblTRQXlRBMuMIfKvk9/JxLQobaM35gg4voNospDZ/Mr9Qeomuz0iZtfMRYvXPeM=
-  secret_access_key:
-    secure: Intclmdbwg0nGqcGSEVMqJHa4BrtqzsfzlqOo12+e4sVHT8c3ZRf9NlQb68m+029jlCK3caQoMtt1aP90WVgYfRRvL48mme+xAGPIBZJ5xDESpVMHJ3d8numnBOd9/Gqwh49PL9DUBRJOibbHeVGRELweUZpp+CerNDKcvUrd+Q=
-  bucket: oyam.ca
-  endpoint: oyam.ca.s3-website-us-east-1.amazonaws.com
-  region: us-east-1
-  skip_cleanup: true
-  local-dir: deploy
-  acl: public_read
-  on:
-    repo: mayo/oyam.ca
-    branch: public
+  - provider: s3
+    access_key_id:
+      secure: YPzJ2ZTPGNM6BYi2HIH8VmaBjo2bb9dHi6kX8bR21sy+0hXtTALUvdF10O/Exor/+pY9VKhsZRB5qR4Z6FgaZcHZCe4ANfIAXiQhPB3OLsSoblTRQXlRBMuMIfKvk9/JxLQobaM35gg4voNospDZ/Mr9Qeomuz0iZtfMRYvXPeM=
+    secret_access_key:
+      secure: Intclmdbwg0nGqcGSEVMqJHa4BrtqzsfzlqOo12+e4sVHT8c3ZRf9NlQb68m+029jlCK3caQoMtt1aP90WVgYfRRvL48mme+xAGPIBZJ5xDESpVMHJ3d8numnBOd9/Gqwh49PL9DUBRJOibbHeVGRELweUZpp+CerNDKcvUrd+Q=
+    bucket: oyam.ca
+    endpoint: oyam.ca.s3-website-us-east-1.amazonaws.com
+    region: us-east-1
+    skip_cleanup: true
+    local-dir: deploy
+    acl: public_read
+    on:
+      repo: mayo/oyam.ca
+      branch: public
+  - provider: s3
+    access_key_id:
+      secure: YPzJ2ZTPGNM6BYi2HIH8VmaBjo2bb9dHi6kX8bR21sy+0hXtTALUvdF10O/Exor/+pY9VKhsZRB5qR4Z6FgaZcHZCe4ANfIAXiQhPB3OLsSoblTRQXlRBMuMIfKvk9/JxLQobaM35gg4voNospDZ/Mr9Qeomuz0iZtfMRYvXPeM=
+    secret_access_key:
+      secure: Intclmdbwg0nGqcGSEVMqJHa4BrtqzsfzlqOo12+e4sVHT8c3ZRf9NlQb68m+029jlCK3caQoMtt1aP90WVgYfRRvL48mme+xAGPIBZJ5xDESpVMHJ3d8numnBOd9/Gqwh49PL9DUBRJOibbHeVGRELweUZpp+CerNDKcvUrd+Q=
+    bucket: draft.oyam.ca
+    endpoint: draft.oyam.ca.s3-website-us-east-1.amazonaws.com
+    region: us-east-1
+    skip_cleanup: true
+    local-dir: deploy
+    acl: public_read
+    on:
+      repo: mayo/oyam.ca
+      branch: master
+
