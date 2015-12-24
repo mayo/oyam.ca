@@ -21,4 +21,4 @@ And there it is. Simple, fairly generic and relatively easy to adapt to differen
 [travis]: http://travis-ci.org
 [workingcopy]: http://workingcopyapp.com
 [writer]: https://ia.net/writer
-[diagram]: /media/images/blog/2015/12/mobile-workflow/workflow.png
+[diagram]: /media/images/blog/2015/12/mobile-workflow/diagram.png
