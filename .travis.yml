@@ -9,7 +9,6 @@ deploy:
     secret_access_key:
       secure: Intclmdbwg0nGqcGSEVMqJHa4BrtqzsfzlqOo12+e4sVHT8c3ZRf9NlQb68m+029jlCK3caQoMtt1aP90WVgYfRRvL48mme+xAGPIBZJ5xDESpVMHJ3d8numnBOd9/Gqwh49PL9DUBRJOibbHeVGRELweUZpp+CerNDKcvUrd+Q=
     bucket: oyam.ca
-    endpoint: oyam.ca.s3-website-us-east-1.amazonaws.com
     region: us-east-1
     skip_cleanup: true
     local-dir: deploy
@@ -23,7 +22,6 @@ deploy:
     secret_access_key:
       secure: Intclmdbwg0nGqcGSEVMqJHa4BrtqzsfzlqOo12+e4sVHT8c3ZRf9NlQb68m+029jlCK3caQoMtt1aP90WVgYfRRvL48mme+xAGPIBZJ5xDESpVMHJ3d8numnBOd9/Gqwh49PL9DUBRJOibbHeVGRELweUZpp+CerNDKcvUrd+Q=
     bucket: draft.oyam.ca
-    endpoint: draft.oyam.ca.s3-website-us-east-1.amazonaws.com
     region: us-east-1
     skip_cleanup: true
     local-dir: deploy
