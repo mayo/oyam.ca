@@ -25,7 +25,7 @@
     "swig": "*",
 
     "metalsmith-stencils": "mayo/metalsmith-stencils",
-    "metalsmith-markdown": "segmentio/metalsmith-markdown",
+    "metalsmith-markdownit": "mayo/metalsmith-markdownit",
     "metalsmith-permalinks": "segmentio/metalsmith-permalinks",
     "metalsmith-drafts": "segmentio/metalsmith-drafts",
     "metalsmith-collections": "segmentio/metalsmith-collections",
@@ -36,6 +36,8 @@
     "metalsmith-ignore": "segmentio/metalsmith-ignore",
     "metalsmith-autoprefixer": "esundahl/metalsmith-autoprefixer",
     "autoprefixer": "*",
+
+    "markdown-it-implicit-figures": "*",
 
     "metalsmith-clean-css": "aymericbeaumet/metalsmith-clean-css",
     "metalsmith-uglify": "ksmithut/metalsmith-uglify",
@@ -48,7 +50,8 @@
 
     "normalize.css": "*",
     "microevent": "*",
-    "font-awesome": "*"
+    "font-awesome": "*",
+    "unsemantic": "nathansmith/unsemantic"
   }
 }
 

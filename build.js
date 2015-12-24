@@ -1,6 +1,5 @@
 var Metalsmith = require('metalsmith');
 
-var markdown = require('metalsmith-markdown');
 var permalinks = require('metalsmith-permalinks');
 var stencils = require('metalsmith-stencils');
 var drafts = require('metalsmith-drafts');
@@ -15,6 +14,9 @@ var asset = require('metalsmith-static');
 var debug = require('metalsmith-debug');
 var beautify = require('metalsmith-beautify');
 var autoprefixer = require('metalsmith-autoprefixer');
+
+var markdown = require('metalsmith-markdownit');
+var md_implicit_figures = require('markdown-it-implicit-figures')
 
 var minify_css = require('metalsmith-clean-css');
 //var minify_js = require('metalsmith-uglify');
@@ -102,6 +104,11 @@ metalsmith
       "src": "node_modules/normalize.css/normalize.css",
       "dest": "media/css/normalize.css"
     },
+    //unsemantic fluid layout
+    {
+      "src": "node_modules/unsemantic/assets/stylesheets/unsemantic-grid-responsive-no-ie7.css",
+      "dest": "media/css/unsemantic-grid-responsive-no-ie7.css"
+    },
     //microevent for slideshow
     {
       "src": "node_modules/microevent/microevent.js",
@@ -119,7 +126,14 @@ metalsmith
 
   .use(drafts())
 
-  .use(markdown())
+  .use(markdown('default', {
+      html: true,
+      typographer: true
+    }).use(md_implicit_figures, {
+        dataType: true,
+        figcaption: true
+    })
+  )
 
   .use(branch("blog/*/**")
 
