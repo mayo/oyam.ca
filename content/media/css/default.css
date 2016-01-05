@@ -38,7 +38,8 @@ div.blognav,
 .link,
 nav.sitenav,
 .grid-container .sidebar {
-  font-family: "aktiv-grotesk-std", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "azo-sans-web";
+  font-weight: 300;
 }
 
 pre,
@@ -54,8 +55,8 @@ h1, h2, h3, h4 {
 
 h1 {
   margin-top: 0;
-  font-weight: 100;
   font-size: 5rem;
+  font-weight: 500;
 }
 
 h2 {
@@ -67,9 +68,6 @@ h3 {
 }
 
 p {
-/*
-  margin: .7em auto;
-  */
   margin-bottom: 1.3em;
 }
 
@@ -77,11 +75,20 @@ a {
   color: red;
 }
 
+strong {
+  font-weight: 500;
+}
+
 body > footer,
 article footer,
+.article-list article.quote footer,
 small,
 .font-small {
   font-size: 1.5rem;
+}
+
+article.quote footer {
+  font-size: 2rem;
 }
 
 .grid-container,
@@ -274,7 +281,7 @@ nav.sitenav .menu .folder .submenu-wrapper .submenu {
   display: none;
   text-align: left;
   box-shadow: 1px 1px 1px rgba(30,30,30,.4);
-  font-weight: normal;
+  font-weight: 300;
   -webkit-font-smoothing: antialiased;
   background: black;
 }
@@ -398,9 +405,9 @@ figure figcaption {
 
 blockquote {
   border-left: .6rem solid rgb(125,125,125);
-  font-size: 1.5rem;
+
+  font-style: italic;
   margin-left: .4rem;
-  
   padding: .2em 0 .3em 1em;
 }
 
@@ -438,383 +445,6 @@ pre::-webkit-scrollbar-thumb {
     border-radius: 4px;
     background-color: rgba(0,0,0,.5);
 }
-
-/* old stuff */
-
-/*
-.post-time {
-  display: block;
-}
-
-.wide-content {
-  width: 100%;
-  margin: auto auto;
-}
-
-#content .wide-content:first-child {
-  margin-top: 0;
-}
-
-.wide-content img {
-  border-radius: .5em;
-  
-  width: 100%;
-  height: auto;
-}
-
-img {
-  margin: 0;
-  padding: 0;
-}
-
-a {
-  color: rgb(255,0,0);
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-footer {
-  font-weight: 200;
-}
-
-.permalink,
-.permalink a {
-  text-decoration: none;
-  font-size: .9em;
-  color: rgb(255,26,0);
-  font-weight: bold;
-}
-
-.archive {
-  margin: 0;
-  padding: 0;
-  position: relative;
-}
-
-.archive > li {
-  list-style-type: none;
-}
-
-article .permalink {
-  display: none;
-}
-
-article:hover .permalink {
-  display: inline;
-}
-
-article.quote .content p {
-  font-size: .8em;
-  color: rgb(190,190,190);
-}
-
-article.quote .extended {
-  font-size: 1.2em;
-  font-weight: 200;
-  line-height: 1.3em;
-}
-
-article.link a:hover {
-  color: rgb(255,26,0);
-}
-
-.archive .post .title a,
-article.post h1 a,
-.archive .photo .title a,
-article.photo h1 a {
-  text-decoration: none;
-  color: rgb(0,0,0);
-}
-
-.content-container.post a {
-  color: rgb(0,0,0);
-}
-
-.content-container.post a:hover,
-.content-container.photo a:hover,
-.archive .post .title a
-.archive .photo .title a {
-  color: rgb(255,26,0);
-  text-decoration: underline;
-}
-
-.archive .link .title,
-article.link h1 {
-  margin-bottom: 0em;
-}
-
-article.link .content p {
-  margin-top: .4em;
-}
-
-h1 {
-  font-size: 1.8em;
-  font-weight: 200;
-}
-
-h2 {
-  font-size: 1.3em;
-  font-weight: 500;
-}
-
-.archive .quote {
-  max-width: 30em;
-}
-
-.archive .quote .title,
-.quote h1,
-.quote .extended {
-  font-weight: 200;
-}
-
-.quote .extended {
-  font-size: 1.2em;
-}
-
-.archive .quote .title a {
-  text-decoration: none;
-}
-
-article.link h1 {
-  font-weight: 200;
-  font-size: 1.1em;
-}
-
-article.link {
-  font-size: .9em;
-  margin-bottom: 2em;
-}
-
-.content-container .post-time,
-.date-threshold {
-  color: rgb(200,200,200);
-}
-
-.date-threshold {
-  margin-top: 5em;
-  margin-bottom: 0;
-  text-align: right;
-  border-bottom: .0em solid rgb(230,230,230);
-  font-weight: 200;
-  font-size: .8em;
-}
-*/
-
-/* after date threshold, reduce margin, as the threshold introduces margin on it's own */
-/*
-.date-threshold + * {
-  margin-top: 1em;
-}
-
-.archive .date-threshold {
-  text-align: left;
-  padding: 0;
-  margin-top: 2em;
-  margin-bottom: 2em;
-  font-size: 1em;
-}
-
-.archive .post .title {
-  font-size: 1.4em;
-}
-
-.archive .post,
-.archive .photo,
-.archive .quote {
-  margin-top: 2em;
-  margin-bottom: 2em;
-}
-
-.archive .quote {
-  font-size: .8em;
-}
-
-.archive .quote .title {
-  font-size: 1.4em;
-}
-
-.archive .link {
-  margin-bottom: 1em;
-  font-size: .8em;
-}
-*/
-
-/* adobe gammond only has bold
-.archive .post .title {
-  font-weight: 100;
-}
-*/
-/*
-.archive .quote a:hover {
-  text-decoration: underline;
-}
-
-nav.blog {
-  font-size: .8em;
-  margin-top: 4em;
-}
-
-nav.blog,
-nav.blog a {
-  font-weight: 200;
-  color: rgb(150,150,150);
-}
-
-nav.blog a:hover {
-  color: rgb(79,79,79);
-}
-
-nav.blog li {
-  list-style-type: none;
-}
-
-nav.blog ul {
-  margin: 0;
-  padding: 0;
-}
-
-.archive .post .title a,
-.archive .photo .title a,
-.archive .quote .title a {
-  color: rgb(0,0,0);
-}
-
-.archive .link .title a {
-  color: rgb(255,26,0);
-}
-
-.content-container .post-time {
-  font-size: .8em;
-}
-
-.quote .author {
-  padding-left: 2em;
-  margin-top: .8em;
-  margin-bottom: 4em;
-}
-
-.logo .firstname {
-  font-weight: 200;
-  letter-spacing: 0;
-}
-
-.logo .lastname {
-  font-weight: 200;
-}
-
-footer .bottomnav {
-  font-size: .8em;
-  margin-top: 8em;
-  margin-bottom: 2em;
-}
-
-.logo {
-  margin-top: 1.0em;
-  margin-bottom: 1.6em;
-}
-
-footer .bottomnav .menu {
-  font-size: 1em;
-}
-
-footer .bottomnav .menu li {
-  font-size: 1em;
-}
-
-footer .bottomnav .menu a {
-  text-decoration: none;
-}
-
-footer a {
-  text-decoration: none;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-
-footer {
-  color: rgb(150,150,150);
-  
-}
-
-footer .bottomnav,
-footer .bottomnav .menu a {
-  color: rgb(0,0,0);
-}
-
-footer .bottomnav .menu li,
-footer .bottomnav .menu li.divider {
-  border-bottom: .3em solid;
-}
-
-footer .bottomnav .menu a:hover {
-  color: rgb(255,26,0);
-  text-decoration: none;
-}
-
-footer .bottomnav .menu li.active,
-footer .bottomnav .menu li.active {
-  border-color: rgb(255,26,0);
-}
-*/
-/* simplifying for new styles
-.logo .firstname {
-  color: rgb(79,79,79);
-}
-*/
-/*
-footer .bottomnav .menu li.spacer {
-  border-bottom: 0px;
-}
-
-footer .bottomnav .menu {
-  margin: 0;
-  padding: 0;
-}
-
-footer .bottomnav .menu li {
-  display: inline;
-  padding: 0 .7em 0 .7em;
-  margin: 0 .1em 0 0;
-}
-
-footer .bottomnav .menu li.divider {
-  padding: 0 0 0 0;
-  width: .3em;
-}
-
-footer .bottomnav .menu li,
-footer .bottomnav .menu li.divider {
-  padding-bottom: .3em;
-}
-
-footer .bottomnav .menu li .spacer {
-  width: 6.9em;
-}
-
-figure figcaption {
-  margin-right: .2em;
-}
-
-
-*/
-/* this affects multiple articles listed end to end */
-/* todo, what about next to date-threshold? */
-/*
-article + article.content-container {
-  margin-top: 6em;
-  margin-bottom: 2.6em;
-}
-
-article.link + article {
-  margin-top: 1em;
-  margin-bottom: 1em;
-}
-
-*/
 
 .fullpage .image,
 .banner .image {
@@ -1014,7 +644,7 @@ article.link + article {
 }
 
 #about .sidebar .name {
-  font-weight: 600;
+  font-weight: 500;
   font-size: 1.3em;
   display: block;
   color: #777;
@@ -1043,7 +673,7 @@ article.link + article {
 
 /* TODO: this needs checking on mobile browsers */
 #blog nav.sitenav .menu > li {
-  font-weight: normal;
+  font-weight: 300;
 }
 
 #blog nav.sitenav .menu > li {
@@ -1095,9 +725,12 @@ div.blognav a {
 
 .article-list .date-threshold,
 article .post-time {
-  display: inline-block;
+  display: block;
   color: #777;
-  font-weight: 100;
+}  
+
+.article-list .date-threshold {
+  border-bottom: 1px solid rgb(220,220,220);
 }
 
 .article-list article h2 {
@@ -1116,28 +749,22 @@ article .post-time {
   margin-top: 2em;
 }
 
-.article-list article h2 {
-  font-weight: 600;
-}
-
 .article-list article a.readmore {
   color: inherit;
   text-decoration: inherit;
 }
 
-.article-list article.quote h2 {
-  font-weight: 200;
+article.quote header {
+  margin-bottom: 1em;
 }
 
-.article-list article.quote h2 a {
-  text-decoration: none;
-}
-
+article.quote footer,
 .article-list article.quote footer,
 .article-list article.quote footer p {
   margin-top: 0;
 }
 
+article.quote footer p.author,
 .article-list article.quote footer {
   padding-left: 1.5em;
 }
@@ -1178,6 +805,20 @@ article h1 {
   margin-bottom: 0;
 }
 
+article h1, 
+article h2 {
+  text-transform: uppercase;
+}
+
+article.quote.short h1,
+article.quote.short h2 {
+  text-transform: inherit;	
+}
+
+article h1 {
+  font-size: 1.7em; 
+}
+
 article header {
   margin-bottom: 4em;
 }
@@ -1186,23 +827,44 @@ article header {
   margin-bottom: inherit;
 }
 
-article.quote:not(.extended) h1:before,
+article header h1,
+article header h2 {
+  font-weight: 500;
+}
+
+article.quote.short header h1,
+article.quote.short header h2 {
+  font-weight: 200;
+}
+
+article header a {
+  text-decoration: none;
+}
+
+article.quote.short h1:before,
 article.quote.extended .content p:first-child:before,
-article.quote:not(.extended) h2:before,
+article.quote.short h2:before,
 article.quote.extended .excerpt p:last-child:before {
   content: open-quote;
 }
 
-article.quote:not(.extended) h1:after,
+article.quote.short h1:after,
 article.quote .content p:last-child:after,
-article.quote:not(.extended) h2:after,
+article.quote.short h2:after,
 article.quote.extended .excerpt p:last-child:after {
   content: close-quote;
 }
 
+article.quote p {
+  font-weight: 200;	
+}
 
 article.post .content {
-  font-weight: 400;
+  font-weight: normal;
+}
+
+article.link p {
+  font-size: .9em;	
 }
 
 article.link footer li {
@@ -1256,10 +918,6 @@ article.link footer .author {
   position: absolute;
   bottom: 0;
   padding: 0 .5em;
-}
-
-#travel article header h2 {
-  font-weight: 100;
 }
 
 /* @end */
