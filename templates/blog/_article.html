@@ -1,6 +1,10 @@
 {% set extra_classes = "" %}
-{% if type == "quote" and contents != "" %}
-  {% set extra_classes = "extended" %}
+{% if type == "quote" %}
+  {% if contents != "" %}
+    {% set extra_classes = "extended" %}
+  {% else %}
+    {% set extra_classes = "short" %}
+  {% endif %}
 {% endif %}
 
 <article class="{{ type }} {{ extra_classes }}">
