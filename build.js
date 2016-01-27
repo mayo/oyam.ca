@@ -11,16 +11,13 @@ var title = require('metalsmith-title');
 var ignore = require('metalsmith-ignore');
 var excerpts = require('metalsmith-excerpts');
 var asset = require('metalsmith-static');
+var autoprefixer = require('metalsmith-autoprefixer');
+
 var debug = require('metalsmith-debug');
 var beautify = require('metalsmith-beautify');
-var autoprefixer = require('metalsmith-autoprefixer');
 
 var markdown = require('metalsmith-markdownit');
 var md_implicit_figures = require('markdown-it-implicit-figures')
-
-var minify_css = require('metalsmith-clean-css');
-//var minify_js = require('metalsmith-uglify');
-//var minify_html = require('metalsmith-html-minifier');
 
 /**
  * Environment helper
@@ -30,7 +27,7 @@ var buildEnv = function() {
   this.PRODUCTION = "production";
   this.DEVELOPMENT = "development";
 
-  this.isProduction = process.env.ENVIRONMENT == this.PRODUCTION;
+  this.isProduction = process.env.ENVIRONMENT == this.PRODUCTION || process.env.TRAVIS_BRANCH == 'public';
   this.isDevelopment = process.env.ENVIRONMENT =! this.PRODUCTION;
 
   this.environment = (this.isProduction) ? this.PRODUCTION : this.DEVELOPMENT;
@@ -209,18 +206,6 @@ if (!buildEnv.isProduction && buildEnv.serve) {
       port: 8080,
       verbose: true
     }))
-  ;
-}
-
-if (buildEnv.isProduction) {
-  metalsmith
-  //TODO: this breaks metalsmith-templates
-//    .use(minify_html())
-
-  //TODO: generates .min.js files, which is not exactly useful without rewriting the source files
-//    .use(minify_js({}))
-
-    .use(minify_css())
   ;
 }
 
