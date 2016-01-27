@@ -37,16 +37,12 @@
     "metalsmith-autoprefixer": "esundahl/metalsmith-autoprefixer",
     "autoprefixer": "*",
 
-    "markdown-it-implicit-figures": "*",
-
-    "metalsmith-clean-css": "aymericbeaumet/metalsmith-clean-css",
-    "metalsmith-uglify": "ksmithut/metalsmith-uglify",
-    "metalsmith-html-minifier": "whymarrh/metalsmith-html-minifier",
-
     "metalsmith-beautify": "boushley/metalsmith-beautify",
     "metalsmith-watch": "*",
     "metalsmith-debug": "mahnunchik/metalsmith-debug",
     "metalsmith-serve": "mayo/metalsmith-serve",
+
+    "markdown-it-implicit-figures": "*",
 
     "normalize.css": "*",
     "microevent": "*",
