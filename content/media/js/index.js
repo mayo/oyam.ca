@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
     areas.forEach(function(area) {
       var def = slide.hasAttribute('data-darkbg-' + area);
 s
-      var tags = document.querySelectorAll("." + area);
+      var tags = document.querySelectorAll(".chameleon ." + area);
       for (var i = 0; i < tags.length; i++) {
         var tag = tags[i];
 

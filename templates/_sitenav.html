@@ -1,4 +1,8 @@
-<nav id="sitenav" class="sitenav">
+{% set chameleon = "chameleon" %}
+{% if disable_chameleon %}
+  {% set chameleon = "" %}
+{% endif %}
+<nav id="sitenav" class="sitenav {{ chameleon }}">
   <div class="navhead grid-33 mobile-grid-100 topleft">
     <div class="logo">
       <a href="/">
