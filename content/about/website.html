@@ -24,6 +24,13 @@ page_id: about
 
     <p>This website is hand crafted, forged with <a href="http://metalsmith.io">Metalsmith</a>, and source managed at <a href="https://github.com">GitHub</a>. It is built and deployed with <a href="http://travis-ci.org">Travis CI</a> to <a href="http://aws.amazon.com/s3">Amazon S3</a>, and served to you by <a href="http://cloudflare.com">CloudFlare</a>. You can view the sources and build scripts in the <a href="https://github.com/mayo/oyam.ca">mayo/oyam.ca</a> repository.</p>
 
+    <h2>Related posts</h2>
+    <ul>
+    {% for post in collections.sitebuild %}
+      <li><a href="{{ "/" + post.path }}">{{ post.title|safe }}</a></li>
+    {% endfor %}
+    </ul>
+
   </div>
 
   <div class="grid-35 mobile-grid-100 sidebar">
