@@ -44,35 +44,6 @@ console.log("Build environment: " + buildEnv.environment );
  * Build.
  */
 
-var assetManager = function() {
-
-    var manager = {};
-
-    manager.push = function(file, asset) {
-        console.log("file: %s, asset: %s", file, asset);
-    }
-
-    return manager;
-    
-}();
-
-var markdownitAssets = function(md, options) {
-    options = options || {}
-
-    var defaultRender = md.renderer.rules.image;
-
-    md.renderer.rules.image = function (tokens, idx, options, env, self) {
-        var token = tokens[idx];
-        var aIndex = token.attrIndex('src');
-
-        assetManager.push(env.source_file, token.attrs[aIndex][1]);
-
-        // pass token to default renderer.
-        return defaultRender(tokens, idx, options, env, self);
-    };
-
-}
-
 var metalsmith = Metalsmith(__dirname);
 var sourceDir = "content";
 metalsmith
@@ -155,14 +126,9 @@ metalsmith
   .use(markdown('default', {
       html: true,
       typographer: true
-    })
-    .use(md_implicit_figures, {
+    }).use(md_implicit_figures, {
         dataType: true,
         figcaption: true
-    })
-    .use(markdownitAssets, {})
-    .env(function(data, meta) {
-        return data;
     })
   )
 
