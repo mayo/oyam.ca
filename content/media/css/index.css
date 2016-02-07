@@ -87,12 +87,14 @@
 }
 
 .caption .description,
-.caption .icon {
+.caption .icon,
+#frontpage .scrolldown {
   transition: opacity 0.2s ease-in-out;
 }
 
 .caption:hover .description,
-.caption:hover .icon {
+.caption:hover .icon,
+#frontpage .scrolldown:hover {
   opacity: 1;
 }
 
@@ -105,8 +107,13 @@
   opacity: 1;
 }
 
-
 /* page specific */
+
+.slideshow {
+  width: 100vw;
+  height: 100vh;
+}
+
 .slideshow .controls {
   position: absolute;
   bottom: .8em;
@@ -114,6 +121,58 @@
   
   opacity: 0.5;
   transition: opacity 0.2s ease-in-out;
+}
+
+
+
+#frontpage {
+  min-height: 200vh;	
+}
+
+#frontpage .scrolldown {
+  font-size: 2em;
+  position: absolute;
+  top: 94.5vh;
+  left: 50vw;
+  opacity: 0.5;
+}
+
+.scrolldown a {
+  color: inherit;	
+}
+
+.chameleon .scrolldown.dark-bg a {
+  color:  white;
+}
+
+
+.article-list {
+  font-size: .9em;
+}
+
+.article-list tr > td {
+  padding-bottom: .4em;	
+}
+
+.article-list td {
+  vertical-align: top;
+}
+
+.article-list td.time,
+.article-list td.archive {
+  width: 6em;
+}
+
+.article-list td.archive {
+  text-align: right;
+}
+
+.article-list td.archive i {
+  margin-right: .6em;
+}
+
+.article-list a {
+  padding-right: .5em;
 }
 
 
