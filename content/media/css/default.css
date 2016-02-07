@@ -24,7 +24,7 @@ article.post .content,
 
 body.dark-bg {
   background-color: rgb(10,10,10);
-  color: white;
+  color: #bbb;
 }
 
 h1, h2, h3, h4, h5, h6,
@@ -47,10 +47,20 @@ code {
   font-family: "anonymous-pro", Monaco, "Bitstream Vera Sans Mono", "Lucida Console", "Courier New", monospace;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   margin: 1.414em 0 0.5em;
   line-height: 1.2;
   color: rgb(50,50,50);
+}
+
+.dark-bg h1,
+.dark-bg h2,
+.dark-bg h3,
+.dark-bg h4 {
+  color: #eee;	
 }
 
 h1 {
@@ -75,11 +85,18 @@ a {
   color: red;
 }
 
+.dark-bg a {
+  color: rgb(195,0,0);
+}
+
 strong {
   font-weight: 500;
 }
 
-body > footer,
+body > footer {
+  font-size: 1.3rem;
+}
+
 article footer,
 .article-list article.quote footer,
 small,
@@ -101,6 +118,7 @@ article.quote footer {
   max-width: 100%;
 }
 
+.grid-container.narrow,
 #blog .grid-container {
   max-width: 70rem;
 }
@@ -129,16 +147,25 @@ body > footer i.fa {
 
 body > footer {
   margin: 6em 0 2em 0;
-  color: rgb(180,180,180);
   font-weight: 200;
+  color: rgb(180,180,180);
 }
 
-body > footer a {
+body.dark-bg > footer {
+  color: rgb(180,180,180);
+}
+
+body > footer a,
+body.dark-bg > footer a {
   color: inherit;
 }
 
 body > footer a:hover {
   color: rgb(0,0,0);
+}
+
+body.dark-bg > footer a:hover {
+  color: #fff;
 }
 
 /* @group Nav */
@@ -833,7 +860,9 @@ article header h2 {
 }
 
 article.quote.short header h1,
-article.quote.short header h2 {
+article.quote.short header h2,
+article.quote p,
+#frontpage .article-list .quote {
   font-weight: 200;
 }
 
@@ -844,19 +873,17 @@ article header a {
 article.quote.short h1:before,
 article.quote.extended .content p:first-child:before,
 article.quote.short h2:before,
-article.quote.extended .excerpt p:last-child:before {
+article.quote.extended .excerpt p:last-child:before,
+#frontpage .article-list .quote.short a:before {
   content: open-quote;
 }
 
 article.quote.short h1:after,
 article.quote .content p:last-child:after,
 article.quote.short h2:after,
-article.quote.extended .excerpt p:last-child:after {
+article.quote.extended .excerpt p:last-child:after,
+#frontpage .article-list .quote.short a:after {
   content: close-quote;
-}
-
-article.quote p {
-  font-weight: 200;	
 }
 
 article.post .content {
