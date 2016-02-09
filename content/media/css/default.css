@@ -392,21 +392,6 @@ body > footer ul {
   padding: 0;
 }
 
-body > footer ul,
-body > footer ul + p {
-  display: inline-block;
-}
-
-body > footer .social li {
-  display: inline-block;
-  list-style-type: none;
-}
-
-body > footer .rss li {
-  display: inline-block;
-  list-style-type: none;
-}
-
 section {
   margin-top: 1em;
   margin-bottom: 2em;
