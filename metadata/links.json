@@ -5,5 +5,7 @@
   "instagram": "http://instagram.com/oyam.ca",
   "flickr": "https://www.flickr.com/photos/oyam/",
   "github": "https://github.com/mayo",
-  "bitbucket": "https://bitbucket.org/mayo"
+  "bitbucket": "https://bitbucket.org/mayo",
+
+  "rss": "/feed/atom.xml"
 }
