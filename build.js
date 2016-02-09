@@ -67,8 +67,16 @@ metalsmith
       "source_dir": sourceDir
     },
 
+    "social_links": {
+      "instagram": "fa-instagram",
+      "twitter": "fa-twitter-square",
+      "flickr": "fa-flickr",
+      "linkedin": "fa-linkedin-square",
+      "github": "fa-github-square"
+    },
+
     "github": {
-      "base": "https://github.com/mayo/oyam.ca",
+      "repo": "/oyam.ca",
       "edit": "/edit/master"
     },
 
@@ -263,4 +271,37 @@ function storeSource(key) {
     done();
   }
 }
+
+
+function metadataFiles(options) {
+  options = (typeof force !== 'undefined') ? force : false;
+
+  /* Options:
+   *   - createMainFile: create a main file if metadata file exists without main file
+   *   - metadata prefix
+   *   - metadata extension/parser
+   */
+
+  /**
+   * Metadata Files Plugin
+   *
+   * Sets metadata from a metadata file on content file.
+   *
+   * @param {Object} files
+   * @param {Metalsmith} metalsmith
+   * @param {Function} done
+   */
+  return function(files, metalsmith, done){
+    Object.keys(files).forEach(function(file) {
+      Object.keys(meta).forEach(function(key) {
+        if (force || !files[file][key]) {
+          files[file][key] = meta[key];
+        }
+      })
+    })
+
+    done();
+  }
+}
+
 

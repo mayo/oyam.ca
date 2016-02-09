@@ -28,20 +28,12 @@
 
     <div class="grid-100">
       {% block footer_content %}
-      <ul class="social">
-        <li><a href="{{ links.facebook }}"><i class="fa fa-facebook-square"></i></a></li>
-        <li><a href="{{ links.instagram }}"><i class="fa fa-instagram"></i></a></li>
-        <li><a href="{{ links.twitter }}"><i class="fa fa-twitter-square"></i></a></li>
-        <li><a href="{{ links.flickr }}"><i class="fa fa-flickr"></i></a></li>
-        <li><a href="{{ links.linkedin }}"><i class="fa fa-linkedin-square"></i></a></li>
 
-        <li><a href="{{ links.github }}"><i class="fa fa-github-square"></i></a></li>
-        <li><a href="{{ links.bitbucket }}"><i class="fa fa-bitbucket-square"></i></a></li>
-      </ul>
-      <ul class="rss">
-        <li><a href="/feed/atom.xml"><i class="fa fa-rss"></i></a></li>
-      </ul>
-      <p class="copyright">Copyright &copy;{{ now|date("Y") }} {{ author.name }}</p>
+      {% for link, icon in social_links %}
+        <a href="{{ links[link] }}"><i class="fa {{ icon }}"></i></a>
+      {% endfor %}
+        <a href="/feed/atom.xml"><i class="fa fa-rss"></i></a>
+      <span class="copyright">Copyright &copy;{{ now|date("Y") }} {{ author.name }}</span>
       {% endblock %}
     </div>
     {% endblock %}
