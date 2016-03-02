@@ -38,12 +38,9 @@ page_id: about
         <li><i class="fa inline fa-envelope-o"></i>mayo@oyam.ca<br/><i class="fa inline fa-phone"></i>+1.604.484.9845</li>
         <li class="pgp-fingerprint"><i class="fa inline fa-key"></i>PGP: <a href="https://keybase.io/mayo"><span>56A3</span><span>789C</span><span>ED4D</span><span>2DD7</span></a></li>
         <li class="social">
-          <a href="{{ links.twitter }}"><i class="fa fa-twitter-square"></i></a>
-          <a href="{{ links.facebook }}"><i class="fa fa-facebook-square"></i></a>
-          <a href="{{ links.linkedin }}"><i class="fa fa-linkedin-square"></i></a>
-          <a href="{{ links.flickr }}"><i class="fa fa-flickr"></i></a>
-          <a href="{{ links.instagram }}"><i class="fa fa-instagram"></i></a>
-          <a href="{{ links.github }}"><i class="fa fa-github-square"></i></a>
+        {% for link, icon in social_links %}
+          <a href="{{ links[link] }}"><i class="fa {{ icon }}"></i></a>
+        {% endfor %}
         </li>
       </ul>
     </p>

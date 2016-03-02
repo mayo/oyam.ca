@@ -67,8 +67,16 @@ metalsmith
       "source_dir": sourceDir
     },
 
+    "social_links": {
+      "instagram": "fa-instagram",
+      "twitter": "fa-twitter-square",
+      "flickr": "fa-flickr",
+      "linkedin": "fa-linkedin-square",
+      "github": "fa-github-square"
+    },
+
     "github": {
-      "base": "https://github.com/mayo/oyam.ca",
+      "repo": "/oyam.ca",
       "edit": "/edit/master"
     },
 
