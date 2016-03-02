@@ -14,10 +14,55 @@ background_class: dark-bg
   <script src="/media/js/index.js"></script>
 {% endblock %}
 
-{% block main_content %}
-  {% include '_slideshow.html' with { 'slides': slides } only %}
-{% endblock %}
 
-{% block footer %}
+{% block main_content %}
+  {% set grid_container_class="normal" %}
+  {% include '_slideshow.html' with { 'slides': slides } only %}
+  {% set nav_id = "sitenav2" %}
+  <div class="chameleon"><div class="scrolldown bottomright"><a href="#{{nav_id}}"><i class="fa fa-angle-down"></i></a></div></div>
+
+  <div class="grid-container {{ grid_container_class }}">
+    <div class="grid-100">
+      {% set disable_chameleon = true %}
+      {% include '_sitenav.html' %}
+    </div>
+  </div>
+
+  <div class="grid-container {{ grid_container_class }}">
+
+    <div class="grid-50 font-sansserif bio-blob">
+      {% block content %}
+        {{ contents }}
+      {% endblock %}
+    </div>
+
+
+    <div class="grid-50">
+      <h2>Recent posts</h2>
+
+      <table class="article-list">
+      {% set list_limit=5 %}
+      {% for post in collections.articles %}
+        {% if !list_limit or loop.index0 < list_limit %}
+        <tr>
+          <td class="time"><time>{{ post.created|date('M d, Y') }}</time></td>
+          {% set extra_classes = "" %}
+          {% if post.type == "quote" and not post.contents %}
+            {% set extra_classes = "short" %}
+          {% endif %}
+          <td class="{{ post.type }} {{ extra_classes }}"><a href="{{ "/" + post.path }}">{{ post.title|safe }}</a>{% if post.type == "link" %}<a href="{{ post.href }}" class="extlink"><i class="fa fa-external-link"></i></a>{% endif %}</td>
+        </tr>
+        {% endif %}
+      {% endfor %}
+
+        <tr>
+          <td class="archive"><i class="fa fa-archive"></i></td>
+          <td>More in <a class="small" href="/blog/archive.html">archive</a></td>
+        </tr>
+      </table>
+
+    </div>
+
+  </div>
 {% endblock %}
 
