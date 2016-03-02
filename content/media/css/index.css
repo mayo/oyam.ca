@@ -146,7 +146,8 @@
 }
 
 
-.article-list {
+.article-list,
+.bio-blob {
   font-size: .9em;
 }
 
