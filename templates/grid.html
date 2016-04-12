@@ -32,7 +32,7 @@
         {% for link, icon in social_links %}
         <a href="{{ links[link] }}"><i class="fa {{ icon }}"></i></a>
         {% endfor %}
-        <a href="{{ links.rss }}"><i class="fa fa-rss"></i></a>
+        <a href="{{ links.rss }}"><i class="fa fa-rss-square"></i></a>
       <span class="copyright">Copyright &copy;{{ now|date("Y") }} {{ author.name }}</span>
       {% endblock %}
     </div>
