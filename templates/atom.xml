@@ -1,29 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>{{ title }}</title>
-    <link rel="self" href="https://oyam.ca/{{source_file}}" type="application/atom+xml"/>
-    <link rel="alternate" href="https://oyam.ca/" type="text/html"/>
-    <updated>{{ now|date('c') }}</updated>
-    <id>tag:oyam.ca,2010:/</id>
+  <link rel="self" href="http://oyam.ca/{{source_file}}" type="application/atom+xml"/>
+  <link rel="alternate" href="http://oyam.ca/" type="text/html"/>
+  <updated>{{ now|date('c') }}</updated>
+  <rights>Copyright © {{ now|date('Y') }}, Mayo Jordanov</rights>
+  <id>tag:oyam.ca,2010:/</id>
+  <author>
+    <name>{{ author.name }} Mayo Jordanov</name>
+    <uri>http://oyam.ca/</uri>
+  </author>
+
+  {% for res in collections.articles %}
+  <entry>
+    <id>tag:oyam.ca,2010:{{ res.path }}</id>
     <author>
-      <name>{{ author.name }} Mayo Jordanov</name>
-      <url>https://oyam.ca/</url>
+      <name>{% if res.author -%}{{ res.author }}{%- else %}{{ author.name }}{%- endif %}</name>
+      <uri>http://oyam.ca/</uri>
     </author>
+    <published>{{ res.created|date('c') }}</published>
+    {% set updated = res.updated or res.created -%}
+    <updated>{{ updated|date('c') }}</updated>
+    {% if res.type == 'link' -%}
+    <link rel="related" href="http://oyam.ca/{{ res.path }}" type="text/html"/>
+    {%- endif -%}
+    <link rel="alternate" href="{% if res.type == 'link' -%}{{ res.href }}{%- else %}http://oyam.ca/{{ res.path }}{%- endif %}" type="text/html"/>
+    <title type="html">{% if res.type == 'quote' and res.contents == "" -%}&ldquo;{%- endif %}{{ res.title }}{% if res.type == 'quote' and res.contents == "" -%}&rdquo; &mdash; {{ res.author }}{%- endif %}</title>
 
-    {% for res in collections.articles %}
-    <entry>
-      <id>tag:oyam.ca,2010:{{ res.path }}</id>
-      <author><name>{% if res.author -%}{{ res.author }}{%- else %}{{ author.name }}{%- endif %}</name></author>
-      <updated>{{ res.created|date('c') }}</updated>
-      <published>{{ res.created|date('c') }}</published>
+    {% if res.type == 'post' -%}
+    <summary type="html"><![CDATA[
+      {{ res.excerpt }}
+    ]]></summary>
+    {%- endif -%}
 
-      <title type="html">{% if res.type == 'quote' and res.contents == "" -%}&ldquo;{%- endif %}{{ res.title }}{% if res.type == 'quote' and res.contents == "" -%}&rdquo; &mdash; {{ res.author }}{%- endif %}</title>
-      <link rel="alternate" href="{% if res.type == 'link' -%}{{ res.href }}{%- else %}/{{ res.path }}{%- endif %}" type="text/html"/>
+    <content type="html" xml:lang="en"><![CDATA[
+    {% if res.type == 'photo' %}
+      <figure>
+        <img src="http://oyam.ca/media/images/photos/{{ res.created|date('Y/m') }}/{{ res.photo }}" title="{{ res.title }}"/>
+        <figcaption>{{ res.caption }}</figcaption>
+      </figure>
+    {% else %}
+      {{ res.contents }}
+      {% if res.type == "quote" and res.contents != "" -%} &mdash; {{ res.author }}{%- endif %}
+    {% endif %}
+    ]]></content>
 
-      <content type="html">
-        {{ res.contents }}
-        {% if res.type == "quote" and res.contents != "" -%} &mdash; {{ res.author }}{%- endif %}
-      </content>
-    </entry>
-    {% endfor %}
+    {# if res.type == 'photo' #}
+    {# <link rel="enclosure" type="image/jpeg" href="http://oyam.ca/media/images/photos/{{ res.created|date('Y/m') }}/{{ res.photo }}" /> #}
+    {# endif #}
+  </entry>
+  {% endfor %}
 </feed>
