@@ -586,9 +586,10 @@ pre::-webkit-scrollbar-thumb {
   opacity: 1;
 }
 
-.slideshow .dark-bg .controls,
 .dark-bg .slideshow .controls,
-.slideshow .dark-bg.controls {
+.dark-bg .slideshow .controls button,
+.slideshow .dark-bg.controls,
+.slideshow .dark-bg.controls button {
   color: white;
 }
 
