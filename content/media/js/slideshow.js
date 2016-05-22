@@ -139,17 +139,17 @@ function SlideshowEvents(slideshow) {
       // If action was already triggered return
       if (touchFlag) return;
 
-      e.preventDefault();
-
       touch = e.touches[0] || e.changedTouches[0];
       // Move at least 40 pixels to trigger the action
       if(touch.pageX - touchStartX > touchDisplacement) {
         touchFlag = true;
         s.previous();
+        e.preventDefault();
 
       } else if (touch.pageX - touchStartX < -1 * touchDisplacement) {
         touchFlag = true;
         s.next();
+        e.preventDefault();
       }
     }, false);
 
