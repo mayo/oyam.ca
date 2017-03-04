@@ -29,4 +29,9 @@ deploy:
     on:
       repo: mayo/oyam.ca
       branch: master
-
+notifications:
+  webhooks:
+    urls:
+      - https://webhooks.gitter.im/e/84d44a66a76302687bc4
+    on_success: always 
+    on_failure: never 
