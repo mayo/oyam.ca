@@ -5,6 +5,7 @@
   </div>
 
   <div class="slides">
+    {% set slides = site.slides %}
     {% for slide in slides %}
 
       {% set quadrants = "" %}
@@ -24,7 +25,7 @@
       <div class="slide fullpage" {{ quadrants }}>
         <div class="image" style="background-image: url('{{ slide.image }}'); background-position: {{ slide.image_position }};"></div>
 
-        {% if !slide.hide_content %}
+        {% if not slide.hide_content %}
         <div class="main">
           <h1>{{ slide.title }}</h1>
           <p>{{ slide.content }}</p>

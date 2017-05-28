@@ -44,10 +44,10 @@
 
         {% set header_style = "" %}
         {% if header_image %}
-          {% set header_style += "background-image: url('" + header_image + "');" %}
+          {% set header_style = header_style + "background-image: url('" + header_image + "');" %}
         {% endif %}
         {% if header_image_pos %}
-          {% set header_style += "background-position: " + header_image_pos + ";" %}
+          {% set header_style = header_style + "background-position: " + header_image_pos + ";" %}
         {% endif %}
 
         {% if header_style %}
