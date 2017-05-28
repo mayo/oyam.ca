@@ -29,11 +29,11 @@
     <div class="grid-100">
       {% block footer_content %}
 
-        {% for link, icon in social_links %}
-        <a href="{{ links[link] }}"><i class="fa {{ icon }}"></i></a>
+        {% for link, icon in site.social_links.iteritems() %}
+        <a href="{{ site.links[link] }}"><i class="fa {{ icon }}"></i></a>
         {% endfor %}
-        <a href="{{ links.rss }}"><i class="fa fa-rss-square"></i></a>
-      <span class="copyright">Copyright &copy;{{ now|date("Y") }} {{ author.name }}</span>
+        <a href="{{ site.links.rss }}"><i class="fa fa-rss-square"></i></a>
+      <span class="copyright">Copyright &copy;{{ site.now.strftime('%Y') }} {{ site.author.name }}</span>
       {% endblock %}
     </div>
     {% endblock %}

@@ -2,7 +2,7 @@
 {% if disable_chameleon %}
   {% set chameleon = "" %}
 {% endif %}
-{% if !nav_id %}
+{% if not nav_id %}
   {% set nav_id = "sitenav" %}
 {% endif %}
 <nav id="{{nav_id}}" class="sitenav {{ chameleon }}">
@@ -39,7 +39,7 @@
           <ul class="submenu">
             <li><a href="/about">mayo</a></li>
             <li><a href="/about/website.html">website</a></li>
-            <li><a href="{{ links.rss }}">rss</a></li>
+            <li><a href="{{ site.links.rss }}">rss</a></li>
           </ul>
         </div>
       </li>
