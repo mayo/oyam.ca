@@ -9,9 +9,9 @@ In addition to the news of the [Triggertrap hardware dongle getting open sourced
 > Earlier this year, I released the [Triggertrap Mobile Dongle hardware][1] as open source, and today, the apps join the fray as well, with the source code for both our [Triggertrap iOS][3] app and our [Triggertrap Android][5] app now available for download from GitHub.
 
 Relevant links:
-* [Official announcement][6]
+* [Official announcement][4]
 * [GitHub repo for hardware][1]
-* [GitHub repo for iOS app][5]
+* [GitHub repo for iOS app][4]
 
 [1]: https://github.com/Triggertrap/mobile-dongle
 [2]: //oyam.ca/blog/2017/05/triggertap/
