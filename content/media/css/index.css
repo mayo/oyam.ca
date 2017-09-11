@@ -111,6 +111,7 @@
 
 .slideshow {
   width: 100vw;
+  max-width: 100%; /* fixes width100vw with scrollbars */
   height: 100vh;
 }
 
