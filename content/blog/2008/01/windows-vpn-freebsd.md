@@ -1,7 +1,7 @@
 ---
 type: post
 title: Windows VPN from FreeBSD
-created: !!timestamp '2008-01-31 00:00:00'
+created: !!timestamp '2008-01-31 00:00:00 -8'
 hashtag: mjwvpnbsd
 ---
 While developing an application, I had the need to access Active Directory (AD) that was running on a remote machine with no access to AD from outside world. The only option to talk to the AD was via Window's VPN.

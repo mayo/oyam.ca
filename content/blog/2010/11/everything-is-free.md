@@ -3,7 +3,7 @@ type: post
 title: We Live In Public
 author: Josh Harris
 hashtag: wlipjh
-created: !!timestamp '2010-11-29 00:00:00'
+created: !!timestamp '2010-11-29 00:00:00 -8'
 ---
 > Everything is free, except the video that we capture of you. That we own.
 

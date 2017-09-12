@@ -21,7 +21,7 @@
     {% endif %}
 
     {% if article.type != "quote" %}
-    <time class="post-time" datetime="{{ article.created.strftime('%Y-%m-%dT%H:%M:%S') }}">{{ article.created.strftime('%A, %B %d, %Y') }}</time>
+    <time class="post-time" datetime="{{ article.created.strftime('%Y-%m-%dT%H:%M:%SZ') }}">{{ article.created.strftime('%A, %B %d, %Y') }}</time>
     {% endif %}
   </header>
 
@@ -82,7 +82,7 @@
   {% if article.type == "quote" %}
   <footer>
     <p class="article.author">&mdash; {{ article.author }}</p>
-    <time class="post-time" datetime="{{ article.created.strftime('%Y-%m-%dT%H:%M:%S') }}">{{ article.created.strftime('%A, %B %d, %Y') }}</time>
+    <time class="post-time" datetime="{{ article.created.strftime('%Y-%m-%dT%H:%M:%SZ') }}">{{ article.created.strftime('%A, %B %d, %Y') }}</time>
   </footer>
   {% endif %}
 </article>

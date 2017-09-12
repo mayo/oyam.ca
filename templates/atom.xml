@@ -3,8 +3,8 @@
   <title>{{ page.title }}</title>
   <link rel="self" href="http://oyam.ca/{{page.source_file}}" type="application/atom+xml"/>
   <link rel="alternate" href="http://oyam.ca/" type="text/html"/>
-  <updated>{{ site.now.strftime('%c') }}</updated>
-  <rights>Copyright © {{ site.now.strftime('%Y') }}, Mayo Jordanov</rights>
+  <updated>{{ site.now_utc.strftime('%Y-%m-%dT%H:%M:%SZ') }}</updated>
+  <rights>Copyright © {{ site.now_utc.strftime('%Y') }}, Mayo Jordanov</rights>
   <id>tag:oyam.ca,2010:/</id>
   <author>
     <name>{{ site.author.name }} Mayo Jordanov</name>
@@ -18,9 +18,9 @@
       <name>{% if res.author -%}{{ res.author }}{%- else %}{{ site.author.name }}{%- endif %}</name>
       <uri>http://oyam.ca/</uri>
     </author>
-    <published>{{ res.created.strftime('%c') }}</published>
+    <published>{{ res.created.strftime('%Y-%m-%dT%H:%M:%SZ') }}</published>
     {% set updated = res.updated or res.created -%}
-    <updated>{{ updated.strftime('%c') }}</updated>
+    <updated>{{ updated.strftime('%Y-%m-%dT%H:%M:%SZ') }}</updated>
     {% if res.type == 'link' -%}
     <link rel="related" href="http://oyam.ca/{{ res.path }}" type="text/html"/>
     {%- endif -%}
