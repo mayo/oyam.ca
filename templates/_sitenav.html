@@ -26,7 +26,7 @@
         <a href="/" class="menuitem">showing</a>
         <div class="submenu-wrapper">
           <ul class="submenu">
-            {% for slide in slides %}
+            {% for slide in site.slides %}
             <li><a href="/#slide{{ loop.index0 }}">{{ slide.title }}</a></li>
             {% endfor %}
           </ul>

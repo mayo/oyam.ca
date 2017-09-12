@@ -17,7 +17,8 @@ background_class: dark-bg
 
 {% block main_content %}
   {% set grid_container_class="normal" %}
-  {% include '_slideshow.html' %}
+  {% from "macros.j2" import display_slideshow %}
+  {{ display_slideshow(site.slides) }}
   {% set nav_id = "sitenav2" %}
   <div class="chameleon"><div class="scrolldown bottomright"><a href="#{{nav_id}}"><i class="fa fa-angle-down"></i></a></div></div>
 
@@ -40,12 +41,14 @@ background_class: dark-bg
     <div class="grid-50">
       <h2>Recent posts</h2>
 
+      {% for post in site.collections.articles %}
+        {% endfor %}
       <table class="article-list">
       {% set list_limit=5 %}
       {% for post in site.collections.articles %}
         {% if not list_limit or loop.index0 < list_limit %}
         <tr>
-          <td class="time"><time>{{ post.created.strftime('%M %d, %Y') }}</time></td>
+          <td class="time"><time datetime="{{ post.created.strftime('%Y-%m-%dT%H:%M:%S') }}">{{ post.created.strftime('%a %d, %Y') }}</time></td>
           {% set extra_classes = "" %}
           {% if post.type == "quote" and not post.contents %}
             {% set extra_classes = "short" %}
