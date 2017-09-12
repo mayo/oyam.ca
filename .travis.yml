@@ -1,7 +1,10 @@
-language: node_js
+language: python
 sudo: false
-node_js:
-- '4.1'
+python:
+- '2.7'
+- '3.6'
+script:
+  - make build
 deploy:
   - provider: s3
     access_key_id:
