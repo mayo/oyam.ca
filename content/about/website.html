@@ -1,8 +1,9 @@
 ---
-extends: grid.html
+template: true
 title: About oyam.ca
 page_id: about
 ---
+{% extends "grid.html" %}
 {% block main_content %}
 <!--
 <div class="banner">
@@ -26,7 +27,7 @@ page_id: about
 
     <h2>Related posts</h2>
     <ul>
-    {% for post in collections.sitebuild %}
+    {% for post in site.collections.sitebuild %}
       <li><a href="{{ "/" + post.path }}">{{ post.title|safe }}</a></li>
     {% endfor %}
     </ul>

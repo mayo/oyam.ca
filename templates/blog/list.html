@@ -2,20 +2,18 @@
 {% from "macros.j2" import blog_article %}
 
 {% block content %}
-  <h1>{{ title }}</h1>
+  <h1>{{ page.title }}</h1>
 
   <div class="article-list">
-  {% set lastDate = None %}
+  {% set lastDate = [None] %}
   {% for post in site.collections.articles %}
-    {% if not list_limit or loop.index0 < list_limit %}
-
-      {% if lastDate.strftime('%F %Y') != post.created.strftime('%F %Y') %}
-      <div class="date-threshold">{{ post.created.strftime('%F %Y') }}</div>
-        {% set lastDate = post.created %}
+    {% if not page.list_limit or loop.index0 < page.list_limit %}
+      {% if lastDate[-1] != post.created.strftime('%B %Y') %}
+      <div class="date-threshold">{{ post.created.strftime('%B %Y') }}</div>
+        {% do lastDate.append(post.created.strftime('%B %Y')) %}
       {% endif %}
-  
-      {% set article_context="list" %}
-      {{ blog_article(post) }}
+
+      {{ blog_article(page, post, "list") }}
 
     {% endif %}
   {% endfor %}

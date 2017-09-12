@@ -8,15 +8,15 @@
     <article class="{{ post.type }}">
       {% set post_link = "/" + post.path %}
       {% set post_title = post.title %}
-      {% set header_style = "" %}
+      {% set header_style = [] %}
 
       {% if post.header_image %}
-      {% set header_style = header_stryle + "background-image: url('%s');" % post.header_image %}
+      {% do header_style.append("background-image: url('%s');" % post.header_image) %}
       {% endif %}
       {% if post.header_image_pos %}
-      {% set header_style = header_style + "background-position: %s" % post.header_image_pos %}
+      {% do header_style.append("background-position: %s" % post.header_image_pos) %}
       {% endif %}
-      <header {% if header_style %}style="{{ header_style }}"{% endif %}>
+      <header {% if header_style %}style="{{ header_style|join(" ") }}"{% endif %}>
           <a class="readmore" href="{{ post_link }}"><h2 {% if post.header_color %}style="color: {{ post.header_color }}"{% endif %}>{{ post_title }}</h2></a>
       </header>
     </article>

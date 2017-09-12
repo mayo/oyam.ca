@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>{{ title }}</title>
-  <link rel="self" href="http://oyam.ca/{{source_file}}" type="application/atom+xml"/>
+  <title>{{ page.title }}</title>
+  <link rel="self" href="http://oyam.ca/{{page.source_file}}" type="application/atom+xml"/>
   <link rel="alternate" href="http://oyam.ca/" type="text/html"/>
   <updated>{{ site.now.strftime('%c') }}</updated>
   <rights>Copyright © {{ site.now.strftime('%Y') }}, Mayo Jordanov</rights>
