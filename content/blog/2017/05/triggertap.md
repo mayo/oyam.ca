@@ -2,8 +2,8 @@
 type: link
 title: "Triggertrap mobile dongle open sourced!"
 href: https://github.com/Triggertrap/mobile-dongle
-created: !!timestamp '2017-05-25 11:32:00'
-updated: !!timestamp '2017-06-07 08:15:00'
+created: !!timestamp '2017-05-25 11:32:00 -8'
+updated: !!timestamp '2017-06-07 08:15:00 -8'
 ---
 *Updated June 7, 2017: added ADA link*
 
