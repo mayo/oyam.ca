@@ -20,11 +20,11 @@
 			"date_modified": "{{ updated|date('c') }}",
       {%- if res.type == 'photo' -%}
 			"image": "http://oyam.ca/media/images/photos/{{ res.created|date('Y/m') }}/{{ res.photo }}",
-			"content_html": {{ res.caption|json }},
+			"content_html": {%- filter json -%}<img src="http://oyam.ca/media/images/photos/{{ res.created|date('Y/m') }}/{{ res.photo }}" title="{{ res.title }}"/>{{ res.caption }}{%- endfilter -%},
       {%- endif -%}
       {%- if res.type == 'link' -%}
 			"external_url": "{{ res.href }}",
-			"content_html": {{ res.contents|json }},
+			"content_html": {%- filter json -%}<a href="{{ res.href }}">{{res.title}}</a>{{ res.contents }}{%- endfilter -%},
       {%- endif -%}
       {%- if res.type == 'quote' -%}
 			"content_html": {%- filter json -%}&ldquo;{%- if res.contents == "" -%}{{ res.title }}{%- else -%}{{ res.contents }}{%- endif -%}&rdquo; &mdash; {{ res.author }}{%- endfilter -%},
