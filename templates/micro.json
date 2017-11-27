@@ -27,7 +27,7 @@
 			"content_html": {%- filter json -%}<a href="{{ res.href }}">{{res.title}}</a>{{ res.contents }}{%- endfilter -%},
       {%- endif -%}
       {%- if res.type == 'quote' -%}
-			"content_html": {%- filter json -%}&ldquo;{%- if res.contents == "" -%}{{ res.title }}{%- else -%}{{ res.contents }}{%- endif -%}&rdquo; &mdash; {{ res.author }}{%- endfilter -%},
+			"content_html": {%- filter json -%}&ldquo;{%- if res.contents == "" -%}{{ res.title }}{%- else -%}{{ res.contents }}{%- endif -%}&rdquo;<br/>&mdash; {{ res.author }}{%- endfilter -%},
       {%- endif -%}
 			"url": "http://oyam.ca/{{ res.path }}"
 		}
