@@ -1,0 +1,38 @@
+{
+	"version": "https://jsonfeed.org/version/1",
+	"title": "Mayo Jordanov",
+	"home_page_url": "http://oyam.ca/",
+	"feed_url": "http://oyam.ca/{{source_file}}",
+	"author": {
+	"name": "{{ author.name }}",
+		"url": "http://oyam.ca"
+	},
+	"items": [
+  {%- set need_comma = false -%}
+  {%- for res in collections.articles -%}
+    {%- if res.type == 'link' or res.type == 'quote' or res.type == 'photo' -%}
+      {%- if need_comma -%},{%- endif -%}
+      {%- set need_comma = true -%}
+		{
+			"id": "http://oyam.ca/{{ res.path }}",
+			"date_published": "{{ res.created|date('c') }}",
+      {%- set updated = res.updated or res.created -%}
+			"date_modified": "{{ updated|date('c') }}",
+      {%- if res.type == 'photo' -%}
+			"image": "http://oyam.ca/media/images/photos/{{ res.created|date('Y/m') }}/{{ res.photo }}",
+			"content_html": {{ res.caption|json }},
+      {%- endif -%}
+      {%- if res.type == 'link' -%}
+			"external_url": "{{ res.href }}",
+			"content_html": {{ res.contents|json }},
+      {%- endif -%}
+      {%- if res.type == 'quote' -%}
+			"content_html": {%- filter json -%}&ldquo;{%- if res.contents == "" -%}{{ res.title }}{%- else -%}{{ res.contents }}{%- endif -%}&rdquo; &mdash; {{ res.author }}{%- endfilter -%},
+      {%- endif -%}
+			"url": "http://oyam.ca/{{ res.path }}"
+		}
+    {%- endif -%}
+  {%- endfor -%}
+	]
+}
+
