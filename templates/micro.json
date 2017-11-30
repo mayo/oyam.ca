@@ -10,28 +10,30 @@
 	"items": [
   {%- set need_comma = false -%}
   {%- for res in collections.articles -%}
-    {%- if res.type == 'link' or res.type == 'quote' or res.type == 'photo' -%}
       {%- if need_comma -%},{%- endif -%}
       {%- set need_comma = true -%}
 		{
 			"id": "http://oyam.ca/{{ res.path }}",
+			"url": "http://oyam.ca/{{ res.path }}",
 			"date_published": "{{ res.created|date('c') }}",
       {%- set updated = res.updated or res.created -%}
 			"date_modified": "{{ updated|date('c') }}",
       {%- if res.type == 'photo' -%}
 			"image": "http://oyam.ca/media/images/photos/{{ res.created|date('Y/m') }}/{{ res.photo }}",
-			"content_html": {%- filter json -%}<p>{{ res.caption }}</p><img src="http://oyam.ca/media/images/photos/{{ res.created|date('Y/m') }}/{{ res.photo }}" title="{{ res.title }}"/></p>{%- endfilter -%},
-      {%- endif -%}
-      {%- if res.type == 'link' -%}
+			"content_html": {%- filter json -%}<p>{{ res.caption }}</p><p><img src="http://oyam.ca/media/images/photos/{{ res.created|date('Y/m') }}/{{ res.photo }}" title="{{ res.title }}"/></p>{%- endfilter -%},
+      {%- elif res.type == 'link' -%}
 			"external_url": "{{ res.href }}",
-			"content_html": {%- filter json -%}<p><a href="{{ res.href }}">{{res.title}}</a></p>{{ res.contents }}{%- endfilter -%},
-      {%- endif -%}
-      {%- if res.type == 'quote' -%}
+			"content_html": {%- filter json -%}<p>{{ res.contents }}</p><p><a href="{{ res.href }}">{{ res.title }}</a></p>{%- endfilter -%},
+      {%- elif res.type == 'quote' -%}
 			"content_html": {%- filter json -%}&ldquo;{%- if res.contents == "" -%}{{ res.title }}{%- else -%}{{ res.contents }}{%- endif -%}&rdquo;<br/>&mdash; {{ res.author }}{%- endfilter -%},
+      "author": {
+        "name": {{res.author|json }}
+      }
+      {%- else -%}
+			"content_html": {%- filter json -%}<p>{{ res.title }}</p><p>{{ res.excerpt }}</p><p><a href="{{ res.href }}">{{ res.href }}</a></p>{%- endfilter -%},
       {%- endif -%}
 			"url": "http://oyam.ca/{{ res.path }}"
 		}
-    {%- endif -%}
   {%- endfor -%}
 	]
 }
