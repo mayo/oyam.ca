@@ -5,41 +5,49 @@ import json
 import os
 import time
 
-def storeSource(key='source_file'):
-    def add_key(files, hana):
-        for f in files.itervalues():
-            f[key] = f.source
-
-    return add_key
+#def storeSource(key='source_file'):
+#    def add_key(files, hana):
+#        for f in files.itervalues():
+#            f[key] = f.source
+#
+#    return add_key
 
 def set_metadata(metadata):
 
     def set_metadata_plugin(files, hana):
-        for f in files.itervalues():
+        for _, f in files:
             f.update(metadata)
 
     return set_metadata_plugin
 
 h = hana.Hana(
-    source='content',
-    output='deploy-py',
+    output_directory='deploy',
 )
 
+content_dir = 'content'
 
-h.use(metadata({
-    # Used for blog post back-links
+ignore_patterns = [
+    '**/.*.swp',
+    '**/.DS_Store',
+]
+
+h.plugin(FileLoader(content_dir))
+
+h.plugin(metadata({
+    # Used for blog post feedback links
     "site": {
-      "source_dir": h.source,
+      "source_dir": content_dir,
     },
 }))
 
 now = time.time()
 
-h.use(metadata({
+h.plugin(metadata({
     "author": {
       "name": "Mayo Jordanov",
       "email": "mayo@oyam.ca",
-      "twitter": "@oyam"
+      "twitter": "@oyam",
+      "instagram": "@oyam.ca"
     },
 
     "site": {
@@ -77,7 +85,7 @@ h.use(metadata({
 
 }))
 
-h.use(asset([
+h.plugin(asset([
     #font-awesome.io
     {
       "src": "node_modules/font-awesome/css/font-awesome.min.css",
@@ -104,28 +112,25 @@ h.use(asset([
     }
 ]))
 
-h.use(ignore([
-    '**/.*.swp',
-    '**/.DS_Store',
-]))
+h.plugin(ignore(ignore_patterns))
 
-h.use(front_matter)
+h.plugin(front_matter)
 
-#TODO: metafile experiment
-#h.use(storeSource())
+#NOTE: filesystem loader does this 
+#h.plugin(storeSource())
 
-h.use(drafts)
+h.plugin(drafts)
 
-h.use(Markdown())
+h.plugin(Markdown())
 
 #TODO: branch
 
-h.use(set_metadata({'template': 'blog/article.html'}), 'blog/*/**')
-h.use(title(remove=True), 'blog/*/**')
-h.use(excerpt, 'blog/*/**')
-h.use(PrettyUrl(relative=False), 'blog/*/**')
+h.plugin(set_metadata({'template': 'blog/article.html'}), 'blog/*/**')
+h.plugin(title(remove=True), 'blog/*/**')
+h.plugin(excerpt, 'blog/*/**')
+h.plugin(PrettyUrl(relative=False), 'blog/*/**')
 
-h.use(Collections({
+h.plugin(Collections({
     "travel": {
       "sortBy": 'created',
       "reverse": True,
@@ -136,10 +141,12 @@ h.use(Collections({
       "pattern": "blog/*/**",
       "sortBy": 'created',
       "reverse": True,
+
+      "default": True,
     },
 }))
 
-h.use(JinjaTemplate({
+h.plugin(JinjaTemplate({
     'directory': 'templates',
 }))
 
@@ -149,7 +156,7 @@ h.use(JinjaTemplate({
 #TODO: dev: serve
 
 #TODO: dev only:
-#h.use(beautify(
+#h.plugin(beautify(
 #    indent_size=2,
 #    indent_char=" "
 #))
