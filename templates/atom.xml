@@ -7,7 +7,7 @@
   <rights>Copyright © {{ site.now_utc.strftime('%Y') }}, Mayo Jordanov</rights>
   <id>tag:oyam.ca,2010:/</id>
   <author>
-    <name>{{ site.author.name }} Mayo Jordanov</name>
+    <name>{{ site.author.name }}</name>
     <uri>http://oyam.ca/</uri>
   </author>
 
