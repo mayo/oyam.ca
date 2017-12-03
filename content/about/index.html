@@ -26,18 +26,18 @@ page_id: about
 
     <p>As a naturally curious person I’m driven to explore the unknown, and the great outdoors is my playground. With snow on ground, I take my skis to explore the mountains around me. When the air gets warmer, I like to climb rocks, hike up mountains, or ride around on a bike. I run when I can, trying to keep in shape for the next long distance race or adventure. All these activities help me escape the daily bustle and enjoy serene outdoors that not everyone gets to see.</p>
 
-    <p>Photography is my creative outlet and reflects my passion for outdoors. I try to enjoy the moments on my adventures, and capture them as they happen, so other can share the experience and feel as if they were there.</p>
+    <p>Photography is my creative outlet and reflects my passion for outdoors. I try to enjoy the moments on my adventures, and capture them as they happen, so others can share the experience and feel as if they were there.</p>
 
   </div>
 
   <div class="grid-35 mobile-grid-100 sidebar">
     <p>
-      <ul class="contact-list">
-        <li><div class="me"><img class="me" src="/media/images/mex1.png"/></div></li>
-        <li class="main"><span class="name">Mayo Jordanov</span><br/><span class="tag">Creative Solutions</a></li>
-        <li><i class="fa inline fa-globe"></i>Vancouver, BC</li>
-        <li><i class="fa inline fa-envelope-o"></i>mayo@oyam.ca<br/><i class="fa inline fa-phone"></i>+1.604.484.9845</li>
-        <li class="pgp-fingerprint"><i class="fa inline fa-key"></i>PGP: <a href="https://keybase.io/mayo"><span>56A3</span><span>789C</span><span>ED4D</span><span>2DD7</span></a></li>
+      <ul class="contact-list h-card">
+        <li><div class="me"><img class="me u-photo" src="/media/images/mex1.png"/></div></li>
+        <li class="main"><span class="name p-name">Mayo Jordanov</span><br/><span class="tag">Creative Solutions</a></li>
+        <li><i class="fa inline fa-globe"></i><span class="p-locality">Vancouver</span>, <span class="p-region">BC</span></li>
+        <li><i class="fa inline fa-envelope-o"></i><a href="mailto:mayo@oyam.ca" class="u-email">mayo@oyam.ca</a><br/><i class="fa inline fa-phone"></i><span class="p-tel">+1.604.484.9845</span></li>
+        <li class="pgp-fingerprint"><i class="fa inline fa-key"></i>GPG: <a rel="me" href="https://keybase.io/mayo"><span>56A3</span><span>789C</span><span>ED4D</span><span>2DD7</span></a></li>
         <li class="social">
         {% for link, icon in social_links %}
           <a href="{{ links[link] }}"><i class="fa {{ icon }}"></i></a>
