@@ -2,7 +2,7 @@
   "version": "https://jsonfeed.org/version/1",
   "title": "Mayo Jordanov",
   "home_page_url": "http://oyam.ca/",
-  "feed_url": "http://oyam.ca/{{source_file}}",
+  "feed_url": "http://oyam.ca/{{page.source_file}}",
   "author": {
   "name": "{{ site.author.name }}",
     "url": "http://oyam.ca"
