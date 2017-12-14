@@ -28,7 +28,7 @@
 			"content_html": {%- filter json -%}&ldquo;{%- if res.contents == "" -%}{{ res.title }}{%- else -%}{{ res.contents }}{%- endif -%}&rdquo;<br/>&mdash; {{ res.author }}{%- endfilter -%},
       "author": {
         "name": {{res.author|json }}
-      }
+      },
       {%- else -%}
 			"content_html": {%- filter json -%}<p>{{ res.title }}</p><p>{{ res.excerpt }}</p><p><a href="{{ res.href }}">{{ res.href }}</a></p>{%- endfilter -%},
       {%- endif -%}
