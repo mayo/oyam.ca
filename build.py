@@ -110,14 +110,9 @@ h.plugin(ignore(ignore_patterns))
 
 h.plugin(front_matter)
 
-#NOTE: filesystem loader does this 
-#h.plugin(storeSource())
-
 h.plugin(drafts)
 
 h.plugin(Markdown())
-
-#TODO: branch
 
 h.plugin(set_metadata({'template': 'blog/article.html'}), 'blog/*/**')
 h.plugin(title(remove=True), 'blog/*/**')
