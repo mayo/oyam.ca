@@ -1,7 +1,7 @@
 ---
 type: post
 title: "Plotting non-uniform time data with D3.js"
-created: !!timestamp '2014-07-22 14:50:00'
+created: !!timestamp '2014-07-22 14:50:00 -8'
 ---
 For a typical time-series data, one would use the `d3.time.scale` scale. This scale, however, does not work for plotting non-uniform time-series data (for eg. market data) where weekend days show as gaps and are undesirable.
 

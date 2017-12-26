@@ -1,5 +1,7 @@
 node_modules
+deploy-py
 deploy
 old
 *.swp
 .DS_Store
+env/
