@@ -1,1 +1,9 @@
 -e git+https://github.com/mayo/hana#egg=hana
+
+#hana dependencies
+Jinja2
+pathspec
+python-frontmatter
+Markdown
+beautifulsoup4
+
