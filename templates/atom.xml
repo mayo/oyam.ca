@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>{{ title }}</title>
-  <link rel="self" href="http://oyam.ca/{{source_file}}" type="application/atom+xml"/>
+  <title>{{ page.title }}</title>
+  <link rel="self" href="http://oyam.ca/{{page.source_file}}" type="application/atom+xml"/>
   <link rel="alternate" href="http://oyam.ca/" type="text/html"/>
-  <updated>{{ now|date('c') }}</updated>
-  <rights>Copyright © {{ now|date('Y') }}, Mayo Jordanov</rights>
+  <updated>{{ site.now_utc.strftime('%Y-%m-%dT%H:%M:%SZ') }}</updated>
+  <rights>Copyright © {{ site.now_utc.strftime('%Y') }}, Mayo Jordanov</rights>
   <id>tag:oyam.ca,2010:/</id>
   <author>
-    <name>{{ author.name }}</name>
+    <name>{{ site.author.name }}</name>
     <uri>http://oyam.ca/</uri>
   </author>
 
-  {% for res in collections.articles %}
+  {% for res in site.collections.articles %}
   <entry>
     <id>tag:oyam.ca,2010:{{ res.path }}</id>
     <author>
-      <name>{% if res.author -%}{{ res.author }}{%- else %}{{ author.name }}{%- endif %}</name>
+      <name>{% if res.author -%}{{ res.author }}{%- else %}{{ site.author.name }}{%- endif %}</name>
       <uri>http://oyam.ca/</uri>
     </author>
-    <published>{{ res.created|date('c') }}</published>
+    <published>{{ res.created.strftime('%Y-%m-%dT%H:%M:%SZ') }}</published>
     {% set updated = res.updated or res.created -%}
-    <updated>{{ updated|date('c') }}</updated>
+    <updated>{{ updated.strftime('%Y-%m-%dT%H:%M:%SZ') }}</updated>
     {% if res.type == 'link' -%}
     <link rel="related" href="http://oyam.ca/{{ res.path }}" type="text/html"/>
     {%- endif -%}
@@ -36,7 +36,7 @@
     <content type="html" xml:lang="en"><![CDATA[
     {% if res.type == 'photo' %}
       <figure>
-        <img src="http://oyam.ca/media/images/photos/{{ res.created|date('Y/m') }}/{{ res.photo }}" title="{{ res.title }}"/>
+        <img src="http://oyam.ca/media/images/photos/{{ res.created.strftime('%Y/%m') }}/{{ res.photo }}" title="{{ res.title }}"/>
         <figcaption>{{ res.caption }}</figcaption>
       </figure>
     {% else %}
@@ -46,7 +46,7 @@
     ]]></content>
 
     {# if res.type == 'photo' #}
-    {# <link rel="enclosure" type="image/jpeg" href="http://oyam.ca/media/images/photos/{{ res.created|date('Y/m') }}/{{ res.photo }}" /> #}
+    {# <link rel="enclosure" type="image/jpeg" href="http://oyam.ca/media/images/photos/{{ res.created.strftime('%Y/%m') }}/{{ res.photo }}" /> #}
     {# endif #}
   </entry>
   {% endfor %}

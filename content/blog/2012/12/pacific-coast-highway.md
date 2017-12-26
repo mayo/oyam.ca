@@ -1,7 +1,7 @@
 ---
 type: post
 title: "Pacific Coast Highway: First timer's 101 to the 101"
-created: !!timestamp '2012-12-15 00:00:00'
+created: !!timestamp '2012-12-15 00:00:00 -8'
 
 collection:
   - articles

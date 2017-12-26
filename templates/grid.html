@@ -2,7 +2,7 @@
 
 {% block body_container %}
   {% block header_wrapper %}
-  <header class="grid-container {{ grid_container_class }}">
+  <header class="grid-container {{ page.grid_container_class }}">
   {% block header_content %}
     {% include '_sitenav.html' %}
   {% endblock header_content %}
@@ -11,7 +11,7 @@
 
   <main>
   {% block main_content %}
-    <div class="grid-container {{ grid_container_class }}">
+    <div class="grid-container {{ page.grid_container_class }}">
       <div class="grid-100">
         {% block content %}{% endblock %}
       </div>
@@ -20,7 +20,7 @@
   </main>
 
   {% block footer_wrapper %}
-  <footer class="new grid-container {{ grid_container_class }}">
+  <footer class="new grid-container {{ page.grid_container_class }}">
     {% block footer %}
 
       {% block footer_nav %}
@@ -29,11 +29,11 @@
     <div class="grid-100">
       {% block footer_content %}
 
-        {% for link, icon in social_links %}
-        <a href="{{ links[link] }}"><i class="fa {{ icon }}"></i></a>
+        {% for link, icon in site.social_links.iteritems() %}
+        <a href="{{ site.links[link] }}"><i class="fa {{ icon }}"></i></a>
         {% endfor %}
-        <a href="{{ links.rss }}"><i class="fa fa-rss-square"></i></a>
-      <span class="copyright">Copyright &copy;{{ now|date("Y") }} {{ author.name }}</span>
+        <a href="{{ site.links.rss }}"><i class="fa fa-rss-square"></i></a>
+      <span class="copyright">Copyright &copy;{{ site.now.strftime('%Y') }} {{ site.author.name }}</span>
       {% endblock %}
     </div>
     {% endblock %}

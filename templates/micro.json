@@ -1,40 +1,38 @@
 {
-	"version": "https://jsonfeed.org/version/1",
-	"title": "Mayo Jordanov",
-	"home_page_url": "http://oyam.ca/",
-	"feed_url": "http://oyam.ca/{{source_file}}",
-	"author": {
-	"name": "{{ author.name }}",
-		"url": "http://oyam.ca"
-	},
-	"items": [
-  {%- set need_comma = false -%}
-  {%- for res in collections.articles -%}
-      {%- if need_comma -%},{%- endif -%}
-      {%- set need_comma = true -%}
-		{
-			"id": "http://oyam.ca/{{ res.path }}",
-			"url": "http://oyam.ca/{{ res.path }}",
-			"date_published": "{{ res.created|date('c') }}",
-      {%- set updated = res.updated or res.created -%}
-			"date_modified": "{{ updated|date('c') }}",
-      {%- if res.type == 'photo' -%}
-			"image": "http://oyam.ca/media/images/photos/{{ res.created|date('Y/m') }}/{{ res.photo }}",
-			"content_html": {%- filter json -%}<p>{{ res.caption }}</p><p><img src="http://oyam.ca/media/images/photos/{{ res.created|date('Y/m') }}/{{ res.photo }}" title="{{ res.title }}"/></p>{%- endfilter -%},
-      {%- elif res.type == 'link' -%}
-			"external_url": "{{ res.href }}",
-			"content_html": {%- filter json -%}<p>{{ res.contents }}</p><p><a href="{{ res.href }}">{{ res.title }}</a></p>{%- endfilter -%},
-      {%- elif res.type == 'quote' -%}
-			"content_html": {%- filter json -%}&ldquo;{%- if res.contents == "" -%}{{ res.title }}{%- else -%}{{ res.contents }}{%- endif -%}&rdquo;<br/>&mdash; {{ res.author }}{%- endfilter -%},
-      "author": {
-        "name": {{res.author|json }}
-      },
-      {%- else -%}
-			"content_html": {%- filter json -%}<p>{{ res.title }}</p><p>{{ res.excerpt }}</p><p><a href="{{ res.href }}">{{ res.href }}</a></p>{%- endfilter -%},
-      {%- endif -%}
-			"url": "http://oyam.ca/{{ res.path }}"
-		}
-  {%- endfor -%}
-	]
+  "version": "https://jsonfeed.org/version/1",
+  "title": "Mayo Jordanov",
+  "home_page_url": "http://oyam.ca/",
+  "feed_url": "http://oyam.ca/{{page.source_file}}",
+  "author": {
+  "name": "{{ site.author.name }}",
+    "url": "http://oyam.ca"
+  },
+  "items": [
+{%- for res in site.collections.articles -%}
+    {
+      "id": "http://oyam.ca/{{ res.path }}",
+      "url": "http://oyam.ca/{{ res.path }}",
+      "date_published": "{{ res.created.strftime('%Y-%m-%dT%H:%M:%SZ') }}",
+  {% set updated = res.updated or res.created -%}
+      "date_modified": "{{ updated.strftime('%Y-%m-%dT%H:%M:%SZ') }}",
+  {% if res.type == 'photo' -%}
+      "image": "http://oyam.ca/media/images/photos/{{ res.created.strftime('%Y/%m') }}/{{ res.photo }}",
+      "content_html": {%- filter json -%}<p>{{ res.caption }}</p><p><img src="http://oyam.ca/media/images/photos/{{ res.created.strftime('%Y/%m') }}/{{ res.photo }}" title="{{ res.title }}"/></p>{%- endfilter -%},
+  {% elif res.type == 'link' -%}
+      "external_url": "{{ res.href }}",
+      "content_html": {%- filter json -%}<p>{{ res.contents }}</p><p><a href="{{ res.href }}">{{ res.title }}</a></p>{%- endfilter -%},
+  {% elif res.type == 'quote' -%}
+      "content_html": {%- filter json -%}&ldquo;{%- if res.contents == "" -%}{{ res.title }}{%- else -%}{{ res.contents }}{%- endif -%}&rdquo;<br/>&mdash; {{ res.author }}{%- endfilter -%},
+  "author": {
+    "name": {{ res.author|json }}
+  },
+  {% else -%}
+      "content_html": {%- filter json -%}<p>{{ res.title }}</p><p>{{ res.excerpt }}</p><p><a href="{{ res.href }}">{{ res.href }}</a></p>{%- endfilter -%},
+  {% endif -%}
+      "url": "http://oyam.ca/{{ res.path }}"
+    }
+  {% if not loop.last -%},{%- endif -%}
+{%- endfor -%}
+  ]
 }
 

@@ -1,7 +1,7 @@
 ---
 type: post
 title: Mercurial Atoms
-created: !!timestamp '2011-02-15 00:00:00'
+created: !!timestamp '2011-02-15 00:00:00 -8'
 hashtag: hgatoms
 ---
 Building blocks that matter. At least to some of us... [Atoms](http://hgatoms.com) is a paste-like service implemented on top of [Mercurial](http://mercurial.selenic.com/) as a backend. The idea was inspired and heavily influenced by [GitHub](http://github.com/)'s [Gists](http://gist.github.com/).

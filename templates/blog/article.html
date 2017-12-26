@@ -1,19 +1,21 @@
-{% extends "blog.html" %}
+{% extends "blog/blog.html" %}
 
 {% block content %}
 
-{% include "_article.html" %}
+{% from "macros.j2" import blog_article %}
+{{ blog_article(page, page) }}
+{#% include "blog/_article.html" %#}
 
 <div class="blognav font-small">
 
-  <p class="feedback">Feedback is always welcome. Feel free to <a href="/about">get in touch</a>, or edit <a href="{{ links.github }}{{ github.repo }}{{ github.edit }}/{{ site.source_dir }}/{{ source_file }}">{{ source_file }}</a> on GitHub and submit a push request.</p>
+  <p class="feedback">Feedback is always welcome. Feel free to <a href="/about">get in touch</a>, or edit <a href="{{ site.links.github }}{{ site.github.repo }}{{ site.github.edit }}{{ site.source_dir }}/{{ page.source_file }}">{{ page.source_file }}</a> on GitHub and submit a push request.</p>
 
   <ul class="fa-ul">
-    {% if previous -%}
-    <li><i class="fa fa-li fa-arrow-circle-o-right"></i><a class="small" href="/{{ previous.path }}">{{ previous.title }}</a></li>
+    {% if page.previous -%}
+    <li><i class="fa fa-li fa-arrow-circle-o-right"></i><a class="small" href="/{{ page.previous.path }}">{{ page.previous.title }}</a></li>
     {%- endif %}
-    {% if next -%}
-    <li><i class="fa fa-li fa-arrow-circle-o-left"></i><a href="/{{ next.path }}">{{ next.title }}</a></li>
+    {% if page.next -%}
+    <li><i class="fa fa-li fa-arrow-circle-o-left"></i><a href="/{{ page.next.path }}">{{ page.next.title }}</a></li>
     {%- endif %}
   </ul>
 </div>
