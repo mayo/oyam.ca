@@ -1,41 +1,18 @@
 ---
-template: true
-title: About oyam.ca
+extends: page.html
+title: Colophon
 page_id: about
 ---
-{% extends "grid.html" %}
-{% block main_content %}
-<!--
-<div class="banner">
-  <div class="image" style="background-image: url('/media/images/about.jpg'); background-position: center;"></div>
+{% block content %}
+<h1>{{ title }}</h1>
 
-  <div class="head-title grid-container normal dark-bg">
-    <div class="title grid-100">
-      <h1 style="color: white">Mayo Jordanov</h1>
-    </div>
-  </div>
-</div>
--->
+<p>This website is hand crafted, forged with <a href="http://metalsmith.io">Metalsmith</a>, and source managed at <a href="https://github.com">GitHub</a>. It is built and deployed with <a href="http://travis-ci.org">Travis CI</a> to <a href="http://aws.amazon.com/s3">Amazon S3</a>, and served to you by <a href="http://cloudflare.com">CloudFlare</a>. You can view the sources and build scripts in the <a href="https://github.com/mayo/oyam.ca">mayo/oyam.ca</a> repository.</p>
 
-<div class="grid-container {{ grid_container_class }}">
-
-  <div class="grid-65 mobile-grid-100">
-
-    <h1>Website</h1>
-
-    <p>This website is hand crafted, forged with <a href="https://github.com/mayo/hana">Hana</a>, and source managed at <a href="https://github.com">GitHub</a>. It is built and deployed with <a href="http://travis-ci.org">Travis CI</a> to <a href="http://aws.amazon.com/s3">Amazon S3</a>, and served to you by <a href="http://cloudflare.com">CloudFlare</a>. You can view the sources and build scripts in the <a href="https://github.com/mayo/oyam.ca">mayo/oyam.ca</a> repository.</p>
-
-    <h2>Related posts</h2>
-    <ul>
-    {% for post in site.collections.sitebuild %}
-      <li><a href="{{ "/" + post.path }}">{{ post.title|safe }}</a></li>
-    {% endfor %}
-    </ul>
-
-  </div>
-
-  <div class="grid-35 mobile-grid-100 sidebar">
-  </div>
-
-</div>
+<h2>Related posts</h2>
+<ul>
+{% for post in collections.sitebuild %}
+  <li><a href="{{ "/" + post.path }}">{{ post.title|safe }}</a></li>
+{% endfor %}
+</ul>
 {% endblock %}
+

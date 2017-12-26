@@ -1,6 +1,27 @@
 {% extends "grid.html" %}
 
 {% block main_content %}
-  {{ contents }}
-{% endblock main_content %}
+  {% block banner %}
+<!--
+<div class="banner">
+  <div class="image" style="background-image: url('/media/images/about.jpg'); background-position: center;"></div>
 
+  <div class="head-title grid-container normal dark-bg">
+    <div class="title grid-100">
+      <h1 style="color: white">Mayo Jordanov</h1>
+    </div>
+  </div>
+</div>
+-->
+  {% endblock %}
+
+<div class="grid-container {{ grid_container_class }}">
+  <div class="grid-65 mobile-grid-100">
+    {% block content %}{{ contents }}{% endblock %}
+  </div>
+
+  <div class="grid-35 mobile-grid-100 sidebar">
+    {% block sidebar %}{% endblock %}
+  </div>
+</div>
+{% endblock %}
