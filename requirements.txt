@@ -1,1 +1,1 @@
--e git+https://github.com/mayo/hana
+-e git+https://github.com/mayo/hana#egg=hana
