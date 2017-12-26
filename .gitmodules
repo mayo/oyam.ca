@@ -1,0 +1,12 @@
+[submodule "depends/font-awesome"]
+	path = depends/font-awesome
+	url = https://github.com/FortAwesome/Font-Awesome
+[submodule "depends/normalize.css"]
+	path = depends/normalize.css
+	url = https://github.com/necolas/normalize.css
+[submodule "depends/unsemantic"]
+	path = depends/unsemantic
+	url = https://github.com/nathansmith/unsemantic
+[submodule "depends/microevent.js"]
+	path = depends/microevent.js
+	url = https://github.com/jeromeetienne/microevent.js

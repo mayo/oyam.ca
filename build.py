@@ -82,26 +82,26 @@ h.plugin(metadata({
 h.plugin(asset([
   #font-awesome.io
   {
-    "src": "node_modules/font-awesome/css/font-awesome.min.css",
+    "src": "depends/font-awesome/css/font-awesome.min.css",
     "dst": "media/css/font-awesome.min.css"
   },
   {
-    "src": "node_modules/font-awesome/fonts",
+    "src": "depends/font-awesome/fonts",
     "dst": "media/fonts"
   },
   #load normalize.css from module to keep it up to date more easily
   {
-    "src": "node_modules/normalize.css/normalize.css",
+    "src": "depends/normalize.css/normalize.css",
     "dst": "media/css/normalize.css"
   },
   #unsemantic fluid layout
   {
-    "src": "node_modules/unsemantic/assets/stylesheets/unsemantic-grid-responsive-no-ie7.css",
+    "src": "depends/unsemantic/assets/stylesheets/unsemantic-grid-responsive-no-ie7.css",
     "dst": "media/css/unsemantic-grid-responsive-no-ie7.css"
   },
   #microevent for slideshow
   {
-    "src": "node_modules/microevent/microevent.js",
+    "src": "depends/microevent.js/microevent.js",
     "dst": "media/js/microevent.js"
   }
 ]))
