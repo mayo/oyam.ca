@@ -1,7 +1,7 @@
 ---
 type: post
 title: "180&deg; South: Conquerors of the Useless"
-created: !!timestamp '2012-05-08 17:24:00'
+created: !!timestamp '2012-05-08 17:24:00 -8'
 ---
 [180&deg; South][180south] is a documentary about Jeff Johnson's inspiring
 adventure to Patagonia, Chile, following in the footsteps of Yvon Chouinard

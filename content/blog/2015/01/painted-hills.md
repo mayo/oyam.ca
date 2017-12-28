@@ -1,7 +1,7 @@
 ---
 type: post
 title: "Exploring Oregon: Painted Hills"
-created: !!timestamp '2015-01-31 18:57:00'
+created: !!timestamp '2015-01-31 18:57:00 -8'
 
 collection:
   - articles
