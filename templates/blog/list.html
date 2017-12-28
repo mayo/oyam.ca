@@ -1,25 +1,24 @@
-{% extends "blog.html" %}
+{% extends "blog/blog.html" %}
+{% from "macros.j2" import blog_article %}
 
 {% block content %}
-  <h1>{{ title }}</h1>
+  <h1>{{ page.title }}</h1>
 
   <div class="article-list">
-  {% set lastDate = None %}
-  {% for post in collections.articles %}
-    {% if !list_limit or loop.index0 < list_limit %}
-
-      {% if lastDate|date('F Y') != post.created|date('F Y') %}
-      <div class="date-threshold">{{ post.created|date('F Y') }}</div>
-        {% set lastDate = post.created %}
+  {% set lastDate = [None] %}
+  {% for post in site.collections.articles %}
+    {% if not page.list_limit or loop.index0 < page.list_limit %}
+      {% if lastDate[-1] != post.created.strftime('%B %Y') %}
+      <div class="date-threshold">{{ post.created.strftime('%B %Y') }}</div>
+        {% do lastDate.append(post.created.strftime('%B %Y')) %}
       {% endif %}
-  
-      {% set article_context="list" %}
-      {% include "_article.html" with post %}
+
+      {{ blog_article(page, post, "list") }}
 
     {% endif %}
   {% endfor %}
 
-  {% if !archive %}
+  {% if not archive %}
     <div class="blognav font-small">
       <ul class="fa-ul">
         <li><i class="fa fa-li fa-archive"></i>More in <a class="small" href="/blog/archive.html">archive</a></li>

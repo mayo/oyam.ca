@@ -1,11 +1,10 @@
-build: node_modules
-#	node_modules/.bin/metalsmith
-	@node build.js
+build: pip_requirements
+	python build.py
 
-node_modules: package.json
-	npm install
+pip_requirements:
+	pip install -r requirements.txt
 
 serve:
-	@$(MAKE) build SERVE=1 WATCH=1
+	(cd deploy && python -m SimpleHTTPServer)
 
 .PHONY: build

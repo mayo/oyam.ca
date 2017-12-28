@@ -1,86 +1,88 @@
 {% set extra_classes = "" %}
-{% if type == "quote" %}
-  {% if contents != "" %}
+{% if article.type == "quote" %}
+  {% if article.contents != "" %}
     {% set extra_classes = "extended" %}
   {% else %}
     {% set extra_classes = "short" %}
   {% endif %}
 {% endif %}
 
-<article class="{{ type }} {{ extra_classes }}">
+<article class="{{ article.type }} {{ extra_classes }}">
   <header>
-    {% set post_link = "/" + path %}
-    {% if type == "link" %}
-      {% set post_link = href %}
+    {% set post_link = "/" + article.path %}
+    {% if article.type == "link" %}
+      {% set post_link = article.href %}
     {% endif %}
 
     {% if article_context == "list" %}
-      <h2><a href="{{ post_link }}">{{ title|safe }}</a></h2>
+      <h2><a href="{{ post_link }}">{{ article.title|safe }}</a></h2>
     {% else %}
-      <h1>{{ title|safe }}</h1>
+      <h1>{{ article.title|safe }}</h1>
     {% endif %}
 
-    {% if type != "quote" %}
-    <time class="post-time" datetime="{{ created|date('l, F d, Y') }}">{{ created|date('l, F d, Y') }}</time>
+    {% if article.type != "quote" %}
+    <time class="post-time" datetime="{{ article.created.strftime('%Y-%m-%dT%H:%M:%SZ') }}">{{ article.created.strftime('%A, %B %d, %Y') }}</time>
     {% endif %}
   </header>
 
   {% set content_class="content" %}
-  {% if article_context == "list" and type != "link" %}
+  {% if article_context == "list" and article.type != "link" %}
     {% set content_class="excerpt" %}
   {% endif %}
+  {% if article.excerpt or article.type == 'photo' %}
   <div class="{{ content_class }}">
-    {% if article_context == "list" and type != "link" %}
+    {% if article_context == "list" and article.type != "link" %}
       <a class="readmore" href="{{ post_link }}">
     {% endif %}
-    {% if type == "photo" %}
+    {% if article.type == "photo" %}
       <figure>
-        <img src="/media/images/photos/{{ created|date('Y/m') }}/{{ photo }}" title="{{ title }}" width="900"/>
-        <figcaption>{{ caption }}</figcaption>
+        <img src="/media/images/photos/{{ article.created.strftime('%Y/%m') }}/{{ article.photo }}" title="{{ article.title }}" width="900"/>
+        <figcaption>{{ article.caption }}</figcaption>
       </figure>
 
     {% else %}
-      {% if article_context == "list" and type != "link" %}
+      {% if article_context == "list" and article.type != "link" %}
 
-        {% set header_style = "" %}
+        {% set header_style = [] %}
         {% if header_image %}
-          {% set header_style += "background-image: url('" + header_image + "');" %}
+          {% do header_style.append("background-image: url('%s');" % header_image) %}
         {% endif %}
         {% if header_image_pos %}
-          {% set header_style += "background-position: " + header_image_pos + ";" %}
+          {% do header_style.append("background-position: %s;" % header_image_pos) %}
         {% endif %}
 
         {% if header_style %}
-        <div class="header-image" style="{{ header_style }}"></div>
+        <div class="header-image" style="{{ header_style|join(" ") }}"></div>
         {% endif %}
 
-        {{ excerpt|safe }}
+        {{ article.excerpt|safe }}
       {% else %}
-        {{ contents|safe }}
+        {{ article.contents|safe }}
       {% endif %}
     {% endif %}
-    {% if article_context == "list" and type != "link" %}
+    {% if article_context == "list" and article.type != "link" %}
       </a>
     {% endif %}
   </div>
+  {% endif %}
 
-  {% if type == "link" %}
+  {% if article.type == "link" %}
   <footer>
     <ul class="fa-ul">
       {% if article_context == "list" %}
-      <li><i class="fa-li fa fa-bookmark-o"></i><a class="permalink" href="/{{ path }}">Permalink</a></li>
+      <li><i class="fa-li fa fa-bookmark-o"></i><a class="permalink" href="/{{ article.path }}">Permalink</a></li>
       {% endif %}
-      <li><i class="fa-li fa fa-external-link"></i><a class="extlink" href="{{ href }}">{{ href }}</a></li>
-    {% if source %}
-      <li><i class="fa-li fa fa-external-link"></i><a class="extlink" href="{{ source_link }}">{{ source }}</a></li>
+      <li><i class="fa-li fa fa-external-link"></i><a class="extlink" href="{{ article.href }}">{{ article.href }}</a></li>
+    {% if article.source %}
+      <li><i class="fa-li fa fa-external-link"></i><a class="extlink" href="{{ article.source_link }}">{{ article.source }}</a></li>
     {% endif %}
     </ul>
   </footer>
   {% endif %}
-  {% if type == "quote" %}
+  {% if article.type == "quote" %}
   <footer>
-    <p class="author">&mdash; {{ author }}</p>
-    <time class="post-time" datetime="{{ created|date('l, F d, Y') }}">{{ created|date('l, F d, Y') }}</time>
+    <p class="article.author">&mdash; {{ article.author }}</p>
+    <time class="post-time" datetime="{{ article.created.strftime('%Y-%m-%dT%H:%M:%SZ') }}">{{ article.created.strftime('%A, %B %d, %Y') }}</time>
   </footer>
   {% endif %}
 </article>

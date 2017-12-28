@@ -1,5 +1,6 @@
 ---
 extends: page.html
+extends-block: content
 title: Now
 page_id: about
 ---
