@@ -1,4 +1,4 @@
--e git+https://github.com/mayo/hana.git@6230b0ff0867b19f8d091c5d735fad15a08ad4e1#egg=hana
+-e git+https://github.com/mayo/hana.git@8cd92bc644349da5f73e0cf2d5b8973c29768c0c#egg=hana
 -e git+https://github.com/mayo/hana-plugins.git@8d4fab18fedbd5e7083a96f61019f6013a1a5611#egg=hana_plugin_assets&subdirectory=assets
 -e git+https://github.com/mayo/hana-plugins.git@8d4fab18fedbd5e7083a96f61019f6013a1a5611#egg=hana_plugin_collections&subdirectory=collections
 -e git+https://github.com/mayo/hana-plugins.git@8d4fab18fedbd5e7083a96f61019f6013a1a5611#egg=hana_plugin_drafts&subdirectory=drafts
