@@ -1,6 +1,18 @@
 import datetime
 import hana
-from hana.plugins import *
+from hana.plugins.assets import assets
+from hana.plugins.collections import Collections
+from hana.plugins.drafts import drafts
+from hana.plugins.excerpts import excerpts
+from hana.plugins.file_loader import FileLoader
+from hana.plugins.file_writer import FileWriter
+from hana.plugins.frontmatter import frontmatter
+from hana.plugins.jinja import Jinja
+from hana.plugins.ignore import ignore
+from hana.plugins.markdown import Markdown
+from hana.plugins.metadata import metadata
+from hana.plugins.pretty_url import PrettyUrl
+from hana.plugins.titles import titles
 import json
 import os
 import time
@@ -13,8 +25,10 @@ def set_metadata(metadata):
 
     return set_metadata_plugin
 
+DEPLOY_DIR = 'deploy'
+
 h = hana.Hana(
-  output_directory='deploy',
+  configuration="hana.yaml"
 )
 
 content_dir = 'content'
@@ -79,44 +93,17 @@ h.plugin(metadata({
 
 }))
 
-h.plugin(asset([
-  #font-awesome.io
-  {
-    "src": "depends/font-awesome/css/font-awesome.min.css",
-    "dst": "media/css/font-awesome.min.css"
-  },
-  {
-    "src": "depends/font-awesome/fonts",
-    "dst": "media/fonts"
-  },
-  #load normalize.css from module to keep it up to date more easily
-  {
-    "src": "depends/normalize.css/normalize.css",
-    "dst": "media/css/normalize.css"
-  },
-  #unsemantic fluid layout
-  {
-    "src": "depends/unsemantic/assets/stylesheets/unsemantic-grid-responsive-no-ie7.css",
-    "dst": "media/css/unsemantic-grid-responsive-no-ie7.css"
-  },
-  #microevent for slideshow
-  {
-    "src": "depends/microevent.js/microevent.js",
-    "dst": "media/js/microevent.js"
-  }
-]))
-
 h.plugin(ignore(ignore_patterns))
 
-h.plugin(front_matter)
+h.plugin(frontmatter)
 
 h.plugin(drafts)
 
 h.plugin(Markdown())
 
 h.plugin(set_metadata({'template': 'blog/article.html'}), 'blog/*/**')
-h.plugin(title(remove=True), 'blog/*/**')
-h.plugin(excerpt, 'blog/*/**')
+h.plugin(titles(remove=True), 'blog/*/**')
+h.plugin(excerpts, 'blog/*/**')
 h.plugin(PrettyUrl(relative=False), 'blog/*/**')
 
 h.plugin(Collections({
@@ -135,20 +122,42 @@ h.plugin(Collections({
   },
 }))
 
-h.plugin(JinjaTemplate({
+h.plugin(Jinja({
   'directory': 'templates',
 }))
 
 #TODO: autoprefixer
-#TODO: dev: beautify
+
+#TODO: prod: uglify
+
 #TODO: dev: watch
 #TODO: dev: serve
-
-#TODO: dev only:
+#TODO: dev: beautify
 #h.plugin(beautify(
 #  indent_size=2,
 #  indent_char=" "
 #))
 
-h.build(clean=True)
+h.plugin(FileWriter(
+    deploy_path=DEPLOY_DIR,
+    clean=True
+))
+
+h.plugin(assets({
+  #font-awesome.io
+  "depends/font-awesome/css/font-awesome.min.css": "media/css/font-awesome.min.css",
+  "depends/font-awesome/fonts": "media/fonts",
+
+  #load normalize.css from module to keep it up to date more easily
+  "depends/normalize.css/normalize.css": "media/css/normalize.css",
+
+  #unsemantic fluid layout
+  "depends/unsemantic/assets/stylesheets/unsemantic-grid-responsive-no-ie7.css": "media/css/unsemantic-grid-responsive-no-ie7.css",
+
+  #microevent for slideshow
+  "depends/microevent.js/microevent.js": "media/js/microevent.js",
+}, base_dir=DEPLOY_DIR))
+
+
+h.build()
 

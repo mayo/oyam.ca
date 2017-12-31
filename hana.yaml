@@ -1,0 +1,13 @@
+log_level: debug
+plugins:
+    #- assets:
+    #    patterns: x 
+    #    parameters:
+    #        title: x
+    #- ignore:
+    #    baz: z
+    #- assets:
+    #    sdf: x
+    #- ignore
+    #- metadata
+    #

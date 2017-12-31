@@ -1,0 +1,13 @@
+-e ../hana
+-e ../hana-plugins/assets
+-e ../hana-plugins/collections
+-e ../hana-plugins/drafts
+-e ../hana-plugins/excerpts
+-e ../hana-plugins/frontmatter
+-e ../hana-plugins/ignore
+-e ../hana-plugins/jinja
+-e ../hana-plugins/markdown
+-e ../hana-plugins/metadata
+-e ../hana-plugins/pretty_url
+-e ../hana-plugins/titles
+
