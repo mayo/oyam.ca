@@ -48,7 +48,7 @@ background_class: dark-bg
       {% for post in site.collections.articles %}
         {% if not list_limit or loop.index0 < list_limit %}
         <tr>
-          <td class="time"><time datetime="{{ post.created.strftime('%Y-%m-%dT%H:%M:%S') }}">{{ post.created.strftime('%a %d, %Y') }}</time></td>
+          <td class="time"><time datetime="{{ post.created.strftime('%Y-%m-%dT%H:%M:%S') }}">{{ post.created.strftime('%b %d, %Y') }}</time></td>
           {% set extra_classes = "" %}
           {% if post.type == "quote" and not post.contents %}
             {% set extra_classes = "short" %}
