@@ -99,7 +99,7 @@ h.plugin(frontmatter)
 
 h.plugin(drafts)
 
-h.plugin(Markdown())
+h.plugin(Markdown(img_figure=True))
 
 h.plugin(set_metadata({'template': 'blog/article.html'}), 'blog/*/**')
 h.plugin(titles(remove=True), 'blog/*/**')
