@@ -6,9 +6,10 @@ created: !!timestamp '2012-12-15 00:00:00 -8'
 collection:
   - articles
   - travel
-header_image: /media/images/photos/2012/12/pacific-coast-highway/long-beach.jpg
-header_image_pos: "0 69%"
-header_color: white
+header:
+    image: /media/images/photos/2012/12/pacific-coast-highway/long-beach.jpg
+    image_position: "0 69%"
+    color: white
 ---
 I've previously driven to specific spots or short sections of the coast, but never as a whole. After years of wanting to do the full length of it, I finally got around to driving it all in the fall.
 
