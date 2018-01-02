@@ -17,20 +17,19 @@
       "date_modified": "{{ updated.strftime('%Y-%m-%dT%H:%M:%SZ') }}",
   {% if res.type == 'photo' -%}
       "image": "http://oyam.ca/media/images/photos/{{ res.created.strftime('%Y/%m') }}/{{ res.photo }}",
-      "content_html": {%- filter json -%}<p>{{ res.caption }}</p><p><img src="http://oyam.ca/media/images/photos/{{ res.created.strftime('%Y/%m') }}/{{ res.photo }}" title="{{ res.title }}"/></p>{%- endfilter -%},
+      "content_html": {%- filter json -%}<p>{{ res.caption }}</p><p><img src="http://oyam.ca/media/images/photos/{{ res.created.strftime('%Y/%m') }}/{{ res.photo }}" title="{{ res.title }}"/></p>{%- endfilter -%}
   {% elif res.type == 'link' -%}
       "external_url": "{{ res.href }}",
-      "content_html": {%- filter json -%}<p>{{ res.contents }}</p><p><a href="{{ res.href }}">{{ res.title }}</a></p>{%- endfilter -%},
+      "content_html": {%- filter json -%}<p>{{ res.contents }}</p><p><a href="{{ res.href }}">{{ res.title }}</a></p>{%- endfilter -%}
   {% elif res.type == 'quote' -%}
       "content_html": {%- filter json -%}&ldquo;{%- if res.contents == "" -%}{{ res.title }}{%- else -%}{{ res.contents }}{%- endif -%}&rdquo;<br/>&mdash; {{ res.author }}{%- endfilter -%},
-  "author": {
-    "name": {{ res.author|json }}
-  },
+      "author": {
+        "name": {{ res.author|json }}
+      }
   {% else -%}
       "content_html": {%- filter json -%}<p>{{ res.title }}.</p>
-<p><a href="{{ res.path }}">{{ res.path }}</a></p>{%- endfilter -%},
+<p><a href="http://oyam.ca/{{ res.path }}">http://oyam.ca/{{ res.path }}</a></p>{%- endfilter -%}
   {% endif %}
-      "url": "http://oyam.ca/{{ res.path }}"
     }
   {% if not loop.last -%},{%- endif -%}
 {%- endfor -%}
