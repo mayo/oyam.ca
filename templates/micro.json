@@ -27,7 +27,8 @@
     "name": {{ res.author|json }}
   },
   {% else -%}
-      "content_html": {%- filter json -%}<p>{{ res.title }}</p><p>{{ res.excerpt }}</p><p><a href="{{ res.href }}">{{ res.href }}</a></p>{%- endfilter -%},
+      "content_html": {%- filter json -%}<p>{{ res.title }}.</p>
+<p><a href="{{ res.href }}">{{ res.href }}</a></p>{%- endfilter -%}
   {% endif -%}
       "url": "http://oyam.ca/{{ res.path }}"
     }
