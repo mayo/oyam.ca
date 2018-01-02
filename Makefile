@@ -1,7 +1,7 @@
 build:
 	python build.py
 
-serve:
+serve: build
 	(cd deploy && python -m SimpleHTTPServer)
 
 .PHONY: build
