@@ -1,7 +1,6 @@
 import datetime
 import hana
 from hana.plugins.assets import assets
-from hana.plugins.collections import Collections
 from hana.plugins.drafts import drafts
 from hana.plugins.excerpts import excerpts
 from hana.plugins.file_loader import FileLoader
@@ -12,6 +11,7 @@ from hana.plugins.ignore import ignore
 from hana.plugins.markdown import Markdown
 from hana.plugins.metadata import metadata
 from hana.plugins.pretty_url import PrettyUrl
+from hana.plugins.tags import Tags
 from hana.plugins.titles import titles
 import json
 import os
@@ -106,21 +106,22 @@ h.plugin(titles(remove=True), 'blog/*/**')
 h.plugin(excerpts, 'blog/*/**')
 h.plugin(PrettyUrl(relative=False), 'blog/*/**')
 
-h.plugin(Collections({
-  "travel": {
-    "sortBy": 'created',
-    "reverse": True,
-  },
+h.plugin(Tags(
+    config={
+      "travel": {
+        "sort_by": 'created',
+        "reverse": True,
+      },
 
-  #The last collection defines article's previous/next links
-  "articles": {
-    "pattern": "blog/*/**",
-    "sortBy": 'created',
-    "reverse": True,
-
-    "default": True,
-  },
-}))
+      #The last collection defines article's previous/next links
+      "articles": {
+        "pattern": "blog/*/**",
+        "sort_by": 'created',
+        "reverse": True,
+      },
+    },
+    metadata_key='tags',
+))
 
 h.plugin(Jinja({
   'directory': 'templates',

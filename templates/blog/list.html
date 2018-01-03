@@ -6,7 +6,7 @@
 
   <div class="article-list">
   {% set lastDate = [None] %}
-  {% for post in site.collections.articles %}
+  {% for post in site.tags.articles %}
     {% if not page.list_limit or loop.index0 < page.list_limit %}
       {% if lastDate[-1] != post.created.strftime('%B %Y') %}
       <div class="date-threshold">{{ post.created.strftime('%B %Y') }}</div>
