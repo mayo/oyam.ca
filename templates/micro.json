@@ -8,7 +8,7 @@
     "url": "http://oyam.ca"
   },
   "items": [
-{%- for res in site.collections.articles -%}
+{%- for res in site.tags.articles -%}
     {
       "id": "http://oyam.ca/{{ res.path }}",
       "url": "http://oyam.ca/{{ res.path }}",
