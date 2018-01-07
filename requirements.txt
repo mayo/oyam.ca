@@ -1,6 +1,6 @@
 -e git+https://github.com/mayo/hana.git@c4365015827f85371728281176559947ad7e46c6#egg=hana
 -e git+https://github.com/mayo/hana-plugins.git@3f9537ce679f0073a6c34b85ffc0247a1e44943e#egg=hana_plugin_assets&subdirectory=assets
--e git+https://github.com:mayo/hana-plugins.git@3f9537ce679f0073a6c34b85ffc0247a1e44943e#egg=hana_plugin_aws_s3_deploy&subdirectory=aws-s3-deploy
+-e git+https://github.com/mayo/hana-plugins.git@3f9537ce679f0073a6c34b85ffc0247a1e44943e#egg=hana_plugin_aws_s3_deploy&subdirectory=aws-s3-deploy
 -e git+https://github.com/mayo/hana-plugins.git@3f9537ce679f0073a6c34b85ffc0247a1e44943e#egg=hana_plugin_tags&subdirectory=tags
 -e git+https://github.com/mayo/hana-plugins.git@3f9537ce679f0073a6c34b85ffc0247a1e44943e#egg=hana_plugin_drafts&subdirectory=drafts
 -e git+https://github.com/mayo/hana-plugins.git@3f9537ce679f0073a6c34b85ffc0247a1e44943e#egg=hana_plugin_excerpts&subdirectory=excerpts
