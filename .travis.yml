@@ -6,23 +6,13 @@ install:
 - pip install -r requirements.txt
 script:
 - make build
-deploy:
-  - provider: s3
-    access_key_id:
-      secure: YPzJ2ZTPGNM6BYi2HIH8VmaBjo2bb9dHi6kX8bR21sy+0hXtTALUvdF10O/Exor/+pY9VKhsZRB5qR4Z6FgaZcHZCe4ANfIAXiQhPB3OLsSoblTRQXlRBMuMIfKvk9/JxLQobaM35gg4voNospDZ/Mr9Qeomuz0iZtfMRYvXPeM=
-    secret_access_key:
-      secure: Intclmdbwg0nGqcGSEVMqJHa4BrtqzsfzlqOo12+e4sVHT8c3ZRf9NlQb68m+029jlCK3caQoMtt1aP90WVgYfRRvL48mme+xAGPIBZJ5xDESpVMHJ3d8numnBOd9/Gqwh49PL9DUBRJOibbHeVGRELweUZpp+CerNDKcvUrd+Q=
-    bucket: oyam.ca
-    region: us-east-1
-    skip_cleanup: true
-    local-dir: deploy
-    acl: public_read
-    on:
-      repo: mayo/oyam.ca
-      branch: public
 notifications:
   webhooks:
     urls:
-      - https://webhooks.gitter.im/e/84d44a66a76302687bc4
-    on_success: always 
-    on_failure: never 
+    - https://webhooks.gitter.im/e/84d44a66a76302687bc4
+    on_success: always
+    on_failure: never
+env:
+  global:
+  - secure: JoL+0lkCbj0FQPikVKUQ431J8Pc23UUQp0qV45XAScP/ogP9u8KHBnP4pHosrs3i/b3XUNRq+eAUCrxM4TMyRp31QtoeDSWfPXhEwPAweG4GjqxLUJGccZtsCGzr1SYmqvmMAX8ISeeeHZ0ROw6F+DYgYJ+3rkyx9e6VruNCreU=
+  - secure: YvYyUilkVBfHU4BiKnGP2JQ2P3A1nW7VvKGUskH7Fl/7EysPBmMXj6TOhf+HyLwWeqCzLcEGrfqnaRe3T86VfY7n9iKs0SwUMqPQHknId2+M2nzS8uMX6ajc2OH2NBsR9GMIJqKKY7mkdPUHoIHVV8ebpiNd3PxjVz2HkAoGB4U=
