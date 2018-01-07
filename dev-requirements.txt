@@ -1,5 +1,6 @@
 -e ../hana
 -e ../hana-plugins/assets
+-e ../hana-plugins/aws-s3-deploy
 -e ../hana-plugins/drafts
 -e ../hana-plugins/excerpts
 -e ../hana-plugins/frontmatter

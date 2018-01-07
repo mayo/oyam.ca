@@ -1,6 +1,7 @@
 import datetime
 import hana
 from hana.plugins.assets import assets
+from hana.plugins.aws_s3_deploy import AWSS3Deploy
 from hana.plugins.drafts import drafts
 from hana.plugins.excerpts import excerpts
 from hana.plugins.file_loader import FileLoader
@@ -26,6 +27,14 @@ def set_metadata(metadata):
     return set_metadata_plugin
 
 DEPLOY_DIR = 'deploy'
+
+PRODUCTION = False
+
+if os.environ.get('ENVIRONMENT') == 'production':
+    PRODUCTION = True
+
+if os.environ.get('TRAVIS_BRANCH') == 'public':
+    PRODUCTION = True
 
 h = hana.Hana(
   configuration="hana.yaml"
@@ -85,7 +94,7 @@ h.plugin(metadata({
   "now": datetime.datetime.fromtimestamp(now),
   "now_utc": datetime.datetime.utcfromtimestamp(now),
 
-  "production": True if 'ENVIRONMENT' in os.environ and os.environ['ENVIRONMENT'] == 'production' else False,
+  "production": PRODUCTION,
 
   # It should be possible to replace these with additional metadata() calls
   "slides": json.load(open("./metadata/slides.json")),
@@ -139,26 +148,43 @@ h.plugin(Jinja({
 #  indent_char=" "
 #))
 
+asset_list =  {
+    #font-awesome.io
+    "depends/font-awesome/css/font-awesome.min.css": "media/css/font-awesome.min.css",
+    "depends/font-awesome/fonts": "media/fonts",
+
+    #load normalize.css from module to keep it up to date more easily
+    "depends/normalize.css/normalize.css": "media/css/normalize.css",
+
+    #unsemantic fluid layout
+    "depends/unsemantic/assets/stylesheets/unsemantic-grid-responsive-no-ie7.css": "media/css/unsemantic-grid-responsive-no-ie7.css",
+
+    #microevent for slideshow
+    "depends/microevent.js/microevent.js": "media/js/microevent.js",
+}
+
+h.plugin(assets(asset_list, base_dir=''))
+
 h.plugin(FileWriter(
     deploy_path=DEPLOY_DIR,
     clean=True
 ))
 
-h.plugin(assets({
-  #font-awesome.io
-  "depends/font-awesome/css/font-awesome.min.css": "media/css/font-awesome.min.css",
-  "depends/font-awesome/fonts": "media/fonts",
+#h.plugin(assets(asset_list, base_dir=DEPLOY_DIR, sideload=True))
 
-  #load normalize.css from module to keep it up to date more easily
-  "depends/normalize.css/normalize.css": "media/css/normalize.css",
+if not PRODUCTION and int(os.environ.get('S3_DEPLOY', 0)) == 1:
+    h.plugin(AWSS3Deploy(
+        bucket="hana-s3-test",
+        deploy_log_name='.deploy_log.json',
+        update_changed_only=True,
+    ))
 
-  #unsemantic fluid layout
-  "depends/unsemantic/assets/stylesheets/unsemantic-grid-responsive-no-ie7.css": "media/css/unsemantic-grid-responsive-no-ie7.css",
-
-  #microevent for slideshow
-  "depends/microevent.js/microevent.js": "media/js/microevent.js",
-}, base_dir=DEPLOY_DIR))
-
+if PRODUCTION:
+    h.plugin(AWSS3Deploy(
+        bucket="oyam.ca",
+        deploy_log_name='.deploy_log.json',
+        update_changed_only=True,
+    ))
 
 h.build()
 
