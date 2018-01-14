@@ -1,4 +1,13 @@
-log_level: debug
+logging:
+    hana:
+        level: info
+    hana.core:
+        level: debug
+    hana.plugins:
+        level: info
+    hana.plugins.ignore:
+        level: debug
+plugins_directory: plugins
 plugins:
     #- assets:
     #    patterns: x 
