@@ -130,6 +130,7 @@ h.plugin(Tags(
       },
     },
     metadata_key='tags',
+    default_tag='articles',
 ))
 
 h.plugin(Jinja({
