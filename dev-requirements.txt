@@ -1,6 +1,6 @@
 -e ../hana
 -e ../hana-plugins/assets
--e ../hana-plugins/collections
+-e ../hana-plugins/aws-s3-deploy
 -e ../hana-plugins/drafts
 -e ../hana-plugins/excerpts
 -e ../hana-plugins/frontmatter
@@ -9,5 +9,6 @@
 -e ../hana-plugins/markdown
 -e ../hana-plugins/metadata
 -e ../hana-plugins/pretty_url
+-e ../hana-plugins/tags
 -e ../hana-plugins/titles
 

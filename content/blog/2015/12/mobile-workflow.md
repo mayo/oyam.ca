@@ -2,9 +2,7 @@
 type: post
 title: Mobile Publishing Workflow with Metalsmith and Travis CI
 created: !!timestamp '2015-12-24 8:50:00 -8'
-
-collection:
-  - articles
+tags:
   - sitebuild
 ---
 I like the simplicity of having a static site — it reduces the overhead of maintaining the server and software running it, copes with larger loads better, and opens up a myriad options for hosting that would otherwise not be available. The drawback, however, is publishing on the go, especially if computer access is limited. My criteria for a mobile workflow are similar to one on a computer: being able to work offline and publish once online, use Git to maintain the site, avoid having to SSH to edit or publish, and limit manual interaction with remote services as much as possible. 

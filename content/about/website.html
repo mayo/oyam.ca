@@ -11,7 +11,7 @@ page_id: about
 
 <h2>Related posts</h2>
 <ul>
-{% for post in site.collections.sitebuild %}
+{% for post in site.tags.sitebuild %}
   <li><a href="{{ "/" + post.path }}">{{ post.title|safe }}</a></li>
 {% endfor %}
 </ul>
