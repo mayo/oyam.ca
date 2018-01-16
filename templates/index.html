@@ -43,8 +43,10 @@ background_class: dark-bg
 
       <table class="article-list">
       {% set list_limit=5 %}
+      {% set ns = namespace(count=0) %}
       {% for post in site.tags.articles %}
-        {% if not list_limit or loop.index0 < list_limit %}
+        {% if ns.count < list_limit %}
+          {% if post.title %}
         <tr>
           <td class="time"><time datetime="{{ post.created.strftime('%Y-%m-%dT%H:%M:%S') }}">{{ post.created.strftime('%b %d, %Y') }}</time></td>
           {% set extra_classes = "" %}
@@ -53,6 +55,8 @@ background_class: dark-bg
           {% endif %}
           <td class="{{ post.type }} {{ extra_classes }}"><a href="{{ "/" + post.path }}">{{ post.title|safe }}</a>{% if post.type == "link" %}<a href="{{ post.href }}" class="extlink"><i class="fa fa-external-link"></i></a>{% endif %}</td>
         </tr>
+            {% set ns.count = ns.count + 1 %}
+          {% endif %}
         {% endif %}
       {% endfor %}
 
