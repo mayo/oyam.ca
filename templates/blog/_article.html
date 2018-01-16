@@ -1,3 +1,4 @@
+{% set microblog = not article.title %}
 {% set extra_classes = "" %}
 {% if article.type == "quote" %}
   {% if article.contents != "" %}
@@ -8,21 +9,21 @@
 {% endif %}
 
 <article class="{{ article.type }} {{ extra_classes }}">
+  {% set post_link = "/" + article.path %}
+  {% if article.type == "link" %}
+    {% set post_link = article.href %}
+  {% endif %}
+
   <header>
-    {% set post_link = "/" + article.path %}
-    {% if article.type == "link" %}
-      {% set post_link = article.href %}
+    {% if article.title %}
+      {% if article_context == "list" %}
+        <h2><a href="{{ post_link }}">{{ article.title|safe }}</a></h2>
+      {% else %}
+        <h1>{{ article.title|safe }}</h1>
+      {% endif %}
     {% endif %}
 
-    {% if article_context == "list" %}
-      <h2><a href="{{ post_link }}">{{ article.title|safe }}</a></h2>
-    {% else %}
-      <h1>{{ article.title|safe }}</h1>
-    {% endif %}
-
-    {% if article.type != "quote" %}
     <time class="post-time" datetime="{{ article.created.strftime('%Y-%m-%dT%H:%M:%SZ') }}">{{ article.created.strftime('%A, %B %d, %Y') }}</time>
-    {% endif %}
   </header>
 
   {% set content_class="content" %}
@@ -36,7 +37,7 @@
     {% endif %}
     {% if article.type == "photo" %}
       <figure>
-        <img src="/media/images/photos/{{ article.created.strftime('%Y/%m') }}/{{ article.photo }}" title="{{ article.title }}" width="900"/>
+        <img src="/media/images/photos/{{ article.created.strftime('%Y/%m') }}/{{ article.photo }}" title="{{ article.title or article.caption }}" width="900"/>
         <figcaption>{{ article.caption }}</figcaption>
       </figure>
 
@@ -66,9 +67,13 @@
   </div>
   {% endif %}
 
-  {% if article.type == "link" %}
+  {% if article.type == "quote" %}
+  <p class="article author">&mdash; {{ article.author }}</p>
+  {% endif %}
+
   <footer>
-    <ul class="fa-ul">
+    {% if article.type == "link" and article.href %}
+    <ul class="fa-ul links">
       {% if article_context == "list" %}
       <li><i class="fa-li fa fa-bookmark-o"></i><a class="permalink" href="/{{ article.path }}">Permalink</a></li>
       {% endif %}
@@ -77,12 +82,6 @@
       <li><i class="fa-li fa fa-external-link"></i><a class="extlink" href="{{ article.source_link }}">{{ article.source }}</a></li>
     {% endif %}
     </ul>
+    {% endif %}
   </footer>
-  {% endif %}
-  {% if article.type == "quote" %}
-  <footer>
-    <p class="article.author">&mdash; {{ article.author }}</p>
-    <time class="post-time" datetime="{{ article.created.strftime('%Y-%m-%dT%H:%M:%SZ') }}">{{ article.created.strftime('%A, %B %d, %Y') }}</time>
-  </footer>
-  {% endif %}
 </article>

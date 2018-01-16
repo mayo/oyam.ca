@@ -4,7 +4,7 @@
   <h1>{{ title }}</h1>
 
   <div class="article-list">
-  {% for post in site.tags.travel %}
+  {% for post in site.tags.travel if post.title %}
     <article class="{{ post.type }}">
       {% set post_link = "/" + post.path %}
       {% set post_title = post.title %}
