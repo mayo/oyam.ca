@@ -1,6 +1,9 @@
 ---
 type: post
 title: "Gear Review: Altra Superior 2.0"
+tags:
+  - gear
+  - running
 created: !!timestamp '2015-06-07 21:16:00 -8'
 updated: !!timestamp '2015-06-24 22:02:00 -8'
 ---
