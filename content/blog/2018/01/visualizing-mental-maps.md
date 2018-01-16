@@ -2,7 +2,7 @@
 type: link
 title: Visualizing Mental Maps of San Francisco
 href: http://groups.ischool.berkeley.edu/mentalmaps/index.html
-created: !!timestamp '2018-01-15 13:35:00'
+created: !!timestamp '2018-01-15 13:35:00 -8'
 ---
 > The visualizations presented here highlight ways in which San Francisco residents' perceptions of local spaces may not be reflected in standard maps.
 
