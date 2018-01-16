@@ -1,4 +1,4 @@
-/* @override http://localhost:8080/media/css/default.css */
+/* @override http://localhost:8000/media/css/default.css */
 
 html {
   /* 62.5 = 10px; */
@@ -100,15 +100,17 @@ body > footer {
   font-size: 1.3rem;
 }
 
-article footer,
-.article-list article.quote footer,
+article.quote p.author {
+  font-size: .8em;
+}
+
 small,
 .font-small {
   font-size: 1.5rem;
 }
 
-article.quote footer {
-  font-size: 2rem;
+article footer {
+  font-size: 1.5rem;
 }
 
 .grid-container,
@@ -777,12 +779,12 @@ article.quote header {
 
 article.quote footer,
 .article-list article.quote footer,
-.article-list article.quote footer p {
+.article-list article.quote footer p,
+.article-list  article.link footer {
   margin-top: 0;
 }
 
-article.quote footer p.author,
-.article-list article.quote footer {
+article.quote p.author {
   padding-left: 1.5em;
 }
 
@@ -814,7 +816,7 @@ article h2 a {
   color: inherit;
 }
 
-article .post-time {
+article header .post-time {
   font-size: .8em;
 }
 
@@ -847,6 +849,10 @@ article header {
 article header h1,
 article header h2 {
   font-weight: 500;
+}
+
+article.quote div.content {
+  margin-top: 3em;
 }
 
 article.quote.short header h1,
@@ -889,13 +895,6 @@ article.link footer li {
   margin: 0;
 }
 
-article footer .permalink {
-	/*
-  display: block;
-  float: right;
-  */
-}
-
 article.link footer li,
 article.link footer li a {
   color: #aaa;
@@ -909,16 +908,12 @@ article.link footer .fa-li {
   top: 0.3em;
 }
 
-article.link footer .fa-ul {
+article.link footer ul.links {
   margin: 1.6em;
 }
 
-article.link footer .author {
+article .author {
   color: black;
-}
-
-.article-list  article.link footer {
-  margin-top: 0;
 }
 
 /* @end Blog */
