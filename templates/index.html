@@ -53,7 +53,7 @@ background_class: dark-bg
           {% if post.type == "quote" and not post.contents %}
             {% set extra_classes = "short" %}
           {% endif %}
-          <td class="{{ post.type }} {{ extra_classes }}"><a href="{{ "/" + post.path }}">{{ post.title|safe }}</a>{% if post.type == "link" %}<a href="{{ post.href }}" class="extlink"><i class="fa fa-external-link"></i></a>{% endif %}</td>
+          <td class="{{ post.type }} {{ extra_classes }}"><a href="{{ "/" + post.path }}">{{ post.title|safe }}</a></td>
         </tr>
             {% set ns.count = ns.count + 1 %}
           {% endif %}
