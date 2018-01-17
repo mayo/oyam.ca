@@ -7,7 +7,7 @@ logging:
         level: info
     hana.plugins.ignore:
         level: debug
-plugins_directory: plugins
+#plugins_directory: plugins
 plugins:
     #- assets:
     #    patterns: x 
