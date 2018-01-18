@@ -1,15 +1,13 @@
 /* @override http://localhost:8000/media/css/default.css */
 
 html {
-  /* 62.5 = 10px; */
-  font-size: 62.5%;
+  font-size: 62.5%; /* 62.5 = 10px; */
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-size: 1.9rem;
-  font-weight: 400;
+  font-size: 2rem;
   line-height: 1.45;
   background-color: rgb(245,246,246);
   color: rgb(60,60,60);
@@ -20,7 +18,8 @@ article.post .content,
 #gallery-page .grid-container.gallery .meta h1,
 .font-serif {
   /* Berling T is preferred, but not available on TypeKit */
-  font-family: "adobe-garamond-pro", serif;
+  font-family: "freight-text-pro";
+  font-weight: 400;
 }
 
 body.dark-bg {
@@ -28,7 +27,17 @@ body.dark-bg {
   color: #bbb;
 }
 
-h1, h2, h3, h4, h5, h6,
+h1, h2, h3, h4, h5, h6  {
+  font-family: "freight-sans-pro";
+  font-weight: 600;
+}
+
+article h1, article h2, article h3, article h4, article h5, article h6  {
+  font-family: "freight-sans-compressed-pro";
+  font-weight: 600;
+
+}
+
 footer,
 .post-time,
 .date-threshold,
@@ -40,14 +49,19 @@ div.blognav,
 nav.sitenav,
 .grid-container .sidebar,
 .font-sansserif {
-  font-family: "azo-sans-web";
+  font-family: "freight-sans-pro";
+}
+
+.quote {
+  font-style: italic;
   font-weight: 300;
 }
+
 
 pre,
 code,
 .font-code {
-  font-family: "anonymous-pro", Monaco, "Bitstream Vera Sans Mono", "Lucida Console", "Courier New", monospace;
+  font-family: "source-code-pro", monospace;
 }
 
 h1,
@@ -68,16 +82,14 @@ h4 {
 
 h1 {
   margin-top: 0;
-  font-size: 5rem;
-  font-weight: 500;
 }
 
 h2 {
-  font-size: 3.1rem;
+
 }
 
 h3 {
-  font-size: 2.4rem;
+
 }
 
 p {
@@ -92,21 +104,17 @@ a {
   color: rgb(195,0,0);
 }
 
-strong {
-  font-weight: 500;
-}
-
 body > footer {
-  font-size: 1.3rem;
+  font-size: 1.6rem;
 }
 
 article.quote p.author {
-  font-size: .8em;
+  font-size: .9em;
 }
 
 small,
 .font-small {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
 }
 
 article footer {
@@ -146,13 +154,8 @@ body > header {
   padding-top: .5em;
 }
 
-body > footer i.fa {
-  font-size: 1.1em;
-}
-
 body > footer {
   margin: 6em 0 2em 0;
-  font-weight: 200;
   color: rgb(180,180,180);
 }
 
@@ -178,8 +181,7 @@ body.dark-bg > footer a:hover {
 nav.sitenav {
   display: inline-block;
   width: 100%;
-  
-  font-size: .6em;
+  font-size: .65em;
   color: black;
 }
 
@@ -214,11 +216,8 @@ nav.sitenav .logo .logotype {
   display: inline-block;
   -webkit-font-smoothing: antialiased;
   line-height: 1;
-
   text-transform: uppercase;
-
   color: black;
-  
   font-size: 1.2em
 }
 
@@ -236,7 +235,6 @@ nav.sitenav .mobilemenu {
 }
 
 nav.sitenav .menu {
-  font-size: 1em;
   text-transform: uppercase;
   text-align: right;
   margin: 0;
@@ -313,7 +311,6 @@ nav.sitenav .menu .folder .submenu-wrapper .submenu {
   display: none;
   text-align: left;
   box-shadow: 1px 1px 1px rgba(30,30,30,.4);
-  font-weight: 300;
   -webkit-font-smoothing: antialiased;
   background: black;
 }
@@ -414,9 +411,9 @@ figure img {
 }
 
 figure figcaption {
-  margin-top: -.5em;
-  font-size: .7em;
-  text-align: right;
+  margin-top: -.3em;
+  font-style: italic;
+  font-size: .9em;
   color: rgb(105,105,105);
 }
 
@@ -509,7 +506,7 @@ pre::-webkit-scrollbar-thumb {
 
 .grid-container .sidebar {
   color: #888;
-  font-size: .72em;
+  font-size: .8em;
   line-height: 1.6em;
 }
 
@@ -553,16 +550,8 @@ pre::-webkit-scrollbar-thumb {
   font-size: 1em;
 }
 
-#error .article-list h1::after {
-  content: " – ";
-}
-
 #error .article-list .current + .archived {
   margin-top: 2em;
-}
-
-#error .article-list h1 a {
-  color: red;
 }
 
 /* @end */
@@ -601,24 +590,18 @@ pre::-webkit-scrollbar-thumb {
   right: 3em;
   margin-left: 3em; /* for mobile devices */
   max-width: 30em; /* max-width instead of width for mobile devices */
-  
-  font-family: "aktiv-grotesk-std", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-align: right;
-  
+  font-family: "freight-sans-pro";
+  text-align: right;  
   color: black;
+}
+
+.slideshow .slide .main h1 {
+  font-family: "freight-sans-compressed-pro";
 }
 
 .dark-bg .slideshow .slide .main,
 .dark-bg .slideshow .slide .main h1 {
   color: white;
-}
-
-.slideshow .slide .main h1 {
-  font-weight: 100;
-}
-
-.slideshow .slide .main p {
-  font-weight: 300;	
 }
 
 /* @end */
@@ -663,7 +646,6 @@ pre::-webkit-scrollbar-thumb {
 }
 
 #about .sidebar .name {
-  font-weight: 500;
   font-size: 1.3em;
   display: block;
   color: #777;
@@ -676,7 +658,7 @@ pre::-webkit-scrollbar-thumb {
 }
 
 #about .sidebar .social {
-  font-size: 1.34em;
+  font-size: 1.2em;
 }
 
 /* @end About */
@@ -687,12 +669,7 @@ pre::-webkit-scrollbar-thumb {
 #blog nav.sitenav .menuitem,
 #blog nav.sitenav .menu .folder:before,
 #blog nav.sitenav .menu > li:after {
-  color: rgb(200,200,200);	
-}
-
-/* TODO: this needs checking on mobile browsers */
-#blog nav.sitenav .menu > li {
-  font-weight: 300;
+  color: rgb(100,100,100);	
 }
 
 #blog nav.sitenav .menu > li {
@@ -717,7 +694,6 @@ div.blognav .feedback a {
 
 div.blognav .feedback {
   font-style: italic;
-  font-size: .8em;
 }
 
 div.blognav li {
@@ -817,7 +793,7 @@ article h2 a {
 }
 
 article header .post-time {
-  font-size: .8em;
+  font-size: .9em;
 }
 
 article h1 {
@@ -835,7 +811,7 @@ article.quote.short h2 {
 }
 
 article h1 {
-  font-size: 1.7em; 
+
 }
 
 article header {
@@ -848,18 +824,11 @@ article header {
 
 article header h1,
 article header h2 {
-  font-weight: 500;
+
 }
 
 article.quote div.content {
   margin-top: 3em;
-}
-
-article.quote.short header h1,
-article.quote.short header h2,
-article.quote p,
-#frontpage .article-list .quote {
-  font-weight: 200;
 }
 
 article header a {
@@ -880,14 +849,6 @@ article.quote.short h2:after,
 article.quote.extended .excerpt p:last-child:after,
 #frontpage .article-list .quote.short a:after {
   content: close-quote;
-}
-
-article.post .content {
-  font-weight: normal;
-}
-
-article.link p {
-  font-size: .9em;	
 }
 
 article.link footer li {
