@@ -39,8 +39,8 @@ page_id: about
         <li><i class="fa inline fa-envelope-o"></i><a href="mailto:mayo@oyam.ca" class="u-email">mayo@oyam.ca</a><br/><i class="fa inline fa-phone"></i><span class="p-tel">+1.604.484.9845</span></li>
         <li class="pgp-fingerprint"><i class="fa inline fa-key"></i>GPG: <a rel="me" href="https://keybase.io/mayo"><span>56A3</span><span>789C</span><span>ED4D</span><span>2DD7</span></a></li>
         <li class="social">
-        {% for link, icon in social_links %}
-          <a href="{{ links[link] }}"><i class="fa {{ icon }}"></i></a>
+        {% for link, icon in site.social_links.iteritems() %}
+          <a href="{{ site.links[link] }}"><i class="fa {{ icon }}"></i></a>
         {% endfor %}
         </li>
       </ul>
