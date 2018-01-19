@@ -48,11 +48,13 @@
     {% elif article_context == "list" and article.type != "link" and article.type != 'photo' %}
 
       {% set header_style = [] %}
-      {% if header_image %}
-        {% do header_style.append("background-image: url('%s');" % header_image) %}
-      {% endif %}
-      {% if header_image_pos %}
-        {% do header_style.append("background-position: %s;" % header_image_pos) %}
+      {% if article.header %}
+        {% if article.header.image %}
+          {% do header_style.append("background-image: url('%s');" % article.header.image) %}
+        {% endif %}
+        {% if article.header.image_position %}
+          {% do header_style.append("background-position: %s;" % article.header.image_position) %}
+        {% endif %}
       {% endif %}
 
       {% if header_style %}
