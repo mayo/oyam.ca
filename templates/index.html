@@ -49,11 +49,11 @@ background_class: dark-bg
           {% if post.title %}
         <tr>
           <td class="time"><time datetime="{{ post.created.strftime('%Y-%m-%dT%H:%M:%S') }}">{{ post.created.strftime('%b %d, %Y') }}</time></td>
-          {% set extra_classes = "" %}
-          {% if post.type == "quote" and not post.contents %}
-            {% set extra_classes = "short" %}
+          {% set post_title = post.title %}
+          {% if post.type == "quote" and post.contents %}
+            {% set post_title = post.contents|striptags|truncate(280) %}
           {% endif %}
-          <td class="{{ post.type }} {{ extra_classes }}"><a href="{{ "/" + post.path }}">{{ post.title|safe }}</a></td>
+          <td class="{{ post.type }}"><a href="{{ "/" + post.path }}">{{ post_title|safe }}</a></td>
         </tr>
             {% set ns.count = ns.count + 1 %}
           {% endif %}

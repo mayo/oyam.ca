@@ -52,12 +52,6 @@ nav.sitenav,
   font-family: "freight-sans-pro";
 }
 
-.quote {
-  font-style: italic;
-  font-weight: 300;
-}
-
-
 pre,
 code,
 .font-code {
@@ -106,10 +100,6 @@ a {
 
 body > footer {
   font-size: 1.6rem;
-}
-
-article.quote p.author {
-  font-size: .9em;
 }
 
 small,
@@ -385,10 +375,6 @@ main > .grid-container:first-child {
   margin-top: 5em;
 }
 
-article > footer {
-  margin-top: 3em;
-}
-
 body > footer ul {
   margin: 0;
   padding: 0;
@@ -413,7 +399,7 @@ figure img {
 figure figcaption {
   margin-top: -.3em;
   font-style: italic;
-  font-size: .9em;
+  font-size: .8em;
   color: rgb(105,105,105);
 }
 
@@ -728,12 +714,16 @@ article .post-time {
   border-bottom: 1px solid rgb(220,220,220);
 }
 
+.article-list .date-threshold {
+  font-size: 2em;
+}
+
 .article-list article h2 {
   margin-top: 0;
 }
 
 .article-list article + article {
-  margin-top: 4em;
+  margin-top: 5em;
 }
 
 .article-list .date-threshold {
@@ -749,19 +739,15 @@ article .post-time {
   text-decoration: inherit;
 }
 
-article.quote header {
-  margin-bottom: 1em;
-}
-
-article.quote footer,
-.article-list article.quote footer,
-.article-list article.quote footer p,
-.article-list  article.link footer {
-  margin-top: 0;
+article.quote div.content,
+#frontpage .quote {
+  font-style: italic;
+  font-weight: 300;
 }
 
 article.quote p.author {
   padding-left: 1.5em;
+  margin-top: -.6em;
 }
 
 .article-list article.link footer a {
@@ -769,11 +755,7 @@ article.quote p.author {
 }
 
 .article-list article .post-time {
-  display: none;	
-}
-
-.article-list article.photo header {
-  display: none;	
+  margin-top: -1em;
 }
 
 .article-list article div.header-image {
@@ -805,49 +787,25 @@ article h2 {
   text-transform: uppercase;
 }
 
-article.quote.short h1,
-article.quote.short h2 {
-  text-transform: inherit;	
-}
-
-article h1 {
-
-}
-
 article header {
-  margin-bottom: 4em;
+  margin-bottom: 3em;
 }
 
 .article-list article header {
   margin-bottom: inherit;
 }
 
-article header h1,
-article header h2 {
-
-}
-
-article.quote div.content {
-  margin-top: 3em;
-}
-
 article header a {
   text-decoration: none;
 }
 
-article.quote.short h1:before,
-article.quote.extended .content p:first-child:before,
-article.quote.short h2:before,
-article.quote.extended .excerpt p:last-child:before,
-#frontpage .article-list .quote.short a:before {
+article.quote .content p:first-child:before,
+#frontpage .article-list .quote a:before {
   content: open-quote;
 }
 
-article.quote.short h1:after,
 article.quote .content p:last-child:after,
-article.quote.short h2:after,
-article.quote.extended .excerpt p:last-child:after,
-#frontpage .article-list .quote.short a:after {
+#frontpage .article-list .quote a:after {
   content: close-quote;
 }
 
@@ -873,7 +831,7 @@ article.link footer ul.links {
   margin: 1.6em;
 }
 
-article .author {
+article .quote .author {
   color: black;
 }
 
