@@ -1,21 +1,16 @@
 {% set microblog = not article.title %}
-{% set extra_classes = "" %}
-{% if article.type == "quote" %}
-  {% if article.contents != "" %}
-    {% set extra_classes = "extended" %}
-  {% else %}
-    {% set extra_classes = "short" %}
-  {% endif %}
+{% if article.excerpt and article.type != "link" and article.type != 'quote' and article.type != 'photo' %}
+  {% set has_excerpt = True %}
 {% endif %}
 
-<article class="{{ article.type }} {{ extra_classes }}">
+<article class="{{ article.type }}">
   {% set post_link = "/" + article.path %}
   {% if article.type == "link" %}
     {% set post_link = article.href %}
   {% endif %}
 
   <header>
-    {% if article.title %}
+    {% if article.title and not article.type == 'quote' %}
       {% if article_context == "list" %}
         <h2><a href="{{ post_link }}">{{ article.title|safe }}</a></h2>
       {% else %}
@@ -26,46 +21,53 @@
     <time class="post-time" datetime="{{ article.created.strftime('%Y-%m-%dT%H:%M:%SZ') }}">{{ article.created.strftime('%A, %B %d, %Y') }}</time>
   </header>
 
-  {% set content_class="content" %}
-  {% if article_context == "list" and article.type != "link" %}
-    {% set content_class="excerpt" %}
+  {% set extra_content_class="" %}
+  {% if article_context == "list" and has_excerpt %}
+    {% set extra_content_class="excerpt" %}
   {% endif %}
-  {% if article.excerpt or article.type == 'photo' %}
-  <div class="{{ content_class }}">
+
+  <div class="content {{ extra_content_class }}">
     {% if article_context == "list" and article.type != "link" %}
       <a class="readmore" href="{{ post_link }}">
     {% endif %}
-    {% if article.type == "photo" %}
+
+    {# Only photos that don't have contents get figure wrapper, the others should have regular content #}
+    {% if article.type == "photo" and not article.contents %}
       <figure>
         <img src="/media/images/photos/{{ article.created.strftime('%Y/%m') }}/{{ article.photo }}" title="{{ article.title or article.caption }}" width="900"/>
         <figcaption>{{ article.caption }}</figcaption>
       </figure>
 
-    {% else %}
-      {% if article_context == "list" and article.type != "link" %}
-
-        {% set header_style = [] %}
-        {% if header_image %}
-          {% do header_style.append("background-image: url('%s');" % header_image) %}
-        {% endif %}
-        {% if header_image_pos %}
-          {% do header_style.append("background-position: %s;" % header_image_pos) %}
-        {% endif %}
-
-        {% if header_style %}
-        <div class="header-image" style="{{ header_style|join(" ") }}"></div>
-        {% endif %}
-
-        {{ article.excerpt|safe }}
-      {% else %}
+    {% elif article.type == 'quote' %}
+      {# Title based quotes don't have paragraph tag #}
+      {% if article.contents %}
         {{ article.contents|safe }}
+      {% else %}
+        <p>{{ article.title|safe }}</p>
       {% endif %}
+    {% elif article_context == "list" and article.type != "link" and article.type != 'photo' %}
+
+      {% set header_style = [] %}
+      {% if header_image %}
+        {% do header_style.append("background-image: url('%s');" % header_image) %}
+      {% endif %}
+      {% if header_image_pos %}
+        {% do header_style.append("background-position: %s;" % header_image_pos) %}
+      {% endif %}
+
+      {% if header_style %}
+      <div class="header-image" style="{{ header_style|join(" ") }}"></div>
+      {% endif %}
+
+      {{ article.excerpt|safe }}
+    {% else %}
+      {{ article.contents|safe }}
     {% endif %}
+
     {% if article_context == "list" and article.type != "link" %}
       </a>
     {% endif %}
   </div>
-  {% endif %}
 
   {% if article.type == "quote" %}
   <p class="article author">&mdash; {{ article.author }}</p>
