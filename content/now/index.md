@@ -8,7 +8,8 @@ page_id: about
 
 Enjoying the warmth of Mexico.
 
-Currently working on:
+Working on:
+
 * [Hana](https://github.com/mayo/hana), a static site generator written in Python
 * Serverless micropub endpoint
 
