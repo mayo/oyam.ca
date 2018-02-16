@@ -20,7 +20,7 @@
       "content_html": {%- filter json -%}<p>{{ res.caption }}</p><p><img src="http://oyam.ca/media/images/photos/{{ res.created.strftime('%Y/%m') }}/{{ res.photo }}" title="{{ res.title }}"/></p>{%- endfilter -%}
   {% elif res.type == 'link' -%}
       "external_url": "{{ res.href }}",
-      "content_html": {%- filter json -%}{%- if res.title == "" -%}<p><a href="{{ res.href }}">{{ res.title }}</a>.</p>{%- endif -%}<p>{{ res.contents }}</p>{%- endfilter -%}
+      "content_html": {%- filter json -%}{%- if res.title == "" -%}<p><a href="{{ res.href }}">{{ res.title }}</a> &rarr;</p>{%- else -%}<p>{{ res.contents }}</p>{%- endif -%}{%- endfilter -%}
   {% elif res.type == 'quote' -%}
       "content_html": {%- filter json -%}&ldquo;{%- if res.contents == "" -%}{{ res.title }}{%- else -%}{{ res.contents }}{%- endif -%}&rdquo;<br/>&mdash; {{ res.author }}{%- endfilter -%},
       "author": {
