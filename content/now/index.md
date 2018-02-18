@@ -2,15 +2,14 @@
 extends: page.html
 extends-block: content
 title: Now
-page_id: about
+page_id: now
 ---
 # Now
-
-Enjoying the warmth of Mexico.
 
 Working on:
 
 * [Hana](https://github.com/mayo/hana), a static site generator written in Python
+* Micropub module for Python
 * Serverless micropub endpoint
 
-*Last updated February 2, 2018*
+*Last updated February 18, 2018*
