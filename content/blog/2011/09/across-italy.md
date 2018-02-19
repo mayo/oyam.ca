@@ -96,22 +96,22 @@ I explored what I could in the two days I had here. I enjoyed the day as long as
 
 ![Sun setting over Basilica di Santa Maria della Salute, Venzia, Ialy][venezia-sunset]
 
-[lago-sunrise]: /media/images/blog/2011/09/across-italy/lago-sunrise.jpg
-[lago-torbole]: /media/images/blog/2011/09/across-italy/lago-torbole.jpg
-[lago-tremalzo-views]: /media/images/blog/2011/09/across-italy/lago-tremalzo2.jpg
-[lago-tremalzo]: /media/images/blog/2011/09/across-italy/lago-tremalzo.jpg
-[manarola-sea]: /media/images/blog/2011/09/across-italy/manarola-sea.jpg
-[manarola]: /media/images/blog/2011/09/across-italy/manarola.jpg
-[manarola-mainstreet]: /media/images/blog/2011/09/across-italy/manarola-mainstreet.jpg
-[manarola-storm]: /media/images/blog/2011/09/across-italy/manarola-storm.jpg
-[manarola-fields]: /media/images/blog/2011/09/across-italy/manarola-fields.jpg
-[manarola-riomaggiore]: /media/images/blog/2011/09/across-italy/manarola-riomaggiore.jpg
-[manarola-pano]: /media/images/blog/2011/09/across-italy/manarola-pano.jpg
-[venezia-welcome]: /media/images/blog/2011/09/across-italy/venezia-welcome.jpg
-[venezia-exploring]: /media/images/blog/2011/09/across-italy/venezia-exploring.jpg
-[venezia-evening]: /media/images/blog/2011/09/across-italy/venezia-evening.jpg
-[venezia-evening-piazza]: /media/images/blog/2011/09/across-italy/venezia-evening-piazza.jpg
-[venezia-morning]: /media/images/blog/2011/09/across-italy/venezia-morning.jpg
-[venezia-clothes]: /media/images/blog/2011/09/across-italy/venezia-clothes.jpg
-[venezia-sunset]: /media/images/blog/2011/09/across-italy/venezia-sunset.jpg
+[lago-sunrise]: /media/images/photos/2011/09/across-italy/lago-sunrise.jpg
+[lago-torbole]: /media/images/photos/2011/09/across-italy/lago-torbole.jpg
+[lago-tremalzo-views]: /media/images/photos/2011/09/across-italy/lago-tremalzo2.jpg
+[lago-tremalzo]: /media/images/photos/2011/09/across-italy/lago-tremalzo.jpg
+[manarola-sea]: /media/images/photos/2011/09/across-italy/manarola-sea.jpg
+[manarola]: /media/images/photos/2011/09/across-italy/manarola.jpg
+[manarola-mainstreet]: /media/images/photos/2011/09/across-italy/manarola-mainstreet.jpg
+[manarola-storm]: /media/images/photos/2011/09/across-italy/manarola-storm.jpg
+[manarola-fields]: /media/images/photos/2011/09/across-italy/manarola-fields.jpg
+[manarola-riomaggiore]: /media/images/photos/2011/09/across-italy/manarola-riomaggiore.jpg
+[manarola-pano]: /media/images/photos/2011/09/across-italy/manarola-pano.jpg
+[venezia-welcome]: /media/images/photos/2011/09/across-italy/venezia-welcome.jpg
+[venezia-exploring]: /media/images/photos/2011/09/across-italy/venezia-exploring.jpg
+[venezia-evening]: /media/images/photos/2011/09/across-italy/venezia-evening.jpg
+[venezia-evening-piazza]: /media/images/photos/2011/09/across-italy/venezia-evening-piazza.jpg
+[venezia-morning]: /media/images/photos/2011/09/across-italy/venezia-morning.jpg
+[venezia-clothes]: /media/images/photos/2011/09/across-italy/venezia-clothes.jpg
+[venezia-sunset]: /media/images/photos/2011/09/across-italy/venezia-sunset.jpg
 
