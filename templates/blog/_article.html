@@ -76,15 +76,18 @@
   {% endif %}
 
   <footer>
-    {% if article.type == "link" and article.href %}
+    {% if (article.type == "link" and article.href) or microblog  %}
     <ul class="fa-ul links">
-      {% if article_context == "list" %}
+      {% if article_context == "list" or microblog %}
       <li><i class="fa-li fa fa-bookmark-o"></i><a class="permalink" href="/{{ article.path }}">Permalink</a></li>
       {% endif %}
+
+      {% if article.href %}
       <li><i class="fa-li fa fa-external-link"></i><a class="extlink" href="{{ article.href }}">{{ article.href }}</a></li>
-    {% if article.source %}
+      {% endif %}
+      {% if article.source %}
       <li><i class="fa-li fa fa-external-link"></i><a class="extlink" href="{{ article.source_link }}">{{ article.source }}</a></li>
-    {% endif %}
+      {% endif %}
     </ul>
     {% endif %}
   </footer>
