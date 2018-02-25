@@ -16,9 +16,11 @@
       {% if post.header.image_position %}
       {% do header_style.append("background-position: %s" % post.header.image_position) %}
       {% endif %}
-      <header {% if header_style %}style="{{ header_style|join(" ") }}"{% endif %}>
-          <a class="readmore" href="{{ post_link }}"><h2 {% if post.header.color %}style="color: {{ post.header.color }}"{% endif %}>{{ post_title }}</h2></a>
-      </header>
+      <a href="{{ post_link }}" title="{{ post_title }}">
+          <div class="header" style="{{ header_style|join(" ") }}">
+              <h2 {% if post.header.color %}style="color: {{ post.header.color }}"{% endif %}>{{ post_title }}</h2>
+          </div>
+      </a>
     </article>
   {% endfor %}
 {% endblock %}

@@ -793,15 +793,18 @@ article h2 {
   text-transform: uppercase;
 }
 
-article header {
+article header,
+article div.header {
   margin-bottom: 3em;
 }
 
-.article-list article header {
+.article-list article header,
+.article-list article div.header {
   margin-bottom: inherit;
 }
 
-article header a {
+article header a,
+article div.header a {
   text-decoration: none;
 }
 
@@ -845,13 +848,14 @@ article footer ul.links {
 
 /* @group Travel */
 
-#travel article header {
+#travel article div.header {
   position: relative;
   min-height: 15em;
   background-size: cover;
+  display: block;
 }
 
-#travel article header h2 {
+#travel article div.header h2 {
   position: absolute;
   bottom: 0;
   padding: 0 .5em;
