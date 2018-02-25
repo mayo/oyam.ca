@@ -5,7 +5,7 @@ created: !!timestamp '2011-09-26 00:00:00'
 tags:
   - travel
 header:
-    image: /media/images/blog/2011/09/across-italy/manarola-sea.jpg
+    image: /media/images/photos/2011/09/across-italy/manarola-sea.jpg
     image_position: "0 73%"
     color: white
 ---
