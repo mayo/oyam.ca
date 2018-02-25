@@ -815,17 +815,21 @@ article.quote .content p:last-child:after,
   content: close-quote;
 }
 
-article.link footer li {
+article .quote .author {
+  color: black;
+}
+
+article footer .links li {
   list-style-type: none;
   margin: 0;
 }
 
-article.link footer li,
-article.link footer li a {
+article footer .links li,
+article footer .links li a {
   color: #aaa;
 }
 
-article.link footer .fa-li {
+article footer .links .fa-li {
   text-align: left;
   width: 1em;
   margin: 0;
@@ -833,12 +837,8 @@ article.link footer .fa-li {
   top: 0.3em;
 }
 
-article.link footer ul.links {
+article footer ul.links {
   margin: 1.6em;
-}
-
-article .quote .author {
-  color: black;
 }
 
 /* @end Blog */
