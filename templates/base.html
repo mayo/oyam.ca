@@ -71,9 +71,5 @@
   <body class="{{background_class}}" {% if page_id -%}id="{{ page_id }}"{%- endif %}>
     {% block body_container %}
     {% endblock %}
-
-    {% block analytics %}
-    {% include "_analytics.html" %}
-    {% endblock %}
   </body>
 </html>
