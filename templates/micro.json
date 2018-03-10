@@ -27,7 +27,11 @@
         "name": {{ res.author|json }}
       }
   {% else -%}
+    {% if not res.title %}
+      "content_html": {%- filter json -%}{{ res.contents }}{%- endfilter -%}
+    {% else %}
       "content_html": {%- filter json -%}<p>{{ res.title }}. <a href="http://oyam.ca/{{ res.path }}">oyam.ca</a></p>{%- endfilter -%}
+    {% endif %}
   {% endif %}
     }
   {% if not loop.last -%},{%- endif -%}

@@ -85,12 +85,6 @@ h.plugin(metadata({
     "edit": "/edit/master"
   },
 
-  "analytics": {
-    "google": {
-      "id": "UA-803388-1"
-    }
-  },
-
   "now": datetime.datetime.fromtimestamp(now),
   "now_utc": datetime.datetime.utcfromtimestamp(now),
 
