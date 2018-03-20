@@ -467,7 +467,8 @@ pre::-webkit-scrollbar-thumb {
 }
 
 .banner picture img {
-	height: auto; /* keep ratio */
+  object-fit: cover;
+  object-position: center center;
 }
 
 
@@ -654,6 +655,14 @@ pre::-webkit-scrollbar-thumb {
 }
 
 /* @end About */
+
+/* @group Now */
+
+#now .attribution .mapbox-logo {
+  margin-top: 1em;
+}
+
+/* @end Now */
 
 /* @group Blog */
 
