@@ -1,11 +1,9 @@
 ---
-extends: page.html
+extends: now.html
 extends-block: content
 title: Now
 page_id: now
 ---
-# Now
-
 Working on:
 
 * [Hana](https://github.com/mayo/hana), a static site generator written in Python
