@@ -1,6 +1,6 @@
 ---
 type: link
-created: !!timestamp '2018-04-13 13:57:42 -0700'
+created: !!timestamp '2018-04-13 13:57:42 -7'
 tags:
     - microblog
 ---
