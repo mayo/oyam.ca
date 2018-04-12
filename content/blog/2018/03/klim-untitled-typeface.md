@@ -1,5 +1,5 @@
 ---
-type: post
+type: link
 created: !!timestamp '2018-03-01 09:51:00 -8'
 tags:
     - microblog
