@@ -116,6 +116,11 @@ h.plugin(Tags(
         "reverse": True,
       },
 
+      "microblog": {
+        "sort_by": 'created',
+        "reverse": True,
+      },
+
       #The last collection defines article's previous/next links
       "articles": {
         "pattern": "blog/*/**",
