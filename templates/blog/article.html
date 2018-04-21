@@ -12,10 +12,10 @@
 
   <ul class="fa-ul">
     {% if page.previous -%}
-    <li><i class="fa fa-li fa-arrow-circle-o-right"></i><a class="small" href="/{{ page.previous.path }}">{{ page.previous.title or page.previous.contents|truncate(280) }}</a></li>
+    <li><i class="fa fa-li fa-arrow-circle-o-right"></i><a class="small" href="/{{ page.previous.path }}">{{ page.previous.title or page.previous.contents|striptags|truncate(280) }}</a></li>
     {%- endif %}
     {% if page.next -%}
-    <li><i class="fa fa-li fa-arrow-circle-o-left"></i><a href="/{{ page.next.path }}">{{ page.next.title or page.next.contents|truncate(280) }}</a></li>
+    <li><i class="fa fa-li fa-arrow-circle-o-left"></i><a href="/{{ page.next.path }}">{{ page.next.title or page.next.contents|striptags|truncate(280) }}</a></li>
     {%- endif %}
   </ul>
 </div>
