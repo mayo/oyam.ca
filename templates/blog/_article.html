@@ -45,7 +45,7 @@
       {% else %}
         <p>{{ article.title|safe }}</p>
       {% endif %}
-    {% elif article_context == "list" and article.type != "link" and article.type != 'photo' %}
+    {% elif article_context == "list" and not microblog and article.type != "link" and article.type != 'photo' %}
 
       {% set header_style = [] %}
       {% if article.header %}
