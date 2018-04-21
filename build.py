@@ -14,6 +14,7 @@ from hana.plugins.metadata import metadata
 from hana.plugins.pretty_url import PrettyUrl
 from hana.plugins.tags import Tags
 from hana.plugins.titles import titles
+from hana.plugins.micro_blog import ping as MicroBlogPing
 import json
 import os
 import time
@@ -185,6 +186,9 @@ if PRODUCTION:
         deploy_log_name='.deploy_log.json',
         update_changed_only=True,
     ))
+
+
+    h.plugin(MicroBlogPing("https://oyam.ca/feeds/micro.json"))
 
 h.build()
 
