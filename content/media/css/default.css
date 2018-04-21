@@ -146,11 +146,11 @@ body > header {
 
 body > footer {
   margin: 6em 0 2em 0;
-  color: rgb(180,180,180);
+  color: rgb(200,200,200);
 }
 
 body.dark-bg > footer {
-  color: rgb(180,180,180);
+  color: rgb(100,100,100);
 }
 
 body > footer a,
