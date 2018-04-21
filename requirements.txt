@@ -1,16 +1,16 @@
 Jinja2>=2.10
 -e git+https://github.com/mayo/hana.git@e480f5a400508aa63407697d92bc07c3c1b77063#egg=hana
--e git+https://github.com/mayo/hana-plugins.git@1ff294db67e7610018abfe64309342d3bfd059dc#egg=hana_plugin_assets&subdirectory=assets
--e git+https://github.com/mayo/hana-plugins.git@13d47f0cf563a8cf30954dcbd677d303bf6de88d#egg=hana_plugin_aws_s3_deploy&subdirectory=aws-s3-deploy
--e git+https://github.com/mayo/hana-plugins.git@1ff294db67e7610018abfe64309342d3bfd059dc#egg=hana_plugin_tags&subdirectory=tags
--e git+https://github.com/mayo/hana-plugins.git@1ff294db67e7610018abfe64309342d3bfd059dc#egg=hana_plugin_drafts&subdirectory=drafts
--e git+https://github.com/mayo/hana-plugins.git@1ff294db67e7610018abfe64309342d3bfd059dc#egg=hana_plugin_excerpts&subdirectory=excerpts
--e git+https://github.com/mayo/hana-plugins.git@1ff294db67e7610018abfe64309342d3bfd059dc#egg=hana_plugin_frontmatter&subdirectory=frontmatter
--e git+https://github.com/mayo/hana-plugins.git@1ff294db67e7610018abfe64309342d3bfd059dc#egg=hana_plugin_ignore&subdirectory=ignore
--e git+https://github.com/mayo/hana-plugins.git@1ff294db67e7610018abfe64309342d3bfd059dc#egg=hana_plugin_jinja&subdirectory=jinja
--e git+https://github.com/mayo/hana-plugins.git@13d47f0cf563a8cf30954dcbd677d303bf6de88d#egg=hana_plugin_markdown&subdirectory=markdown
--e git+https://github.com/mayo/hana-plugins.git@1ff294db67e7610018abfe64309342d3bfd059dc#egg=hana_plugin_metadata&subdirectory=metadata
--e git+https://github.com/mayo/hana-plugins.git@070e7eb8dc551565cdc5bce20425f7d9e0164427#egg=hana_plugin_micro_blog&subdirectory=micro-blog
--e git+https://github.com/mayo/hana-plugins.git@1ff294db67e7610018abfe64309342d3bfd059dc#egg=hana_plugin_pretty_url&subdirectory=pretty_url
--e git+https://github.com/mayo/hana-plugins.git@1ff294db67e7610018abfe64309342d3bfd059dc#egg=hana_plugin_titles&subdirectory=titles
+-e git+https://github.com/mayo/hana-plugins.git@5045f3101b1b955619e13f5da2858fce72f73c31#egg=hana_plugin_assets&subdirectory=assets
+-e git+https://github.com/mayo/hana-plugins.git@5045f3101b1b955619e13f5da2858fce72f73c31#egg=hana_plugin_aws_s3_deploy&subdirectory=aws-s3-deploy
+-e git+https://github.com/mayo/hana-plugins.git@5045f3101b1b955619e13f5da2858fce72f73c31#egg=hana_plugin_tags&subdirectory=tags
+-e git+https://github.com/mayo/hana-plugins.git@5045f3101b1b955619e13f5da2858fce72f73c31#egg=hana_plugin_drafts&subdirectory=drafts
+-e git+https://github.com/mayo/hana-plugins.git@5045f3101b1b955619e13f5da2858fce72f73c31#egg=hana_plugin_excerpts&subdirectory=excerpts
+-e git+https://github.com/mayo/hana-plugins.git@5045f3101b1b955619e13f5da2858fce72f73c31#egg=hana_plugin_frontmatter&subdirectory=frontmatter
+-e git+https://github.com/mayo/hana-plugins.git@5045f3101b1b955619e13f5da2858fce72f73c31#egg=hana_plugin_ignore&subdirectory=ignore
+-e git+https://github.com/mayo/hana-plugins.git@5045f3101b1b955619e13f5da2858fce72f73c31#egg=hana_plugin_jinja&subdirectory=jinja
+-e git+https://github.com/mayo/hana-plugins.git@5045f3101b1b955619e13f5da2858fce72f73c31#egg=hana_plugin_markdown&subdirectory=markdown
+-e git+https://github.com/mayo/hana-plugins.git@5045f3101b1b955619e13f5da2858fce72f73c31#egg=hana_plugin_metadata&subdirectory=metadata
+-e git+https://github.com/mayo/hana-plugins.git@5045f3101b1b955619e13f5da2858fce72f73c31#egg=hana_plugin_micro_blog&subdirectory=micro-blog
+-e git+https://github.com/mayo/hana-plugins.git@5045f3101b1b955619e13f5da2858fce72f73c31#egg=hana_plugin_pretty_url&subdirectory=pretty_url
+-e git+https://github.com/mayo/hana-plugins.git@5045f3101b1b955619e13f5da2858fce72f73c31#egg=hana_plugin_titles&subdirectory=titles
 
