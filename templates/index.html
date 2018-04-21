@@ -32,13 +32,6 @@
 
   <div class="grid-container {{ grid_container_class }}">
 
-    <div class="grid-50 bio-blob">
-      {% block content %}
-        {{ page.contents }}
-      {% endblock %}
-    </div>
-
-
     <div class="grid-50">
       <h2>Recent posts</h2>
 
@@ -68,6 +61,44 @@
       </table>
 
     </div>
+
+    <div class="grid-50">
+      <h2>Thoughts</h2>
+
+      <table class="article-list">
+      {% set list_limit=5 %}
+      {% set ns = namespace(count=0) %}
+      {% for post in site.tags.microblog %}
+        {% if ns.count < list_limit %}
+        <tr>
+          <td class="time"><time datetime="{{ post.created.strftime('%Y-%m-%dT%H:%M:%S') }}">{{ post.created.strftime('%b %d, %Y') }}</time></td>
+          {% set post_contents = post.contents|striptags|truncate(280) %}
+          {% if post.type == "quote" and not post.contents %}
+            {% set post_contents = post.title|striptags|truncate(280) %}
+          {% endif %}
+          <td class="{{ post.type }}"><a href="{{ "/" + post.path }}">{{ post_contents }}</a></td>
+        </tr>
+          {% set ns.count = ns.count + 1 %}
+        {% endif %}
+      {% endfor %}
+
+        <tr>
+          <td class="archive"><i class="fa fa-archive"></i></td>
+          <td>More in <a class="small" href="/blog/archive.html">archive</a></td>
+        </tr>
+      </table>
+
+    </div>
+
+
+
+    <div class="grid-100 bio-blob">
+      {% block content %}
+        {{ page.contents }}
+      {% endblock %}
+    </div>
+
+
 
   </div>
 {% endblock %}
