@@ -10,7 +10,7 @@
   "items": [
 {%- for res in site.tags.articles -%}
     {
-      "id": "http://oyam.ca/{{ res.path }}",
+      "id": "{% if res.guid %}{{ res.guid }}{% else %}http://oyam.ca/{{ res.path }}{% endif %}",
       "url": "http://oyam.ca/{{ res.path }}",
       "date_published": "{{ res.created.strftime('%Y-%m-%dT%H:%M:%SZ') }}",
   {% set updated = res.updated or res.created -%}
