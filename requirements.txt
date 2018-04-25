@@ -10,7 +10,8 @@ Jinja2>=2.10
 -e git+https://github.com/mayo/hana-plugins.git@5045f3101b1b955619e13f5da2858fce72f73c31#egg=hana_plugin_jinja&subdirectory=jinja
 -e git+https://github.com/mayo/hana-plugins.git@5045f3101b1b955619e13f5da2858fce72f73c31#egg=hana_plugin_markdown&subdirectory=markdown
 -e git+https://github.com/mayo/hana-plugins.git@5045f3101b1b955619e13f5da2858fce72f73c31#egg=hana_plugin_metadata&subdirectory=metadata
--e git+https://github.com/mayo/hana-plugins.git@5045f3101b1b955619e13f5da2858fce72f73c31#egg=hana_plugin_micro_blog&subdirectory=micro-blog
+-e git+https://github.com/mayo/hana-plugins.git@070e7eb8dc551565cdc5bce20425f7d9e0164427#egg=hana_plugin_micro_blog&subdirectory=micro-blog
 -e git+https://github.com/mayo/hana-plugins.git@5045f3101b1b955619e13f5da2858fce72f73c31#egg=hana_plugin_pretty_url&subdirectory=pretty_url
 -e git+https://github.com/mayo/hana-plugins.git@5045f3101b1b955619e13f5da2858fce72f73c31#egg=hana_plugin_titles&subdirectory=titles
+-e git+https://github.com/mayo/hana-plugins.git@d4a5b21ebc4af8bebaacfdd6027f576f1a3aee2b#egg=hana_plugin_webmentions&subdirectory=webmentions
 
