@@ -24,10 +24,6 @@ jobs:
           key: site-{{ .Branch }}-webmention_cache-
 
       - run:
-          name: Load environment variables
-          command: |
-            eval "$(openssl aes-256-cbc -k "${ENCRYPTION_KEY}" -d -in environment.env.enc)"
-      - run:
           name: Setup Python environment
           command: |
             python -m virtualenv venv
@@ -42,6 +38,7 @@ jobs:
       - run:
           name: Build
           command: |
+            eval "$(openssl aes-256-cbc -k "${ENCRYPTION_KEY}" -d -in environment.env.enc)"
             . venv/bin/activate
             python build.py
 
