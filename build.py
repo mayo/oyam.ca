@@ -14,6 +14,7 @@ from hana.plugins.metadata import metadata
 from hana.plugins.pretty_url import PrettyUrl
 from hana.plugins.tags import Tags
 from hana.plugins.titles import titles
+from hana.plugins.webmentions import FindWebmentions, SendWebmentions
 from hana.plugins.micro_blog import ping as MicroBlogPing
 import json
 import os
@@ -132,6 +133,12 @@ h.plugin(Tags(
     metadata_key='tags',
     default_tag='articles',
 ))
+
+h.plugin(FindWebmentions(
+    exclude_domains=['oyam.ca'],
+    allow_insecure_https=True,
+    cache_file='.webmention_cache.json',
+), 'blog/*/**')
 
 h.plugin(Jinja({
   'directory': 'templates',
