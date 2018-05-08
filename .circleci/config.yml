@@ -39,14 +39,15 @@ jobs:
           paths:
             - ./venv
 
-      - save_cache:
-          key: site-{{ .Branch }}-webmention_cache-{{ checksum ".webmention_cache.json" }}
-          paths:
-            - .webmention_cache.json
-
       - run:
           name: Build
           command: |
             . venv/bin/activate
             python build.py
+
+      - save_cache:
+          key: site-{{ .Branch }}-webmention_cache-{{ checksum ".webmention_cache.json" }}
+          paths:
+            - .webmention_cache.json
+
 
