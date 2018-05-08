@@ -46,13 +46,9 @@ jobs:
             - ./venv
 
       - run:
-          name: Setup environment
-          command: |
-            eval "\$(openssl aes-256-cbc -k '${ENCRYPTION_KEY}' -d -in environment.env.enc |grep -vE '(^#|^\s*$)')"
-
-      - run:
           name: Build
           command: |
+            eval "\$(openssl aes-256-cbc -k '${ENCRYPTION_KEY}' -d -in environment.env.enc |grep -vE '(^#|^\s*$)')"
             . venv/bin/activate
             python build.py
 
