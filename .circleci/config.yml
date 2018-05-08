@@ -20,8 +20,15 @@ jobs:
       - restore_cache:
           key: deps1-{{ .Branch }}-{{ checksum "requirements.txt" }}
 
+      - restore_cache:
+          key: site-{{ .Branch }}-webmention_cache-
+
       - run:
-          name: Setup environment
+          name: Load environment variables
+          command: |
+            eval "$(openssl aes-256-cbc -k "${ENCRYPTION_KEY}" -d -in environment.env.enc)"
+      - run:
+          name: Setup Python environment
           command: |
             python -m virtualenv venv
             . venv/bin/activate
@@ -31,6 +38,11 @@ jobs:
           key: deps1-{{ .Branch }}-{{ checksum "requirements.txt" }}
           paths:
             - ./venv
+
+      - save_cache:
+          key: site-{{ .Branch }}-webmention_cache-{{ checksum ".webmention_cache.json" }}
+          paths:
+            - .webmention_cache.json
 
       - run:
           name: Build

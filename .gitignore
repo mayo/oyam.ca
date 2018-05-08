@@ -5,3 +5,5 @@ old
 *.swp
 .DS_Store
 env/
+/environment.env
+/.webmention_cache.json
