@@ -18,7 +18,7 @@ jobs:
 
       - run:
           name: Update git submodules
-          commnd: |
+          command: |
             git submodule sync
             git submodule update --init
 
