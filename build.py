@@ -35,7 +35,7 @@ PRODUCTION = False
 if os.environ.get('ENVIRONMENT') == 'production':
     PRODUCTION = True
 
-if os.environ.get('TRAVIS_BRANCH') == 'public':
+if os.environ.get('CIRCLE_BRANCH') == 'public':
     PRODUCTION = True
 
 h = hana.Hana(
@@ -194,6 +194,10 @@ if PRODUCTION:
         update_changed_only=True,
     ))
 
+    h.plugin(SendWebmentions(
+        base_uri="https://oyam.ca",
+        allow_insecure_https=True,
+    ))
 
     h.plugin(MicroBlogPing("https://oyam.ca/feeds/micro.json"))
 
