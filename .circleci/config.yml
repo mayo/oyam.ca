@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - restore_cache:
-          key: git-{{ .Branch }}
+          key: git-v1-{{ .Branch }}
 
       - checkout
 
@@ -23,15 +23,15 @@ jobs:
             git submodule update --init
 
       - save_cache:
-          key: git-{{ .Branch }}
+          key: git-v1-{{ .Branch }}
           paths:
             - .git
 
       - restore_cache:
-          key: deps1-{{ .Branch }}-{{ checksum "requirements.txt" }}
+          key: venv-v1-{{ .Branch }}-{{ checksum "requirements.txt" }}
 
       - restore_cache:
-          key: site-{{ .Branch }}-webmention_cache-
+          key: site-v1-{{ .Branch }}-webmention_cache-
 
       - run:
           name: Setup and update Python environment
@@ -41,7 +41,7 @@ jobs:
             pip install -r requirements.txt
 
       - save_cache:
-          key: deps1-{{ .Branch }}-{{ checksum "requirements.txt" }}
+          key: venv-v1-{{ .Branch }}-{{ checksum "requirements.txt" }}
           paths:
             - ./venv
 
@@ -52,7 +52,7 @@ jobs:
             python build.py
 
       - save_cache:
-          key: site-{{ .Branch }}-webmention_cache-{{ checksum ".webmention_cache.json" }}
+          key: site-v1-{{ .Branch }}-webmention_cache-{{ checksum ".webmention_cache.json" }}
           paths:
             - .webmention_cache.json
 
