@@ -52,7 +52,7 @@ jobs:
             python build.py
 
       - save_cache:
-          key: site-v1-{{ .Branch }}-webmention_cache-{{ checksum ".webmention_cache.json" }}
+          key: site-v2-{{ .Branch }}-webmention_cache-{{ checksum ".webmention_cache.json" }}
           paths:
             - .webmention_cache.json
 
