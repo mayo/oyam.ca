@@ -17,7 +17,7 @@
       "date_modified": "{{ updated.strftime('%Y-%m-%dT%H:%M:%SZ') }}",
   {% if res.type == 'photo' -%}
       "image": "http://oyam.ca/media/images/photos/{{ res.created.strftime('%Y/%m') }}/{{ res.photo }}",
-      "content_html": {%- filter json -%}{%- if res.caption -%}<p>{{ res.caption }}</p>{%- endif -%}<p><img src="http://oyam.ca/media/images/photos/{{ res.created.strftime('%Y/%m') }}/{{ res.photo }}" title="{{ res.title }}"/></p>{%- endfilter -%}
+      "content_html": {%- filter json -%}{%- if res.caption -%}<p>{{ res.caption }}</p>{%- endif -%}<p><img src="http://oyam.ca/media/images/photos/{{ res.created.strftime('%Y/%m') }}/{{ res.photo }}" alt="{{ res.caption }}" title="{{ res.title or res.caption }}"/></p>{%- endfilter -%}
   {% elif res.type == 'link' -%}
       "external_url": "{{ res.href }}",
       "content_html": {%- filter json -%}{%- if res.title -%}<p><a href="{{ res.href }}">{{ res.title }}</a>.</p>{%- endif -%}{{ res.contents }}{%- endfilter -%}

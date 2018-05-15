@@ -35,14 +35,13 @@ def extract_photo():
     import re
     import posixpath
 
-    pat = re.compile(r'<img\s+.*\s*alt="(?P<title>.*)"\s+.*\s*src="(?P<photo>.*)"\s*.*>.*')
+    pat = re.compile(r'<img\s+.*\s*alt="(?P<title>[^"]*)"\s+.*\s*src="(?P<photo>[^"]+)"\s*.*>.*')
 
     def extract_photo_plugin(files, hana):
         for _, f in files:
             if f['type'] == 'photo' and 'photo' not in f:
                 match = pat.search(f['contents'])
                 f['photo'] = posixpath.basename(match.group('photo'))
-                f['title'] = match.group('title')
                 f['caption'] = match.group('title')
 
     return extract_photo_plugin
