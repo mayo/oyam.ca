@@ -25,7 +25,9 @@
     <link rel="related" href="http://oyam.ca/{{ res.path }}" type="text/html"/>
     {%- endif -%}
     <link rel="alternate" href="{% if res.type == 'link' -%}{{ res.href }}{%- else %}http://oyam.ca/{{ res.path }}{%- endif %}" type="text/html"/>
-    <title type="html">{% if res.type == 'quote' and res.contents == "" -%}&ldquo;{%- endif %}{{ res.title }}{% if res.type == 'quote' and res.contents == "" -%}&rdquo; &mdash; {{ res.author }}{%- endif %}</title>
+    {% if res.title -%}
+    <title type="html">{{ res.title }}</title>
+    {%- endif -%}
 
     {% if res.type == 'post' -%}
     <summary type="html"><![CDATA[

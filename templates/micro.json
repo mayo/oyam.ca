@@ -22,7 +22,7 @@
       "external_url": "{{ res.href }}",
       "content_html": {%- filter json -%}{%- if res.title -%}<p><a href="{{ res.href }}">{{ res.title }}</a>.</p>{%- endif -%}{{ res.contents }}{%- endfilter -%}
   {% elif res.type == 'quote' -%}
-      "content_html": {%- filter json -%}&ldquo;{%- if res.contents == "" -%}{{ res.title }}{%- else -%}{{ res.contents }}{%- endif -%}&rdquo;<br/>&mdash; {{ res.author }}{%- endfilter -%},
+      "content_html": {%- filter json -%}{{ res.contents }}<br/>&mdash; {{ res.author }}{%- endfilter -%},
       "author": {
         "name": {{ res.author|json }}
       }
