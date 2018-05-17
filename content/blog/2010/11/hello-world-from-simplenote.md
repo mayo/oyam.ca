@@ -1,6 +1,5 @@
 ---
 type: post
-simplenote_key: agtzaW1wbGUtbm90ZXINCxIETm90ZRjbjtYEDA
 title: Hello World from Simplenote
 created: !!timestamp '2010-11-15 00:00:00 -8'
 ---

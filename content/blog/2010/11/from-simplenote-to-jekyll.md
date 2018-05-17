@@ -1,7 +1,5 @@
 ---
 type: post
-hashtag: sn2jk
-simplenote_key: agtzaW1wbGUtbm90ZXINCxIETm90ZRiSzM8EDA
 title: From Simplenote to Jekyll
 created: !!timestamp '2010-11-16 00:00:00 -8'
 ---

@@ -2,7 +2,6 @@
 type: post
 title: Aperture's time adjustment functionality
 created: !!timestamp '2010-09-13 00:00:00 -8'
-hashtag: apttimeadj
 ---
 I've always missed decent way of adjusting photo time in Aperture. The normal `Batch Change` only allows you to change time-zones, which is almost always useless if you are like me and don't adjust your camera for daylight savings, or have camera with wrong time.
 
