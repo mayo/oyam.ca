@@ -38,13 +38,6 @@
         <figcaption>{{ article.caption }}</figcaption>
       </figure>
 
-    {% elif article.type == 'quote' %}
-      {# Title based quotes don't have paragraph tag #}
-      {% if article.contents %}
-        {{ article.contents|safe }}
-      {% else %}
-        <p>{{ article.title|safe }}</p>
-      {% endif %}
     {% elif article_context == "list" and not microblog and article.type != "link" and article.type != 'photo' %}
 
       {% set header_style = [] %}

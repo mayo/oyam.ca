@@ -1,6 +1,5 @@
 ---
 type: quote
-title: I can still take one more step
 author: Gordy Ainsleigh
 created: !!timestamp '2012-08-07 23:11:00 -8'
 ---

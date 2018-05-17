@@ -817,16 +817,6 @@ article div.header a {
   text-decoration: none;
 }
 
-article.quote .content p:first-child:before,
-#frontpage .article-list .quote a:before {
-  content: open-quote;
-}
-
-article.quote .content p:last-child:after,
-#frontpage .article-list .quote a:after {
-  content: close-quote;
-}
-
 article .quote .author {
   color: black;
 }
