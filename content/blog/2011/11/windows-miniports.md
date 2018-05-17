@@ -2,7 +2,6 @@
 type: post
 title: Broken WAN Miniports
 created: !!timestamp '2011-11-13 17:24:00 -8'
-hashtag: miniport
 ---
 Windows network stack uses "miniports" to handle different layers of the network. These can sometimes "break" and cause VPN and possibly other network level services to not work properly. Usually you can tell a miniport is not working when it has an exclamation sign icon next to it in the device manager. (The miniports are typically hidden too, so if they aren't broken, they won't show up at all.) To me, this problem manifested when I was creating a VPN, and despite choosing connection over network, the connection would try to dial the modem.
 
