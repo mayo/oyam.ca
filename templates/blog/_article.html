@@ -31,14 +31,7 @@
       <a class="readmore" href="{{ post_link }}">
     {% endif %}
 
-    {# Only photos that don't have contents get figure wrapper, the others should have regular content #}
-    {% if article.type == "photo" and not article.contents %}
-      <figure>
-        <img src="/media/images/photos/{{ article.created.strftime('%Y/%m') }}/{{ article.photo }}" title="{{ article.title or article.caption }}" width="900"/>
-        <figcaption>{{ article.caption }}</figcaption>
-      </figure>
-
-    {% elif article_context == "list" and not microblog and article.type != "link" and article.type != 'photo' %}
+    {% if article_context == "list" and not microblog and article.type != "link" and article.type != 'photo' %}
 
       {% set header_style = [] %}
       {% if article.header %}

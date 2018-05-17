@@ -36,20 +36,9 @@
     {%- endif -%}
 
     <content type="html" xml:lang="en"><![CDATA[
-    {% if res.type == 'photo' %}
-      <figure>
-        <img src="http://oyam.ca/media/images/photos/{{ res.created.strftime('%Y/%m') }}/{{ res.photo }}" title="{{ res.title }}"/>
-        <figcaption>{{ res.caption }}</figcaption>
-      </figure>
-    {% else %}
       {{ res.contents }}
       {% if res.type == "quote" and res.contents != "" -%} &mdash; {{ res.author }}{%- endif %}
-    {% endif %}
     ]]></content>
-
-    {# if res.type == 'photo' #}
-    {# <link rel="enclosure" type="image/jpeg" href="http://oyam.ca/media/images/photos/{{ res.created.strftime('%Y/%m') }}/{{ res.photo }}" /> #}
-    {# endif #}
   </entry>
   {% endfor %}
 </feed>
