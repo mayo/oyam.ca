@@ -28,9 +28,7 @@ def set_metadata(metadata):
 
     return set_metadata_plugin
 
-# NOTE: special handling for photos to make micro.json simpler. There should be
-#       better way of doing this... Without this, markdown photos get images
-#       screwed up
+# NOTE: special handling for photo posts (helps with feeds)
 def extract_photo():
     import re
     import posixpath
@@ -43,6 +41,20 @@ def extract_photo():
                 f['photo'] = pat.search(f['contents']).group('photo')
 
     return extract_photo_plugin
+
+# NOTE: special handling for links (helps with feeds)
+def extract_link():
+    import re
+    import posixpath
+
+    pat = re.compile(r'<a\s+.*\s*href="(?P<link>[^"]+)"\s*.*>.*')
+
+    def extract_link_plugin(files, hana):
+        for _, f in files:
+            if f['type'] == 'link' and 'href' not in f:
+                f['href'] = pat.search(f['contents']).group('link')
+
+    return extract_link_plugin
 
 DEPLOY_DIR = 'deploy'
 
@@ -123,6 +135,7 @@ h.plugin(drafts)
 h.plugin(Markdown(img_figure=True))
 
 h.plugin(extract_photo(), 'blog/*/**')
+h.plugin(extract_link(), 'blog/*/**')
 
 h.plugin(set_metadata({'template': 'blog/article.html'}), 'blog/*/**')
 h.plugin(titles(remove=True), 'blog/*/**')
