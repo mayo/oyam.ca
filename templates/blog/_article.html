@@ -64,7 +64,8 @@
   <footer>
     {% if (article.type == "link" and article.href) or microblog  %}
     <ul class="fa-ul links">
-      {% if article_context == "list" or microblog %}
+      {# Don't show permalinks for quotes, they never have titles and are "microblog" posts #}
+      {% if article_context == "list" or microblog and article.type != "quote" %}
       <li><i class="fa-li fa fa-bookmark-o"></i><a class="permalink" href="/{{ article.path }}">Permalink</a></li>
       {% endif %}
 
