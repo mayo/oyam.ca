@@ -56,6 +56,13 @@ def extract_link():
 
     return extract_link_plugin
 
+def autotag_microblog(files, hana):
+    for _, f in files:
+        if not f.get('title'):
+            if 'tags' not in f:
+                f['tags'] = []
+            f['tags'].append('microblog')
+
 DEPLOY_DIR = 'deploy'
 
 PRODUCTION = False
@@ -141,6 +148,8 @@ h.plugin(set_metadata({'template': 'blog/article.html'}), 'blog/*/**')
 h.plugin(titles(remove=True), 'blog/*/**')
 h.plugin(excerpts, 'blog/*/**')
 h.plugin(PrettyUrl(relative=False), 'blog/*/**')
+
+h.plugin(autotag_microblog, 'blog/*/**')
 
 h.plugin(Tags(
     config={
