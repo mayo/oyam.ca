@@ -1,6 +1,6 @@
 ---
 type: photo
-microblog: true
+imported: "microblog"
 created: !!timestamp '2018-01-09 08:19:04 -7'
 tags:
     - microblog
