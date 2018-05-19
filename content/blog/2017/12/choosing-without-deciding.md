@@ -1,6 +1,6 @@
 ---
 type: link
-microblog: true
+imported: "microblog"
 created: !!timestamp '2017-12-22 14:28:24 -7'
 tags:
     - microblog

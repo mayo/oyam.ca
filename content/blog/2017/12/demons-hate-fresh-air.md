@@ -1,6 +1,6 @@
 ---
 type: quote
-microblog: true
+imported: "microblog"
 created: !!timestamp '2017-12-30 10:21:10 -7'
 tags:
     - microblog
