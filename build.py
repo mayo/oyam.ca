@@ -38,7 +38,7 @@ def extract_photo():
     def extract_photo_plugin(files, hana):
         for _, f in files:
             if f['type'] == 'photo' and 'photo' not in f:
-                f['photo'] = pat.search(f['contents']).group('photo')
+                f['image'] = pat.search(f['contents']).group('photo')
 
     return extract_photo_plugin
 

@@ -15,8 +15,16 @@
       "date_published": "{{ res.created.strftime('%Y-%m-%dT%H:%M:%SZ') }}",
   {% set updated = res.updated or res.created -%}
       "date_modified": "{{ updated.strftime('%Y-%m-%dT%H:%M:%SZ') }}",
+  {% if res.image -%}
+      "image": "http://oyam.ca{{ res.image }}",
+  {% endif -%}
+  {% if res.header and res.header.image -%}
+      "banner_image": "http://oyam.ca{{ res.header.image }}",
+  {% endif -%}
+  {% if res.tags -%}
+      "tags": {{ res.tags|json }},
+  {% endif -%}
   {% if res.type == 'photo' -%}
-      "image": "http://oyam.ca{{ res.photo }}",
       "content_html": {%- filter json -%}{{ res.contents }}{%- endfilter -%}
   {% elif res.type == 'link' -%}
       "external_url": "{{ res.href }}",
