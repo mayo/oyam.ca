@@ -48,7 +48,7 @@ jobs:
       - run:
           name: Build
           command: |
-            eval $(openssl aes-256-cbc -k '${ENCRYPTION_KEY}' -d -in environment.env.enc |grep -vE '(^#|^\s*$)')
+            eval $(openssl aes-256-cbc -k '${ENCRYPTION_KEY}' -in environment.env.enc -d |grep -vE '(^#|^\s*$)')
             . venv/bin/activate
             python build.py
 
