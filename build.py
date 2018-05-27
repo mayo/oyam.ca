@@ -16,6 +16,7 @@ from hana.plugins.tags import Tags
 from hana.plugins.titles import titles
 from hana.plugins.webmentions import FindWebmentions, SendWebmentions
 from hana.plugins.micro_blog import ping as MicroBlogPing
+from hana.plugins.cloudflare import PurgeCache
 import json
 import os
 import time
@@ -238,6 +239,8 @@ if PRODUCTION:
         base_uri="https://oyam.ca",
         allow_insecure_https=True,
     ))
+
+    h.plugin(PurgeCache("https://oyam.ca/", '.cf_purge_cache.json'))
 
     h.plugin(MicroBlogPing("https://oyam.ca/feeds/micro.json"))
 
