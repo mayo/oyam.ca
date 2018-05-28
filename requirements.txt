@@ -1,5 +1,5 @@
 Jinja2>=2.10
--e git+https://github.com/mayo/hana.git@15ac7a58af23df51db1d1d876c84fe84f2643656#egg=hana
+-e git+https://github.com/mayo/hana.git@c86a8663c92d801139c18ad5542c7b36116394ab#egg=hana
 -e git+https://github.com/mayo/hana-plugins.git@9d1f4b467c437f8fbe9832ca95fc9302cfd323ab#egg=hana_plugin_assets&subdirectory=assets
 -e git+https://github.com/mayo/hana-plugins.git@9d1f4b467c437f8fbe9832ca95fc9302cfd323ab#egg=hana_plugin_aws_s3_deploy&subdirectory=aws-s3-deploy
 -e git+https://github.com/mayo/hana-plugins.git@9d1f4b467c437f8fbe9832ca95fc9302cfd323ab#egg=hana_plugin_cloudflare&subdirectory=cloudflare
