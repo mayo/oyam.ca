@@ -72,11 +72,7 @@
         {% if ns.count < list_limit %}
         <tr>
           <td class="time"><time datetime="{{ post.created.strftime('%Y-%m-%dT%H:%M:%S') }}">{{ post.created.strftime('%b %d, %Y') }}</time></td>
-          {% set post_contents = post.contents|striptags|truncate(280) %}
-          {% if post.type == "quote" and not post.contents %}
-            {% set post_contents = post.title|striptags|truncate(280) %}
-          {% endif %}
-          <td class="{{ post.type }}"><a href="{{ "/" + post.path }}">{{ post_contents }}</a></td>
+          <td class="{{ post.type }}"><a href="{{ "/" + post.path }}">{{ post.title|striptags|truncate(280) or post.contents|striptags|truncate(280) or post.type }}</a></td>
         </tr>
           {% set ns.count = ns.count + 1 %}
         {% endif %}
