@@ -1,4 +1,8 @@
 import datetime
+import json
+import os
+import time
+
 import hana
 from hana.plugins.assets import assets
 from hana.plugins.aws_s3_deploy import AWSS3Deploy
@@ -17,9 +21,6 @@ from hana.plugins.titles import titles
 from hana.plugins.webmentions import FindWebmentions, SendWebmentions
 from hana.plugins.micro_blog import ping as MicroBlogPing
 from hana.plugins.cloudflare import PurgeCache
-import json
-import os
-import time
 
 def set_metadata(metadata):
 
