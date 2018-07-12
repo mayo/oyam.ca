@@ -1,25 +1,25 @@
 {
   "version": "https://jsonfeed.org/version/1",
   "title": "Mayo Jordanov",
-  "home_page_url": "http://oyam.ca/",
-  "feed_url": "http://oyam.ca/{{page.source_file}}",
+  "home_page_url": "https://oyam.ca/",
+  "feed_url": "https://oyam.ca/{{page.source_file}}",
   "author": {
   "name": "{{ site.author.name }}",
-    "url": "http://oyam.ca"
+    "url": "https://oyam.ca"
   },
   "items": [
 {%- for res in site.tags.articles -%}
     {
-      "id": "{% if res.guid %}{{ res.guid }}{% else %}http://oyam.ca/{{ res.path }}{% endif %}",
-      "url": "http://oyam.ca/{{ res.path }}",
+      "id": "{% if res.guid %}{{ res.guid }}{% else %}https://oyam.ca/{{ res.path }}{% endif %}",
+      "url": "https://oyam.ca/{{ res.path }}",
       "date_published": "{{ res.created.strftime('%Y-%m-%dT%H:%M:%SZ') }}",
   {% set updated = res.updated or res.created -%}
       "date_modified": "{{ updated.strftime('%Y-%m-%dT%H:%M:%SZ') }}",
   {% if res.image -%}
-      "image": "http://oyam.ca{{ res.image }}",
+      "image": "https://oyam.ca{{ res.image }}",
   {% endif -%}
   {% if res.header and res.header.image -%}
-      "banner_image": "http://oyam.ca{{ res.header.image }}",
+      "banner_image": "https://oyam.ca{{ res.header.image }}",
   {% endif -%}
   {% if res.tags -%}
       "tags": {{ res.tags|json }},
@@ -38,7 +38,7 @@
     {% if not res.title %}
       "content_html": {%- filter json -%}{{ res.contents }}{%- endfilter -%}
     {% else %}
-      "content_html": {%- filter json -%}<p>{{ res.title }}. <a href="http://oyam.ca/{{ res.path }}">oyam.ca</a></p>{%- endfilter -%}
+      "content_html": {%- filter json -%}<p>{{ res.title }}. <a href="https://oyam.ca/{{ res.path }}">oyam.ca</a></p>{%- endfilter -%}
     {% endif %}
   {% endif %}
     }
