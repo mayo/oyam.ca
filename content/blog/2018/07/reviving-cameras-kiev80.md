@@ -10,18 +10,18 @@ I haven't been taking pictures as much as I usually do lately, aside for a phone
 
 ![Kiev 80](/media/images/photos/2018/07/kiev80.jpg)
 
-As the alias implies, this was is Russan ripoff of a Hasselblad model, which itself was a ripoff of another camera prototype. This is a distinguished member of my grandpas' camera collection, I think it was his favourite.
+As the alias implies, this was is Russan ripoff of a Hasselblad model, which itself was a ripoff of another camera prototype. This is a distinguished member of my grandpas' camera collection, I think it was his favourite, and a lot of my childhood photos were shot on it.
 
 It needed some cleaning and minor lubrication, but otherwise worked like a charm. The winding mechanism is a little wonky, as has been known with these cameras, but my grandpa modified one of the cartridges to separate film winding from the shutter cocking. This requires two separate winds for each picture, but makes life much easier in the long term. The camera came with Vega 12B 2.8/90mm lens. I remember there was another wide angle lens (Mir-26 if I remember correctly), but that lens is missing in action somewhere. I remember it being huge and heavy.
 
-Here are a couple of random shots from testing, shot on Illford Delta 400.
+Here are a couple of random shots from testing, shot on Illford HP5 Plus 400.
 
 
-![Meditation garden entrance in Van Dusen Botanic Garden, Vancouver, BC. ](/media/images/photos/2018/07/vandusen-zen.jpg)
+![Japanese meditation garden entrance in Van Dusen Botanic Garden, Vancouver, BC. ](/media/images/photos/2018/07/vandusen-zen.jpg)
 
-![The british Columbia Sugar Refining Co., Vancouer, BC](/media/images/photos/2018/07/bc-sugar.jpg)
+![The British Columbia Sugar Refining Co., Vancouer, BC](/media/images/photos/2018/07/bc-sugar.jpg)
 
-The scanning was a whole other exercise in pain. I had to undust my scanner that I haven't used in ages, and clean it inside and out. The software that came with it (which was decent) no longer worked, and the Image Capture built into macOS was blowing out highlights in all the scans. VueScan Pro to the rescue, and I'm getting decent images. I'm also keeping my eye on [pixl-latr](http://pixl-latr.com), and am quite interested how that medhod works. It seems there is more control this was, and it's simpler.
+The scanning was a whole other exercise in pain. I had to undust my scanner that I haven't used in ages, and clean it inside and out. The software that came with it (which was decent) no longer worked, and the Image Capture built into macOS was blowing out highlights in all the scans, so VueScan Pro to the rescue. I'm also keeping my eye on [pixl-latr](http://pixl-latr.com), and am quite interested how that medhod works. It seems there is more control this was, and it's simpler.
 
-There are two more cameras to work on: Moskva-5, another medium format rangefinder, and a Vollenda Nagel Compur.
+There are two more cameras to work on: Moskva-5, and Vollenda Nagel Compur.
 
