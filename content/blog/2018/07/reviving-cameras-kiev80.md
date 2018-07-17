@@ -1,6 +1,6 @@
 ---
 type: post
-title: Reviving old cameras - Kiev 80
+title: Reviving old cameras: Kiev 80
 tags:
   - photography
   - film
