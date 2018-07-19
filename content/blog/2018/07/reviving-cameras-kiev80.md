@@ -14,7 +14,7 @@ As the alias implies, this was is Russan ripoff of a Hasselblad model, which its
 
 It needed some cleaning and minor lubrication, but otherwise worked like a charm. The winding mechanism is a little wonky, as has been known with these cameras, but my grandpa modified one of the cartridges to separate film winding from the shutter cocking. This requires two separate winds for each picture, but makes life much easier in the long term. The camera came with Vega 12B 2.8/90mm lens. I remember there was another wide angle lens (Mir-26 if I remember correctly), but that lens is missing in action somewhere. I remember it being huge and heavy.
 
-Here are a couple of random shots from testing, shot on Illford HP5 Plus 400.
+Here are a couple of random shots from testing, shot on Illford Delta Pro 400.
 
 
 ![Japanese meditation garden entrance in Van Dusen Botanic Garden, Vancouver, BC. ](/media/images/photos/2018/07/vandusen-zen.jpg)
