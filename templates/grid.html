@@ -20,7 +20,7 @@
   </main>
 
   {% block footer_wrapper %}
-  <footer class="new grid-container {{ page.grid_container_class }}">
+  <footer class="grid-container {{ page.grid_container_class }}">
     {% block footer %}
 
       {% block footer_nav %}
@@ -33,9 +33,10 @@
         <a href="{{ site.links[link] }}"><i class="fa {{ icon }}"></i></a>
         {% endfor %}
         <a href="{{ site.links.rss }}"><i class="fa fa-rss-square"></i></a>
-      <span class="copyright">Copyright &copy;{{ site.now.strftime('%Y') }} {{ site.author.name }}</span>
+        <span class="copyright">Copyright &copy;{{ site.now.strftime('%Y') }} {{ site.author.name }}</span>
       {% endblock %}
     </div>
+
     {% endblock %}
   </footer>
   {% endblock %}
