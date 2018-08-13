@@ -166,6 +166,24 @@ body.dark-bg > footer a:hover {
   color: #fff;
 }
 
+body > footer {
+  border-top: 1px solid;
+  padding-top: 1em;
+}
+
+body > footer .h-card {
+  margin-bottom: 1em;
+}
+
+body > footer .h-card .u-photo {
+  width: 5em;
+  float: left;
+  
+  border: 3px solid #ccc;
+  border-radius: 50%;
+  margin-right: 2em;
+}
+
 /* @group Nav */
 
 nav.sitenav {
@@ -629,13 +647,15 @@ pre::-webkit-scrollbar-thumb {
 
 #about div.me img {
   display: block;
-  width: 80%;
+  width: 100%;
+  
+  border-radius: 10px;
   
   position: absolute;
   
   top: 50%;
   left: 50%;
-  margin: -40% 0 0 -40%;  
+  margin: -50% 0 0 -50%;  
 }
 
 #about .sidebar .name {
