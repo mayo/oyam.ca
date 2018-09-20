@@ -184,6 +184,14 @@ body > footer .h-card .u-photo {
   margin-right: 2em;
 }
 
+/* @group IndieWeb */
+
+article a.u-author {
+  display: hidden;
+}
+
+/* @end */
+
 /* @group Nav */
 
 nav.sitenav {

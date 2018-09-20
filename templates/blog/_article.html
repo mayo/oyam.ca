@@ -3,7 +3,7 @@
   {% set has_excerpt = True %}
 {% endif %}
 
-<article class="{{ article.type }}">
+<article class="{{ article.type }} h-entry">
   {% set post_link = "/" + article.path %}
   {% if article.type == "link" %}
     {% set post_link = article.href %}
@@ -12,13 +12,14 @@
   <header>
     {% if article.title and not article.type == 'quote' %}
       {% if article_context == "list" %}
-        <h2><a href="{{ post_link }}">{{ article.title|safe }}</a></h2>
+        <h2><a href="{{ post_link }}" class="p-name">{{ article.title|safe }}</a></h2>
       {% else %}
-        <h1>{{ article.title|safe }}</h1>
+        <h1 class="p-name">{{ article.title|safe }}</h1>
       {% endif %}
     {% endif %}
 
-    <time class="post-time" datetime="{{ article.created.strftime('%Y-%m-%dT%H:%M:%SZ') }}">{{ article.created.strftime('%A, %B %d, %Y') }}</time>
+    <time class="post-time dt-published" datetime="{{ article.created.strftime('%Y-%m-%dT%H:%M:%SZ') }}">{{ article.created.strftime('%A, %B %d, %Y') }}</time>
+    <a class="u-author" href="/"></a>
   </header>
 
   {% set extra_content_class="" %}
@@ -26,7 +27,7 @@
     {% set extra_content_class="excerpt" %}
   {% endif %}
 
-  <div class="content {{ extra_content_class }}">
+  <div class="content {{ extra_content_class }} e-content">
     {% if article_context == "list" and article.type != "link" %}
       <a class="readmore" href="{{ post_link }}">
     {% endif %}
