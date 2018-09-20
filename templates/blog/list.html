@@ -13,7 +13,7 @@
         {% do lastDate.append(post.created.strftime('%B %Y')) %}
       {% endif %}
 
-      {{ blog_article(page, post, "list") }}
+      {{ blog_article(site, page, post, "list") }}
 
     {% endif %}
   {% endfor %}
