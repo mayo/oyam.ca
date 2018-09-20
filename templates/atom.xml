@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>{{ page.title }}</title>
-  <link rel="self" href="https://oyam.ca/{{page.source_file}}" type="application/atom+xml"/>
+  <link rel="self" href="https://oyam.ca/{{page.path}}" type="application/atom+xml"/>
   <link rel="alternate" href="https://oyam.ca/" type="text/html"/>
   <updated>{{ site.now_utc.strftime('%Y-%m-%dT%H:%M:%SZ') }}</updated>
   <rights>Copyright © {{ site.now_utc.strftime('%Y') }}, Mayo Jordanov</rights>
@@ -25,11 +25,10 @@
     <link rel="related" href="https://oyam.ca/{{ res.path }}" type="text/html"/>
     {%- endif -%}
     <link rel="alternate" href="{% if res.type == 'link' -%}{{ res.href }}{%- else %}https://oyam.ca/{{ res.path }}{%- endif %}" type="text/html"/>
-    {% if res.title -%}
-    <title type="html">{{ res.title }}</title>
-    {%- endif -%}
+    {% set title = res.title or res.contents|striptags|truncate(28) %}
+    <title type="html"><![CDATA[{{ title }}]]></title>
 
-    {% if res.type == 'post' -%}
+    {% if res.type == 'post' and res.title -%}
     <summary type="html"><![CDATA[
       {{ res.excerpt }}
     ]]></summary>
