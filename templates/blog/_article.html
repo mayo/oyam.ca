@@ -3,7 +3,7 @@
   {% set has_excerpt = True %}
 {% endif %}
 
-<article class="{{ article.type }} h-entry">
+<article class="{{ article.type }} h-entry {{ " in-list" if article_context == "list" }}">
   {% set post_link = "/" + article.path %}
   {% if article.type == "link" %}
     {% set post_link = article.href %}
@@ -66,7 +66,7 @@
     {% if (article.type == "link" and article.href) or microblog  %}
     <ul class="fa-ul links">
       {# Don't show permalinks for quotes, they never have titles and are "microblog" posts #}
-      {% if article_context == "list" or microblog and article.type != "quote" %}
+      {% if article_context == "list" and article.type == "link" %}
       <li><i class="fa-li fa fa-bookmark-o"></i><a class="permalink" href="/{{ article.path }}">Permalink</a></li>
       {% endif %}
 
@@ -77,6 +77,9 @@
       <li><i class="fa-li fa fa-external-link"></i><a class="extlink" href="{{ article.source_link }}">{{ article.source }}</a></li>
       {% endif %}
     </ul>
+    {% endif %}
+    {% if article.type in ['post', 'quote'] and article_context != "list" %}
+    <p class="feedback">Feedback is always welcome. Feel free to <a href="/about">get in touch</a>, or edit <a href="{{ site.links.github }}{{ site.github.repo }}{{ site.github.edit }}{{ site.source_dir }}/{{ page.source_file }}">{{ page.source_file }}</a> on GitHub and submit a push request.</p>
     {% endif %}
   </footer>
 </article>

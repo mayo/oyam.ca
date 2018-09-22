@@ -103,12 +103,9 @@ body > footer {
 }
 
 small,
-.font-small {
-  font-size: 1.7rem;
-}
-
+.font-small,
 article footer {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
 }
 
 .grid-container,
@@ -711,7 +708,7 @@ pre::-webkit-scrollbar-thumb {
 }
 
 div.blognav {
-  margin-top: 4em;
+  margin-top: 2em;
   padding-top: .3em;
   border-top: 1px solid rgb(230,230,230);
 }
@@ -864,14 +861,23 @@ article .quote .author {
   color: black;
 }
 
+article:not(.in-list) footer {
+	margin-top: 3em;
+}
+
 article footer .links li {
   list-style-type: none;
   margin: 0;
 }
 
-article footer .links li,
-article footer .links li a {
+article footer,
+article footer a {
   color: #aaa;
+}
+
+article footer p {
+  margin-bottom: .5em;
+  margin-top: 0em;
 }
 
 article footer .links .fa-li {
@@ -884,6 +890,7 @@ article footer .links .fa-li {
 
 article footer ul.links {
   margin: 1.6em;
+  margin-bottom: 3em;
 }
 
 /* @end Blog */
