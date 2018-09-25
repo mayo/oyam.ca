@@ -10,6 +10,8 @@
   {% endif %}
 
   <header>
+    <time class="post-time dt-published" datetime="{{ article.created.strftime('%Y-%m-%dT%H:%M:%SZ') }}">{{ article.created.strftime('%A, %B %d, %Y') }}</time>
+
     {% if article.title and not article.type == 'quote' %}
       {% if article_context == "list" %}
         <h2><a href="{{ post_link }}" class="p-name">{{ article.title|safe }}</a></h2>
@@ -18,7 +20,6 @@
       {% endif %}
     {% endif %}
 
-    <time class="post-time dt-published" datetime="{{ article.created.strftime('%Y-%m-%dT%H:%M:%SZ') }}">{{ article.created.strftime('%A, %B %d, %Y') }}</time>
     <a class="u-author" href="/"></a>
   </header>
 
