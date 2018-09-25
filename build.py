@@ -112,10 +112,8 @@ h.plugin(metadata({
   },
 
   "social_links": {
-    "instagram": "fa-instagram",
-    "twitter": "fa-twitter-square",
     "flickr": "fa-flickr",
-    "linkedin": "fa-linkedin-square",
+    "linkedin": "fa-linkedin",
     "github": "fa-github-square"
   },
 
@@ -199,9 +197,10 @@ h.plugin(Jinja({
 #))
 
 asset_list =  {
-    #font-awesome.io
-    "depends/font-awesome/css/font-awesome.min.css": "media/css/font-awesome.min.css",
-    "depends/font-awesome/fonts": "media/fonts",
+    #font-awesome
+    "depends/FontAwesome-subset/fa-shim.css": "media/css/fa-shim.css",
+    "depends/FontAwesome-subset/style.css": "media/css/fa-style.css",
+    "depends/FontAwesome-subset/fonts": "media/fonts",
 
     #load normalize.css from module to keep it up to date more easily
     "depends/normalize.css/normalize.css": "media/css/normalize.css",

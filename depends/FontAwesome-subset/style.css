@@ -1,0 +1,116 @@
+@font-face {
+  font-family: 'FontAwesome-subset';
+  src:  url('/media/fonts/FontAwesome-subset.eot?2s1toj');
+  src:  url('/media/fonts/FontAwesome-subset.eot?2s1toj#iefix') format('embedded-opentype'),
+    url('/media/fonts/FontAwesome-subset.ttf?2s1toj') format('truetype'),
+    url('/media/fonts/FontAwesome-subset.woff?2s1toj') format('woff'),
+    url('/media/fonts/FontAwesome-subset.svg?2s1toj#FontAwesome-subset') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.fa-subset-oyam {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'FontAwesome-subset' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.fa-chevron-circle-left:before {
+  content: "\e915";
+}
+.fa-chevron-circle-right:before {
+  content: "\e916";
+}
+.fa-chevron-down:before {
+  content: "\e917";
+}
+.fa-chevron-left:before {
+  content: "\e918";
+}
+.fa-chevron-right:before {
+  content: "\e919";
+}
+.fa-angle-down:before {
+  content: "\e91a";
+}
+.fa-archive:before {
+  content: "\e91b";
+}
+.fa-camera:before {
+  content: "\e91c";
+}
+.fa-bars:before {
+  content: "\e91d";
+}
+.fa-key:before {
+  content: "\e906";
+}
+.fa-fingerprint:before {
+  content: "\e90b";
+}
+.fa-location-circle:before {
+  content: "\e90e";
+}
+.fa-compass:before {
+  content: "\e90f";
+}
+.fa-phone:before {
+  content: "\e910";
+}
+.fa-envelope:before {
+  content: "\e911";
+}
+.fa-globe-africa:before {
+  content: "\e912";
+}
+.fa-globe-americas:before {
+  content: "\e913";
+}
+.fa-globe-asia:before {
+  content: "\e914";
+}
+.fa-flickr:before {
+  content: "\e900";
+}
+.fa-github-square:before {
+  content: "\e901";
+}
+.fa-linkedin:before {
+  content: "\e902";
+}
+.fa-arrow-circle-left:before {
+  content: "\e903";
+}
+.fa-arrow-circle-right:before {
+  content: "\e904";
+}
+.fa-bookmark:before {
+  content: "\e905";
+}
+.fa-external-link-square:before {
+  content: "\e907";
+}
+.fa-paper-plane:before {
+  content: "\e908";
+}
+.fa-rss-square:before {
+  content: "\e909";
+}
+.fa-share-alt-square:before {
+  content: "\e90a";
+}
+.fa-tag:before {
+  content: "\e90c";
+}
+.fa-tags:before {
+  content: "\e90d";
+}

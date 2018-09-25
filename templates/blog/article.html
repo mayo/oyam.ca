@@ -10,11 +10,11 @@
   <ul class="fa-ul">
     {% if page.previous -%}
     {# Using page.type for cases when photos are missing captions. It shouldn't happen to other posts #}
-    <li><i class="fa fa-li fa-arrow-circle-o-right"></i><a class="small" href="/{{ page.previous.path }}">{{ page.previous.title or page.previous.contents|striptags|truncate(280) or page.previous.type }}</a></li>
+    <li><i class="fal fa-li fa-chevron-circle-right"></i><a class="small" href="/{{ page.previous.path }}">{{ page.previous.title or page.previous.contents|striptags|truncate(280) or page.previous.type }}</a></li>
     {%- endif %}
     {% if page.next -%}
     {# Using page.type for cases when photos are missing captions. It shouldn't happen to other posts #}
-    <li><i class="fa fa-li fa-arrow-circle-o-left"></i><a href="/{{ page.next.path }}">{{ page.next.title or page.next.contents|striptags|truncate(280) or page.next.type }}</a></li>
+    <li><i class="fal fa-li fa-chevron-circle-left"></i><a href="/{{ page.next.path }}">{{ page.next.title or page.next.contents|striptags|truncate(280) or page.next.type }}</a></li>
     {%- endif %}
   </ul>
 </div>
