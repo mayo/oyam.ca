@@ -7,7 +7,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-size: 2rem;
+  font-size: 2.3rem;
   line-height: 1.45;
   background-color: rgb(245,246,246);
   color: rgb(60,60,60);
@@ -67,6 +67,11 @@ h4 {
   color: rgb(50,50,50);
 }
 
+h1 {
+  font-size: 2.5em;
+  line-height: 1em;
+}
+
 .dark-bg h1,
 .dark-bg h2,
 .dark-bg h3,
@@ -76,14 +81,6 @@ h4 {
 
 h1 {
   margin-top: 0;
-}
-
-h2 {
-
-}
-
-h3 {
-
 }
 
 p {
@@ -99,19 +96,19 @@ a {
 }
 
 body > footer {
-  font-size: 1.6rem;
+  font-size: .7em;
 }
 
 small,
 .font-small,
 article footer {
-  font-size: 1.7rem;
+  font-size: .7em;
 }
 
 .grid-container,
 .grid-container.normal {
-  max-width: 38.7rem; /* 618px - original site width */
   max-width: 96rem; /* 960px */
+  max-width: 100rem;
 }
 
 .grid-container.full {
@@ -120,7 +117,7 @@ article footer {
 
 .grid-container.narrow,
 #blog .grid-container {
-  max-width: 70rem;
+  max-width: 85rem;
 }
 
 li {
@@ -423,15 +420,15 @@ figure img {
 figure figcaption {
   margin-top: -.3em;
   font-style: italic;
-  font-size: .8em;
+  font-size: .7em;
   color: rgb(105,105,105);
 }
 
 blockquote {
-  border-left: .6rem solid rgb(125,125,125);
+  border-left: .3em solid rgb(125,125,125);
 
   font-style: italic;
-  margin-left: .4rem;
+  margin-left: .2em;
   padding: .2em 0 .3em 1em;
 }
 
@@ -450,12 +447,12 @@ pre {
 pre,
 code,
 pre code {
-  font-size: .9em;
+  font-size: .8em;
 }
 
 pre {
   border: 1px dotted rgb(220,220,220);
-  padding: .7rem 1rem;
+  padding: .4em .6em;
   overflow: auto;
 }
 
@@ -509,7 +506,7 @@ pre::-webkit-scrollbar-thumb {
 
 .banner .head-title .title {
   position: absolute;
-  bottom: 2rem;
+  bottom: 1em;
 }
 
 .banner .head-title h1 {
@@ -522,13 +519,14 @@ pre::-webkit-scrollbar-thumb {
 
 .grid-container .sidebar {
   color: #888;
-  font-size: .8em;
+  font-size: .7em;
   line-height: 1.6em;
 }
 
 .grid-container .sidebar .inline.icon {
   width: 1em;
-  margin-right: .4em;
+  margin-right: .5em;
+  vertical-align: -.1em;
 }
 
 .grid-container .sidebar a {
@@ -630,7 +628,7 @@ pre::-webkit-scrollbar-thumb {
 
 #about .contact-list li {
   list-style-type: none;
-  margin-bottom: .5em;
+  margin-bottom: .2em;
 }
 
 #about .contact-list .pgp-fingerprint span {
@@ -794,10 +792,6 @@ article.quote p.author {
   display: block;
 }
 
-.article-list article .post-time {
-  margin-top: -1em;
-}
-
 .article-list article div.header-image {
   height: 11em;
   background-size: cover;
@@ -815,7 +809,7 @@ article h2 a {
 }
 
 article header .post-time {
-  font-size: .9em;
+  font-size: .8em;
 }
 
 article h1 {
