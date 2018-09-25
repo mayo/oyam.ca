@@ -67,14 +67,14 @@
     <ul class="fa-ul links">
       {# Don't show permalinks for quotes, they never have titles and are "microblog" posts #}
       {% if article_context == "list" and article.type == "link" %}
-      <li><i class="fa-li fa fa-bookmark-o"></i><a class="permalink" href="/{{ article.path }}">Permalink</a></li>
+      <li><i class="fa-li fal fa-bookmark"></i><a class="permalink" href="/{{ article.path }}">Permalink</a></li>
       {% endif %}
 
       {% if article.href %}
-      <li><i class="fa-li fa fa-external-link"></i><a class="extlink" href="{{ article.href }}">{{ article.href }}</a></li>
+      <li><i class="fa-li fal fa-external-link-square"></i><a class="extlink" href="{{ article.href }}">{{ article.href }}</a></li>
       {% endif %}
       {% if article.source %}
-      <li><i class="fa-li fa fa-external-link"></i><a class="extlink" href="{{ article.source_link }}">{{ article.source }}</a></li>
+      <li><i class="fa-li fal fa-external-link-square"></i><a class="extlink" href="{{ article.source_link }}">{{ article.source }}</a></li>
       {% endif %}
     </ul>
     {% endif %}
