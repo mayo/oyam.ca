@@ -865,10 +865,6 @@ article:not(.in-list) footer {
 	margin-top: 3em;
 }
 
-article footer .links li {
-  list-style-type: none;
-  margin: 0;
-}
 
 article footer,
 article footer a {
@@ -880,17 +876,28 @@ article footer p {
   margin-top: 0em;
 }
 
-article footer .links .fa-li {
-  text-align: left;
-  width: 1em;
-  margin: 0;
-  left: -1.6em;
-  top: 0.3em;
+article footer dt.icon {
+  float: left;
+  width: 1.1em;
 }
 
-article footer ul.links {
-  margin: 1.6em;
-  margin-bottom: 3em;
+article footer dt.icon i {
+  vertical-align: -.1em;
+}
+
+article footer dd {
+  float: left;
+  margin-left: .5em;
+}
+
+article footer dd + dt {
+  clear: both;
+}
+
+article footer dl:after {
+  display: block;
+  clear: both;
+  content: '';
 }
 
 /* @end Blog */

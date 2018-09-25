@@ -63,23 +63,45 @@
   {% endif %}
 
   <footer>
+    <dl>
     {% if (article.type == "link" and article.href) or microblog  %}
-    <ul class="fa-ul links">
       {# Don't show permalinks for quotes, they never have titles and are "microblog" posts #}
       {% if article_context == "list" and article.type == "link" %}
-      <li><i class="fa-li fal fa-bookmark"></i><a class="permalink" href="/{{ article.path }}">Permalink</a></li>
+      <dt class="icon"><i class="fal fa-bookmark"></i></dt>
+        <dd><a class="permalink" href="/{{ article.path }}">Permalink</a></dd>
       {% endif %}
 
       {% if article.href %}
-      <li><i class="fa-li fal fa-external-link-square"></i><a class="extlink" href="{{ article.href }}">{{ article.href }}</a></li>
+      <dt class="icon"><i class="fal fa-external-link-square"></i></dt>
+        <dd><a class="extlink" href="{{ article.href }}">{{ article.href }}</a></dd>
       {% endif %}
       {% if article.source %}
-      <li><i class="fa-li fal fa-external-link-square"></i><a class="extlink" href="{{ article.source_link }}">{{ article.source }}</a></li>
+      <dt class="icon"><i class="fal fa-external-link"></i><dt>
+        <dd><a class="extlink" href="{{ article.source_link }}">{{ article.source }}</a></dd>
       {% endif %}
-    </ul>
     {% endif %}
+
+    {% if article.tags and article_context != "list" %}
+    <dt class="icon"><i class="fal fa-tag"></i><dt>
+    {% for tag in article.tags %}
+      <dd><a href="/tags/{{tag}}" class="p-category">{{ tag }}</a></dd>
+    {% endfor %}
+    {% endif %}
+
+    {% if article['syndicate-to'] and article_context != "list" %}
+    <dt class="icon"><i class="fal fa-share-alt-square"></i><dt>
+      {% for item in article['syndicate-to'] %}
+        {% set url = item.url if 'url' in item else item %}
+        {% set name = item.name if 'name' in item else url %}
+      <dd><a href="{{ url }}" class="u-syndication">{{ name }}</a></dd>
+      {% endfor %}
+    {% endif %}
+
+    </dl>
+
     {% if article.type in ['post', 'quote'] and article_context != "list" %}
     <p class="feedback">Feedback is always welcome. Feel free to <a href="/about">get in touch</a>, or edit <a href="{{ site.links.github }}{{ site.github.repo }}{{ site.github.edit }}{{ site.source_dir }}/{{ page.source_file }}">{{ page.source_file }}</a> on GitHub and submit a push request.</p>
     {% endif %}
+    </dl>
   </footer>
 </article>
