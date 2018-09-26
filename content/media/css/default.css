@@ -102,12 +102,11 @@ body > footer {
 small,
 .font-small,
 article footer {
-  font-size: .7em;
+  font-size: .8em;
 }
 
 .grid-container,
 .grid-container.normal {
-  max-width: 96rem; /* 960px */
   max-width: 100rem;
 }
 
@@ -420,7 +419,7 @@ figure img {
 figure figcaption {
   margin-top: -.3em;
   font-style: italic;
-  font-size: .7em;
+  font-size: .8em;
   color: rgb(105,105,105);
 }
 
@@ -519,7 +518,7 @@ pre::-webkit-scrollbar-thumb {
 
 .grid-container .sidebar {
   color: #888;
-  font-size: .7em;
+  font-size: .8em;
   line-height: 1.6em;
 }
 
