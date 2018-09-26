@@ -1,7 +1,7 @@
 <div class="slideshow chameleon">
     <div class="controls bottomright">
-    <button class="previous fal fa-lg fa-chevron-circle-left"><span class="sr-only">previous</span></button>
-    <button class="next fal fa-lg fa-chevron-circle-right"><span class="sr-only">next</span></button>
+    <button class="previous fal fa-lg fa-chevron-circle-left" title="Previous"><span class="sr-only">previous</span></button>
+    <button class="next fal fa-lg fa-chevron-circle-right" title="Next"><span class="sr-only">next</span></button>
   </div>
 
   <div class="slides">
@@ -32,7 +32,7 @@
         {% endif %}
 
         <div class="caption bottomleft">
-          <div class="icon"><span class="fal fa-camera"></span></div>
+          <div class="icon"><span class="fal fa-camera" aria-hidden></span></div>
           <div class="description">{{ slide.caption }}</div>
         </div>
 

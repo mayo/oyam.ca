@@ -68,29 +68,29 @@
     {% if (article.type == "link" and article.href) or microblog  %}
       {# Don't show permalinks for quotes, they never have titles and are "microblog" posts #}
       {% if article_context == "list" and article.type == "link" %}
-      <dt class="icon"><i class="fal fa-bookmark"></i></dt>
+      <dt class="icon"><i class="fal fa-bookmark" title="Permalink"></i><span class="sr-only">Permalink</span></dt>
         <dd><a class="permalink" href="/{{ article.path }}">Permalink</a></dd>
       {% endif %}
 
       {% if article.href %}
-      <dt class="icon"><i class="fal fa-external-link-square"></i></dt>
+      <dt class="icon"><i class="fal fa-external-link-square" title="Article link"></i><span class="sr-only">Article link</span></dt>
         <dd><a class="extlink" href="{{ article.href }}">{{ article.href }}</a></dd>
       {% endif %}
       {% if article.source %}
-      <dt class="icon"><i class="fal fa-external-link"></i><dt>
+      <dt class="icon"><i class="fal fa-external-link" title="Source link"></i><span class="sr-only">Source link</span><dt>
         <dd><a class="extlink" href="{{ article.source_link }}">{{ article.source }}</a></dd>
       {% endif %}
     {% endif %}
 
     {% if article.tags and article_context != "list" %}
-    <dt class="icon"><i class="fal fa-tag"></i><dt>
+    <dt class="icon"><i class="fal fa-tag" title="Tags"></i><span class="sr-only">Tags</span><dt>
     {% for tag in article.tags %}
       <dd><a href="/tags/{{tag}}" class="p-category">{{ tag }}</a></dd>
     {% endfor %}
     {% endif %}
 
     {% if article['syndicate-to'] and article_context != "list" %}
-    <dt class="icon"><i class="fal fa-share-alt-square"></i><dt>
+    <dt class="icon"><i class="fal fa-share-alt-square" title="Syndicated to"></i><span class="sr-only">Syndicated to</span><dt>
       {% for item in article['syndicate-to'] %}
         {% set url = item.url if 'url' in item else item %}
         {% set name = item.name if 'name' in item else url %}
