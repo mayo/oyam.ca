@@ -16,6 +16,7 @@ from hana.plugins.ignore import ignore
 from hana.plugins.markdown import Markdown
 from hana.plugins.metadata import metadata
 from hana.plugins.pretty_url import PrettyUrl
+from hana.plugins.sass import Sass
 from hana.plugins.tags import Tags
 from hana.plugins.titles import titles
 from hana.plugins.webmentions import FindWebmentions, SendWebmentions
@@ -136,6 +137,8 @@ h.plugin(metadata({
 h.plugin(ignore(ignore_patterns))
 
 h.plugin(frontmatter)
+
+h.plugin(Sass())
 
 h.plugin(drafts)
 
