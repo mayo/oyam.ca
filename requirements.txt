@@ -13,6 +13,7 @@ Jinja2>=2.10
 -e git+https://github.com/mayo/hana-plugins.git@9d1f4b467c437f8fbe9832ca95fc9302cfd323ab#egg=hana_plugin_metadata&subdirectory=metadata
 -e git+https://github.com/mayo/hana-plugins.git@9d1f4b467c437f8fbe9832ca95fc9302cfd323ab#egg=hana_plugin_micro_blog&subdirectory=micro-blog
 -e git+https://github.com/mayo/hana-plugins.git@9d1f4b467c437f8fbe9832ca95fc9302cfd323ab#egg=hana_plugin_pretty_url&subdirectory=pretty_url
+-e git+https://github.com/mayo/hana-plugins.git@992399f784f59bc64517f24434f5fe6829563d80#egg=hana_plugin_sass&subdirectory=sass
 -e git+https://github.com/mayo/hana-plugins.git@9d1f4b467c437f8fbe9832ca95fc9302cfd323ab#egg=hana_plugin_titles&subdirectory=titles
 -e git+https://github.com/mayo/hana-plugins.git@9d1f4b467c437f8fbe9832ca95fc9302cfd323ab#egg=hana_plugin_webmentions&subdirectory=webmentions
 
