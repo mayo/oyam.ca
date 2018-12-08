@@ -1,4 +1,5 @@
 /* @override http://localhost:8080/media/css/index.css */
+@import "theme";
 
 /* iphone retina - portrait */
 @media only screen and (max-width: 480px) {
@@ -70,7 +71,7 @@
   font-size: .8em;
   
   -webkit-font-smoothing: antialiased;
-  color: black;
+  color: $darkest;
 }
 
 .caption .icon {
@@ -100,7 +101,7 @@
 
 .dark-bg .caption,
 .dark-bg.caption {
-  color: white;
+  color: $lightest;
 }
 
 .caption:hover {
@@ -143,7 +144,7 @@
 }
 
 .chameleon .scrolldown.dark-bg a {
-  color:  white;
+  color:  $lightest;
 }
 
 
