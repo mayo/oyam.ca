@@ -100,7 +100,7 @@
 
     </dl>
 
-    {% if article.type in ['post', 'quote'] and article_context != "list" %}
+    {% if article_context != "list" %}
     <p class="feedback">Feedback is always welcome. Feel free to <a href="/about">get in touch</a>, or edit <a href="{{ site.links.github }}{{ site.github.repo }}{{ site.github.edit }}{{ site.source_dir }}/{{ page.source_file }}">{{ page.source_file }}</a> on GitHub and submit a push request.</p>
     {% endif %}
     </dl>
