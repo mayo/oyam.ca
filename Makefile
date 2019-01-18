@@ -2,6 +2,6 @@ build:
 	python build.py
 
 serve: build
-	(cd deploy && python -m SimpleHTTPServer)
+	(cd deploy && python -m http.server)
 
 .PHONY: build
