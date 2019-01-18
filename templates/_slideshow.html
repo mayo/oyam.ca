@@ -14,7 +14,7 @@
       {% endif %}
 
       {% if slide.dark_bg_quadrants %}
-        {% for q, val in slide.dark_bg_quadrants.iteritems() %}
+        {% for q, val in slide.dark_bg_quadrants.items() %}
           {% if val %}
             {% do quadrants.append(" data-darkbg-" + q) %}
           {% endif %}
