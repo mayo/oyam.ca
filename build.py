@@ -23,49 +23,6 @@ from hana.plugins.webmentions import FindWebmentions, SendWebmentions
 from hana.plugins.micro_blog import ping as MicroBlogPing
 from hana.plugins.cloudflare import PurgeCache
 
-def set_metadata(metadata):
-
-    def set_metadata_plugin(files, hana):
-        for _, f in files:
-            f.update(metadata)
-
-    return set_metadata_plugin
-
-# NOTE: special handling for photo posts (helps with feeds)
-def extract_photo():
-    import re
-    import posixpath
-
-    pat = re.compile(r'<img\s+.*\s*src="(?P<photo>[^"]+)"\s*.*>.*')
-
-    def extract_photo_plugin(files, hana):
-        for _, f in files:
-            if f['type'] == 'photo' and 'photo' not in f:
-                f['image'] = pat.search(f['contents']).group('photo')
-
-    return extract_photo_plugin
-
-# NOTE: special handling for links (helps with feeds)
-def extract_link():
-    import re
-    import posixpath
-
-    pat = re.compile(r'<a\s+.*\s*href="(?P<link>[^"]+)"\s*.*>.*')
-
-    def extract_link_plugin(files, hana):
-        for _, f in files:
-            if f['type'] == 'link' and 'href' not in f:
-                f['href'] = pat.search(f['contents']).group('link')
-
-    return extract_link_plugin
-
-def autotag_microblog(files, hana):
-    for _, f in files:
-        if not f.get('title'):
-            if 'tags' not in f:
-                f['tags'] = []
-            f['tags'].append('microblog')
-
 DEPLOY_DIR = 'deploy'
 
 PRODUCTION = False
@@ -80,12 +37,12 @@ h = hana.Hana(
   configuration="hana.yaml"
 )
 
-content_dir = 'content'
+set_metadata = h.load_plugin('set_metadata')
+extract_photo = h.load_plugin('extract_photo')
+extract_link = h.load_plugin('extract_link')
+autotag_microblog = h.load_plugin('autotag_microblog')
 
-ignore_patterns = [
-  '**/.*.swp',
-  '**/.DS_Store',
-]
+content_dir = 'content'
 
 h.plugin(FileLoader(content_dir, source_file_keyword='source_file'))
 
@@ -99,14 +56,6 @@ h.plugin(metadata({
 now = time.time()
 
 h.plugin(metadata({
-  "author": {
-    "name": "Mayo Jordanov",
-    "email": "mayo@oyam.ca",
-    "twitter": "@oyam",
-    "instagram": "@oyam.ca",
-    "github": "mayo",
-  },
-
   "site": {
     "description": "Mayo Jordanov; software developer, photographer, climber, runner, hiker, adventurer, explorer",
     "keywords": "mayo jordanov software development photography adventure explore climbing running hiking consulting tech design",
@@ -134,7 +83,10 @@ h.plugin(metadata({
 
 }))
 
-h.plugin(ignore(ignore_patterns))
+h.plugin(ignore([
+  '**/.*.swp',
+  '**/.DS_Store',
+]))
 
 h.plugin(frontmatter)
 
@@ -152,7 +104,7 @@ h.plugin(titles(remove=True), 'blog/*/**')
 h.plugin(excerpts, 'blog/*/**')
 h.plugin(PrettyUrl(relative=False), 'blog/*/**')
 
-h.plugin(autotag_microblog, 'blog/*/**')
+h.plugin(autotag_microblog(), 'blog/*/**')
 
 h.plugin(Tags(
     config={
