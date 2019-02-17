@@ -8,3 +8,4 @@ env/
 /environment.env
 /.webmention_cache.json
 /.cf_purge_cache.json
+*.icloud
