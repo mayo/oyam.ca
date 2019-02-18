@@ -42,7 +42,7 @@
     <div class="grid-100">
       {% block footer_content %}
 
-        {% for link, icon in site.social_links.iteritems() %}
+        {% for link, icon in site.social_links.items() %}
         <a href="{{ site.links[link] }}"><i class="fa {{ icon }}"></i></a>
         {% endfor %}
         <a href="{{ site.links.rss }}"><i class="fal fa-rss-square" title="RSS"></i><span class="sr-only">RSS</span></a>

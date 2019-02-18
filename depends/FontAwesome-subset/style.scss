@@ -1,0 +1,174 @@
+@import "variables";
+
+@font-face {
+  font-family: '#{$icomoon-font-family}';
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?xfdy0m');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?xfdy0m#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?xfdy0m') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?xfdy0m') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?xfdy0m##{$icomoon-font-family}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.fa-subset-oyam {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '#{$icomoon-font-family}' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.fa-chevron-circle-left {
+  &:before {
+    content: $fa-chevron-circle-left; 
+  }
+}
+.fa-chevron-circle-right {
+  &:before {
+    content: $fa-chevron-circle-right; 
+  }
+}
+.fa-chevron-down {
+  &:before {
+    content: $fa-chevron-down; 
+  }
+}
+.fa-chevron-left {
+  &:before {
+    content: $fa-chevron-left; 
+  }
+}
+.fa-chevron-right {
+  &:before {
+    content: $fa-chevron-right; 
+  }
+}
+.fa-angle-down {
+  &:before {
+    content: $fa-angle-down; 
+  }
+}
+.fa-archive {
+  &:before {
+    content: $fa-archive; 
+  }
+}
+.fa-camera {
+  &:before {
+    content: $fa-camera; 
+  }
+}
+.fa-bars {
+  &:before {
+    content: $fa-bars; 
+  }
+}
+.fa-key {
+  &:before {
+    content: $fa-key; 
+  }
+}
+.fa-fingerprint {
+  &:before {
+    content: $fa-fingerprint; 
+  }
+}
+.fa-location-circle {
+  &:before {
+    content: $fa-location-circle; 
+  }
+}
+.fa-compass {
+  &:before {
+    content: $fa-compass; 
+  }
+}
+.fa-phone {
+  &:before {
+    content: $fa-phone; 
+  }
+}
+.fa-envelope {
+  &:before {
+    content: $fa-envelope; 
+  }
+}
+.fa-globe-africa {
+  &:before {
+    content: $fa-globe-africa; 
+  }
+}
+.fa-globe-americas {
+  &:before {
+    content: $fa-globe-americas; 
+  }
+}
+.fa-globe-asia {
+  &:before {
+    content: $fa-globe-asia; 
+  }
+}
+.fa-flickr {
+  &:before {
+    content: $fa-flickr; 
+  }
+}
+.fa-github-square {
+  &:before {
+    content: $fa-github-square; 
+  }
+}
+.fa-linkedin {
+  &:before {
+    content: $fa-linkedin; 
+  }
+}
+.fa-bookmark {
+  &:before {
+    content: $fa-bookmark; 
+  }
+}
+.fa-external-link-square {
+  &:before {
+    content: $fa-external-link-square; 
+  }
+}
+.fa-paper-plane {
+  &:before {
+    content: $fa-paper-plane; 
+  }
+}
+.fa-rss-square {
+  &:before {
+    content: $fa-rss-square; 
+  }
+}
+.fa-share-alt-square {
+  &:before {
+    content: $fa-share-alt-square; 
+  }
+}
+.fa-tag {
+  &:before {
+    content: $fa-tag; 
+  }
+}
+.fa-tags {
+  &:before {
+    content: $fa-tags; 
+  }
+}
+.fa-broadcast-tower {
+  &:before {
+    content: $fa-broadcast-tower; 
+  }
+}
+

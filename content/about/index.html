@@ -43,7 +43,7 @@ page_id: about
         </li>
         <li class="pgp-fingerprint"><i class="fal inline icon fa-key" title="GPG fingerprint"></i><span class="sr-only">GPG fingerprint</span><a rel="me" href="https://keybase.io/mayo"><span>56A3</span><span>789C</span><span>ED4D</span><span>2DD7</span></a></li>
         <li class="social">
-        {% for link, icon in site.social_links.iteritems() %}
+        {% for link, icon in site.social_links.items() %}
           <a href="{{ site.links[link] }}"><i class="fa {{ icon }}"></i></a>
         {% endfor %}
         </li>

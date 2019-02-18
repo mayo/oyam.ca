@@ -1,6 +1,7 @@
 -e ../hana
 -e ../hana-plugins/assets
 -e ../hana-plugins/aws-s3-deploy
+-e ../hana-plugins/cloudflare
 -e ../hana-plugins/drafts
 -e ../hana-plugins/excerpts
 -e ../hana-plugins/frontmatter
@@ -11,4 +12,9 @@
 -e ../hana-plugins/pretty_url
 -e ../hana-plugins/tags
 -e ../hana-plugins/titles
+-e ../hana-plugins/micro-blog
+-e ../hana-plugins/pretty_url
+-e ../hana-plugins/sass
+-e ../hana-plugins/titles
+-e ../hana-plugins/webmentions
 

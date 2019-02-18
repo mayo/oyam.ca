@@ -18,17 +18,11 @@
 
     {% if page_id == 'blog' %}
     <meta property="og:title" content="{{ page.title or page.contents|striptags|truncate(280) }}">
-    <!--
-    <meta property="og:image" content="link_to_image">
-    -->
     <meta property="og:description" content="{{ page.excerpt|striptags or site.description }}">
     {% endif %}
 
     {% block css %}
     <link rel="stylesheet" href="/media/css/normalize.css">
-    <link rel="stylesheet" href="/media/css/fa-shim.css">
-    <link rel="stylesheet" href="/media/css/fa-style.css">
-    <link rel="stylesheet" href="/media/css/unsemantic-grid-responsive-no-ie7.css" />
     <link rel="stylesheet" href="/media/css/default.css"/>
     <link rel="stylesheet" href="/media/css/handheld.css" media="only screen"/>
     {% endblock %}
