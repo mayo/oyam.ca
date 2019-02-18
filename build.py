@@ -158,9 +158,6 @@ asset_list =  {
     #load normalize.css from module to keep it up to date more easily
     "depends/normalize.css/normalize.css": "media/css/normalize.css",
 
-    #unsemantic fluid layout
-    "depends/unsemantic/assets/stylesheets/unsemantic-grid-responsive-no-ie7.css": "media/css/unsemantic-grid-responsive-no-ie7.css",
-
     #microevent for slideshow
     "depends/microevent.js/microevent.js": "media/js/microevent.js",
 }
