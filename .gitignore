@@ -10,3 +10,4 @@ env3/
 /.webmention_cache.json
 /.cf_purge_cache.json
 *.icloud
+**/__pycache__/
