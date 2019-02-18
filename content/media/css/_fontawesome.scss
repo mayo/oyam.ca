@@ -1,0 +1,5 @@
+/* Customized FontAwesome font */
+$icomoon-font-path: "/media/fonts" !default;
+
+@import "fontawesome-shim";
+@import "../../../depends/FontAwesome-subset/style.scss";
