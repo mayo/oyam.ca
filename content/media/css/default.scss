@@ -23,7 +23,8 @@ article.post .content,
   font-weight: 400;
 }
 
-body.dark-bg {
+body.dark-bg,
+div.body.dark-bg {
   background-color: $darkest;
   color: $light;
 }
@@ -143,12 +144,14 @@ body > footer {
   color: $light;
 }
 
-body.dark-bg > footer {
+body.dark-bg > footer,
+div.body.dark-bg > footer {
   color: $dark;
 }
 
 body > footer a,
-body.dark-bg > footer a {
+body.dark-bg > footer a,
+div.body.dark-bg > footer a {
   color: inherit;
 }
 
@@ -156,7 +159,8 @@ body > footer a:hover {
   color: $darkest;
 }
 
-body.dark-bg > footer a:hover {
+body.dark-bg > footer a:hover,
+div.body.dark-bg > footer a:hover {
   color: $lightest;
 }
 

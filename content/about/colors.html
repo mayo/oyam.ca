@@ -1,158 +1,55 @@
-<html>
-    <head>
+---
+template: true
+title: Color Themes
+page_id: about
+---
+{% extends 'page.html' %}
+{% block content %}
+<h1>{{ page.title }}</h1>
+
+
         <style>
             div.swatches {
+              padding: 1em;
             }
 
             div.color {
                 position: relative;
-                width: 3em;
+                width: 2em;
                 display: inline-block;
+
+                height: 2em;
             }
 
             div.swatch {
-                height: 3em;
-                width: 100%;
                 display: inline-block;
-            }
-
-            div.name {
-                font-family: sans-serif;
-                font-size: .7em;
-                height: 1em;
-                width: 100%;
-                display: inline-block;
-                overflow: hidden;
-            }
-
-            div.name:empty:after {
-                content: "\00a0";
             }
         </style>
-    </head>
-
-    <body>
-        <div class="swatches">
-            <div class="color">
-                <div class="swatch" style="background-color:rgb(0,0,0);"></div>
-                <div class="name">0</div>
-                <div class="name"></div>
-            </div>
-            <div class="color">
-                <div class="swatch" style="background-color:rgb(10,10,10);"></div>
-                <div class="name">10</div>
-                <div class="name"></div>
-            </div>
-            <div class="color" >
-                <div class="swatch" style="background-color:rgb(50,50,50);"></div>
-                <div class="name">50</div>
-                <div class="name"></div>
-            </div>
-            <div class="color">
-                <div class="swatch" style="background-color:rgb(51,51,51);"></div>
-                <div class="name">51</div>
-                <div class="name">333</div>
-            </div>
-            <div class="color" >
-                <div class="swatch" style="background-color:rgb(60,60,60);"></div>
-                <div class="name">60</div>
-                <div class="name"></div>
-            </div>
-            <div class="color" >
-                <div class="swatch" style="background-color:rgb(68,68,68);"></div>
-                <div class="name">68</div>
-                <div class="name">444</div>
-            </div>
-            <div class="color" >
-                <div class="swatch" style="background-color:rgb(100,100,100);"></div>
-                <div class="name">100</div>
-                <div class="name"></div>
-            </div>
-            <div class="color" >
-                <div class="swatch" style="background-color:rgb(105,105,105);"></div>
-                <div class="name">105</div>
-                <div class="name"></div>
-            </div>
-            <div class="color" >
-                <div class="swatch" style="background-color:rgb(119,119,119);"></div>
-                <div class="name">119</div>
-                <div class="name">777</div>
-            </div>
-            <div class="color" >
-                <div class="swatch" style="background-color:rgb(136,136,136);"></div>
-                <div class="name">136</div>
-                <div class="name">888</div>
-            </div>
-            <div class="color" >
-                <div class="swatch" style="background-color:rgb(153,153,153);"></div>
-                <div class="name">153</div>
-                <div class="name">999</div>
-            </div>
-            <div class="color" >
-                <div class="swatch" style="background-color:rgb(170,170,170);"></div>
-                <div class="name">170</div>
-                <div class="name">aaa</div>
-            </div>
-            <div class="color" >
-                <div class="swatch" style="background-color:rgb(187,187,187);"></div>
-                <div class="name">187</div>
-                <div class="name">bbb</div>
-            </div>
-            <div class="color" >
-                <div class="swatch" style="background-color:rgb(200,200,200);"></div>
-                <div class="name">200</div>
-                <div class="name"></div>
-            </div>
-            <div class="color" >
-                <div class="swatch" style="background-color:rgb(220,220,220);"></div>
-                <div class="name">220</div>
-                <div class="name"></div>
-            </div>
-            <div class="color" >
-                <div class="swatch" style="background-color:rgb(238,238,238);"></div>
-                <div class="name">238</div>
-                <div class="name">eee</div>
-            </div>
-            <div class="color" >
-                <div class="swatch" style="background-color:rgb(246,246,246);"></div>
-                <div class="name">246</div>
-                <div class="name"></div>
-            </div>
-            <div class="color" >
-                <div class="swatch" style="background-color:rgb(255,255,255);"></div>
-                <div class="name">255</div>
-                <div class="name"></div>
-            </div>
-            <div class="color" >
-                <div class="swatch" style="background-color:rgb(255,0,0);"></div>
-                <div class="name">255</div>
-                <div class="name">fff</div>
-            </div>
-            <div class="color" >
-                <div class="swatch" style="background-color:rgb(195,0,0);"></div>
-                <div class="name">195</div>
-                <div class="name"></div>
-            </div>
-            <div class="color" >
-                <div class="swatch" style="background-color:rgba(0,0,0,.5);"></div>
-                <div class="name">0/50</div>
-                <div class="name"></div>
-            </div>
-            <div class="color" >
-                <div class="swatch" style="background-color:rgba(10,10,10,.5);"></div>
-                <div class="name">0/50</div>
-                <div class="name"></div>
-            </div>
-            <div class="color">
-                <div class="swatch" style="background-color:rgba(30,30,30,.4);"></div>
-                <div class="name">30/40</div>
-                <div class="name"></div>
-            </div>
-            <div class="color">
-                <div class="swatch" style="background-color:rgba(51,51,51,.4);"></div>
-                <div class="name">51/40</div>
-                <div class="name"></div>
-            </div>
+        
+        <div class="swatches body">
+          <p>Light Background</p>
+          <div class="color theme-darkest-bg" title="darkest"></div>
+          <div class="color theme-darker-bg" title="darker"></div>
+          <div class="color theme-dark-bg" title="dark"></div>
+          <div class="color theme-darkest50-bg" title="darkest 50%"></div>
+          <div class="color theme-light-bg" title="light"></div>
+          <div class="color theme-darker-40" title="darker 40%"></div>
+          <div class="color theme-lighter-bg" title="lighter"></div>
+          <div class="color theme-lightest-bg" title="lightest"></div>
+          <div class="color theme-link-bg" title="link"></div>
         </div>
-    </body>
-</html>
+
+        <div class="swatches body dark-bg">
+          <p>Dark Background</p>
+          <div class="color theme-darkest-bg" title="darkest"></div>
+          <div class="color theme-darker-bg" title="darker"></div>
+          <div class="color theme-dark-bg" title="dark"></div>
+          <div class="color theme-darkest50-bg" title="darkest 50%"></div>
+          <div class="color theme-light-bg" title="light"></div>
+          <div class="color theme-darker-40" title="darker 40%"></div>
+          <div class="color theme-lighter-bg" title="lighter"></div>
+          <div class="color theme-lightest-bg" title="lightest"></div>
+          <div class="color theme-link-bg" title="link"></div>
+        </div>
+
+{% endblock %}
