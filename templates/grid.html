@@ -33,7 +33,10 @@
         <a href="{{ site.links[link] }}"><i class="fa {{ icon }}"></i></a>
         {% endfor %}
         <a href="{{ site.links.rss }}"><i class="fal fa-rss-square" title="RSS"></i><span class="sr-only">RSS</span></a>
-        <span class="copyright">Copyright &copy;{{ site.now.strftime('%Y') }} <a class="h-card p-name u-url" href="http://oyam.ca/about">{{ site.author.name }}</a></span>
+        {% if page_id != 'about' %}
+          {% set h_card = "h-card p-name p-url" %}
+        {% endif %}
+        <span class="copyright">Copyright &copy;{{ site.now.strftime('%Y') }} <a class="{{h_card}}" href="http://oyam.ca/about">{{ site.author.name }}</a></span>
       {% endblock %}
     </div>
 
