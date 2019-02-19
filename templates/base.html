@@ -53,16 +53,6 @@
     {% block js %}
     {% endblock %}
 
-    <script>
-      /* TODO: this is to enable :active css target on links. The side efect is that all links are followed on first tap, which is non-standard behviour when :hover is present.
-       */
-      //document.addEventListener("touchstart", function() {},false);
-      //this script solves this, but requires jQuery. It neesd to be adapted...
-      //http://osvaldas.info/examples/drop-down-navigation-touch-friendly-and-responsive/doubletaptogo.js
-    </script>
-<!--
-    <script src="http://osvaldas.info/examples/drop-down-navigation-touch-friendly-and-responsive/doubletaptogo.js"></script>
--->
   </head>
   <body class="{{background_class}}" {% if page_id -%}id="{{ page_id }}"{%- endif %}>
     {% block body_container %}
