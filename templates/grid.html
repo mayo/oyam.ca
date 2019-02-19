@@ -26,19 +26,6 @@
       {% block footer_nav %}
       {% endblock %}
 
-    <div class="grid-100 h-card">
-      <img class="u-photo" src="/media/images/mex2-bw.jpg" alt="" />
-      <a class="p-name u-url" href="http://oyam.ca">Mayo Jordanov</a>
-
-      <div class="p-adr h-adr">
-        <span class="p-locality">Vancouver</span>
-        <span class="p-region">BC</span>
-        <span class="p-country-name">Canada</span>
-      </div>
-
-      <span class="p-note">Creative solutions. Problem solver, software developer, photographer, adventurer.</span>
-    </div>
-
     <div class="grid-100">
       {% block footer_content %}
 
@@ -46,7 +33,7 @@
         <a href="{{ site.links[link] }}"><i class="fa {{ icon }}"></i></a>
         {% endfor %}
         <a href="{{ site.links.rss }}"><i class="fal fa-rss-square" title="RSS"></i><span class="sr-only">RSS</span></a>
-        <span class="copyright">Copyright &copy;{{ site.now.strftime('%Y') }} {{ site.author.name }}</span>
+        <span class="copyright">Copyright &copy;{{ site.now.strftime('%Y') }} <a class="h-card p-name u-url" href="http://oyam.ca/about">{{ site.author.name }}</a></span>
       {% endblock %}
     </div>
 
