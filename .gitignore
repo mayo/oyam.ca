@@ -11,3 +11,4 @@ env3/
 /.cf_purge_cache.json
 *.icloud
 **/__pycache__/
+.vscode
