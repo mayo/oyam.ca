@@ -5,7 +5,8 @@ old
 *.swp
 .DS_Store
 env/
-env3/
+env?/
+env*.bad/
 /environment.env
 /.webmention_cache.json
 /.cf_purge_cache.json
