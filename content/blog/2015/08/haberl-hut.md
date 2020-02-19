@@ -1,7 +1,7 @@
 ---
 type: post
 title: Summer weekend at Haberl Hut
-created: !!timestamp '2015-08-10 00:00:00'
+created: !!timestamp '2015-08-10 00:00:00 -8'
 tags:
   - travel
 header:
