@@ -1,7 +1,7 @@
 ---
 type: photo
 imported: "instagram"
-created: !!timestamp '2012-08-10 12:57:32'
+created: !!timestamp '2012-08-10 12:57:32 -8'
 tags:
     - microblog
 ---
