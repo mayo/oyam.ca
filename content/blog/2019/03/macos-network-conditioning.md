@@ -4,7 +4,8 @@ title: Network conditioning in macOS
 tags:
   - technology
   - unix
-date: 2019-03-18T21:38:47-07:00
+created: !!timestamp '2019-03-18 21:38:47 -8'¬
+
 ---
 I've had the need to do some light network emulation and conditioning on macOS Mojave, but it seems most of the information out there is outdated, relies on unnecessary external software, or is just plain wrong.
 
