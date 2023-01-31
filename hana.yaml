@@ -3,11 +3,11 @@ logging:
     level: info
   hana.core:
     level: debug
-  hana.plugins:
+  hana_plugins:
     level: info
-  hana.plugins.ignore:
+  hana_plugins.ignore:
     level: info
-  hana.plugins.webmentions:
+  hana_plugins.webmentions:
     level: debug
 
 plugins_directory: plugins
@@ -26,23 +26,23 @@ metadata:
 
 build:
   - set_metadata
-  - hana.plugins.excerpts
-  - hana.plugins.markdown:Markdown
-  - hana.plugins.webmentions:FindWebmentions
-  - hana.plugins.webmentions:SendWebmentions
+  - hana_plugins.excerpts
+  - hana_plugins.markdown:Markdown
+  - hana_plugins.webmentions:FindWebmentions
+  - hana_plugins.webmentions:SendWebmentions
 
-#  - hana.plugins.FileLoader:
+#  - hana_plugins.FileLoader:
 #    parameters:
 #      content_dir: content
 #      source_file_keyword: source_file
 #
-#  - hana.plugins.metadata:
+#  - hana_plugins.metadata:
 #    parameters:
 #      metadata:
 #        site:
 #          source_dir: content
 #
-#  - hana.plugins.metadata:
+#  - hana_plugins.metadata:
 #    parameters:
 #      metadata:
 #        author:

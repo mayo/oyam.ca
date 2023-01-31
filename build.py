@@ -4,24 +4,24 @@ import os
 import time
 
 import hana
-from hana.plugins.assets import assets
-from hana.plugins.aws_s3_deploy import AWSS3Deploy
-from hana.plugins.drafts import drafts
-from hana.plugins.excerpts import excerpts
+from hana_plugins.assets import assets
+from hana_plugins.aws_s3_deploy import AWSS3Deploy
+from hana_plugins.drafts import drafts
+from hana_plugins.excerpts import excerpts
 from hana.plugins.file_loader import FileLoader
 from hana.plugins.file_writer import FileWriter
-from hana.plugins.frontmatter import frontmatter
-from hana.plugins.jinja import Jinja
-from hana.plugins.ignore import ignore
-from hana.plugins.markdown import Markdown
-from hana.plugins.metadata import metadata
-from hana.plugins.pretty_url import PrettyUrl
-from hana.plugins.sass import Sass
-from hana.plugins.tags import Tags
-from hana.plugins.titles import titles
-from hana.plugins.webmentions import FindWebmentions, SendWebmentions
-from hana.plugins.micro_blog import ping as MicroBlogPing
-from hana.plugins.cloudflare import PurgeCache
+from hana_plugins.frontmatter import frontmatter
+from hana_plugins.jinja import Jinja
+from hana_plugins.ignore import ignore
+from hana_plugins.markdown import Markdown
+from hana_plugins.metadata import metadata
+from hana_plugins.pretty_url import PrettyUrl
+from hana_plugins.sass import Sass
+from hana_plugins.tags import Tags
+from hana_plugins.titles import titles
+from hana_plugins.webmentions import FindWebmentions, SendWebmentions
+from hana_plugins.micro_blog import ping as MicroBlogPing
+from hana_plugins.cloudflare import PurgeCache
 
 DEPLOY_DIR = 'deploy'
 
@@ -129,11 +129,11 @@ h.plugin(Tags(
     default_tag='articles',
 ))
 
-h.plugin(FindWebmentions(
-    exclude_domains=['oyam.ca'],
-    allow_insecure_https=True,
-    cache_file='.webmention_cache.json',
-), 'blog/*/**')
+# h.plugin(FindWebmentions(
+#     exclude_domains=['oyam.ca'],
+#     allow_insecure_https=True,
+#     cache_file='.webmention_cache.json',
+# ), 'blog/*/**')
 
 h.plugin(Jinja({
   'directory': 'templates',
