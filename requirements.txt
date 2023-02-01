@@ -8,7 +8,7 @@
 -e git+https://github.com/mayo/hana-plugins.git@735299836738e77171dc685c157aed6662e7b900#egg=hana_plugin_frontmatter&subdirectory=frontmatter
 -e git+https://github.com/mayo/hana-plugins.git@735299836738e77171dc685c157aed6662e7b900#egg=hana_plugin_ignore&subdirectory=ignore
 -e git+https://github.com/mayo/hana-plugins.git@735299836738e77171dc685c157aed6662e7b900#egg=hana_plugin_jinja&subdirectory=jinja
--e git+https://github.com/mayo/markdown-mdfigure.git@master#egg=markdown-mdfigure
+-e git+https://github.com/mayo/markdown-mdfigure.git@master#egg=markdown-figure
 -e git+https://github.com/mayo/hana-plugins.git@735299836738e77171dc685c157aed6662e7b900#egg=hana_plugin_markdown&subdirectory=markdown
 -e git+https://github.com/mayo/hana-plugins.git@735299836738e77171dc685c157aed6662e7b900#egg=hana_plugin_metadata&subdirectory=metadata
 -e git+https://github.com/mayo/hana-plugins.git@735299836738e77171dc685c157aed6662e7b900#egg=hana_plugin_micro_blog&subdirectory=micro-blog
