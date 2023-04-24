@@ -12,7 +12,7 @@
 .fa-subset-oyam {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'FontAwesome-subset' !important;
-  speak: none;
+  speak: never;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -86,6 +86,9 @@
 }
 .fa-linkedin:before {
   content: "\e902";
+}
+.fa-mastodon:before {
+  content: "\e904";
 }
 .fa-bookmark:before {
   content: "\e905";
