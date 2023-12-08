@@ -153,7 +153,7 @@ h.plugin(Jinja({
 
 asset_list =  {
     #font-awesome
-    "depends/FontAwesome-subset/fonts": "media/fonts",
+    "depends/FontAwesome-subset/fonts": "media/fonts/fa",
 
     #load normalize.css from module to keep it up to date more easily
     "depends/normalize.css/normalize.css": "media/css/normalize.css",

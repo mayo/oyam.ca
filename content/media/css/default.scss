@@ -19,8 +19,8 @@ article.post .content,
 #gallery-page .grid-container.gallery .meta h1,
 .font-serif {
   /* Berling T is preferred, but not available on TypeKit */
-  font-family: "freight-text-pro";
-  font-weight: 400;
+  font-family: $font-family-serif /*"freight-text-pro"*/;
+  font-weight: 450;
 }
 
 body.dark-bg,
@@ -30,12 +30,12 @@ div.body.dark-bg {
 }
 
 h1, h2, h3, h4, h5, h6  {
-  font-family: "freight-sans-pro";
+  font-family: $font-family-sans /*"freight-sans-pro"*/;
   font-weight: 600;
 }
 
 article h1, article h2, article h3, article h4, article h5, article h6  {
-  font-family: "freight-sans-compressed-pro";
+  font-family: $font-family-condensed /*"freight-sans-compressed-pro"*/;
   font-weight: 600;
 
 }
@@ -51,13 +51,22 @@ div.blognav,
 nav.sitenav,
 .grid-container .sidebar,
 .font-sansserif {
-  font-family: "freight-sans-pro";
+  font-family: $font-family-sans /*"freight-sans-pro"*/;
+  font-weight: 400;
+}
+
+.post-time {
+  font-weight: 300;
+}
+
+nav.sitenav {
+  font-weight: 300;
 }
 
 pre,
 code,
 .font-code {
-  font-family: "source-code-pro", monospace;
+  font-family: $font-family-mono /*"source-code-pro", monospace*/;
 }
 
 h1,
@@ -608,13 +617,13 @@ pre::-webkit-scrollbar-thumb {
   right: 3em;
   margin-left: 3em; /* for mobile devices */
   max-width: 30em; /* max-width instead of width for mobile devices */
-  font-family: "freight-sans-pro";
+  font-family: $font-family-sans /*"freight-sans-pro" */;
   text-align: right;  
   color: black;
 }
 
 .slideshow .slide .main h1 {
-  font-family: "freight-sans-compressed-pro";
+  font-family: $font-family-condensed /*"freight-sans-compressed-pro"*/;
 }
 
 .dark-bg .slideshow .slide .main,
@@ -823,7 +832,7 @@ article h1 {
 
 article h1, 
 article h2 {
-  text-transform: uppercase;
+  // text-transform: uppercase;
 }
 
 article header,

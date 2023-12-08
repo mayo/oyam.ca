@@ -1,0 +1,167 @@
+/* IBM Plex */
+// $font-prefix: '/media/fonts/plex' !default;
+// @import 'depends/plex/scss/ibm-plex.scss';
+
+
+/* condensed */
+@font-face {
+    font-display: swap;
+    font-family: 'IBM Plex Sans Condensed';
+    font-style: normal;
+    font-weight: 600;
+    src: url('//unpkg.com/@ibm/plex/IBM-Plex-Sans-Condensed/fonts/complete/woff2/IBMPlexSansCondensed-SemiBold.woff2') format('woff2');
+}
+
+/* serif */
+// @font-face {
+//     font-display: swap;
+//     font-family: 'IBM Plex Serif';
+//     font-style: normal;
+//     font-weight: 400;
+//     src: url('//unpkg.com/@ibm/plex/IBM-Plex-Serif/fonts/complete/woff2/IBMPlexSerif-Regular.woff2') format('woff2');
+// }
+
+// @font-face {
+//     font-display: swap;
+//     font-family: 'IBM Plex Serif';
+//     font-style: italic;
+//     font-weight: 400;
+//     src: url('//unpkg.com/@ibm/plex/IBM-Plex-Serif/fonts/complete/woff2/IBMPlexSerif-RegularItalic.woff2') format('woff2');
+// }
+
+@font-face {
+    font-display: swap;
+    font-family: 'IBM Plex Serif';
+    font-style: normal;
+    font-weight: 450;
+    src: url('//unpkg.com/@ibm/plex/IBM-Plex-Serif/fonts/complete/woff2/IBMPlexSerif-Text.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'IBM Plex Serif';
+    font-style: italic;
+    font-weight: 450;
+    src: url('//unpkg.com/@ibm/plex/IBM-Plex-Serif/fonts/complete/woff2/IBMPlexSerif-TextItalic.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'IBM Plex Serif';
+    font-style: normal;
+    font-weight: 700;
+    src: url('//unpkg.com/@ibm/plex/IBM-Plex-Serif/fonts/complete/woff2/IBMPlexSerif-Bold.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'IBM Plex Serif';
+    font-style: italic;
+    font-weight: 700;
+    src: url('//unpkg.com/@ibm/plex/IBM-Plex-Serif/fonts/complete/woff2/IBMPlexSerif-BoldItalic.woff2') format('woff2');
+}
+
+/* sans */
+
+@font-face {
+    font-display: swap;
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 300;
+    src: url('//unpkg.com/@ibm/plex/IBM-Plex-Sans/fonts/complete/woff2/IBMPlexSans-Light.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('//unpkg.com/@ibm/plex/IBM-Plex-Sans/fonts/complete/woff2/IBMPlexSans-Regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'IBM Plex Sans';
+    font-style: italic;
+    font-weight: 400;
+    src: url('//unpkg.com/@ibm/plex/IBM-Plex-Sans/fonts/complete/woff2/IBMPlexSans-Italic.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 450;
+    src: url('//unpkg.com/@ibm/plex/IBM-Plex-Sans/fonts/complete/woff2/IBMPlexSans-Text.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'IBM Plex Sans';
+    font-style: italic;
+    font-weight: 450;
+    src: url('//unpkg.com/@ibm/plex/IBM-Plex-Sans/fonts/complete/woff2/IBMPlexSans-TextItalic.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 600;
+    src: url('//unpkg.com/@ibm/plex/IBM-Plex-Sans/fonts/complete/woff2/IBMPlexSans-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'IBM Plex Sans';
+    font-style: italic;
+    font-weight: 600;
+    src: url('//unpkg.com/@ibm/plex/IBM-Plex-Sans/fonts/complete/woff2/IBMPlexSans-SemiBoldItalic.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: url('//unpkg.com/@ibm/plex/IBM-Plex-Sans/fonts/complete/woff2/IBMPlexSans-Bold.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'IBM Plex Sans';
+    font-style: italic;
+    font-weight: 700;
+    src: url('//unpkg.com/@ibm/plex/IBM-Plex-Sans/fonts/complete/woff2/IBMPlexSans-BoldItalic.woff2') format('woff2');
+}
+
+/*
+
+@import 'sans/index';
+@import 'sans-condensed/index';
+@import 'serif/index';
+@import 'mono/index';
+
+
+
+
+sans 600
+sans 400
+mono
+
+400 == normal
+450 nice for reading
+600 == semibold
+700 == bold
+*/
+
+$font-family-sans: "IBM Plex Sans", -system-ui, -apple-system, sans-serif;
+$font-family-condensed: "IBM Plex Sans Condensed", -system-ui, -apple-system, sans-serif;
+$font-family-serif: "IBM Plex Serif", serif;
+$font-family-mono: "IBM Plex Mono", monospace;
+
+/* Customized FontAwesome font */
+$icomoon-font-path: "/media/fonts/fa" !default;
+
+@import "fontawesome-shim";
+@import "../../../depends/FontAwesome-subset/style.scss";
