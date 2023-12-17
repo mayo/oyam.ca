@@ -130,6 +130,9 @@ h.plugin(Tags(
 ))
 
 if PRODUCTION:
+  #Note: commenting this out causes errors in build process due to caching of
+  #     .webmention_cache.json. If removing, adjust .circle-ci/config.yml and
+  #     remove steps that rely on presence of .webmention_cache.json
   h.plugin(FindWebmentions(
       exclude_domains=['oyam.ca'],
       allow_insecure_https=True,
