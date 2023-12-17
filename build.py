@@ -129,11 +129,12 @@ h.plugin(Tags(
     default_tag='articles',
 ))
 
-# h.plugin(FindWebmentions(
-#     exclude_domains=['oyam.ca'],
-#     allow_insecure_https=True,
-#     cache_file='.webmention_cache.json',
-# ), 'blog/*/**')
+if PRODUCTION:
+  h.plugin(FindWebmentions(
+      exclude_domains=['oyam.ca'],
+      allow_insecure_https=True,
+      cache_file='.webmention_cache.json',
+  ), 'blog/*/**')
 
 h.plugin(Jinja({
   'directory': 'templates',
