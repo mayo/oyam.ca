@@ -1,7 +1,7 @@
 ---
 type: post
 imported: "microblog"
-created: !!timestamp '2018-01-16 23:06:33 -7'
+created: 2018-01-16 23:06:33-07:00
 tags:
     - microblog
 guid: http://oyam.micro.blog/2018/01/17/i-appreciate-how.html

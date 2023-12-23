@@ -2,7 +2,7 @@
 type: link
 title: "How much do you stand out in a crowd of a million?"
 href: http://theverge.com/e/7709114
-created: !!timestamp '2015-01-29 22:07:00 -8'
+created: 2015-01-29 22:07:00-08:00
 ---
 Quite a bit, apparently. Data anonymizing doesn’t necessarily guarantee your privacy.
 

@@ -1,7 +1,7 @@
 ---
 type: quote
 imported: "microblog"
-created: !!timestamp '2017-12-30 10:21:10 -7'
+created: 2017-12-30 10:21:10-07:00
 tags:
     - microblog
 guid: http://oyam.micro.blog/2017/12/30/172110.html

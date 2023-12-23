@@ -1,7 +1,7 @@
 ---
 type: post
 title: So long Simplenote, and thanks for all the notes
-created: !!timestamp '2015-03-02 22:46:00 -8'
+created: 2015-03-02 22:46:00-08:00
 ---
 Simplenote has been my note taking app of choice for a while now, but recently I've been annoyed with missing features, weird UI, and lack of integration. [iA Writer Pro][writerpro] (Writer Pro from here on) came as unlikely replacement, but I already owned the app and some of its features were perfect match for my needs. I've now been using the new setup for about a month, and so far so good.
 

@@ -1,7 +1,7 @@
 ---
 type: post
 title: "Aperture Importer for Lightroom"
-created: !!timestamp '2014-10-25 10:57:00 -8'
+created: 2014-10-25 10:57:00-08:00
 ---
 After Apple announced they will stop developing Aperture, Adobe was nice enough to offer a Lightroom plugin to migrate Aperture libraries to Lightroom. I previously wrote some custom scripts around the Aperture library, and can appreciate how much pain they must have gone through to deciper the Aperture library database (hopefully they had some help from Apple). The Aperture libraries aren't always consistent and can vary depending on how old they are, or how many times they crashed, so there were bound to be some bugs in the Aperture Importer plugins.
 

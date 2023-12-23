@@ -1,6 +1,6 @@
 ---
 type: post
-created: !!timestamp '2018-05-04 21:14:47 -7'
+created: 2018-05-04 21:14:47-07:00
 tags:
     - microblog
 ---

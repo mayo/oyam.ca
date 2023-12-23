@@ -1,7 +1,7 @@
 ---
 type: post
 title: To improve reliability, Time Machine must create a new backup
-created: !!timestamp '2015-02-01 22:10:00 -8'
+created: 2015-02-01 22:10:00-08:00
 ---
 Time Machine has been asking me to start new backups “to improve reliability” more and more frequently. Last instances were merely a week apart. I would typically go with the flow, as I have multiple backups, but as I found out, it may not be the best idea to blindly agree when prompted.
 

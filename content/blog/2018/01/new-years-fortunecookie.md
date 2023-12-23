@@ -1,7 +1,7 @@
 ---
 type: post
 imported: "microblog"
-created: !!timestamp '2018-01-02 15:21:38 -7'
+created: 2018-01-02 15:21:38-07:00
 tags:
     - microblog
 guid: http://oyam.micro.blog/2018/01/02/my-new-years.html

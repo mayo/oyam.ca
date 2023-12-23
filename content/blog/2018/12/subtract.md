@@ -2,7 +2,7 @@
 type: link
 title: Subtract
 href: https://sivers.org/subtract
-created: !!timestamp '2018-12-26 21:06:42 -8'
+created: 2018-12-26 21:06:42-08:00
 ---
 > Imagine a horizontal line, with 0 on the left and 20 on the right. I want to be in the middle, at 10. But I’m at 17.
 

@@ -1,7 +1,7 @@
 ---
 type: photo
 imported: "microblog"
-created: !!timestamp '2018-01-25 12:27:03 -7'
+created: 2018-01-25 12:27:03-07:00
 tags:
     - microblog
 guid: http://oyam.micro.blog/2018/01/25/portal.html

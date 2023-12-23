@@ -1,7 +1,7 @@
 ---
 type: post
 imported: "microblog"
-created: !!timestamp '2018-02-15 09:53:46 -7'
+created: 2018-02-15 09:53:46-07:00
 tags:
     - microblog
 guid: http://oyam.micro.blog/2018/02/15/i-cant-put.html

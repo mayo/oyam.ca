@@ -1,6 +1,6 @@
 ---
 type: quote
-created: !!timestamp '2018-12-26 22:21:10 -7'
+created: 2018-12-26 22:21:10-07:00
 author: Nick Cave
 source: https://www.theredhandfiles.com/communication-dream-feeling
 ---

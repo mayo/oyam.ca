@@ -2,7 +2,7 @@
 type: link
 title: "Reclaiming Conversation: The Power of Talk in a Digital Age"
 href: http://nyti.ms/1VhHsVN
-created: !!timestamp '2015-09-29 20:54:00 -8'
+created: 2015-09-29 20:54:00-08:00
 ---
 Sherry Turkle's contribution to NY Times Sunday Review, adapted from her book "Reclaiming Conversation: The Power of Talk in a Digital Age"
 

@@ -1,6 +1,6 @@
 ---
 type: link
-created: !!timestamp '2021-02-25 23:25:55 -8'
+created: 2021-02-25 23:25:55-08:00
 title: Why time management is ruining our lives
 author: Oliver Burkeman
 href: https://www.theguardian.com/technology/2016/dec/22/why-time-management-is-ruining-our-lives

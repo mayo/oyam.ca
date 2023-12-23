@@ -1,7 +1,7 @@
 ---
 type: post
 title: Another Year, Another Static Site Generator
-created: !!timestamp '2018-01-01 21:35:00 -8'
+created: 2018-01-01 21:35:00-08:00
 tags:
   - sitebuild
 ---

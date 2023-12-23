@@ -2,7 +2,7 @@
 type: quote
 imported: "twitter"
 author: Alan Watts
-created: !!timestamp '2014-09-30 11:27:48 -7'
+created: 2014-09-30 11:27:48-07:00
 ---
 > What is the point of Progress if the food is tasteless, the housing absurd, the work boring, and the earth clobbered with concrete?
 
