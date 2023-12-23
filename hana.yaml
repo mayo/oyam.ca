@@ -13,13 +13,6 @@ logging:
 plugins_directory: plugins
 
 metadata:
-  author:
-    name: Mayo Jordanov
-    email: mayo@oyam.ca
-    microblog: "@oyam"
-    github: mayo
-
-  base_url: //oyam.ca
 
 #content_dir: content
 #output_dir: deploy
