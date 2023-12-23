@@ -6,6 +6,7 @@
   "flickr": "https://www.flickr.com/photos/oyam/",
   "github": "https://github.com/mayo",
   "bitbucket": "https://bitbucket.org/mayo",
+  "mastodon": "https://social.oyam.ca/@mayo",
 
   "rss": "/feed/atom.xml"
 }

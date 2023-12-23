@@ -58,13 +58,14 @@ now = time.time()
 h.plugin(metadata({
   "site": {
     "description": "Mayo Jordanov; software developer, photographer, climber, runner, hiker, adventurer, explorer",
-    "keywords": "mayo jordanov software development photography adventure explore climbing running hiking consulting tech design",
+    "keywords": "mayo jordanov software development photography adventure explore climbing running hiking consulting tech technology design",
   },
 
   "social_links": {
+    "mastodon": "fa-mastodon",
+    "github": "fa-github-square",
     "flickr": "fa-flickr",
     "linkedin": "fa-linkedin",
-    "github": "fa-github-square"
   },
 
   "github": {
