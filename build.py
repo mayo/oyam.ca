@@ -1,5 +1,6 @@
 import datetime
 import json
+import yaml
 import os
 import time
 
@@ -46,31 +47,12 @@ content_dir = 'content'
 
 h.plugin(FileLoader(content_dir, source_file_keyword='source_file'))
 
+now = time.time()
+
 h.plugin(metadata({
   # Used for blog post feedback links
   "site": {
     "source_dir": content_dir,
-  },
-}))
-
-now = time.time()
-
-h.plugin(metadata({
-  "site": {
-    "description": "Mayo Jordanov; software developer, photographer, climber, runner, hiker, adventurer, explorer",
-    "keywords": "mayo jordanov software development photography adventure explore climbing running hiking consulting tech technology design",
-  },
-
-  "social_links": {
-    "mastodon": "fa-mastodon",
-    "github": "fa-github-square",
-    "flickr": "fa-flickr",
-    "linkedin": "fa-linkedin",
-  },
-
-  "github": {
-    "repo": "/oyam.ca",
-    "edit": "/edit/master"
   },
 
   "now": datetime.datetime.fromtimestamp(now),
@@ -80,9 +62,11 @@ h.plugin(metadata({
 
   # It should be possible to replace these with additional metadata() calls
   "slides": json.load(open("./metadata/slides.json")),
-  "links": json.load(open("./metadata/links.json"))
+  # "links": json.load(open("./metadata/links.json"))
 
 }))
+
+h.plugin(metadata(yaml.safe_load(open("./metadata/metadata.yaml"))))
 
 h.plugin(ignore([
   '**/.*.swp',

@@ -1,12 +1,16 @@
 {
-  "twitter": "https://twitter.com/oyam",
+  "bitbucket": "https://bitbucket.org/mayo",
+  "email": "mailto:mayo@oyam.ca",
   "facebook": "https://www.facebook.com/oyamj",
-  "linkedin": "https://www.linkedin.com/in/mayoj",
-  "instagram": "http://instagram.com/oyam.ca",
   "flickr": "https://www.flickr.com/photos/oyam/",
   "github": "https://github.com/mayo",
-  "bitbucket": "https://bitbucket.org/mayo",
+  "instagram": "http://instagram.com/oyam.ca",
+  "keybase": "https://keybase.io/mayo/",
+  "linkedin": "https://www.linkedin.com/in/mayoj",
   "mastodon": "https://social.oyam.ca/@mayo",
+  "mastodon.social": "https://mastodon.social/@oyam",
+  "microblog": "https://micro.blog/oyam",
+  "twitter": "https://twitter.com/oyam",
 
   "rss": "/feed/atom.xml"
 }
