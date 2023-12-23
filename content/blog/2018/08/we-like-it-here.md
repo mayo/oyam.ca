@@ -1,6 +1,6 @@
 ---
 type: post
-created: !!timestamp '2018-08-09 21:21:23 -7'
+created: 2018-08-09 21:21:23-07:00
 ---
 Lately I can't get enough of *Snarky Puppy*'s *[We Like It Here][1]* album. I've been playing it on repeat for a couple of weeks now.
 

@@ -1,7 +1,7 @@
 ---
 type: post
 title: Social Networks And Data Ownership
-created: !!timestamp '2018-04-12 21:43:00 -7'
+created: 2018-04-12 21:43:00-07:00
 ---
 
 Number of the questions to Mark Zuckerberg in the Senate testimony were asking about data ownership and were quick to point out that the users don't make any money off their data. Many people on social media were echoed the same. I believe these questions are short seighted and are looking at the problem from the wrong angle.

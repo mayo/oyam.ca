@@ -1,7 +1,7 @@
 ---
 type: post
 title: Across Italy
-created: !!timestamp '2011-09-26 00:00:00 -7'
+created: 2011-09-26 00:00:00-07:00
 tags:
   - travel
 header:

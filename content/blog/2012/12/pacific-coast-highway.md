@@ -1,7 +1,7 @@
 ---
 type: post
 title: "Pacific Coast Highway: First timer's 101 to the 101"
-created: !!timestamp '2012-12-15 00:00:00 -8'
+created: 2012-12-15 00:00:00-08:00
 tags:
   - travel
 header:

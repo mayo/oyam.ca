@@ -1,7 +1,7 @@
 ---
 type: post
 imported: "facebook"
-created: !!timestamp '2015-03-20 11:27:48 -7'
+created: 2015-03-20 11:27:48-07:00
 ---
 Wise words to live by:
 

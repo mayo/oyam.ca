@@ -1,7 +1,7 @@
 ---
 type: photo
 imported: "microblog"
-created: !!timestamp '2017-11-27 08:12:31 -7'
+created: 2017-11-27 08:12:31-07:00
 tags:
     - microblog
 guid: http://oyam.micro.blog/2017/11/27/sunrise.html

@@ -1,7 +1,7 @@
 ---
 type: post
 title: "iOS HealthKit: Misunderstood"
-created: !!timestamp '2014-12-04 23:57:00 -8'
+created: 2014-12-04 23:57:00-08:00
 ---
 I’ve seen a few discussions about iOS HealthKit recently, and most seem to miss the point of the app. There seems to be a notion that HealthKit is trying to compete with apps that do data visualization, that it somehow wants to take over managing all the wearable sensors, or even push Apple’s wearable fitness tech. While I don’t know what Apple’s intentions, all these assumptions don’t seem right and miss a major reason for HealthKit’s existence – to be an information broker.
 

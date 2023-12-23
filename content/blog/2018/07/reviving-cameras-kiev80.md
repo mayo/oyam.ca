@@ -4,7 +4,7 @@ title: "Reviving old cameras: Kiev 80"
 tags:
   - photography
   - film
-created: !!timestamp '2018-07-16 22:18:47 -7'
+created: 2018-07-16 22:18:47-07:00
 ---
 I haven't been taking pictures as much as I usually do lately, aside for a phone picture here and there. I've been feeling a little nostalgic, and my mind has been on film a lot, so I started working on reviving some old cameras. First in line: Kiev 80, aka Hasselbaldski.
 

@@ -1,7 +1,7 @@
 ---
 type: photo
 imported: "facebook"
-created: !!timestamp '2012-08-25 20:08:45 -7'
+created: 2012-08-25 20:08:45-07:00
 ---
 ![Ambleside sunset, West Vancouver, BC](/media/images/photos/2012/08/ambleside-sunset.jpg)
 

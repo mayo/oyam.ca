@@ -1,7 +1,7 @@
 ---
 type: post
 title: Heading Home
-created: !!timestamp '2015-03-16 13:22:00 -8'
+created: 2015-03-16 13:22:00-08:00
 ---
 *I wrote this story as a response to a Reddit [writing prompt](http://redd.it/2z8w99): “The first spacecraft to leave the solar system discovers another, slower, 2,000 year old vessel travelling to Alpha Centauri.”*
 

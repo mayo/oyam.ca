@@ -2,7 +2,7 @@
 type: post
 title: We Live In Public
 author: Josh Harris
-created: !!timestamp '2010-11-29 00:00:00 -8'
+created: 2010-11-29 00:00:00-08:00
 ---
 > Everything is free, except the video that we capture of you. That we own.
 

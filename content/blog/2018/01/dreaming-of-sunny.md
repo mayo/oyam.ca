@@ -1,7 +1,7 @@
 ---
 type: photo
 imported: "microblog"
-created: !!timestamp '2018-01-09 08:19:04 -7'
+created: 2018-01-09 08:19:04-07:00
 tags:
     - microblog
 guid: http://oyam.micro.blog/2018/01/09/dreaming-of-sunny.html

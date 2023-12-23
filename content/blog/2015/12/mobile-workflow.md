@@ -1,7 +1,7 @@
 ---
 type: post
 title: Mobile Publishing Workflow with Metalsmith and Travis CI
-created: !!timestamp '2015-12-24 8:50:00 -8'
+created: 2015-12-24 8:50:00-08:00
 tags:
   - sitebuild
 ---

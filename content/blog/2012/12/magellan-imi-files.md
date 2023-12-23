@@ -1,7 +1,7 @@
 ---
 type: post
 title: Decoding Magellan Map Files (Update)
-created: !!timestamp '2012-12-18 00:06:00 -8'
+created: 2012-12-18 00:06:00-08:00
 ---
 It's been a while since I have done this, but I still get the occasional request on the topic, so I decided to revisit. The old post was not complete, so here is a rewrite along with some new information I learned since. 
 

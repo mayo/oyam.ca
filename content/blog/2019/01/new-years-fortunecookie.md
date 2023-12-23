@@ -1,7 +1,7 @@
 ---
 type: post
 imported: "microblog"
-created: !!timestamp '2019-01-01 19:38:38 -8'
+created: 2019-01-01 19:38:38-08:00
 tags:
     - microblog
 ---
