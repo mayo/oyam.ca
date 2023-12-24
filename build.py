@@ -68,6 +68,12 @@ h.plugin(metadata({
 
 h.plugin(metadata(yaml.safe_load(open("./metadata/metadata.yaml"))))
 
+# Load key into metadata to avoid having to create custom extensions for Jinja.
+# This is all just to have the key rendered on the pubkey page.
+h.plugin(metadata({
+    "pubkey_txt": open("./content/pubkey.txt").read()
+}))
+
 h.plugin(ignore([
   '**/.*.swp',
   '**/.DS_Store',

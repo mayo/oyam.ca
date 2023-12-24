@@ -1,0 +1,51 @@
+---
+template: true
+title: Mayo Jordanov's Public Key
+page_id: pubkey
+---
+{% extends 'grid.html' %}
+{% block main_content %}
+<div class="head-title grid-container normal">
+    <div class="title grid-100">
+        <h1>{{ page.title }}</h1>
+    </div>
+</div>
+
+<div class="grid-container {{ grid_container_class }}">
+    <div class="grid-40 mobile-grid-100 sidebar">
+        <p>
+            <ul class="sidebar-list">
+                <li><i class="fal inline icon fa-key" title="GPG Fingerprint"></i><span class="sr-only">GPG Fingerprint</span><a rel="gpgkey" href="{{ site.links.pubkey }}" class="hex-string">{% for word in site.pubkey.fingerprint[-4:] %}<span class="word">{{ word }}</span>{% endfor %}</a></li>
+            {% for service, link in site.pubkey.proofs.items() %}
+                <li><i class="fal inline icon {{ site.icons[service] or 'null-icon' }}" title="{{ site.services[service] or service}}"></i><span class="sr-only">{{ site.services[service] or service}}</span><a href="{{ link or site.links[service] }}">{{ site.author[service] or site.links[service] }}</a></li>
+            {% endfor %}
+
+            </ul>
+        </p>
+    </div>
+
+    <div class="grid-60 mobile-grid-100">
+        <dl>
+            <dt>Fingerprint</dt>
+            <dd><code class="hex-string">{% for word in site.pubkey.fingerprint %}<span class="word">{{ word }}</span>{% endfor %}</code></dd>
+
+            <dt>64 bit fingerprint</dt>
+            <dd><code class="hex-string">{% for word in site.pubkey.fingerprint[-4:] %}<span class="word">{{ word }}</span>{% endfor %}</code></dd>
+
+            <dt>Raw key</dt>
+            <dd><a href="{{ site.links.pubkey }}">https:{{ site.base_url }}{{ site.links.pubkey }}</a></dd>
+        </dl>
+
+        <pre class="shell solarized">
+            <span class="shell-comment"># To import key into GPG:</span>
+            <span class="shell-command">curl https:{{ site.base_url }}{{ site.links.pubkey }} | gpg --import</span>
+        </pre>
+
+        <textarea class="font-code pubkey" readonly="true" rows="7">
+            {{ site.pubkey_txt }}
+        </textarea>
+
+    </div>
+</div>
+
+{% endblock %}
