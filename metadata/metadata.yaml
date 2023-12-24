@@ -4,8 +4,18 @@ base_url: //oyam.ca
 author:
   name: Mayo Jordanov
   email: mayo@oyam.ca
+
   microblog: "@oyam"
   github: mayo
+  bitbucket: mayo
+  flickr: oyam
+  instagram: oyam.ca
+  keybase: mayo
+  linkedin: mayoj
+  mastodon: "@mayo@oyam.ca"
+  mastodon_social: "@oyam@mastodon.social"
+  twitter: "@oyam"
+
 
 site:
   description: Mayo Jordanov; software developer, photographer, climber, runner, hiker, adventurer, explorer
@@ -19,7 +29,35 @@ social_links:
 
 github:
   repo: /oyam.ca
-  edit: /edit/master
+  edit: /edit/masterw
+
+services:
+  bitbucket: Bitbucket
+  email: Email
+  facebook: Facebook
+  flickr: Flickr
+  github: GitHub
+  instagram: Instagram
+  keybase: Keybase
+  linkedin: Linkedin
+  mastodon: Mastodon
+  mastodon_social: Mastodon
+  microblog: Micro.blog
+  twitter: Twitter
+
+icons:
+#  bitbucket: Bitbucket
+  email: fa-envelope
+#  facebook: Facebook
+  flickr: fa-flickr
+  github: fa-github-square
+#  instagram: instagram
+#  keybase: keybase
+  linkedin: fa-linkedin
+  mastodon: fa-mastodon
+  mastodon_social: fa-mastodon
+#  microblog: microblog
+#  twitter: twitter
 
 links:
   bitbucket: https://bitbucket.org/mayo
@@ -35,6 +73,7 @@ links:
   microblog: https://micro.blog/oyam
   twitter: https://twitter.com/oyam
 
+  pubkey: /pubkey.txt
   rss: /feed/atom.xml"
 
 rel_me:
@@ -46,3 +85,23 @@ rel_me:
   email: fa-envelope
   mastodon: fa-mastodon
   mastodon_social: fa-mastodon
+
+pubkey:
+  # TODO: see obsidian://open?vault=Notes&file=Notes%2F2335723166
+  proofs:
+    email: null
+    # github: https://gist.github.com/mayo/54b058bd6421a5b1ef31ada68ba9c4e6
+    # microblog: microblog
+    # mastodon: fa-mastodon
+    # mastodon_social: fa-mastodon
+  fingerprint:
+  - 50FE
+  - C3A3
+  - 64B5
+  - 9BEE
+  - 734D
+  - 0E9B
+  - 56A3
+  - 789C
+  - ED4D
+  - 2DD7

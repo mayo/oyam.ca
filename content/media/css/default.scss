@@ -459,14 +459,16 @@ pre {
 
 pre,
 code,
-pre code {
+pre code,
+textarea.pubkey {
   font-size: .8em;
 }
 
 pre {
-  border: 1px dotted $lighter;
+  border: 1px dotted $darker;
   padding: .4em .6em;
   overflow: auto;
+  border-radius: .3em;
 }
 
 pre::-webkit-scrollbar {
@@ -561,6 +563,36 @@ pre::-webkit-scrollbar-thumb {
   border: 0;
 }
 
+.shell {
+  background-color: $darker;
+  color: $lighter;
+  white-space: pre-line;
+  display: block;
+  width: 100%;
+}
+
+.shell .shell-comment {
+  color: $light;
+}
+
+textarea.pubkey {
+  width: 100%;
+  display: block;
+  white-space: pre-line;
+  border-radius: .3em;
+  border: 1px dotted $darker;
+  padding: .4em .6em;
+  overflow: auto;
+}
+
+/* TODO  */
+.null-icon {
+  background-color: red;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+}
+
 /* @group Error */
 
 #error .article-list article {
@@ -635,16 +667,18 @@ pre::-webkit-scrollbar-thumb {
 
 /* @group About */
 
-#about .contact-list {
+#about .contact-list,
+.sidebar-list {
   padding: 0;
 }
 
-#about .contact-list li {
+#about .contact-list li,
+.sidebar-list li {
   list-style-type: none;
   margin-bottom: .2em;
 }
 
-#about .contact-list .pgp-fingerprint span {
+.hex-string .word {
   margin-right: .3em;
 }
 

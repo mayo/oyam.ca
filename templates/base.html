@@ -29,15 +29,10 @@
 
     <link rel="alternate" type="application/atom+xml" href="/feed/atom.xml"/>
 
-    <link rel="me" href="https://keybase.io/mayo/"/>
-    <link rel="me" href="https://github.com/mayo"/>
-    <link rel="me" href="https://twitter.com/oyam"/>
-    <link rel="me" href="https://instagram.com/oyam.ca"/>
-    <link rel="me" href="https://micro.blog/oyam"/>
-    <link rel="me" href="mailto:mayo@oyam.ca"/>
-    <link rel="me" href="https://mastodon.social/@oyam"/>
-    <link rel="me" href="https://social.oyam.ca/@mayo"/>
-    <link rel="gpgkey" href="/pubkey.txt"/>
+    {% for link in site.rel_me.keys() %}
+    <link rel="me" href="{{ site.links[link] }}"/>
+    {% endfor %}
+    <link rel="gpgkey" href="{{ site.links.pubkey }}"/>
 
     <link rel="micropub" href="https://api.oyam.ca/micropub">
     <link rel="microsub" href="https://api.oyam.ca/microsub">
