@@ -90,18 +90,18 @@ pubkey:
   # TODO: see obsidian://open?vault=Notes&file=Notes%2F2335723166
   proofs:
     email: null
-    # github: https://gist.github.com/mayo/54b058bd6421a5b1ef31ada68ba9c4e6
+    github: https://gist.github.com/mayo/54b058bd6421a5b1ef31ada68ba9c4e6
     # microblog: microblog
-    # mastodon: fa-mastodon
+    mastodon: https://social.oyam.ca/@mayo
     # mastodon_social: fa-mastodon
   fingerprint:
-  - 50FE
-  - C3A3
-  - 64B5
-  - 9BEE
-  - 734D
-  - 0E9B
-  - 56A3
-  - 789C
-  - ED4D
-  - 2DD7
+  - 50fe
+  - c3a3
+  - 64b5
+  - 9bee
+  - 734d
+  - 0e9b
+  - 56a3
+  - 789c
+  - ed4d
+  - 2dd7
