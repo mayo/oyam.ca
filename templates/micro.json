@@ -8,7 +8,7 @@
     "url": "https://oyam.ca"
   },
   "items": [
-{%- for res in site.tags.articles -%}
+{%- for res in site.tags.articles[:site.feed_length] -%}
     {
       "id": "{% if res.guid %}{{ res.guid }}{% else %}https://oyam.ca/{{ res.path }}{% endif %}",
       "url": "https://oyam.ca/{{ res.path }}",
