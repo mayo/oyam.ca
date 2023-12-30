@@ -16,6 +16,7 @@ author:
   mastodon_social: "@oyam@mastodon.social"
   twitter: "@oyam"
 
+feed_length: 10
 
 site:
   description: Mayo Jordanov; software developer, photographer, climber, runner, hiker, adventurer, explorer

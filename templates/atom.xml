@@ -11,7 +11,7 @@
     <uri>https://oyam.ca/</uri>
   </author>
 
-  {% for res in site.tags.articles %}
+  {% for res in site.tags.articles[:site.feed_length] %}
   <entry>
     <id>tag:oyam.ca,2010:{{ res.path }}</id>
     <author>
