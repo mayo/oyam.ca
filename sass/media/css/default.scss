@@ -1,5 +1,9 @@
-@import "content/media/css/base";
-@import "content/media/css/theme";
+@import "base";
+@import "theme";
+
+* {
+  box-sizing: border-box;  
+}
 
 html {
   font-size: 62.5%; /* 62.5 = 10px; */
@@ -15,12 +19,13 @@ body {
 }
   
 body,
-article.post .content,
+article.article .content,
+article.note .content,
 #gallery-page .grid-container.gallery .meta h1,
 .font-serif {
   /* Berling T is preferred, but not available on TypeKit */
-  font-family: "freight-text-pro";
-  font-weight: 400;
+  font-family: $font-family-serif /*"freight-text-pro"*/;
+  font-weight: 450;
 }
 
 body.dark-bg,
@@ -30,12 +35,12 @@ div.body.dark-bg {
 }
 
 h1, h2, h3, h4, h5, h6  {
-  font-family: "freight-sans-pro";
+  font-family: $font-family-sans /*"freight-sans-pro"*/;
   font-weight: 600;
 }
 
 article h1, article h2, article h3, article h4, article h5, article h6  {
-  font-family: "freight-sans-compressed-pro";
+  font-family: $font-family-condensed /*"freight-sans-compressed-pro"*/;
   font-weight: 600;
 
 }
@@ -47,17 +52,22 @@ figcaption,
 div.archive,
 div.blognav,
 .quote,
-.link,
+.bookmark,
 nav.sitenav,
-.grid-container .sidebar,
+.content-container .sidebar,
 .font-sansserif {
-  font-family: "freight-sans-pro";
+  font-family: $font-family-sans /*"freight-sans-pro"*/;
+  font-weight: 400;
+}
+
+nav.sitenav {
+  font-weight: 300;
 }
 
 pre,
 code,
 .font-code {
-  font-family: "source-code-pro", monospace;
+  font-family: $font-family-mono /*"source-code-pro", monospace*/;
 }
 
 h1,
@@ -97,30 +107,81 @@ a {
   color: $link;
 }
 
-body > footer {
-  font-size: .7em;
-}
-
 small,
 .font-small,
-article footer {
+article footer,
+.breadcrumbs,
+body > footer {
   font-size: .8em;
 }
 
-.grid-container,
-.grid-container.normal {
+.content-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  // gap: 3rem; //upsetting some space settings
+
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: .5em; //it was 10px, why?
+  padding-right: .5em; //it was 10px, why?
+}
+
+.flex-item-25 {
+  flex: 1;
+  min-width: 25%;
+}
+
+.flex-item-30 {
+  flex: 1;
+  min-width: 30%;
+}
+
+.flex-item-33 {
+  flex: 1;
+  min-width: 33%;
+}
+
+.flex-item-40 {
+  flex: 1;
+  min-width: 40%;
+}
+
+.flex-item-50 {
+  flex: 1;
+  min-width: 50%;
+}
+
+.flex-item-60 {
+  flex: 1;
+  min-width: 60%;
+}
+
+.flex-item-70 {
+  flex: 1;
+  min-width: 70%;
+}
+
+.flex-item-100 {
+  flex: 1;
+  min-width: 100%;
+}
+
+.content-container,
+.content-container.normal {
   max-width: 100rem;
 }
 
-.grid-container.full {
+.content-container.full {
   max-width: 100%;
 }
 
-.grid-container.narrow,
-#blog .grid-container {
+#blog .content-container,
+.content-container.narrow {
   max-width: 85rem;
 }
 
+/* disabling, it messes with other li settings. Why?
 li {
   list-style-type: disc;
 }
@@ -128,15 +189,25 @@ li {
 ul {
   padding-left: 1.2em;
 }
+*/
 
 /* TODO: this is not needed - used in WIP/demo pages */
-.column img {
-  width: 100%;
-  height: auto;
+// .column img {
+//   width: 100%;
+//   height: auto;
+// }
+
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  //width: calc(100% - 2rem);
+  font-family: $font-family-mono;
+  column-gap: 0.4em;
 }
 
 body > header {
   padding-top: .5em;
+  padding-bottom: .5em;
 }
 
 body > footer {
@@ -226,7 +297,7 @@ nav.sitenav .logo img {
   margin-right: .5em;
 }
 
-nav.sitenav .logo .logotype {
+.breadcrumbs .logotype {
   display: inline-block;
   -webkit-font-smoothing: antialiased;
   line-height: 1;
@@ -235,12 +306,12 @@ nav.sitenav .logo .logotype {
   font-size: 1.2em
 }
 
-.dark-bg nav.sitenav .logo .logotype,
-nav.sitenav .dark-bg .logo .logotype {
+.dark-bg .breadcrumbs .logotype,
+.breadcrumbs .dark-bg .logotype {
   color: $lightest;
 }
 
-nav.sitenav .logo .logotype .lastname {
+.breadcrumbs .logotype .lastname {
   padding-left: .3em;
 }
 
@@ -388,15 +459,85 @@ nav.sitenav .menu .folder .submenu li a:active {
   }
 }
 
-/* @end Nav */
-
-/* This specific selector reuired because of pages with banner images */
-main > .grid-container:first-child {
-  margin-top: 3em;
+nav.main-nav.is-closed {
+// temporarily disabled white testing
+  // display: none;
 }
 
-#blog main > .grid-container:first-child {
-  margin-top: 5em;
+nav.main-nav {
+  // display: grid;
+  --main-nav-gap: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--main-nav-gap);
+  width: 100%;
+  flex: 0 0 100%;
+  // grid-gap: 3.5rem 2rem;
+  // overflow: hidden;
+
+  font-family: $font-family-mono;
+  font-size: 1em;
+
+  /* this should be media dependent */
+  // grid-template-columns: repeat(5,1fr);
+}
+
+nav.main-nav .nav-group {
+  flex: 1 1 calc(20% - var(--main-nav-gap));
+  // min-width: 20%;
+}
+
+nav.main-nav .nav-group.gallery {
+  flex: 3 3 calc(60% - var(--main-nav-gap));
+  // min-width: 20%;
+}
+nav.main-nav .nav-group.about {
+  flex: 1 1 calc(40% - var(--main-nav-gap));
+  // min-width: 20%;
+}
+
+body > header nav.main-nav {
+  margin-top: 4rem;
+}
+
+footer nav.main-nav {
+  margin-bottom: 4rem;
+}
+
+nav ul.nav-group {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav .nav-group {
+  display: block;
+  margin: 0 0 1em;
+}
+
+nav .nav-group > :first-child {
+  font-weight: bold;
+}
+
+body > footer .footer-item {
+  // body > footer is context-container, which uses flex layout
+  flex: 0 0 0px;
+  padding-right: .5em;
+}
+
+body > footer .footer-item.copyright {
+  flex: 1 1;
+  text-align: right;
+}
+
+/* @end Nav */
+
+/* 
+  This specific selector required because of pages with banner images. Normally,
+  the margin could be applied on main, however it would create awkward space
+  above banners.
+*/
+main > .content-container:first-child {
+  margin-top: 1em;
 }
 
 body > footer ul {
@@ -428,6 +569,12 @@ figure figcaption {
   color: $dark;
 }
 
+.inline.icon {
+  width: 1em;
+  margin-right: .3em;
+  vertical-align: -.1em;
+}
+
 blockquote {
   border-left: .3em solid $dark;
 
@@ -450,14 +597,16 @@ pre {
 
 pre,
 code,
-pre code {
+pre code,
+textarea.pubkey {
   font-size: .8em;
 }
 
 pre {
-  border: 1px dotted $lighter;
+  border: 1px dotted $darker;
   padding: .4em .6em;
   overflow: auto;
+  border-radius: .3em;
 }
 
 pre::-webkit-scrollbar {
@@ -517,27 +666,21 @@ pre::-webkit-scrollbar-thumb {
   margin-bottom: 0;
 }
 
-.banner + .grid-container p:first-child {
+.banner + .content-container p:first-child {
   margin-top: 3em;
 }
 
-.grid-container .sidebar {
+.content-container .sidebar {
   color: $dark;
   font-size: .8em;
   line-height: 1.6em;
 }
 
-.grid-container .sidebar .inline.icon {
-  width: 1em;
-  margin-right: .5em;
-  vertical-align: -.1em;
-}
-
-.grid-container .sidebar a {
+.content-container .sidebar a {
   color: inherit;
 }
 
-.grid-container .sidebar a:hover {
+.content-container .sidebar a:hover {
   color: $darkest;
 }
 
@@ -550,6 +693,46 @@ pre::-webkit-scrollbar-thumb {
   overflow: hidden;
   clip: rect($darkest,0);
   border: 0;
+}
+
+.shell {
+  background-color: $darker;
+  color: $lighter;
+  white-space: pre-line;
+  display: block;
+  width: 100%;
+}
+
+.shell .shell-comment {
+  color: $light;
+}
+
+textarea.pubkey {
+  width: 100%;
+  display: block;
+  white-space: pre-line;
+  border-radius: .3em;
+  border: 1px dotted $darker;
+  padding: .4em .6em;
+  overflow: auto;
+}
+
+.taxonomy-term-list a {
+  margin-right: .5em;
+}
+
+.section-list .post-time {
+  font-size: .8em;
+  margin-left: 1em;
+  color: $dark;
+}
+
+/* TODO  */
+.null-icon {
+  background-color: red;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
 }
 
 /* @group Error */
@@ -608,13 +791,13 @@ pre::-webkit-scrollbar-thumb {
   right: 3em;
   margin-left: 3em; /* for mobile devices */
   max-width: 30em; /* max-width instead of width for mobile devices */
-  font-family: "freight-sans-pro";
+  font-family: $font-family-sans /*"freight-sans-pro" */;
   text-align: right;  
   color: black;
 }
 
 .slideshow .slide .main h1 {
-  font-family: "freight-sans-compressed-pro";
+  font-family: $font-family-condensed /*"freight-sans-compressed-pro"*/;
 }
 
 .dark-bg .slideshow .slide .main,
@@ -626,21 +809,31 @@ pre::-webkit-scrollbar-thumb {
 
 /* @group About */
 
-#about .contact-list {
+#about .contact-list,
+.sidebar-list {
   padding: 0;
 }
 
-#about .contact-list li {
+#about .contact-list li,
+.sidebar-list li {
   list-style-type: none;
   margin-bottom: .2em;
 }
 
-#about .contact-list .pgp-fingerprint span {
+.no-bullets {
+  padding-left: 0;
+}
+
+.no-bullets li {
+  list-style-type: none;
+}
+
+.hex-string .word {
   margin-right: .3em;
 }
 
-
-#about div.me {
+#about div.me
+{
   background-color: $lighter;
   border-radius: 10px;
   margin-top: -8em;
@@ -652,7 +845,8 @@ pre::-webkit-scrollbar-thumb {
   position: relative;
 }
 
-#about div.me img {
+#about div.me img
+{
   display: block;
   width: 100%;
   
@@ -712,8 +906,7 @@ pre::-webkit-scrollbar-thumb {
 
 div.blognav {
   margin-top: 2em;
-  padding-top: .3em;
-  border-top: 1px solid $lighter;
+  width: 100%;
 }
 
 div.blognav .feedback,
@@ -747,9 +940,7 @@ div.blognav a {
   color: $darker;
 }
 
-.article-list .date-threshold,
-article .post-time {
-  display: block;
+.article-list .date-threshold {
   color: $dark;
 }  
 
@@ -793,10 +984,6 @@ article.quote p.author {
   margin-top: -.6em;
 }
 
-.article-list article.link footer a {
-  display: block;
-}
-
 .article-list article div.header-image {
   height: 11em;
   background-size: cover;
@@ -813,17 +1000,8 @@ article h2 a {
   color: inherit;
 }
 
-article header .post-time {
-  font-size: .8em;
-}
-
 article h1 {
   margin-bottom: 0;
-}
-
-article h1, 
-article h2 {
-  text-transform: uppercase;
 }
 
 article header,
@@ -875,28 +1053,29 @@ article footer p {
   margin-top: 0em;
 }
 
-article footer dt.icon {
-  float: left;
-  width: 1.1em;
+dl.key-value-table {
+  display: grid;
+  grid-template-columns: 1em auto;
+  gap: 0 .5em;
+  grid-auto-rows: auto;
 }
 
-article footer dt.icon i {
-  vertical-align: -.1em;
+dl.key-value-table dt {
+    grid-column-start: 1;
 }
 
-article footer dd {
-  float: left;
-  margin-left: .5em;
+dl.key-value-table dd {
+  grid-column-start: 2;
+  margin-inline-start: 0px;
 }
 
-article footer dd + dt {
-  clear: both;
+dl.key-value-twoline dt {
+  color: $dark;
 }
 
-article footer dl:after {
-  display: block;
-  clear: both;
-  content: '';
+dl.key-value-twoline dd {
+  margin-inline-start: 0px;
+  margin-bottom: .5em;
 }
 
 /* @end Blog */

@@ -1,4 +1,4 @@
-@import "content/media/css/theme";
+@import "theme";
 
 /* iphone retina - portrait */
 @media only screen and (max-width: 480px) {
@@ -147,8 +147,7 @@
 }
 
 
-.article-list,
-.bio-blob {
+.article-list {
   font-size: .9em;
 }
 
