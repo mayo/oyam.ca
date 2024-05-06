@@ -1,11 +1,8 @@
 build:
-	python build.py
+	zola build -u '/'
 
-serve: build
-	(cd deploy && python -m http.server)
-
-clean:
-	rm -rf deploy
+serve:
+	zola serve -u '/'
 
 update-submodules:
 	git submodule update --recursive --init
