@@ -6,5 +6,8 @@ taxonomies:
     - microblog
   type: [photo]
 ---
-![Camping at Inyo National Forest](/media/images/photos/2017/10/fbf384e9264586336b86b77501c85dff.jpg)
+<figure>
+  <img src="/media/images/photos/2017/10/fbf384e9264586336b86b77501c85dff.jpg" title="Camping at Inyo National Forest"/>
+  <figcaption>Camping at Inyo National Forest</figcaption>
+</figure>
 

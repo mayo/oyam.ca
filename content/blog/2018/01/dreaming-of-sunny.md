@@ -7,5 +7,8 @@ taxonomies:
   type: [photo]
 guid: http://oyam.micro.blog/2018/01/09/dreaming-of-sunny.html
 ---
-![Dreaming of sunny mornings](/media/images/photos/2018/01/dreaming-sunny-mornings.jpg)
+<figure>
+  <img src="/media/images/photos/2018/01/dreaming-sunny-mornings.jpg" title="Dreaming of sunny mornings"/>
+  <figcaption>Dreaming of sunny mornings</figcaption>
+</figure>
 

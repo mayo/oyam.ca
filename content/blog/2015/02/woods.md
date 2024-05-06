@@ -6,5 +6,8 @@ taxonomies:
     - microblog
   type: [photo]
 ---
-![Woods.](/media/images/photos/2015/02/694ec03ce95f3dbb8bc57f585c73fb68.jpg)
+<figure>
+  <img src="/media/images/photos/2015/02/694ec03ce95f3dbb8bc57f585c73fb68.jpg" title="Woods."/>
+  <figcaption>Woods.</figcaption>
+</figure>
 

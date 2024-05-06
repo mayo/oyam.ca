@@ -6,5 +6,8 @@ taxonomies:
     - microblog
   type: [photo]
 ---
-![Yaquina Bay Lighthouse](/media/images/photos/2012/09/9fe20565ee4ca34660fae5ad96e8d986.jpg)
+<figure>
+  <img src="/media/images/photos/2012/09/9fe20565ee4ca34660fae5ad96e8d986.jpg" title="Yaquina Bay Lighthouse"/>
+  <figcaption>Yaquina Bay Lighthouse</figcaption>
+</figure>
 

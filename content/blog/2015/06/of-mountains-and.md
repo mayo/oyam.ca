@@ -6,5 +6,8 @@ taxonomies:
     - microblog
   type: [photo]
 ---
-![Of mountains and seas](/media/images/photos/2015/06/d08f9804dfed5145423a669635adddfc.jpg)
+<figure>
+  <img src="/media/images/photos/2015/06/d08f9804dfed5145423a669635adddfc.jpg" title="Of mountains and seas"/>
+  <figcaption>Of mountains and seas</figcaption>
+</figure>
 

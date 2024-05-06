@@ -6,6 +6,13 @@ taxonomies:
     - microblog
   type: [photo]
 ---
-![Cape Blanco](/media/images/photos/2012/09/0eafea808d12543afa979e4bc989db24.jpg)
-![Cape Blanco](/media/images/photos/2012/09/53312075e6419ba62b3d79aa43004db9.jpg)
+<figure>
+  <img src="/media/images/photos/2012/09/0eafea808d12543afa979e4bc989db24.jpg" title="Cape Blanco"/>
+  <figcaption>Cape Blanco</figcaption>
+</figure>
+
+<figure>
+  <img src="/media/images/photos/2012/09/53312075e6419ba62b3d79aa43004db9.jpg" title="Cape Blanco"/>
+  <figcaption>Cape Blanco</figcaption>
+</figure>
 

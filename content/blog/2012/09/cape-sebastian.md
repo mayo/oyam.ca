@@ -6,5 +6,8 @@ taxonomies:
     - microblog
   type: [photo]
 ---
-![Cape Sebastian](/media/images/photos/2012/09/034513e987b18db29159bb18b8adfea4.jpg)
+<figure>
+  <img src="/media/images/photos/2012/09/034513e987b18db29159bb18b8adfea4.jpg" title="Cape Sebastian"/>
+  <figcaption>Cape Sebastian</figcaption>
+</figure>
 

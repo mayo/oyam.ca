@@ -6,5 +6,8 @@ taxonomies:
     - microblog
   type: [photo]
 ---
-![Tracks](/media/images/photos/2016/01/8d77094eb57d198e444398848c880ae9.jpg)
+<figure>
+  <img src="/media/images/photos/2016/01/8d77094eb57d198e444398848c880ae9.jpg" title="Tracks"/>
+  <figcaption>Tracks</figcaption>
+</figure>
 

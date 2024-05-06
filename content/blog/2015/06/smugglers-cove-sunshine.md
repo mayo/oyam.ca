@@ -6,5 +6,8 @@ taxonomies:
     - microblog
   type: [photo]
 ---
-![Smuggler's Cove, Sunshine Coast, BC](/media/images/photos/2015/06/48e6d934cc803a7efb3ec4c730168ae1.jpg)
+<figure>
+  <img src="/media/images/photos/2015/06/48e6d934cc803a7efb3ec4c730168ae1.jpg" title="Smuggler's Cove, Sunshine Coast, BC"/>
+  <figcaption>Smuggler's Cove, Sunshine Coast, BC</figcaption>
+</figure>
 

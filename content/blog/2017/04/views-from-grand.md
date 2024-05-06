@@ -6,5 +6,8 @@ taxonomies:
     - microblog
   type: [photo]
 ---
-![Views from Grand Pass Trail](/media/images/photos/2017/04/efd4a36fd390ab2df397bff59461a238.jpg)
+<figure>
+  <img src="/media/images/photos/2017/04/efd4a36fd390ab2df397bff59461a238.jpg" title="Views from Grand Pass Trail"/>
+  <figcaption>Views from Grand Pass Trail</figcaption>
+</figure>
 

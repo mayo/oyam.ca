@@ -6,5 +6,8 @@ taxonomies:
     - microblog
   type: [photo]
 ---
-![Zion](/media/images/photos/2017/10/4c8406c10726556a23a21d5794307094.jpg)
+<figure>
+  <img src="/media/images/photos/2017/10/4c8406c10726556a23a21d5794307094.jpg" title="Zion"/>
+  <figcaption>Zion</figcaption>
+</figure>
 

@@ -6,5 +6,8 @@ taxonomies:
     - microblog
   type: [photo]
 ---
-![Lighthouse Park](/media/images/photos/2017/07/49aff1bb831019b5206443032ae83b4d.jpg)
+<figure>
+  <img src="/media/images/photos/2017/07/49aff1bb831019b5206443032ae83b4d.jpg" title="Lighthouse Park"/>
+  <figcaption>Lighthouse Park</figcaption>
+</figure>
 

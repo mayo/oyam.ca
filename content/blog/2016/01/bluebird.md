@@ -6,5 +6,8 @@ taxonomies:
     - microblog
   type: [photo]
 ---
-![Bluebird](/media/images/photos/2016/01/5967942725a778f4f7efb6bf460ea123.jpg)
+<figure>
+  <img src="/media/images/photos/2016/01/5967942725a778f4f7efb6bf460ea123.jpg" title="Bluebird"/>
+  <figcaption>Bluebird</figcaption>
+</figure>
 

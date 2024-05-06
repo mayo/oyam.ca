@@ -6,5 +6,8 @@ taxonomies:
     - microblog
   type: [photo]
 ---
-![Darla](/media/images/photos/2015/09/21d1dd29f1f88c4ee97543f42cdd338a.jpg)
+<figure>
+  <img src="/media/images/photos/2015/09/21d1dd29f1f88c4ee97543f42cdd338a.jpg" title="Darla"/>
+  <figcaption>Darla</figcaption>
+</figure>
 

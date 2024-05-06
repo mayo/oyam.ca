@@ -6,5 +6,7 @@ taxonomies:
     - microblog
   type: [photo]
 ---
-![](/media/images/photos/2012/09/54658ae969c3cc98925f7b178da0d0f7.jpg)
+<figure>
+  <img src="/media/images/photos/2012/09/54658ae969c3cc98925f7b178da0d0f7.jpg"/>
+</figure>
 

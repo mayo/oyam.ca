@@ -10,7 +10,10 @@ I like the simplicity of having a static site — it reduces the overhead of mai
 
 This site is generated with [Metalsmith][metalsmith] and a few plugins, but this workflow is not specific to This tool. [Travis CI][travis] builds and deploys the site. All, of the source is maintained in Git, which is the first building block and the first hurdle in my workflow. [Working Copy][workingcopy], a full-fledged iOS Git client, to the rescue! This, combined with the inter-app sharing options introduced in iOS 8, makes for a smooth workflow that allows me to maintain my site just about everywhere.
 
-![Workflow diagram][diagram]
+<figure>
+  <img src="/media/images/blog/2015/12/mobile-workflow/diagram.png" title="Workflow diagram"/>
+  <figcaption>Workflow diagram</figcaption>
+</figure>
 
 The process usually starts with composing a markdown file using [iA Writer][writer]. Once finished writing, I go to Working Copy, update the repository for my site, and import the file from iA Writer including any photos or assets to the appropriate folders. Once done, I review everything, commit the change, and push to a `draft` branch. 
 
@@ -24,4 +27,3 @@ And there it is. Simple, fairly generic and relatively easy to adapt to differen
 [travis]: http://travis-ci.org
 [workingcopy]: http://workingcopyapp.com
 [writer]: https://ia.net/writer
-[diagram]: /media/images/blog/2015/12/mobile-workflow/diagram.png

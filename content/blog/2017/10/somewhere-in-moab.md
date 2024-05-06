@@ -6,5 +6,8 @@ taxonomies:
     - microblog
   type: [photo]
 ---
-![Somewhere in Moab, Utah](/media/images/photos/2017/10/2352a4575b92c157ac4750111f0b3d69.jpg)
+<figure>
+  <img src="/media/images/photos/2017/10/2352a4575b92c157ac4750111f0b3d69.jpg" title="Somewhere in Moab, Utah"/>
+  <figcaption>Somewhere in Moab, Utah</figcaption>
+</figure>
 

@@ -6,5 +6,8 @@ taxonomies:
     - microblog
   type: [photo]
 ---
-![After weeks of rain, sunrise this morning!](/media/images/photos/2016/10/3b806aaa9e110a58885b2752776f0217.jpg)
+<figure>
+  <img src="/media/images/photos/2016/10/3b806aaa9e110a58885b2752776f0217.jpg" title="After weeks of rain, sunrise this morning!"/>
+  <figcaption>After weeks of rain, sunrise this morning!</figcaption>
+</figure>
 

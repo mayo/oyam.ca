@@ -77,6 +77,7 @@ It is worth noting that for photography, Painted Hills is an afternoon/sunset ki
 <figure>
   <img src="/media/images/photos/2015/01/painted-hills/alien-land.jpg" width="900"/>
 </figure>
+
 <figure>
   <img src="/media/images/photos/2015/01/painted-hills/hills.jpg" width="900"/>
 </figure>

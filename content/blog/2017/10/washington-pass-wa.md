@@ -6,5 +6,8 @@ taxonomies:
     - microblog
   type: [photo]
 ---
-![Washington Pass, WA (SR20)](/media/images/photos/2017/10/6578b19c1afe66b48caf9166e21ae3fa.jpg)
+<figure>
+  <img src="/media/images/photos/2017/10/6578b19c1afe66b48caf9166e21ae3fa.jpg" title="Washington Pass, WA (SR20)"/>
+  <figcaption>Washington Pass, WA (SR20)</figcaption>
+</figure>
 

@@ -6,5 +6,8 @@ taxonomies:
     - microblog
   type: [photo]
 ---
-![Misty](/media/images/photos/2014/01/4d044acb32d0f89169eaacaa212e605f.jpg)
+<figure>
+  <img src="/media/images/photos/2014/01/4d044acb32d0f89169eaacaa212e605f.jpg" title="Misty"/>
+  <figcaption>Misty</figcaption>
+</figure>
 

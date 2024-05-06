@@ -6,5 +6,8 @@ taxonomies:
     - microblog
   type: [photo]
 ---
-![North Shore trigraph](/media/images/photos/2015/02/c0c0ad9a64fc268842fadb9c3c8ebeab.jpg)
+<figure>
+  <img src="/media/images/photos/2015/02/c0c0ad9a64fc268842fadb9c3c8ebeab.jpg" title="North Shore trigraph"/>
+  <figcaption>North Shore trigraph</figcaption>
+</figure>
 

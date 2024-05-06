@@ -6,5 +6,8 @@ taxonomies:
     - microblog
   type: [photo]
 ---
-![Good night, Vancouver](/media/images/photos/2015/03/8b6e6dd8d544240b28a7d39e00688895.jpg)
+<figure>
+  <img src="/media/images/photos/2015/03/8b6e6dd8d544240b28a7d39e00688895.jpg" title="Good night, Vancouver"/>
+  <figcaption>Good night, Vancouver</figcaption>
+</figure>
 

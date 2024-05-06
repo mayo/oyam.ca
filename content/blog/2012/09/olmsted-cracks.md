@@ -6,5 +6,8 @@ taxonomies:
     - microblog
   type: [photo]
 ---
-![Olmsted Cracks](/media/images/photos/2012/09/c54e9d315741f053ca124f5a9807db4c.jpg)
+<figure>
+  <img src="/media/images/photos/2012/09/c54e9d315741f053ca124f5a9807db4c.jpg" title="Olmsted Cracks"/>
+  <figcaption>Olmsted Cracks</figcaption>
+</figure>
 

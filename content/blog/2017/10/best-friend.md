@@ -6,5 +6,8 @@ taxonomies:
     - microblog
   type: [photo]
 ---
-![Best friend](/media/images/photos/2017/10/c216e542828bcda5eb8b43cf9b072e5c.jpg)
+<figure>
+  <img src="/media/images/photos/2017/10/c216e542828bcda5eb8b43cf9b072e5c.jpg" title="Best friend"/>
+  <figcaption>Best friend</figcaption>
+</figure>
 

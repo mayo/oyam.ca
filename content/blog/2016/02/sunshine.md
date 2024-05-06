@@ -6,5 +6,8 @@ taxonomies:
     - microblog
   type: [photo]
 ---
-![Sunshine](/media/images/photos/2016/02/17cf55bb7a4824c711fb7707fc9ebe60.jpg)
+<figure>
+  <img src="/media/images/photos/2016/02/17cf55bb7a4824c711fb7707fc9ebe60.jpg" title="Sunshine"/>
+  <figcaption>Sunshine</figcaption>
+</figure>
 

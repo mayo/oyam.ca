@@ -10,6 +10,9 @@ extra:
 
 Fifteen years and more than 45 kilometers... That's pretty good for a rover that was designed to operate for about 90 days and travel one kilometer. A very fitting [XKCD comic](https://xkcd.com/2111/) to say goodbye.
 
-![Thanks for bringing us along](https://imgs.xkcd.com/comics/opportunity_rover.png)
+<figure>
+  <img src="https://imgs.xkcd.com/comics/opportunity_rover.png" title="Thanks for bringing us along"/>
+  <figcaption>Thanks for bringing us along</figcaption>
+</figure>
 
 Thanks for bringing us along, indeed!

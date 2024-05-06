@@ -6,5 +6,8 @@ taxonomies:
     - microblog
   type: [photo]
 ---
-![How to tell you're in bouldering territory](/media/images/photos/2012/09/d38287855dc5a88081ee11c4b482b0af.jpg)
+<figure>
+  <img src="/media/images/photos/2012/09/d38287855dc5a88081ee11c4b482b0af.jpg" title="How to tell you're in bouldering territory"/>
+  <figcaption>How to tell you're in bouldering territory</figcaption>
+</figure>
 

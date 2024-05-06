@@ -6,5 +6,8 @@ taxonomies:
     - microblog
   type: [photo]
 ---
-![Cape Argo](/media/images/photos/2012/09/e0cf85fafdbdd667d9d59012a1b2c208.jpg)
+<figure>
+  <img src="/media/images/photos/2012/09/e0cf85fafdbdd667d9d59012a1b2c208.jpg" title="Cape Argo"/>
+  <figcaption>Cape Argo</figcaption>
+</figure>
 

@@ -6,5 +6,8 @@ taxonomies:
     - microblog
   type: [photo]
 ---
-![Clouds](/media/images/photos/2015/04/d49fce7ce2a68ff0ef69c94b3925ca53.jpg)
+<figure>
+  <img src="/media/images/photos/2015/04/d49fce7ce2a68ff0ef69c94b3925ca53.jpg" title="Clouds"/>
+  <figcaption>Clouds</figcaption>
+</figure>
 

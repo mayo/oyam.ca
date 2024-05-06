@@ -6,5 +6,8 @@ taxonomies:
     - microblog
   type: [photo]
 ---
-![Fall colors](/media/images/photos/2017/10/5049e32c8aec035bef73b0626783c381.jpg)
+<figure>
+  <img src="/media/images/photos/2017/10/5049e32c8aec035bef73b0626783c381.jpg" title="Fall colors"/>
+  <figcaption>Fall colors</figcaption>
+</figure>
 

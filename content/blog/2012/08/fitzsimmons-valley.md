@@ -6,5 +6,8 @@ taxonomies:
     - microblog
   type: [photo]
 ---
-![Fitzsimmons valley](/media/images/photos/2012/08/2994a6cabb7f296b78b4b2861ed354fe.jpg)
+<figure>
+  <img src="/media/images/photos/2012/08/2994a6cabb7f296b78b4b2861ed354fe.jpg" title="Fitzsimmons valley"/>
+  <figcaption>Fitzsimmons valley</figcaption>
+</figure>
 

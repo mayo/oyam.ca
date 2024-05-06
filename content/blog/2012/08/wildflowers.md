@@ -6,5 +6,8 @@ taxonomies:
     - microblog
   type: [photo]
 ---
-![Wildflowers](/media/images/photos/2012/08/03dca72fe019d61476ec92f84fdf80d0.jpg)
+<figure>
+  <img src="/media/images/photos/2012/08/03dca72fe019d61476ec92f84fdf80d0.jpg" title="Wildflowers"/>
+  <figcaption>Wildflowers</figcaption>
+</figure>
 

@@ -6,5 +6,8 @@ taxonomies:
     - microblog
   type: [photo]
 ---
-![Beach](/media/images/photos/2012/09/40a206222cb57ff1e2b7df9937a8527d.jpg)
+<figure>
+  <img src="/media/images/photos/2012/09/40a206222cb57ff1e2b7df9937a8527d.jpg" title="Beach"/>
+  <figcaption>Beach</figcaption>
+</figure>
 

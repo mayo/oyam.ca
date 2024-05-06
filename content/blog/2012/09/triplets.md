@@ -6,5 +6,8 @@ taxonomies:
     - microblog
   type: [photo]
 ---
-![Triplets](/media/images/photos/2012/09/9a4447e740f07481d684dba4afc316cd.jpg)
+<figure>
+  <img src="/media/images/photos/2012/09/9a4447e740f07481d684dba4afc316cd.jpg" title="Triplets"/>
+  <figcaption>Triplets</figcaption>
+</figure>
 

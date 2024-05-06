@@ -6,5 +6,8 @@ taxonomies:
     - microblog
   type: [photo]
 ---
-![And the trip begins](/media/images/photos/2012/09/c107dbc1b46876d84bab57216860e035.jpg)
+<figure>
+  <img src="/media/images/photos/2012/09/c107dbc1b46876d84bab57216860e035.jpg" title="And the trip begins"/>
+  <figcaption>And the trip begins</figcaption>
+</figure>
 

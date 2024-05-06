@@ -6,5 +6,8 @@ taxonomies:
     - microblog
   type: [photo]
 ---
-![Desert views](/media/images/photos/2017/10/cc62aa13a632d061f30f236550853923.jpg)
+<figure>
+  <img src="/media/images/photos/2017/10/cc62aa13a632d061f30f236550853923.jpg" title="Desert views"/>
+  <figcaption>Desert views</figcaption>
+</figure>
 

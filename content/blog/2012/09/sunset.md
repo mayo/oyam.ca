@@ -6,5 +6,8 @@ taxonomies:
     - microblog
   type: [photo]
 ---
-![Sunset](/media/images/photos/2012/09/81c477c67c454592a969cff5529e3c6e.jpg)
+<figure>
+  <img src="/media/images/photos/2012/09/81c477c67c454592a969cff5529e3c6e.jpg" title="Sunset"/>
+  <figcaption>Sunset</figcaption>
+</figure>
 

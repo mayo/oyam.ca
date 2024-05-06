@@ -6,5 +6,8 @@ taxonomies:
     - microblog
   type: [photo]
 ---
-![Ecola Point](/media/images/photos/2012/09/85aa3a27c50e165c996c79a11bbed9da.jpg)
+<figure>
+  <img src="/media/images/photos/2012/09/85aa3a27c50e165c996c79a11bbed9da.jpg" title="Ecola Point"/>
+  <figcaption>Ecola Point</figcaption>
+</figure>
 

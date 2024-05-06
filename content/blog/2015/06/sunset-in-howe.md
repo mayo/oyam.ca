@@ -6,5 +6,8 @@ taxonomies:
     - microblog
   type: [photo]
 ---
-![Sunset in Howe Sound](/media/images/photos/2015/06/f16ed398bbc679587511477bd914d4db.jpg)
+<figure>
+  <img src="/media/images/photos/2015/06/f16ed398bbc679587511477bd914d4db.jpg" title="Sunset in Howe Sound"/>
+  <figcaption>Sunset in Howe Sound</figcaption>
+</figure>
 

@@ -7,5 +7,8 @@ taxonomies:
   type: [photo]
 guid: http://oyam.micro.blog/2017/11/27/sunrise.html
 ---
-![Sunrise](/media/images/photos/2017/11/sunrise.jpg)
+<figure>
+  <img src="/media/images/photos/2017/11/sunrise.jpg" title="Sunrise"/>
+  <figcaption>Sunrise</figcaption>
+</figure>
 

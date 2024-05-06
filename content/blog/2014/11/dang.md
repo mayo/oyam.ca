@@ -6,5 +6,8 @@ taxonomies:
     - microblog
   type: [photo]
 ---
-![Dang!](/media/images/photos/2014/11/7c2d070e6956e0e784aee12cbfabd35d.jpg)
+<figure>
+  <img src="/media/images/photos/2014/11/7c2d070e6956e0e784aee12cbfabd35d.jpg" title="Dang!"/>
+  <figcaption>Dang!</figcaption>
+</figure>
 

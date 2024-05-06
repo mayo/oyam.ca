@@ -6,5 +6,8 @@ taxonomies:
     - microblog
   type: [photo]
 ---
-![Breakfast of champions](/media/images/photos/2012/09/3cea631e329ec405962cda9ccfb45b63.jpg)
+<figure>
+  <img src="/media/images/photos/2012/09/3cea631e329ec405962cda9ccfb45b63.jpg" title="Breakfast of champions"/>
+  <figcaption>Breakfast of champions</figcaption>
+</figure>
 

@@ -6,5 +6,8 @@ taxonomies:
     - microblog
   type: [photo]
 ---
-![She sells sea shells](/media/images/photos/2015/04/50279dfa29e4db11c0b96e16c1e60b69.jpg)
+<figure>
+  <img src="/media/images/photos/2015/04/50279dfa29e4db11c0b96e16c1e60b69.jpg" title="She sells sea shells"/>
+  <figcaption>She sells sea shells</figcaption>
+</figure>
 

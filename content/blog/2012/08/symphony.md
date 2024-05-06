@@ -6,5 +6,8 @@ taxonomies:
     - microblog
   type: [photo]
 ---
-![Symphony](/media/images/photos/2012/08/5184a6dd9ca319a79d49bc1df956f0b3.jpg)
+<figure>
+  <img src="/media/images/photos/2012/08/5184a6dd9ca319a79d49bc1df956f0b3.jpg" title="Symphony"/>
+  <figcaption>Symphony</figcaption>
+</figure>
 

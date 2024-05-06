@@ -6,5 +6,8 @@ taxonomies:
     - microblog
   type: [photo]
 ---
-![Sequoia](/media/images/photos/2012/09/1e61b72651727ec55e8b605adaa5c12e.jpg)
+<figure>
+  <img src="/media/images/photos/2012/09/1e61b72651727ec55e8b605adaa5c12e.jpg" title="Sequoia"/>
+  <figcaption>Sequoia</figcaption>
+</figure>
 
