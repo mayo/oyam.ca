@@ -1,9 +1,10 @@
 ---
-type: post
 imported: "microblog"
-created: !!timestamp '2019-01-01 19:38:38 -8'
-tags:
+date: 2019-01-01 19:38:38-08:00
+taxonomies:
+  tags:
     - microblog
+  type: [note]
 ---
 > Your genuine talent will find its way to success.
 

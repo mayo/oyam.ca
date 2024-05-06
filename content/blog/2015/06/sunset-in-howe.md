@@ -1,9 +1,10 @@
 ---
-type: photo
 imported: "instagram"
-created: !!timestamp '2015-06-20 00:14:16 -8'
-tags:
+date: 2015-06-20 00:14:16-08:00
+taxonomies:
+  tags:
     - microblog
+  type: [photo]
 ---
 ![Sunset in Howe Sound](/media/images/photos/2015/06/f16ed398bbc679587511477bd914d4db.jpg)
 

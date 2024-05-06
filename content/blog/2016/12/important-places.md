@@ -1,8 +1,10 @@
 ---
-type: link
+taxonomies:
+  type: [bookmark]
 title: "The Important Places"
-href: https://vimeo.com/126544483
-created: !!timestamp '2016-12-26 10:40:00 -8'
+date: 2016-12-26 10:40:00-08:00
+extra:
+  href: https://vimeo.com/126544483
 ---
 
 > Child of Mine, come  

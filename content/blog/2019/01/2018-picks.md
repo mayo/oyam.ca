@@ -1,9 +1,10 @@
 ---
-type: photo
 title: 2018 Photo Picks
-tags:
-  - gallery
-created: !!timestamp '2019-01-07 21:44:38 -8'
+taxonomies:
+  tags:
+    - gallery
+  type: [article]
+date: 2019-01-07 21:44:38-08:00
 ---
 ![2018 Photo Picks](/media/images/blog/2019/01/2018-picks/overview.jpg)
 

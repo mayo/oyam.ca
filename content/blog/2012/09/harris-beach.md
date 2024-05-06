@@ -1,9 +1,10 @@
 ---
-type: photo
 imported: "instagram"
-created: !!timestamp '2012-09-21 10:00:55 -8'
-tags:
+date: 2012-09-21 10:00:55-08:00
+taxonomies:
+  tags:
     - microblog
+  type: [photo]
 ---
 ![Harris Beach](/media/images/photos/2012/09/harris-beach.jpg)
 

@@ -1,7 +1,8 @@
 ---
-type: photo
+taxonomies:
+  type: [photo]
 title: "Rise and shine!"
-created: !!timestamp '2015-06-28 23:06:00 -8'
+date: 2015-06-28 23:06:00-08:00
 ---
 I was reluctant to get out of the sleeping bag at 4am and face the onslaught of mosquitoes, but it was well worth it.
 

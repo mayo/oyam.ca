@@ -1,8 +1,10 @@
 ---
-type: link
+taxonomies:
+  type: [bookmark]
 title: "I don't have any connections"
-href: http://ninjasandrobots.com/i-dont-have-any-connections
-created: !!timestamp '2013-11-18 22:07:00 -8'
+date: 2013-11-18 22:07:00-08:00
+extra:
+  href: http://ninjasandrobots.com/i-dont-have-any-connections
 ---
 Nathan Kontny's take on the opinion that one needs to have good contacts in order to start a successful business.
 

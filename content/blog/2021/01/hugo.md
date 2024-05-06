@@ -1,7 +1,8 @@
 ---
-type: post
 title: Hugo, I want to like you
-created: !!timestamp '2021-01-15 00:30:38 -8'
+date: 2021-01-15 00:30:38-08:00
+taxonomies:
+  type: [article]
 ---
 I really really want to like [Hugo][1]. I like the elegance of having a single binary, not having to worry about Python versions and dependencies, and most importantly not being responsible for maintaining the codebase. I've tried migrating my site to Hugo over the last couple of years, but I always run into some issues or major annoyances.
 

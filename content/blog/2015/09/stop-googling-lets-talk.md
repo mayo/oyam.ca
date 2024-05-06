@@ -1,7 +1,10 @@
 ---
-type: link
-imported: "twitter"
-created: !!timestamp '2015-09-28 21:14:47 -7'
+date: 2015-09-28 21:14:47-07:00
+imported: twitter
+taxonomies:
+  type: [bookmark]
+extra:
+  href: https://www.nytimes.com/2015/09/27/opinion/sunday/stop-googling-lets-talk.html
 ---
 [Stop Googling. Let’s Talk.](https://www.nytimes.com/2015/09/27/opinion/sunday/stop-googling-lets-talk.html)
 

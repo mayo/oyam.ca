@@ -1,7 +1,8 @@
 ---
-type: post
+taxonomies:
+  type: [article]
 title: Back in the new digs
-created: !!timestamp '2010-11-10 00:00:00 -8'
+date: 2010-11-10 00:00:00-08:00
 ---
 After fumbling around with numerous redesigns using static pages, switching to wikis, blogs, and anything else you can think of, [Webby][wb], then hopping to [Tumblr][tmbl], and giving up, I made it a full circle back to statically generated pages using [Jekyll][jk].
 

@@ -1,10 +1,12 @@
 ---
-type: post
 title: Summer weekend at Haberl Hut
-created: !!timestamp '2015-08-10 00:00:00 -8'
-tags:
-  - travel
-header:
+date: 2015-08-10 00:00:00-08:00
+taxonomies:
+  tags:
+    - travel
+  type: [article]
+extra:
+  header:
     image: /media/images/photos/2015/08/haberl-hut/sunset.jpg
     image_position: "0 50%"
     color: white

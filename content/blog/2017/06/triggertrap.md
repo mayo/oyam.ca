@@ -1,8 +1,10 @@
 ---
-type: link
+taxonomies:
+  type: [bookmark]
 title: "Triggertrap apps open sourced"
-href: https://medium.com/triggertrap-playbook/triggertrap-for-ios-and-android-is-now-open-source-a194350e9cfc
-created: !!timestamp '2017-06-07 08:15:00 -8'
+date: 2017-06-07 08:15:00-08:00
+extra:
+  href: https://medium.com/triggertrap-playbook/triggertrap-for-ios-and-android-is-now-open-source-a194350e9cfc
 ---
 In addition to the news of the [Triggertrap hardware dongle getting open sourced][2], [today we get the apps as well][4]:
 

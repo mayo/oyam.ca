@@ -1,7 +1,8 @@
 ---
-type: post
+taxonomies:
+  type: [article]
 title: From Simplenote to Jekyll
-created: !!timestamp '2010-11-16 00:00:00 -8'
+date: 2010-11-16 00:00:00-08:00
 ---
 Does Mr. Jekyll have a new twin? Jekyll and statically generated pages are nice, but it would be nice to create some posts while on the road without the laptop. SSHing to the server is an option, but typing up a post in vim on phone is not exactly enjoyable. I use [Simplenote](http://simplenoteapp.com/) all the time, and I figured it would be nice to write posts in Simplenote. Using Simplenote's API, I wrote a quick and dirty [script][script] that pulls notes with a `blog` tag and writes a file that Jekyll can process.
 

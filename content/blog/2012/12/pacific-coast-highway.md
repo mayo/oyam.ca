@@ -1,10 +1,12 @@
 ---
-type: post
 title: "Pacific Coast Highway: First timer's 101 to the 101"
-created: !!timestamp '2012-12-15 00:00:00 -8'
-tags:
-  - travel
-header:
+date: 2012-12-15 00:00:00-08:00
+taxonomies:
+  tags:
+    - travel
+  type: [article]
+extra:
+  header:
     image: /media/images/photos/2012/12/pacific-coast-highway/long-beach.jpg
     image_position: "0 69%"
     color: white

@@ -1,9 +1,10 @@
 ---
-type: photo
 imported: "instagram"
-created: !!timestamp '2017-10-17 18:07:21 -8'
-tags:
+date: 2017-10-17 18:07:21-08:00
+taxonomies:
+  tags:
     - microblog
+  type: [photo]
 ---
 ![Autumn in Yosemite](/media/images/photos/2017/10/9c6e21a364e8df9c1e13627953f6a78d.jpg)
 

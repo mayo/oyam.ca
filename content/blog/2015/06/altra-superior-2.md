@@ -1,11 +1,12 @@
 ---
-type: post
 title: "Gear Review: Altra Superior 2.0"
-tags:
-  - gear
-  - running
-created: !!timestamp '2015-06-07 21:16:00 -8'
-updated: !!timestamp '2015-06-24 22:02:00 -8'
+taxonomies:
+  tags:
+    - gear
+    - running
+  type: [article]
+date: 2015-06-07 21:16:00-08:00
+updated: 2015-06-24 22:02:00-08:00
 ---
 *Updated June 24, 2015.* Altra Lone Peak 1.5 has been my shoe of choice for some time, but now that the supplies are close to non-existent and my own stash is dwindling, it is time to look for a replacement shoe. Lone Peak 2.0 would be the obvious choice, but I didn’t feel as comfortable in them as I did in the 1.5 (the toe-off doesn’t feel right). I decided to try out the Superior 2.0, as I’ve used Superior 1.5 for “everything” shoe including some short runs, and generally liked it, aside from the lack of any sort of lugs. Heads up: As a big Lone Peak 1.5 fan, my review might be a little biased and somewhat of a comparison between the two shoes. 
 

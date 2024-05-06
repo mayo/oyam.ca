@@ -1,10 +1,12 @@
 ---
-type: post
 title: Across Italy
-created: !!timestamp '2011-09-26 00:00:00 -7'
-tags:
-  - travel
-header:
+date: 2011-09-26 00:00:00-07:00
+taxonomies:
+  tags:
+    - travel
+  type: [article]
+extra:
+  header:
     image: /media/images/photos/2011/09/across-italy/manarola-sea.jpg
     image_position: "0 73%"
     color: white
