@@ -1,18 +1,19 @@
 @font-face {
   font-family: 'FontAwesome-subset';
-  src:  url('/media/fonts/FontAwesome-subset.eot?q0wqwu');
-  src:  url('/media/fonts/FontAwesome-subset.eot?q0wqwu#iefix') format('embedded-opentype'),
-    url('/media/fonts/FontAwesome-subset.ttf?q0wqwu') format('truetype'),
-    url('/media/fonts/FontAwesome-subset.woff?q0wqwu') format('woff'),
-    url('/media/fonts/FontAwesome-subset.svg?q0wqwu#FontAwesome-subset') format('svg');
+  src:  url('fonts/FontAwesome-subset.eot?p7jbtm');
+  src:  url('fonts/FontAwesome-subset.eot?p7jbtm#iefix') format('embedded-opentype'),
+    url('fonts/FontAwesome-subset.ttf?p7jbtm') format('truetype'),
+    url('fonts/FontAwesome-subset.woff?p7jbtm') format('woff'),
+    url('fonts/FontAwesome-subset.svg?p7jbtm#FontAwesome-subset') format('svg');
   font-weight: normal;
   font-style: normal;
+  font-display: block;
 }
 
-.fa-subset-oyam {
+.fa {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'FontAwesome-subset' !important;
-  speak: none;
+  speak: never;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -87,6 +88,9 @@
 .fa-linkedin:before {
   content: "\e902";
 }
+.fa-mastodon:before {
+  content: "\e903";
+}
 .fa-bookmark:before {
   content: "\e905";
 }
@@ -109,5 +113,14 @@
   content: "\e90d";
 }
 .fa-broadcast-tower:before {
-  content: "\e903";
+  content: "\e904";
+}
+.fa-calendar-light:before {
+  content: "\e91e";
+}
+.fa-discord:before {
+  content: "\e91f";
+}
+.fa-microblog:before {
+  content: "\e920";
 }
