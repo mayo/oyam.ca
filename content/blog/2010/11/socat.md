@@ -1,8 +1,9 @@
 ---
 taxonomies:
   type: [bookmark]
+  tags:
+    - unix
 title: socat, my new favourite tool
-category: unix
 date: 2010-11-09 00:00:00-08:00
 extra:
   href: http://www.dest-unreach.org/socat/
