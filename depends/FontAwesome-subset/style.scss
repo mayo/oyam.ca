@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: '#{$icomoon-font-family}';
-  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?p7jbtn');
-  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?p7jbtn#iefix') format('embedded-opentype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?p7jbtn') format('truetype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?p7jbtn') format('woff'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?p7jbtn##{$icomoon-font-family}') format('svg');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?7fxu0h');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?7fxu0h#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?7fxu0h') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?7fxu0h') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?7fxu0h##{$icomoon-font-family}') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -190,6 +190,131 @@
 .fa-microblog {
   &:before {
     content: $fa-microblog; 
+  }
+}
+.fa-film-canister-light {
+  &:before {
+    content: $fa-film-canister-light; 
+  }
+}
+.fa-cabinet-filing-light {
+  &:before {
+    content: $fa-cabinet-filing-light; 
+  }
+}
+.fa-quote-left-light {
+  &:before {
+    content: $fa-quote-left-light; 
+  }
+}
+.fa-sticky-note-light {
+  &:before {
+    content: $fa-sticky-note-light; 
+  }
+}
+.fa-newspaper-light {
+  &:before {
+    content: $fa-newspaper-light; 
+  }
+}
+.fa-comment-lines-light {
+  &:before {
+    content: $fa-comment-lines-light; 
+  }
+}
+.fa-comment-light {
+  &:before {
+    content: $fa-comment-light; 
+  }
+}
+.fa-sd-card-light {
+  &:before {
+    content: $fa-sd-card-light; 
+  }
+}
+.fa-images-light {
+  &:before {
+    content: $fa-images-light; 
+  }
+}
+.fa-image-light {
+  &:before {
+    content: $fa-image-light; 
+  }
+}
+.fa-newspaper-duotone .path1 {
+  &:before {
+    content: $fa-newspaper-duotone-path1;  
+    color: rgb(0, 0, 0);  
+    opacity: 0.4;
+  }
+}
+.fa-newspaper-duotone .path2 {
+  &:before {
+    content: $fa-newspaper-duotone-path2;  
+    margin-left: -1.125em;  
+    color: rgb(0, 0, 0);
+  }
+}
+.fa-comment-duotone {
+  &:before {
+    content: $fa-comment-duotone; 
+  }
+}
+.fa-sticky-note-duotone .path1 {
+  &:before {
+    content: $fa-sticky-note-duotone-path1;  
+    color: rgb(0, 0, 0);  
+    opacity: 0.4;
+  }
+}
+.fa-sticky-note-duotone .path2 {
+  &:before {
+    content: $fa-sticky-note-duotone-path2;  
+    margin-left: -0.875em;  
+    color: rgb(0, 0, 0);
+  }
+}
+.fa-image-polaroid-duotone .path1 {
+  &:before {
+    content: $fa-image-polaroid-duotone-path1;  
+    color: rgb(0, 0, 0);  
+    opacity: 0.4;
+  }
+}
+.fa-image-polaroid-duotone .path2 {
+  &:before {
+    content: $fa-image-polaroid-duotone-path2;  
+    margin-left: -0.875em;  
+    color: rgb(0, 0, 0);
+  }
+}
+.fa-bookmark-duotone .path1 {
+  &:before {
+    content: $fa-bookmark-duotone-path1;  
+    color: rgb(0, 0, 0);  
+    opacity: 0.4;
+  }
+}
+.fa-bookmark-duotone .path2 {
+  &:before {
+    content: $fa-bookmark-duotone-path2;  
+    margin-left: -0.75em;  
+    color: rgb(0, 0, 0);
+  }
+}
+.fa-quote-left-duotone .path1 {
+  &:before {
+    content: $fa-quote-left-duotone-path1;  
+    color: rgb(0, 0, 0);  
+    opacity: 0.4;
+  }
+}
+.fa-quote-left-duotone .path2 {
+  &:before {
+    content: $fa-quote-left-duotone-path2;  
+    margin-left: -1em;  
+    color: rgb(0, 0, 0);
   }
 }
 
