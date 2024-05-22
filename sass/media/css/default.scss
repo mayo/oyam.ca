@@ -736,6 +736,17 @@ textarea.pubkey {
 .section-list .post-time {
   font-size: .8em;
   margin-left: 1em;
+
+// position the post type icon in negative margin like a bullet. It's the most
+// straight forward way of customizing bullets. width, margin-left, and
+// padding-right play together to make it work.
+.li-icon-bullet {
+  display: inline-block;
+  width: 1.5em;
+  margin-left: -1.5em;
+  text-align: right;
+  padding-right: .3em;
+}
   color: $dark;
 }
 
@@ -780,6 +791,7 @@ textarea.pubkey {
   background: inherit;
   padding: 0;
   height: 1em;
+  font-size: 1.3em;
 }
 
 .slideshow .controls button + button {
