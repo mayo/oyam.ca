@@ -4,6 +4,8 @@ date: 2015-01-31 18:57:00-08:00
 taxonomies:
   tags:
     - travel
+  categories:
+    - travel
   type: [article]
 extra:
   header:
