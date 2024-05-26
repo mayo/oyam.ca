@@ -1,0 +1,144 @@
+{% macro blog_article(page, article, article_context) %}
+    {% include "blog/_article.html" %}
+{% endmacro blog_article %}
+
+{% macro display_slideshow(slides) %}
+    {% include '_slideshow.html' %}
+{% endmacro display_slideshow %}
+
+{% macro get_page_title(page) -%}
+    {% set page_title = page.title -%}
+    {% if not page_title -%}
+        {% set page_title = page.content | striptags | truncate(length=280) | trim -%}
+    {% endif -%}
+    {% if not page_title and page.taxonomies.type -%}
+        {% set page_title = config.extra.post_types | get(key=page.taxonomies.type.0) -%}
+    {% endif -%}
+    {{ page_title | safe }}
+{%- endmacro %}
+
+{# currently not used #}
+{# % macro blog_list_reverse_chrono(node, section, list_limit=0, date_separator=true) %}
+    {% set_global list_counter = 0 %}
+
+    {% for year_section in section.subsections | sort | reverse %}
+    {% set year_list = get_section(path=year_section, metadata_only=true) %}
+
+        {% for month_section in year_list.subsections | sort | reverse %}
+            {% set month_list = get_section(path=month_section) %}
+
+            {% for post in month_list.pages | reverse %}
+            {% if list_limit > 0 and list_counter >= list_limit %}
+                {% break %}
+            {% endif %}
+
+            {% if loop.index0 == 0 and date_separator == true %}
+            <div class="date-threshold">{{ post.date | date(format='%B %Y') }}</div>
+            {% endif %}
+
+            {{ macros::blog_article(page=node, article=post, article_context="list") }}
+            {% set_global list_counter = list_counter + 1 %}
+            {% endfor %}
+
+        {% endfor %}
+    {% endfor %}
+{% endmacro blog_list_reverse_chrono % #}
+
+{# Returns section title if defined. If undefined, returns blog years and months from path. #}
+{% macro section_path_title(node) -%}
+    {%- if node.title != "" -%}
+        {{ node.title }}
+    {%- endif -%}
+
+    {%- set path = node.relative_path | split(pat="/") | slice(end=-1) -%}
+
+    {%- if path | length == 2 and path[0] == "blog" -%}
+        {{ path[1] }}
+    {%- elif path | length == 3 and path[0] == "blog" -%}
+        {{ path[1] ~ "-" ~ path[2] ~ "-01" | date(format="%B, %Y") }}
+    {%- else -%}
+        {{ node.title }}
+    {%- endif -%}
+{%- endmacro section_path_title %}
+
+{% macro excerpt(content, length=420) -%}
+    {% if content -%}{{ content | striptags | truncate(length=420, end="") | safe }}&hellip; Read more{%- endif %}
+{%- endmacro excerpt %}
+
+{% macro collection_list(collection, include_container=true, expand="", archive_link=false) %}
+    {# Tera doesn't seem to allow initializing empty lists in macros. `expand` is
+       expected to be a list of post types that should be expanded to full content. #}
+
+    {% if include_container %}<ul class="collection-list li-icon-bullet">{% endif %}
+
+    {% for page in collection %}
+        {%- set is_blog = page.path is starting_with("/blog/") -%}
+        {%- set post_type = config.extra.taxonomies.type | get(key=page.taxonomies.type.0) -%}
+        <li class="post {{ page.taxonomies.type.0 }}">
+            <span class="post-type-icon li-icon-bullet"><i class="fa {{ post_type | get(key="icon") }}" title="{{ post_type | get(key="name") }}"></i><span class="sr-only">Post kind: {{ post_type | get(key="name") }}</span></span>
+        {%- if page.taxonomies and page.taxonomies.type and expand is containing(page.taxonomies.type.0) -%}
+            {%- if is_blog -%}
+            <span class="metadata"><span class="sr-only">Published on</span><time title="Published on" class="post-time dt-published" datetime="{{ page.date | date(format='%Y-%m-%dT%H:%M:%SZ') }}">{{ page.date | date(format='%B %d, %Y') }}</time></span>
+            {%- endif -%}
+
+            {%- set content = page.title | default(value=page.content) -%}
+            {%- if page.taxonomies.type.0 == config.extra.post_types.photo -%}
+                {%- set content = page.content -%}
+            {%- endif -%}
+            <a href="{{ page.path }}">{{ content | safe }}</a>
+        {%- else -%}
+            <a href="{{ page.path }}">{{ macros::get_page_title(page=page) }}</a>
+            {%- if is_blog -%}
+            <span class="metadata"><span class="sr-only">Published on</span><time title="Published on" class="post-time dt-published" datetime="{{ page.date | date(format='%Y-%m-%dT%H:%M:%SZ') }}">{{ page.date | date(format='%B %d, %Y') }}</time></span>
+            {%- endif -%}
+        {% endif -%}
+        </li>
+    {% endfor %}
+
+    {% if archive_link %}
+    <li class="archive-link"><span class="post-type-icon li-icon-bullet"><i class="fa fa-archive" aria-hidden></i></span><small>More in <a class="small" href="{{ get_url(path="@/archive/_index.md") }}">archive</a></small></li>
+    {% endif %}
+
+    {% if include_container %}</ul>{% endif %}
+{% endmacro collection_list %}
+
+{% macro breadcrumbnav2(path, origin, depth=0) %}
+    {% if depth == 0 %}
+        {% if path is string %}
+            {# Strip tailing slash and current page (section, taxonomy term). Starting slash is used for logo #}
+            {% set path = path | split(pat="/") | slice(end=-2) %}
+        {% endif %}
+    {% endif %}
+
+    {% set path_length = path | length %}
+
+    {% if depth == 0 %}
+    <span class="crumb root"><a href="/"><img src="/favicon.png" width="16" height="16" alt="MJ"/></a></span>
+    {% if path_length < 1 %}<span class="crumb root"><a href="/"><div class="logotype">Mayo Jordanov</div></a></span>{% endif %}
+        {% if path_length >= 1 %}
+    <span class="separator">/</span>
+        {% endif %}
+    {% else %}
+
+    {% if taxonomy is defined %}
+        {% set title = taxonomy.name %}
+    {% else %}
+        {# slice off first item, equivalent to "/" #}
+        {% set sect_path = path | slice(start=1, end=depth+1) | concat(with="_index.md") | join(sep="/") %}
+        {% set sect = get_section(path=sect_path, metadata_only=true) %}
+        {% set title = sect.extra.breadcrumb_title | default(value=sect.title | default(value=path[depth] | title)) %}
+
+        {# /blog gets special treatment to make the breadcrumbs nicer. Turns month number to month name. #}
+        {% if depth == 3 and path[1] == 'blog' %}
+            {% set title = origin.date | date(format="%B") %}
+        {% endif %}
+    {% endif %}
+    <span class="crumb"><a href="{{ path | slice(start=0, end=depth+1) | join(sep="/") }}">{{ title }}</a></span>
+    <span class="separator">/</span>
+    
+    {% endif %}
+
+    {% if depth < path_length -1 %}
+    {{ self::breadcrumbnav2(path=path, origin=origin, depth=depth + 1) }}
+    {% endif %}
+{% endmacro breadcrumbnav2 %}
