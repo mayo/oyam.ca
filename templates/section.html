@@ -1,0 +1,17 @@
+{% extends "page.html" %}
+
+{% block template_vars %}
+  {{super()}}
+  {% set page_title = macros::section_path_title(node=node) %}
+{% endblock template_vars %}
+
+{% block page_content %}
+
+{% set sort_attribute = "title" %}
+{% if section.path is starting_with("/blog/") %}
+  {% set sort_attribute = "date" %}
+{% endif %}
+
+{{ macros::collection_list(collection=node.pages | sort(attribute=sort_attribute)) }}
+
+{% endblock page_content %}
