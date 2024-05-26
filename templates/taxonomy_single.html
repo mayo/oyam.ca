@@ -1,0 +1,23 @@
+{% extends "page.html" %}
+{% block template_vars %}
+  {{super()}}
+  {# set page_title = taxonomy.name ~": " ~ term.name | title #}
+  {% set page_title = term.name | title %}
+{% endblock template_vars %}
+
+{% block page_content %}
+    {#
+        Zola does have ability to have separate templates for different
+        taxonomies via templates/<taxonomy>/{single,list}.html, but since my
+        templates for the different taxonomies aren't different at all, it means
+        creating duplicate templates. This way, I can use single global template
+        and adapt rendering of individual term pages.
+    #}
+    {% if taxonomy.name == "categories" and term.name == "travel" %}
+        {% include "taxonomies/categories/travel.html" %}
+    {% elif taxonomy.name == "categories" %}
+        {% include "taxonomies/categories/_single.html" %}
+    {% else -%}
+        {{ macros::collection_list(collection=term.pages | sort(attribute="date") | reverse) }}
+    {%- endif -%}
+{% endblock page_content %}

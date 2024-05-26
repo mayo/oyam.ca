@@ -1,0 +1,3 @@
+<div class="flex-item flex-item-100">
+    {{ macros::collection_list(collection=term.pages | sort(attribute="date") | reverse) }}
+</div>

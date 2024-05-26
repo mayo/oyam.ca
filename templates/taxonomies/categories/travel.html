@@ -1,0 +1,23 @@
+<div class="flex-item flex-item-100">
+    <div class="article-list">
+        {% for post in term.pages | sort(attribute="date") | reverse %}
+          {% if not post.title %}
+            {% continue %}
+          {% endif %}
+    
+        <article class="taxonomy-travel {{ post.taxonomies.type.0 }}">
+          {% set header_style = [] %}
+          {% if post.extra.header.image %}
+            {% set header_style = header_style | concat(with="background-image: url('" ~ post.extra.header.image ~ "')") %}
+          {% endif %}
+          {% if post.extra.header.image_position %}
+            {% set header_style = header_style | concat(with="background-position: " ~ post.extra.header.image_position) %}
+          {% endif %}
+          <a href="{{ post.path }}" title="{{ post.title }}">
+              <div class="header" style="{{ header_style | join(sep=";") }}">
+                  <h2 {% if post.extra.header.color %}style="color: {{ post.extra.header.color }}"{% endif %}>{{ post.title }}</h2>
+              </div>
+          </a>
+        </article>
+      {% endfor %}
+</div>
