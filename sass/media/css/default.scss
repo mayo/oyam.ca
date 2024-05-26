@@ -118,6 +118,7 @@ small,
 .font-small,
 article footer,
 .breadcrumbs,
+header#mainhead .menutoggle,
 body > footer {
   font-size: .8em;
 }
@@ -127,6 +128,38 @@ dl {
   margin-block-end: 1em;
 }
 
+header#mainhead .menutoggle,
+header#mainhead .menutoggle a {
+  color: $darker;
+}
+
+#mainhead input.menutoggle {
+  appearance: initial;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  height: 100%;
+  width: 2rem;
+  z-index: 1;
+  text-align: center;
+  cursor: pointer;
+}
+
+#mainhead input.menutoggle::after {
+  content: "\2261";
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#mainhead input.menutoggle:checked::after {
+  content: "\00d7";
+}
+
+#mainhead input.menutoggle:checked ~ nav.main-nav.top {
+  display: flex;
+}
 .content-container {
   display: flex;
   flex-flow: row wrap;
@@ -471,10 +504,6 @@ nav.sitenav .menu .folder .submenu li a:active {
   }
 }
 
-nav.main-nav.is-closed {
-// temporarily disabled white testing
-  // display: none;
-}
 
 nav.main-nav {
   // display: grid;
@@ -494,22 +523,31 @@ nav.main-nav {
   // grid-template-columns: repeat(5,1fr);
 }
 
+nav.main-nav.top {
+  padding-top: 1em;
+  border-top: 1px solid $light;
+  border-bottom: 1px solid $dark;
+  display: none;
+}
+
 nav.main-nav .nav-group {
-  flex: 1 1 calc(20% - var(--main-nav-gap));
-  // min-width: 20%;
+  flex-basis: calc(var(--content-container-multiplier) * 999);
+  flex-grow: 1;
+  max-width: max-content;
+  min-width: calc(20% - var(--main-nav-gap));
 }
 
 nav.main-nav .nav-group.gallery {
-  flex: 3 3 calc(60% - var(--main-nav-gap));
-  // min-width: 20%;
+  min-width: calc(70% - var(--main-nav-gap));
+  max-width: 100%;
 }
 nav.main-nav .nav-group.about {
-  flex: 1 1 calc(40% - var(--main-nav-gap));
-  // min-width: 20%;
+  min-width: calc(30% - var(--main-nav-gap));
+  max-width: 100%;
 }
 
-body > header nav.main-nav {
-  margin-top: 4rem;
+header nav.main-nav {
+  margin-top: 1rem;
 }
 
 footer nav.main-nav {
