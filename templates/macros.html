@@ -39,6 +39,9 @@
         {% endfor %}
     {% endfor %}
 {% endmacro blog_list_reverse_chrono % #}
+{% macro render_hex(value) %}
+{% for word in value -%}<span class="word">{{ word }}</span>{%- endfor %}
+{% endmacro %}
 
 {# Returns section title if defined. If undefined, returns blog years and months from path. #}
 {% macro section_path_title(node) -%}
