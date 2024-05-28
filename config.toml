@@ -1,0 +1,199 @@
+# The URL the site will be built for.
+# Setting to /, as otherwise all calls to get_url yield absolute links.
+base_url = "/"
+
+# Used in feeds
+#title = ""
+#description = "" # config.extra.site.description
+
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = true
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = true
+
+# Feed
+generate_feed = false
+feed_filename = "atom.xml" # or rss.xml, also used for loading template
+feed_limit = 20
+
+[[taxonomies]]
+name = "tags"
+feed = false
+
+[[taxonomies]]
+name = "blog/tags"
+feed = false
+
+[[taxonomies]]
+name = "categories"
+feed = false
+
+[[taxonomies]]
+name = "type"
+feed = false
+
+[markdown]
+# Whether to do syntax highlighting
+# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
+highlight_code = false
+
+[extra]
+source_dir = "content"
+# Contraty to the base_url in the root, this can be used to build full links.
+base_url = "https://oyam.ca"
+
+[extra.post_types]
+article = "article"
+note = "note"
+photo = "photo"
+bookmark = "bookmark"
+quote = "quote"
+
+#[[extra.slides]]
+#title = "Turning in for the night"
+#content = ""
+#caption = "Hammocking under the stars near Coral Pink Sand Dunes, Utah"
+#image = "/media/images/photos/showing/sanddunes-hammock.jpg"
+#image_position = "bottom"
+#hide_content = true
+#dark_bg = true
+
+[extra.author]
+name = "Mayo Jordanov"
+email = "mayo@oyam.ca"
+callsign = "VA7MYO"
+
+#  microblog: "@oyam"
+#  github: mayo
+#  bitbucket: mayo
+#  flickr: oyam
+#  instagram: oyam.ca
+#  keybase: mayo
+#  linkedin: mayoj
+#  mastodon: "@mayo@oyam.ca"
+#  mastodon_social: "@oyam@mastodon.social"
+#  twitter: "@oyam"
+
+[extra.site]
+description = "Mayo Jordanov; software developer, photographer, climber, runner, hiker, adventurer, explorer"
+keywords = "mayo jordanov software development photography adventure explore climbing running hiking consulting tech technology design"
+
+[extra.github]
+repo = "/oyam.ca"
+edit = "/edit/master"
+
+[extra.links]
+rss = "/feed"
+pubkey = "/pubkey.txt"
+
+#  bitbucket: https://bitbucket.org/mayo
+email = "mailto:mayo@oyam.ca"
+#  facebook: https://www.facebook.com/oyamj
+flickr = "https://www.flickr.com/photos/oyam/"
+github = "https://github.com/mayo"
+instagram = "http://instagram.com/oyam.ca"
+keybase = "https://keybase.io/mayo/"
+linkedin = "https://www.linkedin.com/in/mayoj"
+mastodon = "https://social.oyam.ca/@mayo"
+mastodon_social = "https://mastodon.social/@oyam"
+microblog = "https://micro.blog/oyam"
+twitter = "https://twitter.com/oyam"
+
+# Secial link service to icon mapping
+[extra.social_links]
+mastodon = "fa-mastodon"
+github = "fa-github-square"
+flickr = "fa-flickr"
+linkedin = "fa-linkedin"
+
+# Service ID to name mapping
+[extra.services]
+bitbucket = "Bitbucket"
+email = "Email"
+facebook = "Facebook"
+flickr = "Flickr"
+github = "GitHub"
+instagram = "Instagram"
+keybase = "Keybase"
+linkedin = "Linkedin"
+mastodon = "Mastodon"
+mastodon_social = "Mastodon"
+microblog = "Micro.blog"
+twitter = "Twitter"
+
+# Service ID to icon mapping
+[extra.icons]
+#  bitbucket: Bitbucket
+email = "fa-envelope"
+#  facebook: Facebook
+flickr = "fa-flickr"
+github = "fa-github-square"
+#  instagram: instagram
+#  keybase: keybase
+linkedin = "fa-linkedin"
+mastodon = "fa-mastodon"
+mastodon_social = "fa-mastodon"
+microblog = "fa-microblog"
+#  twitter: twitter
+
+[extra.rel_me]
+# The keys index into `extra.links`, values index into `extra.icons`.
+keybase = "keybase"
+github = "fa-github-square"
+twitter = "twitter"
+instagram = "instagram"
+microblog = "microblog"
+email = "fa-envelope"
+mastodon = "fa-mastodon"
+mastodon_social = "fa-mastodon"
+
+[extra.pubkey]
+# TODO: see obsidian://open?vault=Notes&file=Notes%2F2335723166
+fingerprint = ["50fe", "c3a3", "64b5", "9bee", "734d", "0e9b", "56a3", "789c", "ed4d", "2dd7"]
+
+[extra.pubkey.proofs]
+# email = 
+github = "https://gist.github.com/mayo/54b058bd6421a5b1ef31ada68ba9c4e6"
+# microblog: microblog
+mastodon = "https://social.oyam.ca/@mayo"
+# mastodon_social: fa-mastodon
+
+#WIP
+#[extra.taxonomies.categories]
+# term = title
+#travel = "Travel"
+
+# [extra.taxonomies.tags]
+# title_s = "Tag"
+# title_m = "Tags"
+# icon = "fa-tag"
+# [extra.taxonomies.tags.term_icons]
+# _default = "fa-tag"
+# term_1 = "fa-x"
+# term_2 = "fa-y"
+
+# [extra.taxonomies.types]
+# title_s = "Post Type"
+# title_m = "Post Types"
+# #icon = "fa-tag"
+
+[extra.taxonomies.type.article]
+name = "Article"
+icon = "fa-newspaper-light"
+
+[extra.taxonomies.type.note]
+name = "Note"
+icon = "fa-sticky-note-light"
+
+[extra.taxonomies.type.photo]
+name = "Photo"
+icon = "fa-image-light"
+
+[extra.taxonomies.type.bookmark]
+name = "Link"
+icon = "fa-external-link-square"
+
+[extra.taxonomies.type.quote]
+name = "Quote"
+icon = "fa-quote-left-light"
