@@ -47,18 +47,18 @@ article h1, article h2, article h3, article h4, article h5, article h6  {
 
 footer,
 .post-time,
-.date-threshold,
 figcaption,
 div.archive,
 div.blognav,
-.quote,
-.bookmark,
+.collection-list li.archive-link,
+.article-list .quote,
+.article-list .bookmark,
 .content-container .sidebar,
+#now .attribution,
 .font-sansserif {
   font-family: $font-family-sans /*"freight-sans-pro"*/;
   font-weight: 400;
 }
-
 
 pre,
 code,
@@ -110,6 +110,14 @@ a {
   color: $link;
 }
 
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: bold;
+}
+
 small,
 .font-small,
 article footer,
@@ -122,6 +130,19 @@ body > footer {
 dl {
   margin-block-start: 1em;
   margin-block-end: 1em;
+}
+
+.content-container,
+.content-container.normal {
+  max-width: 100rem;
+}
+
+.content-container.full {
+  max-width: 100%;
+}
+
+.content-container.narrow {
+  max-width: 85rem;
 }
 
 header#mainhead .menutoggle,
@@ -156,71 +177,94 @@ header#mainhead .menutoggle a {
 #mainhead input.menutoggle:checked ~ nav.main-nav.top {
   display: flex;
 }
+
+
+/*
+  The flexbox switching between multi- and single- column based on viewport width
+  is based on [The Flexbox Holy Albatross Reincarnated](https://heydonworks.com/article/the-flexbox-holy-albatross-reincarnated).
+  It relies on setting flex-basis for each flex item such that it either falls at
+  the desired width (as specified by flex-grow) or 100% (--content-container-multiplier).
+*/
 .content-container {
+  /* 60rem is picked as arbitrary number when we consider the viewport too "narrow" */
+  --content-container-multiplier: calc(60rem - 100%);
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  // gap: 3rem; //upsetting some space settings
 
   margin-left: auto;
   margin-right: auto;
-  padding-left: .5em; //it was 10px, why?
-  padding-right: .5em; //it was 10px, why?
+  //pad so narrow viewport edges don't touch the content text.
+  //TODO: why isn't this part of <main>?
+  padding-left: .5em;
+  padding-right: .5em;
 }
 
+.content-container.columns {
+  --content-container-columns-column-gap: 3rem;
+  column-gap: var(--content-container-columns-column-gap);
+}
+
+body > footer.content-container {
+  justify-content: start;
+  column-gap: 1rem;
+}
+
+body > footer .footer-item {
+  // body > footer is context-container, which uses flex layout
+  flex-grow: 0;
+  flex-basis: min-content;
+}
+
+body > footer .footer-item.copyright {
+  flex: 1 1;
+  text-align: right;
+}
+
+#frontpage .content-container.columns .flex-item-50 {
+  min-width: calc(50% - var(--content-container-columns-column-gap));
+}
+
+.flex-item {
+  flex-basis: calc(var(--content-container-multiplier) * 999);
+  flex-grow: 1;
+  width: 100%; //needed for elements like <pre> to show scrollbars when needed
+}
 .flex-item-25 {
-  flex: 1;
-  min-width: 25%;
+  flex-grow: 2.5;
 }
 
 .flex-item-30 {
-  flex: 1;
-  min-width: 30%;
+  flex-grow: 3;
 }
 
 .flex-item-33 {
-  flex: 1;
-  min-width: 33%;
+  flex-grow: 3.33;
 }
 
 .flex-item-40 {
-  flex: 1;
-  min-width: 40%;
+  flex-grow: 4;
 }
 
 .flex-item-50 {
-  flex: 1;
-  min-width: 50%;
+  flex-grow: 5;
 }
 
 .flex-item-60 {
-  flex: 1;
-  min-width: 60%;
+  flex-grow: 6;
 }
 
 .flex-item-70 {
-  flex: 1;
-  min-width: 70%;
+  flex-grow: 7;
 }
 
 .flex-item-100 {
-  flex: 1;
+  flex-grow: 10;
+  // without min-width, two .flex-item-100 will still live side-by-side?!?
   min-width: 100%;
 }
 
-.content-container,
-.content-container.normal {
-  max-width: 100rem;
-}
 
-.content-container.full {
-  max-width: 100%;
-}
-
-#blog .content-container,
-.content-container.narrow {
-  max-width: 85rem;
-}
 
 /* disabling, it messes with other li settings. Why?
 li {
@@ -241,9 +285,13 @@ ul {
 .breadcrumbs {
   display: flex;
   flex-wrap: wrap;
-  //width: calc(100% - 2rem);
-  font-family: $font-family-mono;
   column-gap: 0.4em;
+}
+
+.breadcrumbs,
+.menutoggle,
+.menutoggle::after {
+  font-family: $font-family-mono;
 }
 
 body > header {
@@ -281,19 +329,6 @@ body > footer {
   padding-top: 1em;
 }
 
-body > footer .h-card {
-  margin-bottom: 1em;
-}
-
-body > footer .h-card .u-photo {
-  width: 5em;
-  float: left;
-  
-  border: 3px solid $light;
-  border-radius: 50%;
-  margin-right: 2em;
-}
-
 /* @group IndieWeb */
 
 article a.u-author {
@@ -310,7 +345,9 @@ article a.u-author {
   line-height: 1;
   text-transform: uppercase;
   color: black;
-  font-size: 1.2em
+  font-size: 1.2em;
+  //split from logo
+  margin-left: .6em;
 }
 
 .dark-bg .breadcrumbs .logotype,
@@ -332,7 +369,7 @@ article a.u-author {
 
 nav.main-nav {
   // display: grid;
-  --main-nav-gap: 1em;
+  --main-nav-gap: 2rem;
   display: flex;
   flex-wrap: wrap;
   gap: var(--main-nav-gap);
@@ -393,17 +430,6 @@ nav .nav-group > :first-child {
   font-weight: bold;
 }
 
-body > footer .footer-item {
-  // body > footer is context-container, which uses flex layout
-  flex: 0 0 0px;
-  padding-right: .5em;
-}
-
-body > footer .footer-item.copyright {
-  flex: 1 1;
-  text-align: right;
-}
-
 /* @end Nav */
 
 /* 
@@ -425,7 +451,7 @@ section {
   margin-bottom: 2em;
 }
 
-figure,
+figure {
   margin: 0;
   padding: 0;
   margin-top: 1em;
@@ -481,6 +507,7 @@ pre {
   padding: .4em .6em;
   overflow: auto;
   border-radius: .3em;
+  tab-size: 4;
 }
 
 pre::-webkit-scrollbar {
@@ -595,21 +622,42 @@ textarea.pubkey {
   margin-right: .5em;
 }
 
-.section-list .post-time {
-  font-size: .8em;
-  margin-left: 1em;
-
 // position the post type icon in negative margin like a bullet. It's the most
 // straight forward way of customizing bullets. width, margin-left, and
 // padding-right play together to make it work.
-.li-icon-bullet {
+li > .li-icon-bullet {
   display: inline-block;
-  width: 1.5em;
-  margin-left: -1.5em;
+  width: 1.8em;
+  margin-left: -1.93em;
   text-align: right;
-  padding-right: .3em;
+  padding-right: .6em;
 }
+
+ul.li-icon-bullet {
+  margin-left: 1.2em; // bullet width 1.8 - padding-right .6
+}
+
+.collection-list li {
+  margin-bottom: .2em;
+}
+// Icon is always the first element. For expanded collection, metadata is
+// second and when it precedes the post, the margin is not desired.
+.collection-list .metadata:not(:nth-child(2)) {
+  margin-left: 1em;
+}
+
+.collection-list .post-type-icon,
+.collection-list .metadata {
+  font-size: .8em;
   color: $dark;
+}
+
+.collection-list .metadata > * {
+  margin-right: .5em;
+}
+
+.collection-list li.archive-link {
+  margin-top: .7em;
 }
 
 /* TODO  */
@@ -766,17 +814,29 @@ textarea.pubkey {
 
 /* @group Now */
 
+#now .attribution {
+  font-size: .5em;
+  font-size: .5em;
+  position: absolute;
+  bottom: .3em;
+  right: .3em;
+  background-color: $lightest50;
+  border-radius: .5em;
+  padding: .2em .5em;
+}
+
+#now .attribution,
+#now .attribution a {
+  color: $darkest;
+}
+
 #now .attribution .mapbox-logo {
-  margin-top: 1em;
+  vertical-align: middle;
 }
 
 /* @end Now */
 
 /* @group Blog */
-}
-
-}
-
 
 div.blognav {
   margin-top: 2em;
@@ -790,10 +850,6 @@ div.blognav .feedback a {
 
 div.blognav .feedback {
   font-style: italic;
-}
-
-div.blognav li {
-  list-style-type: none;
 }
 
 div.blognav .fa-li {
@@ -814,25 +870,22 @@ div.blognav a {
   color: $darker;
 }
 
-.article-list .date-threshold {
-  color: $dark;
-}  
-
-.article-list .date-threshold {
-  border-bottom: 1px solid $lighter;
+article.quote div.content,
+.collection-list .post.quote,
+#frontpage .quote {
+  font-style: italic;
+  font-weight: 300;
 }
 
-.article-list .date-threshold {
-  font-size: 2em;
+article.quote p.author {
+  padding-left: 1.5em;
 }
 
+article {
+  width: 100%; //needed for elements like <pre> to show scrollbars when needed
+  margin-top: 0em;
 }
 
-}
-
-.article-list .date-threshold {
-  margin: 4em 0 1.5em 0;
-}
 article div.header-image {
   height: 15em;
   background-size: cover;
@@ -840,31 +893,19 @@ article div.header-image {
   content: "";
   display: block;
 
-.article-list .date-threshold:first-child {
-  margin-top: 2em;
   border-radius: 1rem;
   position: relative;
   margin-bottom: 2em;
 }
 
-.article-list article a.readmore {
-  color: inherit;
-  text-decoration: inherit;
 .article-list article h2 {
   margin-top: 0;
 }
 
-article.quote div.content,
-#frontpage .quote {
-  font-style: italic;
-  font-weight: 300;
 .article-list article + article {
   margin-top: 3em;
 }
 
-article.quote p.author {
-  padding-left: 1.5em;
-  margin-top: -.6em;
 .article-list article div.header-image h2 {
   position: absolute;
   bottom: 0;
@@ -939,6 +980,12 @@ dl.key-value-table dt {
 dl.key-value-table dd {
   grid-column-start: 2;
   margin-inline-start: 0px;
+
+  /*
+    long elements, like a tag with long non-breaking space, stretch the dd
+     element past side of page.
+  */
+  overflow: hidden;
 }
 
 dl.key-value-twoline dt {
@@ -950,6 +997,13 @@ dl.key-value-twoline dd {
   margin-bottom: .5em;
 }
 
+dd a.extlink {
+  /* contrain .extlink to it's container size. This is to avoid long links from stretching the containing elements */
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  white-space: nowrap;
 }
 
 /* @end Blog */
