@@ -1,10 +1,9 @@
 ---
 title: Welcome!
-
 template: index.html
-page_id: frontpage
-
-grid_container_class: full
+extra:
+    container_width: full
+    page_id: frontpage
 ---
 ## Mayo Jordanov
 

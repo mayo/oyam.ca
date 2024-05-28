@@ -20,17 +20,18 @@
   {% set grid_container_class="normal" %}
   {% from "macros.j2" import display_slideshow %}
   {{ display_slideshow(site.slides) }}
+  {% set container_width = "normal" %}
   {% set nav_id = "sitenav2" %}
   <div class="chameleon"><div class="scrolldown bottomright"><a href="#{{nav_id}}"><i class="fal fa-angle-down" aria-hidden></i></a></div></div>
 
-  <div class="grid-container {{ grid_container_class }}">
     <div class="grid-100">
+  <div class="content-container {{ container_width }}">
       {% set disable_chameleon = true %}
       {% include '_sitenav.html' %}
     </div>
   </div>
 
-  <div class="grid-container {{ grid_container_class }}">
+  <div class="content-container columns {{ container_width }}">
 
     <div class="grid-50">
       <h2>Recent posts</h2>

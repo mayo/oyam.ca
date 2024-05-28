@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% set page_id = page_id or page.page_id %}
+  {% set container_width = container_width | default(value=macros::node_container_width(node=node)) %}
 <html class="no-js" lang="en">
   <head>
     <title>{% block title %}{{ page.title or page.contents|striptags|truncate(280) }} | {% endblock %}Mayo Jordanov</title>
@@ -55,6 +56,9 @@
   </head>
   <body class="{{background_class}}" {% if page_id -%}id="{{ page_id }}"{%- endif %}>
     {% block body_container %}
+    <header  class="content-container {{ container_width }}" id="mainhead">
+        <div class="content-container {{ container_width }}">
     {% endblock %}
+    <footer class="content-container {{ container_width }}">
   </body>
 </html>

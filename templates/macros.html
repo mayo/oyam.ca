@@ -64,6 +64,26 @@
     {% if content -%}{{ content | striptags | truncate(length=420, end="") | safe }}&hellip; Read more{%- endif %}
 {%- endmacro excerpt %}
 
+{# Get node container width. If not set via `extra.container_width`, recurse
+   through ancestors except root to find it. #}
+{% macro node_container_width(node) -%}
+    {%- set_global container_width = "" -%}
+
+    {%- if node.extra is defined -%}
+        {%- set container_width = node.extra.container_width | default(value="") -%}
+    {%- endif -%}
+
+    {%- if not container_width and node.ancestors is defined -%}
+        {%- for path in node.ancestors | slice(start=1) | reverse -%}
+            {%- set sect = get_section(path=path, metadata_only=true) -%}
+            {%- if not container_width and sect.extra is defined -%}
+                {%- set_global container_width = sect.extra.container_width | default(value="") -%}
+            {%- endif -%}
+        {%- endfor -%}
+    {%- endif -%}
+    {{ container_width }}
+{%- endmacro %}
+
 {% macro collection_list(collection, include_container=true, expand="", archive_link=false) %}
     {# Tera doesn't seem to allow initializing empty lists in macros. `expand` is
        expected to be a list of post types that should be expanded to full content. #}
