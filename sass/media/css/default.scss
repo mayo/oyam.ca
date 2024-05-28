@@ -318,11 +318,17 @@ article a.u-author {
   color: $lightest;
 }
 
-.breadcrumbs .logotype .lastname {
-  padding-left: .3em;
+.breadcrumbs .crumb.root img.logo {
+  // lining up logo with 
+  margin-top: .33em;
 }
 
-
+.breadcrumbs .crumb.root img.logo[src="/favicon.svg"] {
+  //NOTE: the object position and width are based on the favicon.svg file. If the file changes, this will have to be updated.
+  object-fit: contain;
+  object-position: -3.5px -4px;
+  width: 23px;
+}
 
 nav.main-nav {
   // display: grid;

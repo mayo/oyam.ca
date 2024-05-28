@@ -106,8 +106,9 @@
     {% set path_length = path | length %}
 
     {% if depth == 0 %}
-    <span class="crumb root"><a href="/"><img src="/favicon.svg" width="16" height="16" alt="MJ"/></a></span>
-    {% if path_length < 1 %}<span class="crumb root"><a href="/"><div class="logotype">Mayo Jordanov</div></a></span>{% endif %}
+    <span class="crumb root"><a href="/"><img src="/favicon.svg" title="MJ" alt="MJ logo" class="logo"/>
+        {%- if path_length < 1 -%}<div class="logotype">Mayo Jordanov</div>{%- endif -%}
+    </a></span>
         {% if path_length >= 1 %}
     <span class="separator">/</span>
         {% endif %}
