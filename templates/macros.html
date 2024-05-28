@@ -13,32 +13,6 @@
     {{ page_title | safe }}
 {%- endmacro %}
 
-{# currently not used #}
-{# % macro blog_list_reverse_chrono(node, section, list_limit=0, date_separator=true) %}
-    {% set_global list_counter = 0 %}
-
-    {% for year_section in section.subsections | sort | reverse %}
-    {% set year_list = get_section(path=year_section, metadata_only=true) %}
-
-        {% for month_section in year_list.subsections | sort | reverse %}
-            {% set month_list = get_section(path=month_section) %}
-
-            {% for post in month_list.pages | reverse %}
-            {% if list_limit > 0 and list_counter >= list_limit %}
-                {% break %}
-            {% endif %}
-
-            {% if loop.index0 == 0 and date_separator == true %}
-            <div class="date-threshold">{{ post.date | date(format='%B %Y') }}</div>
-            {% endif %}
-
-            {{ macros::blog_article(page=node, article=post, article_context="list") }}
-            {% set_global list_counter = list_counter + 1 %}
-            {% endfor %}
-
-        {% endfor %}
-    {% endfor %}
-{% endmacro blog_list_reverse_chrono % #}
 {% macro render_hex(value) %}
 {% for word in value -%}<span class="word">{{ word }}</span>{%- endfor %}
 {% endmacro %}
