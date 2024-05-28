@@ -420,7 +420,6 @@ section {
 }
 
 figure,
-.article-list article div.header-image {
   margin: 0;
   padding: 0;
   margin-top: 1em;
@@ -821,47 +820,53 @@ div.blognav a {
   font-size: 2em;
 }
 
-.article-list article h2 {
-  margin-top: 0;
 }
 
-.article-list article + article {
-  margin-top: 5em;
 }
 
 .article-list .date-threshold {
   margin: 4em 0 1.5em 0;
 }
+article div.header-image {
+  height: 15em;
+  background-size: cover;
+  overflow: hidden;
+  content: "";
+  display: block;
 
 .article-list .date-threshold:first-child {
   margin-top: 2em;
+  border-radius: 1rem;
+  position: relative;
+  margin-bottom: 2em;
 }
 
 .article-list article a.readmore {
   color: inherit;
   text-decoration: inherit;
+.article-list article h2 {
+  margin-top: 0;
 }
 
 article.quote div.content,
 #frontpage .quote {
   font-style: italic;
   font-weight: 300;
+.article-list article + article {
+  margin-top: 3em;
 }
 
 article.quote p.author {
   padding-left: 1.5em;
   margin-top: -.6em;
+.article-list article div.header-image h2 {
+  position: absolute;
+  bottom: 0;
+  padding: 0 .5em;
 }
 
 .article-list article div.header-image {
   height: 11em;
-  background-size: cover;
-  overflow: hidden;
-  content: "";
-}
-
-article {
-  margin-top: 0em;
 }
 
 article h1 a,
@@ -873,18 +878,15 @@ article h1 {
   margin-bottom: 0;
 }
 
-article header,
-article div.header {
+article header {
   margin-bottom: 3em;
 }
 
-.article-list article header,
-.article-list article div.header {
+.article-list article header {
   margin-bottom: inherit;
 }
 
-article header a,
-article div.header a {
+article header a {
   text-decoration: none;
 }
 
@@ -906,11 +908,6 @@ article.quote .content p:last-child:after,
 article .quote .author {
   color: black;
 }
-
-article:not(.in-list) footer {
-	margin-top: 3em;
-}
-
 
 article footer,
 article footer a {
@@ -947,27 +944,11 @@ dl.key-value-twoline dd {
   margin-bottom: .5em;
 }
 
+}
+
 /* @end Blog */
 
-/* @group Travel */
-
-#travel article div.header {
-  position: relative;
-  min-height: 15em;
-  background-size: cover;
-  display: block;
-}
-
-#travel article div.header h2 {
-  position: absolute;
-  bottom: 0;
-  padding: 0 .5em;
-}
-
-/* @end */
-
 /* @group Gallery */
-
 
 #gallery-page .grid-container.gallery .imageset {
   margin-bottom: 3em;

@@ -14,7 +14,7 @@
             {% set header_style = header_style | concat(with="background-position: " ~ post.extra.header.image_position) %}
           {% endif %}
           <a href="{{ post.path }}" title="{{ post.title }}">
-              <div class="header" style="{{ header_style | join(sep=";") }}">
+              <div class="header-image" style="{{ header_style | join(sep=";") }}">
                   <h2 {% if post.extra.header.color %}style="color: {{ post.extra.header.color }}"{% endif %}>{{ post.title }}</h2>
               </div>
           </a>

@@ -1,22 +1,99 @@
-{% extends "blog/blog.html" %}
+{% extends "base.html" %}
 
 {% block content %}
+{# TODO: this should be refactored #}
+{% set article = page %}
+{% set article_type = article.taxonomies.type[0] %}
 
-{% from "macros.j2" import blog_article %}
-{{ blog_article(site, page, page) }}
-{#% include "blog/_article.html" %#}
+<article class="{{ article_type }} h-entry">
+  {% set post_link = article.path %}
+  {% if article_type == config.extra.post_types.bookmark %}
+    {% set post_link = article.extra.href %}
+  {% endif %}
+
+  <header>
+    {% set header_style = [] %}
+    {% if article.extra.header.image %}
+      {% set header_style = header_style | concat(with="background-image: url('" ~ article.extra.header.image ~ "')") %}
+      
+      {% if article.extra.header.image_position %}
+        {% set header_style = header_style | concat(with="background-position: " ~ article.extra.header.image_position) %}
+      {% endif %}
+    {% endif %}
+
+    {% if header_style %}
+    <div class="header-image" style="{{ header_style | join(sep=";") }}"></div>
+    {% endif %}
+
+    {% if article.title and not article_type == config.extra.post_types.quote %}
+    <h1 class="p-name">{{ article.title | safe }}</h1>
+    {% endif %}
+    <a class="u-author" href="/"></a>
+  </header>
+
+  {% set extra_content_class="" %}
+
+  <div class="content {{ extra_content_class }}">
+    {{ article.content|safe }}
+  </div>
+
+  {% if article_type == "quote" %}
+  <p class="article author">&mdash; {{ article.extra.author }}</p>
+  {% endif %}
+
+  <footer>
+    <dl class="key-value-table">
+      <dt><i class="fa fa-calendar-light" title="Published on"></i><span class="sr-only">Published on</span></dt>
+      <dd><time class="post-time dt-published" datetime="{{ article.date | date(format='%Y-%m-%dT%H:%M:%SZ') }}">{{ article.date | date(format='%B %d, %Y') }}</time></dd>
+    {% if article_type == config.extra.post_types.bookmark or article_type == config.extra.post_types.note %}
+
+      {% if article_type == config.extra.post_types.bookmark %}
+      <dt><i class="fa fa-bookmark" title="Permalink"></i><span class="sr-only">Permalink</span></dt>
+      <dd><a class="permalink" href="{{ article.path }}">Permalink</a></dd>
+      {% endif %}
+
+      {% if article.extra.href %}
+      <dt><i class="fa fa-external-link-square" title="Article link"></i><span class="sr-only">Article link</span></dt>
+      <dd><a class="extlink" href="{{ article.extra.href }}">{{ article.extra.href }}</a></dd>
+      {% endif %}
+    {% endif %}
+
+    {% if article.taxonomies.tags %}
+    <dt><i class="fa fa-tags" title="Tags"></i><span class="sr-only">Tags</span></dt>
+    <dd>{% for tag in article.taxonomies.tags %}
+      <a href="{{ get_taxonomy_url(kind="tags", name=tag) }}" class="p-category">{{ tag }}</a>
+      {% endfor %}</dd>
+    {% endif %}
+
+    {% if article.extra['syndicate-to'] %}
+    <dt><i class="fa fa-share-alt-square" title="Syndicated to"></i><span class="sr-only">Syndicated to</span></dt>
+      {% for item in article.extra['syndicate-to'] %}
+        {% set url = item.url | default(value=item) %}
+        {% set name = item.name | default(value=url) %}
+    <dd><a href="{{ url }}" class="u-syndication">{{ name }}</a></dd>
+      {% endfor %}
+    {% endif %}
+    </dl>
+
+    <p class="feedback">Feedback is always welcome. Feel free to <a href="/about">get in touch</a>, or edit <a href="{{ config.extra.links.github }}{{ config.extra.github.repo }}{{ config.extra.github.edit }}/{{ config.extra.source_dir }}/{{ article.relative_path | safe }}">{{ article.relative_path }}</a> on GitHub and submit a push request.</p>
+  </footer>
+</article>
+
 
 <div class="blognav font-small">
-  <ul class="fa-ul">
-    {% if page.previous -%}
+  <dl class="key-value-table">
+    {% if page.lower -%}
     {# Using page.type for cases when photos are missing captions. It shouldn't happen to other posts #}
-    <li><i class="fal fa-li fa-chevron-circle-right" title="Previous"></i><span class="sr-only">Previous: </span><a class="small" href="/{{ page.previous.path }}">{{ page.previous.title or page.previous.contents|striptags|truncate(280) or page.previous.type }}</a></li>
+    {# Using left arrow for Next as that's moving closer to begining of the axis, when ordered newest to oldest #}
+    <dt><i class="fa fa-chevron-circle-left" title="Next"></i><span class="sr-only">Next: </span></dt>
+    <dd><a href="{{ page.lower.path }}">{{ macros::get_page_title(page=page.lower) | safe }}</a></dd>
     {%- endif %}
-    {% if page.next -%}
+    {% if page.higher -%}
     {# Using page.type for cases when photos are missing captions. It shouldn't happen to other posts #}
-    <li><i class="fal fa-li fa-chevron-circle-left" title="Next"></i><span class="sr-only">Next: </span><a href="/{{ page.next.path }}">{{ page.next.title or page.next.contents|striptags|truncate(280) or page.next.type }}</a></li>
+    <dt><i class="fa fa-chevron-circle-right" title="Previous"></i><span class="sr-only">Previous: </span></dt>
+    <dd><a class="small" href="{{ page.higher.path }}">{{ macros::get_page_title(page=page.higher) | safe }}</a></dd>
     {%- endif %}
-  </ul>
+  </dl>
 </div>
 
 {% endblock %}

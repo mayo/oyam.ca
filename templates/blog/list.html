@@ -1,30 +1,73 @@
-{% extends "blog/blog.html" %}
-{% from "macros.j2" import blog_article %}
+{% extends "base.html" %}
+{% block template_vars %}
+  {{ super() }}
+  {% set container_width = "normal" %}
+{% endblock template_vars %}
 
 {% block content %}
-  <h1>{{ page.title }}</h1>
+<div class="flex-item flex-item-100">
+  <h1>{{ node.title }}</h1>
 
-  <div class="article-list">
-  {% set lastDate = [None] %}
-  {% for post in site.tags.articles %}
-    {% if not page.list_limit or loop.index0 < page.list_limit %}
-      {% if lastDate[-1] != post.created.strftime('%B %Y') %}
-      <div class="date-threshold">{{ post.created.strftime('%B %Y') }}</div>
-        {% do lastDate.append(post.created.strftime('%B %Y')) %}
-      {% endif %}
+  {% set archive_list = get_section(path="blog/_index.md", metadata_only=true) %}
 
-      {{ blog_article(site, page, post, "list") }}
+  <h2>Recent Posts</h2>
+  {% set_global list_counter = 0 %}
+  {% set list_limit = node.extra.list_limit | default(value=10) %}
 
-    {% endif %}
+  {% set recent_posts = [] %}
+  {% for year_section in archive_list.subsections | sort | reverse %}
+      {% set year_list = get_section(path=year_section, metadata_only=true) %}
+  
+      {% for month_section in year_list.subsections | sort | reverse %}
+      {% set month_list = get_section(path=month_section) %}
+
+        {% for post in month_list.pages | reverse %}
+          {% if list_limit > 0 and list_counter >= list_limit %}
+            {% break %}
+          {% endif %}
+
+          {% set_global recent_posts = recent_posts | concat(with=post) %}
+          {% set_global list_counter = list_counter + 1 %}
+        {% endfor %}
+      {% endfor %}
   {% endfor %}
+  {{ macros::collection_list(collection=recent_posts, archive_link=not node.extra.archive, expand=["quote", "note", "photo"]) }}
 
-  {% if not page.archive %}
-    <div class="blognav font-small">
-      <ul class="fa-ul">
-        <li><i class="fal fa-li fa-archive" aria-hidden></i>More in <a class="small" href="/blog/archive.html">archive</a></li>
-      </ul>
-    </div>
-  {% endif %}
-  </div>
+  <h2>Starting Points</h2>
 
+  <dl class="key-value-twoline">
+    {% set post_types = get_taxonomy(kind="type") %}
+    <dt>Post types</dt>
+    <dd>
+    {% for post_type in post_types.items %}
+      <a href="{{ get_taxonomy_url(kind="type", name=post_type.name)}}">{{post_type.name}}</a>
+    {% endfor %}
+    </dd>
+
+    {% set tags = get_taxonomy(kind="tags") %}
+    <dt>Tags</dt>
+    <dd>
+    {% for tag in tags.items | sort(attribute="name") %}
+      <a href="{{ get_taxonomy_url(kind="tags", name=tag.name) }}">{{tag.name}}</a>
+    {% endfor %}
+    </dd>
+
+    {% set categories = get_taxonomy(kind="categories") %}
+    <dt>Categories</dt>
+    <dd>
+    {% for category in categories.items | sort(attribute="name") %}
+      <a href="{{ get_taxonomy_url(kind="categories", name=category.name) }}">{{category.name}}</a>
+    {% endfor %}
+    </dd>
+
+    <dt>Years</dt>
+    <dd>
+    {% for year_section in archive_list.subsections | sort | reverse %}
+    {% set year = get_section(path=year_section, metadata_only=true) %}
+      <a href="{{ year.path }}">{{ macros::section_path_title(node=year) }}</a>
+    {% endfor %}
+    </dd>
+  </dl>
+
+</div>
 {% endblock %}
