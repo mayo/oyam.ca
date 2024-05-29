@@ -92,7 +92,7 @@ h2 {
 }
 
 h1 {
-  margin-top: 0;
+  margin-top: .5em;
 }
 
 p {
@@ -431,15 +431,6 @@ nav .nav-group > :first-child {
 }
 
 /* @end Nav */
-
-/* 
-  This specific selector required because of pages with banner images. Normally,
-  the margin could be applied on main, however it would create awkward space
-  above banners.
-*/
-main > .content-container:first-child {
-  margin-top: 1em;
-}
 
 body > footer ul {
   margin: 0;
