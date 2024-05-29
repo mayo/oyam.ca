@@ -341,13 +341,11 @@ article a.u-author {
 
 .breadcrumbs .logotype {
   display: inline-block;
-  -webkit-font-smoothing: antialiased;
   line-height: 1;
   text-transform: uppercase;
-  color: black;
-  font-size: 1.2em;
+  color: $darkest;
   //split from logo
-  margin-left: .6em;
+  margin-left: .2em;
 }
 
 .dark-bg .breadcrumbs .logotype,
@@ -355,16 +353,11 @@ article a.u-author {
   color: $lightest;
 }
 
-.breadcrumbs .crumb.root img.logo {
-  // lining up logo with 
-  margin-top: .33em;
-}
-
 .breadcrumbs .crumb.root img.logo[src="/favicon.svg"] {
   //NOTE: the object position and width are based on the favicon.svg file. If the file changes, this will have to be updated.
   object-fit: contain;
-  object-position: -3.5px -4px;
-  width: 23px;
+  object-position: -2.5px 3px;
+  width: 20px;
 }
 
 nav.main-nav {
@@ -515,8 +508,6 @@ pre::-webkit-scrollbar-thumb {
 .fullpage .image,
 .banner .image,
 .banner picture img {
-  -webkit-font-smoothing: subpixel-antialiased;
-
   display: block;
   opacity: 1;
   z-index: -1;
