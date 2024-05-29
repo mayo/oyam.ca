@@ -121,8 +121,8 @@ strong {
 small,
 .font-small,
 article footer,
-.breadcrumbs,
-header#mainhead .menutoggle,
+nav.page-nav,
+nav.menu,
 body > footer {
   font-size: .8em;
 }
@@ -144,40 +144,6 @@ dl {
 .content-container.narrow {
   max-width: 85rem;
 }
-
-header#mainhead .menutoggle,
-header#mainhead .menutoggle a {
-  color: $darker;
-}
-
-#mainhead input.menutoggle {
-  appearance: initial;
-  border: 0;
-  margin: 0;
-  padding: 0;
-  outline: none;
-  height: 100%;
-  width: 2rem;
-  z-index: 1;
-  text-align: center;
-  cursor: pointer;
-}
-
-#mainhead input.menutoggle::after {
-  content: "\2261";
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-#mainhead input.menutoggle:checked::after {
-  content: "\00d7";
-}
-
-#mainhead input.menutoggle:checked ~ nav.main-nav.top {
-  display: flex;
-}
-
 
 /*
   The flexbox switching between multi- and single- column based on viewport width
@@ -282,25 +248,13 @@ ul {
 //   height: auto;
 // }
 
-.breadcrumbs {
-  display: flex;
-  flex-wrap: wrap;
-  column-gap: 0.4em;
-}
-
-.breadcrumbs,
-.menutoggle,
-.menutoggle::after {
-  font-family: $font-family-mono;
-}
-
 body > header {
   padding-top: .5em;
   padding-bottom: .5em;
 }
 
 body > footer {
-  margin: 6em 0 2em 0;
+  margin: 3em 0 2em 0;
   color: $light;
 }
 
@@ -339,6 +293,26 @@ article a.u-author {
 
 /* @group Nav */
 
+nav.page-nav {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 0.4em;
+}
+
+.breadcrumbs,
+.menutoggle,
+.menutoggle::after {
+  font-family: $font-family-mono;
+}
+
+
 .breadcrumbs .logotype {
   display: inline-block;
   line-height: 1;
@@ -360,12 +334,44 @@ article a.u-author {
   width: 20px;
 }
 
-nav.main-nav {
+nav.page-nav .menutoggle,
+nav.page-nav .menutoggle a {
+  color: $darker;
+}
+
+nav.page-nav input.menutoggle {
+  appearance: initial;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  width: 2rem;
+  z-index: 1;
+  text-align: center;
+  cursor: pointer;
+}
+
+nav.page-nav input.menutoggle::after {
+  content: "\2261";
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+nav.page-nav input.menutoggle:checked::after {
+  content: "\00d7";
+}
+
+nav.page-nav input.menutoggle:checked ~ nav.menu.top {
+  display: flex;
+}
+
+nav.menu {
   // display: grid;
-  --main-nav-gap: 2rem;
+  --nav-menu-gap: 2rem;
   display: flex;
   flex-wrap: wrap;
-  gap: var(--main-nav-gap);
+  gap: var(--nav-menu-gap);
   width: 100%;
   flex: 0 0 100%;
   // grid-gap: 3.5rem 2rem;
@@ -378,35 +384,31 @@ nav.main-nav {
   // grid-template-columns: repeat(5,1fr);
 }
 
-nav.main-nav.top {
+nav.menu.top {
   padding-top: 1em;
   border-top: 1px solid $light;
   border-bottom: 1px solid $dark;
   display: none;
 }
 
-nav.main-nav .nav-group {
+nav.menu .nav-group {
   flex-basis: calc(var(--content-container-multiplier) * 999);
   flex-grow: 1;
   max-width: max-content;
-  min-width: calc(20% - var(--main-nav-gap));
+  min-width: calc(20% - var(--nav-menu-gap));
 }
 
-nav.main-nav .nav-group.gallery {
-  min-width: calc(70% - var(--main-nav-gap));
+nav.menu .nav-group.gallery {
+  min-width: calc(70% - var(--nav-menu-gap));
   max-width: 100%;
 }
-nav.main-nav .nav-group.about {
-  min-width: calc(30% - var(--main-nav-gap));
+nav.menu .nav-group.about {
+  min-width: calc(30% - var(--nav-menu-gap));
   max-width: 100%;
 }
 
-header nav.main-nav {
+nav.page-nav nav.menu {
   margin-top: 1rem;
-}
-
-footer nav.main-nav {
-  margin-bottom: 4rem;
 }
 
 nav ul.nav-group {

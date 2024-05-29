@@ -3,11 +3,13 @@
   {% set chameleon = "" %}
 {% endif %}
 
-<div class="breadcrumbs">
-  {{ macros::breadcrumbnav2(path=current_path | default(value="/"), origin=node) }}
-</div>
-
-<input type="checkbox" class="menutoggle">
-<nav id="{{nav_id}}" class="main-nav top {{ chameleon }}">
-  {% include "_nav_main.html" %}
+{# nav_id is set on breadcrumbs, because when nav is hidden, anchor links don't work. #}
+<nav id="{{nav_id}}" class="page-nav">
+  <div  class="breadcrumbs">
+    {{ macros::breadcrumbnav2(path=current_path | default(value="/"), origin=node) }}
+  </div>
+  <input type="checkbox" class="menutoggle">
+  <nav class="menu top {{ chameleon }}">
+    {% include "_nav_main.html" %}
+  </nav>
 </nav>
