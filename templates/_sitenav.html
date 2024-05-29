@@ -8,8 +8,8 @@
   <div  class="breadcrumbs">
     {{ macros::breadcrumbnav2(path=current_path | default(value="/"), origin=node) }}
   </div>
-  <input type="checkbox" class="menutoggle">
-  <nav class="menu top {{ chameleon }}">
+  <input type="checkbox" class="menutoggle" title="Open menu" aria-controls="menu">
+  <nav class="menu top {{ chameleon }}" role="menu" aria-orientation="horizontal" aria-labelledby="menubutton">
     {% include "_nav_main.html" %}
   </nav>
 </nav>

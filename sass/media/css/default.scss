@@ -283,155 +283,6 @@ body > footer {
   padding-top: 1em;
 }
 
-/* @group IndieWeb */
-
-article a.u-author {
-  display: hidden;
-}
-
-/* @end */
-
-/* @group Nav */
-
-nav.page-nav {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.breadcrumbs {
-  display: flex;
-  flex-wrap: wrap;
-  column-gap: 0.4em;
-}
-
-.breadcrumbs,
-.menutoggle,
-.menutoggle::after {
-  font-family: $font-family-mono;
-}
-
-
-.breadcrumbs .logotype {
-  display: inline-block;
-  line-height: 1;
-  text-transform: uppercase;
-  color: $darkest;
-  //split from logo
-  margin-left: .2em;
-}
-
-.dark-bg .breadcrumbs .logotype,
-.breadcrumbs .dark-bg .logotype {
-  color: $lightest;
-}
-
-.breadcrumbs .crumb.root img.logo[src="/favicon.svg"] {
-  //NOTE: the object position and width are based on the favicon.svg file. If the file changes, this will have to be updated.
-  object-fit: contain;
-  object-position: -2.5px 3px;
-  width: 20px;
-}
-
-nav.page-nav .menutoggle,
-nav.page-nav .menutoggle a {
-  color: $darker;
-}
-
-nav.page-nav input.menutoggle {
-  appearance: initial;
-  border: 0;
-  margin: 0;
-  padding: 0;
-  outline: none;
-  width: 2rem;
-  z-index: 1;
-  text-align: center;
-  cursor: pointer;
-}
-
-nav.page-nav input.menutoggle::after {
-  content: "\2261";
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-nav.page-nav input.menutoggle:checked::after {
-  content: "\00d7";
-}
-
-nav.page-nav input.menutoggle:checked ~ nav.menu.top {
-  display: flex;
-}
-
-nav.menu {
-  // display: grid;
-  --nav-menu-gap: 2rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--nav-menu-gap);
-  width: 100%;
-  flex: 0 0 100%;
-  // grid-gap: 3.5rem 2rem;
-  // overflow: hidden;
-
-  font-family: $font-family-mono;
-  font-size: 1em;
-
-  /* this should be media dependent */
-  // grid-template-columns: repeat(5,1fr);
-}
-
-nav.menu.top {
-  padding-top: 1em;
-  border-top: 1px solid $light;
-  border-bottom: 1px solid $dark;
-  display: none;
-}
-
-nav.menu .nav-group {
-  flex-basis: calc(var(--content-container-multiplier) * 999);
-  flex-grow: 1;
-  max-width: max-content;
-  min-width: calc(20% - var(--nav-menu-gap));
-}
-
-nav.menu .nav-group.gallery {
-  min-width: calc(70% - var(--nav-menu-gap));
-  max-width: 100%;
-}
-nav.menu .nav-group.about {
-  min-width: calc(30% - var(--nav-menu-gap));
-  max-width: 100%;
-}
-
-nav.page-nav nav.menu {
-  margin-top: 1rem;
-}
-
-nav ul.nav-group {
-  list-style-type: none;
-  padding: 0;
-}
-
-nav .nav-group {
-  display: block;
-  margin: 0 0 1em;
-}
-
-nav .nav-group > :first-child {
-  font-weight: bold;
-}
-
-/* @end Nav */
-
-body > footer ul {
-  margin: 0;
-  padding: 0;
-}
-
 section {
   margin-top: 1em;
   margin-bottom: 2em;
@@ -528,7 +379,6 @@ pre::-webkit-scrollbar-thumb {
   object-fit: cover;
   object-position: center center;
 }
-
 
 .banner {
   position: relative;
@@ -651,6 +501,145 @@ ul.li-icon-bullet {
   height: 1em;
   display: inline-block;
 }
+
+/* @group IndieWeb */
+
+article a.u-author {
+  display: hidden;
+}
+
+/* @end */
+
+/* @group Nav */
+
+nav.page-nav {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 0.4em;
+}
+
+.breadcrumbs,
+.menutoggle,
+.menutoggle::after {
+  font-family: $font-family-mono;
+}
+
+
+.breadcrumbs .logotype {
+  display: inline-block;
+  line-height: 1;
+  text-transform: uppercase;
+  color: $darkest;
+  //split from logo
+  margin-left: .2em;
+}
+
+.dark-bg .breadcrumbs .logotype,
+.breadcrumbs .dark-bg .logotype {
+  color: $lightest;
+}
+
+.breadcrumbs .crumb.root img.logo[src="/favicon.svg"] {
+  //NOTE: the object position and width are based on the favicon.svg file. If the file changes, this will have to be updated.
+  object-fit: contain;
+  object-position: -2.5px 3px;
+  width: 20px;
+}
+
+nav.page-nav .menutoggle,
+nav.page-nav .menutoggle a {
+  color: $darker;
+}
+
+nav.page-nav input.menutoggle {
+  appearance: initial;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  width: 2rem;
+  z-index: 1;
+  text-align: center;
+  cursor: pointer;
+}
+
+nav.page-nav input.menutoggle::after {
+  content: "\2261";
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+nav.page-nav input.menutoggle:checked::after {
+  content: "\00d7";
+}
+
+nav.menu {
+  --nav-menu-gap: 2rem;
+  --nav-menu-display: flex;
+  display: var(--nav-menu-display);
+  flex-wrap: wrap;
+  gap: var(--nav-menu-gap);
+  width: 100%;
+  flex: 0 0 100%;
+  font-family: $font-family-mono;
+  font-size: 1em;
+}
+
+nav.menu.top {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  border-top: 1px solid $light;
+  border-bottom: 1px solid $dark;
+  display: none;
+}
+
+nav.page-nav input.menutoggle:checked ~ nav.menu.top {
+  display: var(--nav-menu-display);
+}
+
+nav.menu .nav-group {
+  flex-basis: calc(var(--content-container-multiplier) * 999);
+  flex-grow: 1;
+  max-width: max-content;
+  min-width: calc(20% - var(--nav-menu-gap));
+}
+
+nav.menu .nav-group.gallery {
+  min-width: calc(70% - var(--nav-menu-gap));
+  max-width: 100%;
+}
+nav.menu .nav-group.about {
+  min-width: calc(30% - var(--nav-menu-gap));
+  max-width: 100%;
+}
+
+nav.page-nav nav.menu {
+  margin-top: 1rem;
+}
+
+nav ul.nav-group {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav .nav-group {
+  display: block;
+}
+
+nav .nav-group > :first-child {
+  font-weight: bold;
+}
+
+/* @end Nav */
+
 
 /* @group Error */
 
