@@ -1,0 +1,59 @@
+---
+template: true
+title: Mayo Jordanov
+page_id: about
+---
+{% extends 'grid.html' %}
+{% block main_content %}
+<div class="banner">
+  <div class="image" style="background-image: url('/media/images/about.jpg'); background-position: center;"></div>
+
+  <div class="head-title grid-container normal dark-bg">
+    <div class="title grid-100">
+        <h1 style="color: white">{{ page.title }}</h1>
+    </div>
+  </div>
+</div>
+
+
+<div class="grid-container {{ grid_container_class }}">
+
+  <div class="grid-70 mobile-grid-100">
+
+    <p>I like challenges. Where others see a problem, I see a challenge in need of a solution. It taunts me, begging to be solved, and it’s personal. Some can be solved by writing code, some by clever design, others by talking to people. Most require creative thinking, but the best kind requires learning of new skills or applying knowledge in new and unexpected ways. </p>
+
+    <p>My background is software development and system administration, but through the varied nature of my work I gained experience in other areas of tech and creative fields. Web applications, database design, network administration, building automation, and web design are just some of the areas I had an opportunity to gain experience in.</p>
+
+    <p>As a naturally curious person I’m driven to explore the unknown, and the great outdoors is my playground. With snow on ground, I take my skis to explore the mountains around me. When the air gets warmer, I like to climb rocks, hike up mountains, or ride around on a bike. I run when I can, trying to keep in shape for the next long distance race or adventure. All these activities help me escape the daily bustle and enjoy serene outdoors that not everyone gets to see.</p>
+
+    <p>Photography is my creative outlet and reflects my passion for outdoors. I try to enjoy the moments on my adventures, and capture them as they happen, so others can share the experience and feel as if they were there.</p>
+
+  </div>
+
+  <div class="grid-30 mobile-grid-100 sidebar">
+    <p>
+      <ul class="contact-list h-card p-adr h-adr">
+        <li><div class="me"><img class="me u-photo" src="/media/images/mex2.jpg"/></div></li>
+            <li class="main"><a href="https://oyam.ca/about" class="name p-name u-url">Mayo Jordanov</a><br/><span class="tag p-note">Creative Solutions</a></li>
+        <li><i class="fal inline icon fa-globe-americas" title="Location"></i><span class="sr-only">Location</span><span class="p-locality">Vancouver</span>, <span class="p-region">BC</span>, <span class="p-country-name">Canada</span></li>
+        <li>
+          <i class="fal inline icon fa-envelope" title="Email"></i><span class="sr-only">Email</span><a href="mailto:mayo@oyam.ca" class="u-email">mayo@oyam.ca</a><br/>
+          <i class="fal inline icon fa-phone" title="Phone"></i><span class="sr-only">Phone</span><span class="p-tel">+1.604.484.9845</span><br/>
+          <i class="fal inline icon fa-broadcast-tower" title="Callsign"></i><span class="sr-only">Callsign</span><span>VA7OYA</span>
+        </li>
+        <li><i class="fal inline icon fa-key" title="GPG fingerprint"></i><span class="sr-only">GPG fingerprint</span><a rel="me" href="/pubkey.html" class="hex-string"><span class="word">56A3</span><span class="word">789C</span><span class="word">ED4D</span><span class="word">2DD7</span></a></li>
+        <li class="social">
+        {% for link, icon in site.social_links.items() %}
+          <a href="{{ site.links[link] }}"><i class="fa {{ icon }}"></i></a>
+        {% endfor %}
+        </li>
+      </ul>
+    </p>
+
+    <p>I'm available to work on software, IT, or photography projects. Please contact me for more information or to chat about the details.</p>
+
+    <p>Any comments or suggestions are appreciated. It's not always possible to respond to all of them, so please don't take it personally if it takes me longer to respond or I don't reply at all.</p>
+  </div>
+
+</div>
+{% endblock %}
