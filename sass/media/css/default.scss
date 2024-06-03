@@ -21,7 +21,7 @@ body {
 body,
 article.article .content,
 article.note .content,
-#gallery-page .grid-container.gallery .meta h1,
+// #gallery-page .grid-container.gallery .meta h1,
 .font-serif {
   /* Berling T is preferred, but not available on TypeKit */
   font-family: $font-family-serif /*"freight-text-pro"*/;
@@ -35,15 +35,15 @@ div.body.dark-bg {
 }
 
 h1, h2, h3, h4, h5, h6  {
-  font-family: $font-family-sans /*"freight-sans-pro"*/;
+  font-family: $font-family-condensed /*"freight-sans-pro"*/;
   font-weight: 600;
 }
 
-article h1, article h2, article h3, article h4, article h5, article h6  {
-  font-family: $font-family-condensed /*"freight-sans-compressed-pro"*/;
-  font-weight: 600;
+// article h1, article h2, article h3, article h4, article h5, article h6  {
+//   font-family: $font-family-condensed /*"freight-sans-compressed-pro"*/;
+//   font-weight: 600;
 
-}
+// }
 
 footer,
 .post-time,
@@ -703,9 +703,9 @@ nav .nav-group > :first-child {
   color: black;
 }
 
-.slideshow .slide .main h1 {
-  font-family: $font-family-condensed /*"freight-sans-compressed-pro"*/;
-}
+// .slideshow .slide .main h1 {
+//   font-family: $font-family-condensed /*"freight-sans-compressed-pro"*/;
+// }
 
 .dark-bg .slideshow .slide .main,
 .dark-bg .slideshow .slide .main h1 {
