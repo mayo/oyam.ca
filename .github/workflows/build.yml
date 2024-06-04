@@ -1,0 +1,24 @@
+name: Build site with Zola
+
+on:
+  push:
+    #paths-ignore:  
+    branches:
+      - public-zola
+
+concurrency:
+  group: site-build-${{ github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Setup Zola environment
+        uses: taiki-e/install-action@v2
+        with:
+          tool: zola
+      - name: Build site
+        run: make build
