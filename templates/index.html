@@ -1,4 +1,4 @@
-{% extends "grid.html" %}
+{% extends "base.html" %}
 
 {# Remove title, so only name shows #}
 {% block title %}{% endblock %}
@@ -17,15 +17,13 @@
 
 
 {% block main_content %}
-  {% set grid_container_class="normal" %}
-  {% from "macros.j2" import display_slideshow %}
-  {{ display_slideshow(site.slides) }}
   {% set container_width = "normal" %}
+  {{ macros::display_slideshow(slides=slides) }}
   {% set nav_id = "sitenav2" %}
-  <div class="chameleon"><div class="scrolldown bottomright"><a href="#{{nav_id}}"><i class="fal fa-angle-down" aria-hidden></i></a></div></div>
+  <div class="chameleon"><div class="scrolldown bottomright"><a href="#{{nav_id}}"><i class="fa fa-angle-down" aria-hidden></i><span class="sr-only">Scroll to content</span></a></div></div>
 
-    <div class="grid-100">
   <div class="content-container {{ container_width }}">
+    <div class="flex-item flex-item-100">
       {% set disable_chameleon = true %}
       {% include '_sitenav.html' %}
     </div>
@@ -33,65 +31,35 @@
 
   <div class="content-container columns {{ container_width }}">
 
-    <div class="grid-50">
-      <h2>Recent posts</h2>
-
-      <table class="article-list">
-      {% set list_limit=5 %}
-      {% set ns = namespace(count=0) %}
-      {% for post in site.tags.articles %}
-        {% if ns.count < list_limit %}
-          {% if post.title %}
-        <tr>
-          <td class="time"><time datetime="{{ post.created.strftime('%Y-%m-%dT%H:%M:%S') }}">{{ post.created.strftime('%b %d, %Y') }}</time></td>
-          {% set post_title = post.title %}
-          {% if post.type == "quote" and post.contents %}
-            {% set post_title = post.contents|striptags|truncate(280) %}
-          {% endif %}
-          <td class="{{ post.type }}"><a href="{{ "/" + post.path }}">{{ post_title|safe }}</a></td>
-        </tr>
-            {% set ns.count = ns.count + 1 %}
-          {% endif %}
-        {% endif %}
+    <div class="flex-item flex-item-100">
+      <h1>Recent Posts</h1>
+      {% set archive_list = get_section(path="blog/_index.md", metadata_only=true) %}
+      {% set_global list_counter = 0 %}
+      {% set list_limit = node.extra.list_limit | default(value=10) %}
+    
+      {% set recent_posts = [] %}
+      {% for year_section in archive_list.subsections | sort | reverse %}
+          {% set year_list = get_section(path=year_section, metadata_only=true) %}
+      
+          {% for month_section in year_list.subsections | sort | reverse %}
+          {% set month_list = get_section(path=month_section) %}
+    
+            {% for post in month_list.pages | reverse %}
+              {% if list_limit > 0 and list_counter >= list_limit %}
+                {% break %}
+              {% endif %}
+    
+              {% set_global recent_posts = recent_posts | concat(with=post) %}
+              {% set_global list_counter = list_counter + 1 %}
+            {% endfor %}
+          {% endfor %}
       {% endfor %}
-
-        <tr>
-          <td class="archive"><i class="fal fa-archive" aria-hidden></i></td>
-          <td>More in <a class="small" href="/blog/archive.html">archive</a></td>
-        </tr>
-      </table>
-
+      {{ macros::collection_list(collection=recent_posts, archive_link=not node.extra.archive, expand=["quote", "note"]) }}
     </div>
 
-    <div class="grid-50">
-      <h2>Thoughts</h2>
-
-      <table class="article-list">
-      {% set list_limit=5 %}
-      {% set ns = namespace(count=0) %}
-      {% for post in site.tags.microblog %}
-        {% if ns.count < list_limit %}
-        <tr>
-          <td class="time"><time datetime="{{ post.created.strftime('%Y-%m-%dT%H:%M:%S') }}">{{ post.created.strftime('%b %d, %Y') }}</time></td>
-          <td class="{{ post.type }}"><a href="{{ "/" + post.path }}">{{ post.title|striptags|truncate(280) or post.contents|striptags|truncate(280) or post.type }}</a></td>
-        </tr>
-          {% set ns.count = ns.count + 1 %}
-        {% endif %}
-      {% endfor %}
-
-        <tr>
-          <td class="archive"><i class="fal fa-archive" aria-hidden></i></td>
-          <td>More in <a class="small" href="/blog/archive.html">archive</a></td>
-        </tr>
-      </table>
-
-    </div>
-
-
-
-    <div class="grid-100 bio-blob">
+    <div class="flex-item flex-item-100">
       {% block content %}
-        {{ page.contents }}
+        {{ node.content | safe }}
       {% endblock %}
     </div>
 
