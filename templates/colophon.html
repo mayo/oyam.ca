@@ -1,0 +1,22 @@
+{% extends 'page-sidebar.html' %}
+
+{% block template_vars %}
+  {{ super() }}
+  {% set column_main_width = 60 %}
+  {% set column_sidebar_width = 40 %}
+{% endblock template_vars %}
+
+{% block sidebar %}
+    {% if node.extra.show_related %}
+        {% set_global related_pages = [] %}
+        {% for taxon in node.extra.show_related %}
+          {% set taxon_term = get_taxonomy_term(kind=taxon.kind, term=taxon.term) %}
+          {% set_global related_pages = related_pages | concat(with=taxon_term.pages) %}
+        {% endfor %}
+    
+        {% if related_pages | length > 0 %}
+        <h2>Related</h2>
+        {{ macros::collection_list(collection=related_pages | sort(attribute="date")) }}
+        {% endif %}
+      {% endif %}
+{% endblock sidebar %}
