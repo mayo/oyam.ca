@@ -8,7 +8,7 @@ KEYOXIDE_WKD_HANDLE=sjd3shepa5rmabd9ggran4dsd5fd4sec
 
 # Main targets
 
-build: depends
+build:
 	zola build -u '/'
 
 serve: dist
