@@ -47,8 +47,11 @@
     <!-- <link rel="stylesheet" href="/media/css/handheld.css" media="only screen"/> -->
     {% endblock %}
 
-
-    <link rel="alternate" type="application/atom+xml" href="/feed/atom.xml"/>
+    {% block rss %}
+      {% if config.generate_feed %}
+    <link rel="alternate" type="application/atom+xml" title="RSS" href="{{ get_url(path="/atom.xml") | safe }}">
+      {% endif %}
+    {% endblock rss %}
 
     {% for link, _ in config.extra.rel_me -%}
     <link rel="me" href="{{ config.extra.links[link] | safe }}"/>
