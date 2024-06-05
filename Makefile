@@ -1,12 +1,13 @@
-ZOLA_CONTENT_DIR=content
-ZOLA_STATIC_DIR=static
-ZOLA_PUBLIC_DIR=public
+ZOLA_CONTENT_DIR := content
+ZOLA_STATIC_DIR := static
 
-GPG_KEYID=50fec3a364b59bee734d0e9b56a3789ced4d2dd7
+GPG_KEYID := 50fec3a364b59bee734d0e9b56a3789ced4d2dd7
 
 # Generated at https://keyoxide.org/util/wkd. Z-Base-32 encoded SHA1 of "mayo@oyam.ca" (Primary key UID)
-KEYOXIDE_WKD_HANDLE=sjd3shepa5rmabd9ggran4dsd5fd4sec
+KEYOXIDE_WKD_HANDLE := sjd3shepa5rmabd9ggran4dsd5fd4sec
 
+ZOLA_BIN ?= zola
+GPG_BIN ?= gpg
 
 # Main targets
 
@@ -16,12 +17,11 @@ serve: zola-serve
 
 dist: update-submodules update-pubkey depends
 
-
 zola-build:
-	zola build -u '/'
+	$(ZOLA_BIN) build -u '/'
 
 zola-serve: dist
-	zola serve -u '/'
+	$(ZOLA_BIN) serve -u '/'
 
 # Depends
 
@@ -45,6 +45,5 @@ update-submodules:
 	git submodule update --recursive --init
 
 update-pubkey:
-	gpg --export $(GPG_KEYID) > $(ZOLA_CONTENT_DIR)/.well-known/openpgpkey/hu/$(KEYOXIDE_WKD_HANDLE)
-	gpg --export --armor $(GPG_KEYID) > $(ZOLA_STATIC_DIR)/pubkey.txt
-
+	$(GPG_BIN) --export $(GPG_KEYID) > $(ZOLA_CONTENT_DIR)/.well-known/openpgpkey/hu/$(KEYOXIDE_WKD_HANDLE)
+	$(GPG_BIN) --export --armor $(GPG_KEYID) > $(ZOLA_STATIC_DIR)/pubkey.txt
