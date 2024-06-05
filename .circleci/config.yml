@@ -3,65 +3,69 @@
 # Check https://circleci.com/docs/2.0/language-python/ for more details
 #
 version: 2
+
 workflows:
   build:
     jobs:
-      - build:
-          filters:
-            branches:
-              only:
-                - public
+      - build
 
-          working_directory: ~/repo
+jobs:
+  build:
+    filters:
+      branches:
+        only:
+          - public
 
-          docker:
-            - image: cimg/python:3.11.1
+    working_directory: ~/repo
 
-          steps:
-            - restore_cache:
-                key: git-v1-{{ .Branch }}
+    docker:
+      - image: cimg/python:3.11.1
 
-            - checkout
+    steps:
+      - restore_cache:
+          key: git-v1-{{ .Branch }}
 
-            - run:
-                name: Update git submodules
-                command: |
-                  git submodule sync
-                  git submodule update --init
+      - checkout
 
-            - save_cache:
-                key: git-v1-{{ .Branch }}
-                paths:
-                  - .git
+      - run:
+          name: Update git submodules
+          command: |
+            git submodule sync
+            git submodule update --init
 
-            - restore_cache:
-                key: venv-v1-{{ .Branch }}-{{ checksum "requirements.txt" }}
+      - save_cache:
+          key: git-v1-{{ .Branch }}
+          paths:
+            - .git
 
-            - restore_cache:
-                key: site-v3-{{ .Branch }}-webmention_cache-
+      - restore_cache:
+          key: venv-v1-{{ .Branch }}-{{ checksum "requirements.txt" }}
 
-            - run:
-                name: Setup and update Python environment
-                command: |
-                  python -m virtualenv venv
-                  . venv/bin/activate
-                  pip install -r requirements.txt
+      - restore_cache:
+          key: site-v3-{{ .Branch }}-webmention_cache-
 
-            - save_cache:
-                key: venv-v1-{{ .Branch }}-{{ checksum "requirements.txt" }}
-                paths:
-                  - ./venv
+      - run:
+          name: Setup and update Python environment
+          command: |
+            python -m virtualenv venv
+            . venv/bin/activate
+            pip install -r requirements.txt
 
-            - run:
-                name: Build
-                command: |
-                  eval $(openssl aes-256-cbc -k "${ENCRYPTION_KEY}" -md sha256 -pbkdf2 -in environment.env.enc -d |grep -vE '(^#|^\s*$)')
-                  . venv/bin/activate
-                  python build.py
+      - save_cache:
+          key: venv-v1-{{ .Branch }}-{{ checksum "requirements.txt" }}
+          paths:
+            - ./venv
 
-            - save_cache:
-                key: site-v3-{{ .Branch }}-webmention_cache-{{ checksum ".webmention_cache.json" }}
-                paths:
-                  - .webmention_cache.json
+      - run:
+          name: Build
+          command: |
+            eval $(openssl aes-256-cbc -k "${ENCRYPTION_KEY}" -md sha256 -pbkdf2 -in environment.env.enc -d |grep -vE '(^#|^\s*$)')
+            . venv/bin/activate
+            python build.py
+
+      - save_cache:
+          key: site-v3-{{ .Branch }}-webmention_cache-{{ checksum ".webmention_cache.json" }}
+          paths:
+            - .webmention_cache.json
 
 
