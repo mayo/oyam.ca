@@ -21,10 +21,6 @@ name = "tags"
 feed = false
 
 [[taxonomies]]
-name = "blog/tags"
-feed = false
-
-[[taxonomies]]
 name = "categories"
 feed = true
 
