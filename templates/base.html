@@ -113,7 +113,7 @@
           {% endif %}
           {% set h_card = "" %}
           {% if node.extra.page_id | default(value="") != 'about' %}
-            {% set h_card = "h-card p-name p-url" %}
+            {% set h_card = "h-card p-name u-url" %}
           {% endif %}
           <span class="copyright footer-item">Copyright &copy;{{ now() | date(format='%Y') }} <a class="{{h_card}}" href="http://oyam.ca/about">{{ config.extra.author.name }}</a></span>
         {% endblock %}
