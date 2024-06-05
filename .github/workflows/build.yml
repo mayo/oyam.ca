@@ -22,3 +22,10 @@ jobs:
           tool: zola
       - name: Build site
         run: make build
+      - name: Save artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: website-public
+          path: public/
+  # call-deploy-workflow:
+  #   uses: ./.github/workflows/deploy.yml
