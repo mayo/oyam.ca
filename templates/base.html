@@ -106,7 +106,7 @@
   
         {% block footer_content %}
           {% for link, icon in config.extra.social_links %}
-          <a class="footer-item" href="{{ config.extra.links[link] }}"><i class="fa {{ icon }}"></i></a>
+          <a class="footer-item" href="{{ config.extra.links[link] | safe }}"><i class="fa {{ icon }}"></i></a>
           {% endfor %}
           {% if config.generate_feed %}
           <a class="footer-item" href="{{ get_url(path='/atom.xml') | safe }}"><i class="fa fa-rss-square" title="RSS"></i><span class="sr-only">RSS</span></a>
@@ -115,7 +115,7 @@
           {% if node.extra.page_id | default(value="") != 'about' %}
             {% set h_card = "h-card p-name u-url" %}
           {% endif %}
-          <span class="copyright footer-item">Copyright &copy;{{ now() | date(format='%Y') }} <a class="{{h_card}}" href="http://oyam.ca/about">{{ config.extra.author.name }}</a></span>
+          <span class="copyright footer-item">Copyright &copy;{{ now() | date(format='%Y') }} <a class="{{h_card}}" href="{{ config.extra.base_url | safe }}{{ get_url(path='@/about/_index.md') }}">{{ config.extra.author.name }}</a></span>
         {% endblock %}
   
       {% endblock %}
