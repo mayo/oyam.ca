@@ -4,7 +4,12 @@
   {# set page_title = taxonomy.name ~": " ~ term.name | title #}
   {% set page_title = term.name | title %}
 {% endblock template_vars %}
-
+{% block rss %}
+  {% if taxonomy.feed %}
+    {% set rss_path = taxonomy.name ~ "/" ~ term.name ~ "/atom.xml" %}
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path=rss_path, trailing_slash=false) }}">
+  {% endif %}
+{% endblock rss %}
 {% block page_content %}
     {#
         Zola does have ability to have separate templates for different

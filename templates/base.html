@@ -18,15 +18,15 @@
 {% endblock template_vars %}
 <html class="no-js" lang="en">
   <head>
-    <title>{% block title %}{{ page_title }} | {% endblock %}Mayo Jordanov</title>
+    <title>{% block title %}{{ page_title }} | {% endblock %}{{ config.title }}</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
     <meta name="author" content="{{ config.extra.author.name }} {{ config.extra.author.email }}">
 
-    {% if config.extra.site.description -%}
-    <meta name="description" content="{{config.extra.site.description}}">
+    {% if config.description -%}
+    <meta name="description" content="{{config.description}}">
     {% endif -%}
     {% if config.extra.site.keywords -%}
     <meta name="keywords" content="{{config.extra.site.keywords}}">
@@ -38,7 +38,7 @@
     {% elif page.content -%}
       {% set og_description = macros::excerpt(content=page.content) -%}
     {% else -%}
-      {% set og_description = config.extra.site.description -%}
+      {% set og_description = config.description -%}
     {% endif -%}
     <meta property="og:description" content="{{ og_description | striptags }}">
 
@@ -49,7 +49,7 @@
 
     {% block rss %}
       {% if config.generate_feed %}
-    <link rel="alternate" type="application/atom+xml" title="RSS" href="{{ get_url(path="/atom.xml") | safe }}">
+    <link rel="alternate" type="application/atom+xml" title="RSS" href="{{ get_url(path='/atom.xml') | safe }}">
       {% endif %}
     {% endblock rss %}
 
@@ -108,7 +108,9 @@
           {% for link, icon in config.extra.social_links %}
           <a class="footer-item" href="{{ config.extra.links[link] }}"><i class="fa {{ icon }}"></i></a>
           {% endfor %}
-          <a class="footer-item" href="{{ config.extra.links.rss }}"><i class="fa fa-rss-square" title="RSS"></i><span class="sr-only">RSS</span></a>
+          {% if config.generate_feed %}
+          <a class="footer-item" href="{{ get_url(path='/atom.xml') | safe }}"><i class="fa fa-rss-square" title="RSS"></i><span class="sr-only">RSS</span></a>
+          {% endif %}
           {% set h_card = "" %}
           {% if node.extra.page_id | default(value="") != 'about' %}
             {% set h_card = "h-card p-name p-url" %}
