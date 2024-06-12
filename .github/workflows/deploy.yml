@@ -1,0 +1,45 @@
+name: Deploy site
+
+on:
+  workflow_call:
+    inputs:
+      artifact-name:
+        required: true
+        type: string
+    secrets:
+      AWS_IAM_ROLE_GITHUB:
+        required: true
+
+permissions:
+  id-token: write
+
+env:
+  AWS_REGION: us-east-1
+  S3_BUCKET: draft.oyam.ca
+
+concurrency:
+  group: site-deploy-${{ github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download the build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ inputs.artifact-name }}
+          path: public
+      
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_IAM_ROLE_GITHUB }}
+          role-session-name: GitHub-Action-Role
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Upload Artifact to s3
+        run: aws s3 sync --acl public-read --delete public/ s3://${{ env.S3_BUCKET }}/
+
+
+#  invalidate-cache:
+#    runs-on: ubuntu-latest

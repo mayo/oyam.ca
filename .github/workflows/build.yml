@@ -16,16 +16,25 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
       - name: Setup Zola environment
         uses: taiki-e/install-action@v2
         with:
           tool: zola
+
       - name: Build site
         run: make build
+
       - name: Save artifact
         uses: actions/upload-artifact@v4
         with:
-          name: website-public
+          name: website-${{ github.ref_name }}
           path: public/
-  # call-deploy-workflow:
-  #   uses: ./.github/workflows/deploy.yml
+
+  call-deploy-workflow:
+    uses: ./.github/workflows/deploy.yml
+    needs: build
+    with:
+      artifact-name: website-${{ github.ref_name }}
+    secrets:
+      AWS_IAM_ROLE_GITHUB: ${{ secrets.AWS_IAM_ROLE_GITHUB }}
