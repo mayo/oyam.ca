@@ -75,7 +75,7 @@
     {% endif %}
     </dl>
 
-    <p class="feedback">Feedback is always welcome. Feel free to <a href="/about">get in touch</a>, or edit <a href="{{ config.extra.links.github }}{{ config.extra.github.repo }}{{ config.extra.github.edit }}/{{ config.extra.source_dir }}/{{ article.relative_path | safe }}">{{ article.relative_path }}</a> on GitHub and submit a push request.</p>
+    <p class="feedback">Feedback is always welcome. Feel free to <a href="{{ get_url(path='@/about/index.md') }}">get in touch</a>, or edit <a href="{{ config.extra.links.github }}{{ config.extra.github.repo }}{{ config.extra.github.edit }}/{{ config.extra.source_dir }}/{{ article.relative_path | safe }}">{{ article.relative_path }}</a> on GitHub and submit a push request.</p>
   </footer>
 </article>
 
