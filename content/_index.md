@@ -4,6 +4,7 @@ template: index.html
 extra:
     container_width: full
     page_id: frontpage
+    list_limit: 5
 ---
 ## Mayo Jordanov
 
