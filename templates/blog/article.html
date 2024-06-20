@@ -94,6 +94,21 @@
     <dd><a class="small" href="{{ page.higher.path }}">{{ macros::get_page_title(page=page.higher) | safe }}</a></dd>
     {%- endif %}
   </dl>
+
+  {% if node.extra.show_related %}
+  <div class="related">
+    {% set_global related_pages = [] %}
+    {% for taxon in node.extra.show_related %}
+      {% set taxon_term = get_taxonomy_term(kind=taxon.kind, term=taxon.term) %}
+      {% set_global related_pages = related_pages | concat(with=taxon_term.pages) %}
+    {% endfor %}
+
+    {% if related_pages | length > 0 %}
+    <strong>Related Posts</strong>
+      {{ macros::collection_list(collection=related_pages | sort(attribute="date"), exclude=[page]) }}
+    {% endif %}
+  </div>
+  {% endif %}
 </div>
 
 {% endblock %}

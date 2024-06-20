@@ -58,13 +58,24 @@
     {{ container_width }}
 {%- endmacro %}
 
-{% macro collection_list(collection, include_container=true, expand="", archive_link=false) %}
-    {# Tera doesn't seem to allow initializing empty lists in macros. `expand` is
-       expected to be a list of post types that should be expanded to full content. #}
+{% macro collection_list(collection, include_container=true, expand="", archive_link=false, exclude="") %}
+    {#- Tera doesn't seem to allow initializing empty lists in macros. `expand` is
+       expected to be a list of post types that should be expanded to full content. -#}
+
+    {#- Setup exclude array of paths, as page doesn't seem to compare with equality -#}
+    {% if exclude != "" %}
+        {% set exclude = exclude | map(attribute="path") %}
+    {% else %}
+        {% set exclude = [] %}
+    {% endif %}
 
     {% if include_container %}<ul class="collection-list li-icon-bullet">{% endif %}
-
     {% for page in collection %}
+        {#- Exclude the page, if specified -#}
+        {%- if exclude != "" and exclude is containing(page.path) -%}
+            {%- continue -%}
+        {%- endif -%}
+
         {%- set is_blog = page.path is starting_with("/blog/") -%}
         {%- set post_type = config.extra.taxonomies.type | get(key=page.taxonomies.type.0) -%}
         <li class="post {{ page.taxonomies.type.0 }}">

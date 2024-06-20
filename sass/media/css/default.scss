@@ -229,17 +229,15 @@ body > footer .footer-item.copyright {
   min-width: 100%;
 }
 
-
-
-/* disabling, it messes with other li settings. Why?
-li {
+/* This makes lists generated from markdown behave as expected in blog posts, but
+   it doesn't for page content. */
+article li {
   list-style-type: disc;
 }
 
-ul {
+article ul {
   padding-left: 1.2em;
 }
-*/
 
 /* TODO: this is not needed - used in WIP/demo pages */
 // .column img {
@@ -840,6 +838,10 @@ div.blognav .fa-ul {
 div.blognav,
 div.blognav a {
   color: $darker;
+}
+
+div.blognav div.related {
+  margin-top: 2em;
 }
 
 article.quote div.content,
