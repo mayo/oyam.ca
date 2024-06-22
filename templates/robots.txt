@@ -1,0 +1,8 @@
+User-agent: *
+Disallow:
+Allow: /
+
+{# Zola can only use *.*ml templates except robots.txt #}
+{% include "robots.ai.txt.html" %}
+
+Sitemap: {{ get_url(path="sitemap.xml") }}
