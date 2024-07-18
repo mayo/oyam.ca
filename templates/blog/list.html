@@ -60,7 +60,7 @@
     {% endfor %}
     </dd>
 
-    <dt>Years</dt>
+    <dt>Index by year</dt>
     <dd>
     {% for year_section in archive_list.subsections | sort | reverse %}
     {% set year = get_section(path=year_section, metadata_only=true) %}
