@@ -13,7 +13,7 @@ build_search_index = true
 
 # Feed
 generate_feeds = true
-feed_filename = "atom.xml" # or rss.xml, also used for loading template
+feed_filenames = ["atom.xml"] # or rss.xml, also used for loading template
 feed_limit = 20
 
 [[taxonomies]]
