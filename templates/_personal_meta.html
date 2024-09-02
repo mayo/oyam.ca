@@ -1,0 +1,13 @@
+<dl class="key-value-table">
+    <dt><i class="fa inline icon fa-globe-americas" title="Location"></i><span class="sr-only">Location</span></dt>
+    <dd><span class="p-locality">Vancouver</span>, <span class="p-region">BC</span>, <span class="p-country-name">Canada</span></dd>
+
+    <dt><i class="fa inline icon fa-envelope" title="Email"></i><span class="sr-only">Email</span></dt>
+    <dd><a href="mailto:mayo@oyam.ca" class="u-email">{{ config.extra.author.email | safe}}</a></dd>
+
+    <dt><i class="fa inline icon fa-broadcast-tower" title="Callsign"></i><span class="sr-only">Callsign</span></dt>
+    <dd><span>{{ config.extra.author.callsign }}</span></dd>
+
+    <dt><i class="fa inline icon fa-key" title="GPG fingerprint"></i><span class="sr-only">GPG fingerprint</span></dt>
+    <dd><a rel="me" href="{{ get_url(path="@/pubkey.md") | safe }}" class="hex-string">{{ macros::render_hex(value=config.extra.pubkey.fingerprint | slice(start=-4)) }}</a></dd>
+</dl>

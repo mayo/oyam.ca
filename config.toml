@@ -12,7 +12,7 @@ compile_sass = true
 build_search_index = true
 
 # Feed
-generate_feed = true
+generate_feeds = true
 feed_filename = "atom.xml" # or rss.xml, also used for loading template
 feed_limit = 20
 

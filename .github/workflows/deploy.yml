@@ -25,21 +25,34 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Download the build artifact
+      - name: Download website artifact
         uses: actions/download-artifact@v4
         with:
           name: ${{ inputs.artifact-name }}
           path: public
       
-      - uses: aws-actions/configure-aws-credentials@v4
+      - name: Download tools artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: deploy_aws_s3
+          path: tools/
+
+      - name: Extract tools artifact
+        run: tar -C tools -xvf tools/deploy_aws_s3.tar
+
+      - name: Setup Credentials
+        uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ secrets.AWS_IAM_ROLE_GITHUB }}
           role-session-name: GitHub-Action-Role
           aws-region: ${{ env.AWS_REGION }}
 
-      - name: Upload Artifact to s3
-        run: aws s3 sync --acl public-read --delete public/ s3://${{ env.S3_BUCKET }}/
+      - name: Upload website to S3
+        #run: aws s3 sync --acl public-read --delete public/ s3://${{ env.S3_BUCKET }}/
+        run: tools/deploy_aws_s3 --bucket ${{ env.S3_BUCKET }} public/ -v -a public-read -d
 
-
-#  invalidate-cache:
-#    runs-on: ubuntu-latest
+  # invalidate-cache:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Foo
+  #       uses: foo

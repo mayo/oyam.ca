@@ -4,10 +4,7 @@
     <li><a href="/#slide{{ loop.index0 }}">{{ slide.title }}</a></li>
     {% endfor %}
 </ul>
-<ul class="nav-group about">
-    <li>{{ config.extra.author.name }}</li>
-    <li><i class="fa inline icon fa-globe-americas" title="Location"></i><span class="sr-only">Location</span><span class="p-locality">Vancouver</span>, <span class="p-region">BC</span>, <span class="p-country-name">Canada</span></li>
-    <li><i class="fa inline icon fa-envelope" title="Email"></i><span class="sr-only">Email</span><a href="mailto:{{ config.extra.author.email }}" class="u-email">{{ config.extra.author.email | safe }}</a></li>
-    <li><i class="fa inline icon fa-broadcast-tower" title="Callsign"></i><span class="sr-only">Callsign</span><span>{{ config.extra.author.callsign }}</span></li>
-    <li><i class="fa inline icon fa-key" title="GPG fingerprint"></i><span class="sr-only">GPG fingerprint</span><a rel="me" href="{{ get_url(path="@/pubkey.md") | safe }}" class="hex-string">{{ macros::render_hex(value=config.extra.pubkey.fingerprint | slice(start=-4)) }}</a></li>
-</ul>
+<div class="nav-group about">
+    <span>{{ config.extra.author.name }}</span>
+    {% include "_personal_meta.html" %}
+  </div>
