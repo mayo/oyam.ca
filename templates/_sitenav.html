@@ -4,12 +4,12 @@
 {% endif %}
 
 {# nav_id is set on breadcrumbs, because when nav is hidden, anchor links don't work. #}
-<nav id="{{nav_id}}" class="page-nav">
-  <div  class="breadcrumbs">
+<nav id="{{nav_id}}" class="page-nav {{ chameleon }}">
+  <div  class="breadcrumbs topleft">
     {{ macros::breadcrumbnav2(path=current_path | default(value="/"), origin=node) }}
   </div>
-  <input type="checkbox" class="menutoggle" title="Open menu" aria-controls="menu">
-  <nav class="menu top {{ chameleon }}" role="menu" aria-orientation="horizontal" aria-labelledby="menubutton">
+  <input type="checkbox" class="menutoggle topright" title="Open menu" aria-controls="menu">
+  <nav class="menu top" role="menu" aria-orientation="horizontal" aria-labelledby="menubutton">
     {% include "_nav_main.html" %}
   </nav>
 </nav>

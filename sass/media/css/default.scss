@@ -127,7 +127,7 @@ body > footer {
 }
 
 dl {
-  margin-block-start: 1em;
+  // margin-block-start: 1em;
   margin-block-end: 1em;
 }
 
@@ -539,7 +539,7 @@ nav.page-nav {
 }
 
 .dark-bg .breadcrumbs .logotype,
-.breadcrumbs .dark-bg .logotype {
+.breadcrumbs.dark-bg .logotype {
   color: $lightest;
 }
 
@@ -553,6 +553,11 @@ nav.page-nav {
 nav.page-nav .menutoggle,
 nav.page-nav .menutoggle a {
   color: $darker;
+}
+
+.dark-bg nav.page-nav .menutoggle,
+nav.page-nav .menutoggle.dark-bg {
+  color: $lightest;
 }
 
 nav.page-nav input.menutoggle {
@@ -591,11 +596,16 @@ nav.menu {
 }
 
 nav.menu.top {
-  padding-top: 1em;
-  padding-bottom: 1em;
+  padding-top: .5em;
+  // padding-bottom: 1em;
   border-top: 1px solid $light;
-  border-bottom: 1px solid $dark;
+  // border-bottom: 1px solid $dark;
   display: none;
+}
+
+.dark-bg nav.menu.top,
+.dark-bg nav.menu.top > a {
+  color: $lightest;
 }
 
 nav.page-nav input.menutoggle:checked ~ nav.menu.top {
@@ -633,6 +643,38 @@ nav .nav-group {
 
 nav .nav-group > :first-child {
   font-weight: bold;
+}
+
+nav .menu.top {
+  justify-content: right;
+}
+
+nav .menu.top .nav-group {
+  min-width: auto;
+}
+
+// Keep top nav thin?
+nav .top .nav-group > :first-child {
+  font-weight: inherit;
+  color: $darkest;
+}
+
+nav .top .nav-group,
+.dark-bg nav.menu.top .nav-group li a {
+  color: $lightest;
+}
+
+/* for devices that support hover, be a bit fancier */
+@media (hover: hover) {
+  nav.menu.top .nav-group li a {
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom-color 0.4s ease-in-out;
+  }
+
+  nav.menu.top .nav-group li a:hover {
+    border-bottom-color: white;
+  }
 }
 
 /* @end Nav */
@@ -933,6 +975,10 @@ article .quote .author {
 article footer,
 article footer a {
   color: $light;
+}
+
+article footer {
+  margin-top: 2em;
 }
 
 article footer p {
