@@ -11,7 +11,7 @@
 
 <p class="social">
   {% for link, icon in config.extra.social_links %}
-  <a href="{{ config.extra.links[link] | safe}}"><i class="fa {{ icon }}"></i></a>
+  <a href="{{ config.extra.links[link] | safe}}"><i class="fa {{ icon }}"></i><span class="sr-only" title="{{ config.extra.services[link] }}">{{ config.extra.services[link] }}</span></a>
 {% endfor %}
 </p>
 

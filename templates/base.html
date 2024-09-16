@@ -106,7 +106,7 @@
   
         {% block footer_content %}
           {% for link, icon in config.extra.social_links %}
-          <a class="footer-item" href="{{ config.extra.links[link] | safe }}"><i class="fa {{ icon }}"></i></a>
+          <a class="footer-item" href="{{ config.extra.links[link] | safe }}"><i class="fa {{ icon }}" title="{{ config.extra.services[link] }}"></i><span class="sr-only">{{ config.extra.services[link] }}</span></a>
           {% endfor %}
           {% if config.generate_feed %}
           <a class="footer-item" href="{{ get_url(path='/atom.xml') | safe }}"><i class="fa fa-rss-square" title="RSS"></i><span class="sr-only">RSS</span></a>

@@ -79,10 +79,10 @@
         {%- set is_blog = page.path is starting_with("/blog/") -%}
         {%- set post_type = config.extra.taxonomies.type | get(key=page.taxonomies.type.0) -%}
         <li class="post {{ page.taxonomies.type.0 }}">
-            <span class="post-type-icon li-icon-bullet"><i class="fa {{ post_type | get(key="icon") }}" title="{{ post_type | get(key="name") }}"></i><span class="sr-only">Post kind: {{ post_type | get(key="name") }}</span></span>
+            <span class="post-type-icon li-icon-bullet"><i class="fa {{ post_type | get(key="icon") }}" title="{{ post_type | get(key="name") }}"></i><span class="sr-only">{{ post_type | get(key="name") }} </span></span>
         {%- if page.taxonomies and page.taxonomies.type and expand is containing(page.taxonomies.type.0) -%}
             {%- if is_blog -%}
-            <span class="metadata"><span class="sr-only">Published on</span><time title="Published on" class="post-time dt-published" datetime="{{ page.date | date(format='%Y-%m-%dT%H:%M:%SZ') }}">{{ page.date | date(format='%B %d, %Y') }}</time></span>
+            <span class="metadata"><span class="sr-only"> Published on </span><time title="Published on" class="post-time dt-published" datetime="{{ page.date | date(format='%Y-%m-%dT%H:%M:%SZ') }}">{{ page.date | date(format='%B %d, %Y') }}</time></span>
             {%- endif -%}
 
             {%- set content = page.title | default(value=page.content) -%}
@@ -93,7 +93,7 @@
         {%- else -%}
             <a href="{{ page.path }}">{{ macros::get_page_title(page=page) }}</a>
             {%- if is_blog -%}
-            <span class="metadata"><span class="sr-only">Published on</span><time title="Published on" class="post-time dt-published" datetime="{{ page.date | date(format='%Y-%m-%dT%H:%M:%SZ') }}">{{ page.date | date(format='%B %d, %Y') }}</time></span>
+            <span class="metadata"><span class="sr-only"> Published on </span><time title="Published on" class="post-time dt-published" datetime="{{ page.date | date(format='%Y-%m-%dT%H:%M:%SZ') }}">{{ page.date | date(format='%B %d, %Y') }}</time></span>
             {%- endif -%}
         {% endif -%}
         </li>
