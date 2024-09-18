@@ -9,7 +9,7 @@
     font-family: 'IBM Plex Sans Condensed';
     font-style: normal;
     font-weight: 600;
-    src: url('//unpkg.com/@ibm/plex/IBM-Plex-Sans-Condensed/fonts/complete/woff2/IBMPlexSansCondensed-SemiBold.woff2') format('woff2');
+    src: url('//cdn.jsdelivr.net/gh/ibm/plex/IBM-Plex-Sans-Condensed/fonts/complete/woff2/IBMPlexSansCondensed-SemiBold.woff2') format('woff2');
 }
 
 /* serif */
@@ -18,7 +18,7 @@
 //     font-family: 'IBM Plex Serif';
 //     font-style: normal;
 //     font-weight: 400;
-//     src: url('//unpkg.com/@ibm/plex/IBM-Plex-Serif/fonts/complete/woff2/IBMPlexSerif-Regular.woff2') format('woff2');
+//     src: url('//cdn.jsdelivr.net/gh/ibm/plex/IBM-Plex-Serif/fonts/complete/woff2/IBMPlexSerif-Regular.woff2') format('woff2');
 // }
 
 // @font-face {
@@ -26,7 +26,7 @@
 //     font-family: 'IBM Plex Serif';
 //     font-style: italic;
 //     font-weight: 400;
-//     src: url('//unpkg.com/@ibm/plex/IBM-Plex-Serif/fonts/complete/woff2/IBMPlexSerif-RegularItalic.woff2') format('woff2');
+//     src: url('//cdn.jsdelivr.net/gh/ibm/plex/IBM-Plex-Serif/fonts/complete/woff2/IBMPlexSerif-RegularItalic.woff2') format('woff2');
 // }
 
 @font-face {
@@ -34,7 +34,7 @@
     font-family: 'IBM Plex Serif';
     font-style: normal;
     font-weight: 450;
-    src: url('//unpkg.com/@ibm/plex/IBM-Plex-Serif/fonts/complete/woff2/IBMPlexSerif-Text.woff2') format('woff2');
+    src: url('//cdn.jsdelivr.net/gh/ibm/plex/IBM-Plex-Serif/fonts/complete/woff2/IBMPlexSerif-Text.woff2') format('woff2');
 }
 
 @font-face {
@@ -42,7 +42,7 @@
     font-family: 'IBM Plex Serif';
     font-style: italic;
     font-weight: 450;
-    src: url('//unpkg.com/@ibm/plex/IBM-Plex-Serif/fonts/complete/woff2/IBMPlexSerif-TextItalic.woff2') format('woff2');
+    src: url('//cdn.jsdelivr.net/gh/ibm/plex/IBM-Plex-Serif/fonts/complete/woff2/IBMPlexSerif-TextItalic.woff2') format('woff2');
 }
 
 @font-face {
@@ -50,7 +50,7 @@
     font-family: 'IBM Plex Serif';
     font-style: normal;
     font-weight: 700;
-    src: url('//unpkg.com/@ibm/plex/IBM-Plex-Serif/fonts/complete/woff2/IBMPlexSerif-Bold.woff2') format('woff2');
+    src: url('//cdn.jsdelivr.net/gh/ibm/plex/IBM-Plex-Serif/fonts/complete/woff2/IBMPlexSerif-Bold.woff2') format('woff2');
 }
 
 @font-face {
@@ -58,7 +58,7 @@
     font-family: 'IBM Plex Serif';
     font-style: italic;
     font-weight: 700;
-    src: url('//unpkg.com/@ibm/plex/IBM-Plex-Serif/fonts/complete/woff2/IBMPlexSerif-BoldItalic.woff2') format('woff2');
+    src: url('//cdn.jsdelivr.net/gh/ibm/plex/IBM-Plex-Serif/fonts/complete/woff2/IBMPlexSerif-BoldItalic.woff2') format('woff2');
 }
 
 /* sans */
@@ -68,7 +68,7 @@
     font-family: 'IBM Plex Sans';
     font-style: normal;
     font-weight: 300;
-    src: url('//unpkg.com/@ibm/plex/IBM-Plex-Sans/fonts/complete/woff2/IBMPlexSans-Light.woff2') format('woff2');
+    src: url('//cdn.jsdelivr.net/gh/ibm/plex/IBM-Plex-Sans/fonts/complete/woff2/IBMPlexSans-Light.woff2') format('woff2');
 }
 
 @font-face {
@@ -76,7 +76,7 @@
     font-family: 'IBM Plex Sans';
     font-style: normal;
     font-weight: 400;
-    src: url('//unpkg.com/@ibm/plex/IBM-Plex-Sans/fonts/complete/woff2/IBMPlexSans-Regular.woff2') format('woff2');
+    src: url('//cdn.jsdelivr.net/gh/ibm/plex/IBM-Plex-Sans/fonts/complete/woff2/IBMPlexSans-Regular.woff2') format('woff2');
 }
 
 @font-face {
@@ -84,7 +84,7 @@
     font-family: 'IBM Plex Sans';
     font-style: italic;
     font-weight: 400;
-    src: url('//unpkg.com/@ibm/plex/IBM-Plex-Sans/fonts/complete/woff2/IBMPlexSans-Italic.woff2') format('woff2');
+    src: url('//cdn.jsdelivr.net/gh/ibm/plex/IBM-Plex-Sans/fonts/complete/woff2/IBMPlexSans-Italic.woff2') format('woff2');
 }
 
 @font-face {
@@ -92,7 +92,7 @@
     font-family: 'IBM Plex Sans';
     font-style: normal;
     font-weight: 450;
-    src: url('//unpkg.com/@ibm/plex/IBM-Plex-Sans/fonts/complete/woff2/IBMPlexSans-Text.woff2') format('woff2');
+    src: url('//cdn.jsdelivr.net/gh/ibm/plex/IBM-Plex-Sans/fonts/complete/woff2/IBMPlexSans-Text.woff2') format('woff2');
 }
 
 @font-face {
@@ -100,7 +100,7 @@
     font-family: 'IBM Plex Sans';
     font-style: italic;
     font-weight: 450;
-    src: url('//unpkg.com/@ibm/plex/IBM-Plex-Sans/fonts/complete/woff2/IBMPlexSans-TextItalic.woff2') format('woff2');
+    src: url('//cdn.jsdelivr.net/gh/ibm/plex/IBM-Plex-Sans/fonts/complete/woff2/IBMPlexSans-TextItalic.woff2') format('woff2');
 }
 
 @font-face {
@@ -108,7 +108,7 @@
     font-family: 'IBM Plex Sans';
     font-style: normal;
     font-weight: 600;
-    src: url('//unpkg.com/@ibm/plex/IBM-Plex-Sans/fonts/complete/woff2/IBMPlexSans-SemiBold.woff2') format('woff2');
+    src: url('//cdn.jsdelivr.net/gh/ibm/plex/IBM-Plex-Sans/fonts/complete/woff2/IBMPlexSans-SemiBold.woff2') format('woff2');
 }
 
 @font-face {
@@ -116,7 +116,7 @@
     font-family: 'IBM Plex Sans';
     font-style: italic;
     font-weight: 600;
-    src: url('//unpkg.com/@ibm/plex/IBM-Plex-Sans/fonts/complete/woff2/IBMPlexSans-SemiBoldItalic.woff2') format('woff2');
+    src: url('//cdn.jsdelivr.net/gh/ibm/plex/IBM-Plex-Sans/fonts/complete/woff2/IBMPlexSans-SemiBoldItalic.woff2') format('woff2');
 }
 
 @font-face {
@@ -124,7 +124,7 @@
     font-family: 'IBM Plex Sans';
     font-style: normal;
     font-weight: 700;
-    src: url('//unpkg.com/@ibm/plex/IBM-Plex-Sans/fonts/complete/woff2/IBMPlexSans-Bold.woff2') format('woff2');
+    src: url('//cdn.jsdelivr.net/gh/ibm/plex/IBM-Plex-Sans/fonts/complete/woff2/IBMPlexSans-Bold.woff2') format('woff2');
 }
 
 @font-face {
@@ -132,7 +132,7 @@
     font-family: 'IBM Plex Sans';
     font-style: italic;
     font-weight: 700;
-    src: url('//unpkg.com/@ibm/plex/IBM-Plex-Sans/fonts/complete/woff2/IBMPlexSans-BoldItalic.woff2') format('woff2');
+    src: url('//cdn.jsdelivr.net/gh/ibm/plex/IBM-Plex-Sans/fonts/complete/woff2/IBMPlexSans-BoldItalic.woff2') format('woff2');
 }
 
 /* mono */
@@ -142,7 +142,7 @@
     font-family: 'IBM Plex Mono';
     font-style: normal;
     font-weight: 400;
-    src: url('//unpkg.com/@ibm/plex/IBM-Plex-Mono/fonts/complete/woff2/IBMPlexMono-Regular.woff2') format('woff2');
+    src: url('//cdn.jsdelivr.net/gh/ibm/plex/IBM-Plex-Mono/fonts/complete/woff2/IBMPlexMono-Regular.woff2') format('woff2');
 }
 
 @font-face {
@@ -150,7 +150,7 @@
     font-family: 'IBM Plex Mono';
     font-style: italic;
     font-weight: 400;
-    src: url('//unpkg.com/@ibm/plex/IBM-Plex-Mono/fonts/complete/woff2/IBMPlexMono-Italic.woff2') format('woff2');
+    src: url('//cdn.jsdelivr.net/gh/ibm/plex/IBM-Plex-Mono/fonts/complete/woff2/IBMPlexMono-Italic.woff2') format('woff2');
 }
 
 @font-face {
@@ -158,7 +158,7 @@
     font-family: 'IBM Plex Mono';
     font-style: normal;
     font-weight: 700;
-    src: url('//unpkg.com/@ibm/plex/IBM-Plex-Mono/fonts/complete/woff2/IBMPlexMono-Bold.woff2') format('woff2');
+    src: url('//cdn.jsdelivr.net/gh/ibm/plex/IBM-Plex-Mono/fonts/complete/woff2/IBMPlexMono-Bold.woff2') format('woff2');
 }
 
 @font-face {
@@ -166,7 +166,7 @@
     font-family: 'IBM Plex Mono';
     font-style: italic;
     font-weight: 700;
-    src: url('//unpkg.com/@ibm/plex/IBM-Plex-Mono/fonts/complete/woff2/IBMPlexMono-BoldItalic.woff2') format('woff2');
+    src: url('//cdn.jsdelivr.net/gh/ibm/plex/IBM-Plex-Mono/fonts/complete/woff2/IBMPlexMono-BoldItalic.woff2') format('woff2');
 }
 
 /*
