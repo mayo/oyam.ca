@@ -10,6 +10,8 @@ The `depends` target will update all necessary files in the Zola site layout. Fo
 
 See [Colophon](content/colophon/index.md) for details about the website build and deployment process.
 
+The infrastructure for website deployment (GitHub Actions secrets, AWS roles, S3 bucket setup, etc) is managed using OpenTofu via my infrastructure management repository.
+
 ## Fonts
 
 To update FontAwesome subset font, load up `depends/FontAwesome-subset/selection.json` to https://icomoon.io, add new glyphs, and export (make sure all glyphs are selected). Replace contents of `depends/FontAwesome-subset` with the generated font, and replace files in `static/media/fonts/fa/` with new files from `depends/FontAwesome-subset/fonts` (or use the `update-fa-fonts` make target).
