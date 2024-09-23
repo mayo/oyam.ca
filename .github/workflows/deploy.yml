@@ -31,14 +31,11 @@ jobs:
           name: ${{ inputs.artifact-name }}
           path: public
       
-      - name: Download tools artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: deploy_aws_s3
-          path: tools/
+      - name: Download tools
+        run: curl -O https://github.com/mayo/oyam.ca-tools/releases/download/v0.0.1/deploy_aws_s3-x86_64-linux.zip
 
-      - name: Extract tools artifact
-        run: tar -C tools -xvf tools/deploy_aws_s3.tar
+      - name: Extract tools
+        run: unzip deploy_aws_s3-x86_64-linux.zip
 
       - name: Setup Credentials
         uses: aws-actions/configure-aws-credentials@v4
@@ -49,7 +46,7 @@ jobs:
 
       - name: Upload website to S3
         #run: aws s3 sync --acl public-read --delete public/ s3://${{ env.S3_BUCKET }}/
-        run: tools/deploy_aws_s3 --bucket ${{ env.S3_BUCKET }} public/ -v -a public-read -d
+        run: deploy_aws_s3 --bucket ${{ env.S3_BUCKET }} public/ -v -a public-read -d
 
   # invalidate-cache:
   #   runs-on: ubuntu-latest
