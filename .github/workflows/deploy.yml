@@ -32,7 +32,7 @@ jobs:
           path: public
       
       - name: Download tools
-        run: curl -O https://github.com/mayo/oyam.ca-tools/releases/download/v0.0.1/deploy_aws_s3-x86_64-linux.zip
+        run: curl -LO https://github.com/mayo/oyam.ca-tools/releases/download/v0.0.1/deploy_aws_s3-x86_64-linux.zip
 
       - name: Extract tools
         run: unzip deploy_aws_s3-x86_64-linux.zip
@@ -44,9 +44,11 @@ jobs:
           role-session-name: GitHub-Action-Role
           aws-region: ${{ env.AWS_REGION }}
 
+      - name: debug
+        run: ls -la
       - name: Upload website to S3
         #run: aws s3 sync --acl public-read --delete public/ s3://${{ env.S3_BUCKET }}/
-        run: deploy_aws_s3 --bucket ${{ env.S3_BUCKET }} public/ -v -a public-read -d
+        run: ./sync_s3 --bucket ${{ env.S3_BUCKET }} public/ -v -a public-read -d
 
   # invalidate-cache:
   #   runs-on: ubuntu-latest
