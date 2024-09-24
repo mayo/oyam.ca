@@ -5,6 +5,7 @@ on:
     #paths-ignore:  
     branches:
       - public-zola
+      - public
 
 concurrency:
   group: site-build-${{ github.ref_name }}
