@@ -1,8 +1,10 @@
 ---
-type: link
+taxonomies:
+  type: [bookmark]
 title: "Gravitational waves explained"
-href: http://www.phdcomics.com/comics.php?f=1853
-created: !!timestamp '2016-02-12 22:24:00 -8'
+date: 2016-02-12 22:24:00-08:00
+extra:
+  href: http://www.phdcomics.com/comics.php?f=1853
 ---
 > Imagine that space is a giant sheet of rubber...
 

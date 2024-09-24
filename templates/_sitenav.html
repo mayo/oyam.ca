@@ -2,54 +2,14 @@
 {% if disable_chameleon %}
   {% set chameleon = "" %}
 {% endif %}
-{% if not nav_id %}
-  {% set nav_id = "sitenav" %}
-{% endif %}
-<nav id="{{nav_id}}" class="sitenav {{ chameleon }}">
-  <div class="navhead grid-33 mobile-grid-100 topleft">
-    <div class="logo">
-      <a href="/">
-        <img src="/favicon.png" width="16" height="16"/>
-        <div class="logotype"><span class="firstname">Mayo</span><span class="lastname">Jordanov</span></div>
-      </a>
-    </div>
-    <div class="mobilemenu">
-      <a href="#sitenav" class="show" title="Show Navigation">Show Navigation<span class="navicon fal fa-bars"></span></a>
-      <a href="#" class="hide" title="Hide Navigation">Hide Navigation<span class="navicon fal fa-bars"></span></a>
-    </div>
+
+{# nav_id is set on breadcrumbs, because when nav is hidden, anchor links don't work. #}
+<nav id="{{nav_id}}" class="page-nav {{ chameleon }}">
+  <div  class="breadcrumbs topleft">
+    {{ macros::breadcrumbnav2(path=current_path | default(value="/"), origin=node) }}
   </div>
-
-  <div class="navmenu grid-66 mobile-grid-100 topright">
-    <ul class="menu">
-
-      <li class="folder">
-        <a href="/" class="menuitem">showing</a>
-        <div class="submenu-wrapper">
-          <ul class="submenu">
-            {% for slide in site.slides %}
-            <li><a href="/#slide{{ loop.index0 }}">{{ slide.title }}</a></li>
-            {% endfor %}
-          </ul>
-        </div>
-      </li>
-
-      <li class="folder">
-        <a href="/about" class="menuitem">about</a>
-        <div class="submenu-wrapper">
-          <ul class="submenu">
-            <li><a href="/about">mayo</a></li>
-            <li><a href="/now">now</a></li>
-            <li><a href="/about/website.html">colophon</a></li>
-            <li><a href="{{ site.links.rss }}">rss</a></li>
-          </ul>
-        </div>
-      </li>
-
-      <li><a href="/travel" class="menuitem">travel</a></li>
-
-      <li><a href="/blog" class="menuitem">blog</a></li>
-
-    </ul>
-  </div>
+  <input type="checkbox" class="menutoggle topright" title="Open menu" aria-controls="menu">
+  <nav class="menu top" role="menu" aria-orientation="horizontal" aria-labelledby="menubutton">
+    {% include "_nav_main.html" %}
+  </nav>
 </nav>
-

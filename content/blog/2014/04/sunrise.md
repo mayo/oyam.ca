@@ -1,6 +1,10 @@
 ---
-type: photo
+taxonomies:
+  type: [photo]
 title: Sunshine!
-created: !!timestamp '2014-04-28 17:15:57 -8'
+date: 2014-04-28 17:15:57-08:00
 ---
-![Sunrise over Vancouver's north shore.](/media/images/photos/2014/04/sunrise.jpg)
+<figure>
+  <img src="/media/images/photos/2014/04/sunrise.jpg" title="Sunrise over Vancouver's north shore."/>
+  <figcaption>Sunrise over Vancouver's north shore.</figcaption>
+</figure>

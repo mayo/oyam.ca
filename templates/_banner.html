@@ -1,0 +1,24 @@
+{% set_global header_style = "" %}
+{% if node.extra.header %}
+  {% if node.extra.header.image %}
+    {% set_global header_style = header_style ~ "background-image: url('" ~ node.extra.header.image ~ "');" %}
+  {% endif %}
+  {% if node.extra.header.image_position %}
+    {% set_global header_style = header_style ~ "background-position: " ~ node.extra.header.image_position ~ ";" %}
+  {% endif %}
+  <div class="banner">
+    <div class="image" style="{{ header_style }}"></div>
+  
+    <div class="head-title content-container {{ container_width }} dark-bg">
+      <div class="title flex-item flex-item-100">
+          <h1 style="color: white">{{page_title}}</h1>
+      </div>
+    </div>
+  </div>
+{% else %}
+<div class="content-container {{ container_width }}">
+  <div class="flex-item flex-item-100">
+      <h1>{{page_title}}</h1>
+  </div>
+</div>
+{% endif %}

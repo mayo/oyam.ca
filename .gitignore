@@ -14,3 +14,6 @@ venv/
 *.icloud
 **/__pycache__/
 .vscode
+
+public/
+WIP/

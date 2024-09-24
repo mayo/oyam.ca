@@ -1,0 +1,21 @@
+{% extends 'page-sidebar.html' %}
+{% block sidebar %}
+<p>
+  <ul class="contact-list h-card p-adr h-adr">
+    <li><div class="me"><img class="me u-photo" src="/media/images/mex2.jpg"/></div></li>
+    <li class="main"><a href="{{ config.extra.base_url | safe }}{{ get_url(path='@/about/index.md') }}" class="name p-name u-url">Mayo Jordanov</a><br/><span class="tag p-note">Creative Solutions</a></li>
+  </ul>
+
+  {% include "_personal_meta.html" %}
+</p>
+
+<p class="social">
+  {% for link, icon in config.extra.social_links %}
+  <a href="{{ config.extra.links[link] | safe}}"><i class="fa {{ icon }}"></i><span class="sr-only" title="{{ config.extra.services[link] }}">{{ config.extra.services[link] }}</span></a>
+{% endfor %}
+</p>
+
+<p>I'm available to work on software, IT, or photography projects. Please contact me for more information or to chat about the details.</p>
+
+<p>Any comments or suggestions are appreciated. It's not always possible to respond to all of them, so please don't take it personally if it takes me longer to respond or I don't reply at all.</p>
+{% endblock sidebar %}

@@ -1,6 +1,9 @@
 ---
-type: link
-created: !!timestamp '2018-05-31 15:12:15 -7'
+date: 2018-05-31 15:12:15-07:00
+taxonomies:
+  type: [bookmark]
+extra:
+  href: https://www.1843magazine.com/technology/rewind/the-crooked-timber-of-humanity
 ---
 [The crooked timber of humanity](https://www.1843magazine.com/technology/rewind/the-crooked-timber-of-humanity)
 

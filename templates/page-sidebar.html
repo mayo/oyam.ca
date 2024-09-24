@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block template_vars %}
+  {{ super() }}
+  {% set column_main_width = 70 %}
+  {% set column_sidebar_width = 30 %}
+{% endblock template_vars %}
+
+{% block main_content %}
+
+{% block banner %}
+{% include '_banner.html' %}
+{% endblock banner %}
+
+<div class="content-container columns {{ container_width }}">
+  <div class="flex-item flex-item-{{column_main_width}}">
+    {% block page_content %}
+    {{ node.content | safe }}
+    {% endblock page_content %}
+  </div>
+
+  <div class="flex-item flex-item-{{column_sidebar_width}} sidebar">
+    {% block sidebar %}
+    {% endblock sidebar %}
+  </div>
+</div>
+{% endblock main_content %}

@@ -1,0 +1,122 @@
+
+/*
+rgb(0,0,0);
+rgb(10,10,10);
+*/
+$darkest: rgb(10,10,10);
+
+/*
+rgb(50,50,50);
+rgb(51,51,51);
+rgb(60,60,60);
+rgb(68,68,68);
+*/
+$darker: rgb(51,51,51);
+
+/*
+rgb(100,100,100);
+rgb(105,105,105);
+rgb(119,119,119);
+rgb(136,136,136);
+*/
+$dark: rgb(105,105,105);
+$darkest50: rgba(10,10,10,.5);
+
+/*
+rgb(153,153,153);
+rgb(170,170,170);
+rgb(187,187,187);
+rgb(200,200,200);
+*/
+$light: rgb(187,187,187);
+$darker40: rgba(30,30,30,.4);
+
+/*
+rgb(220,220,220);
+rgb(238,238,238);
+rgb(245,246,246);
+*/
+$lighter: rgb(238,238,238);
+
+$lightest: rgb(255,255,255);
+$lightest50: rgb(255,255,255,.5);
+
+/*
+rgb(255,0,0);
+rgb(195,0,0);
+*/
+$link: rgb(195,0,0);
+
+.theme-darkest {
+  color: $darkest;
+}
+
+.theme-darker {
+  color: $darker;
+}
+
+.theme-dark {
+  color: $dark;
+}
+
+.theme-darkest50 {
+  color: $darkest50;
+}
+
+.theme-light {
+  color: $light;
+}
+
+.theme-darker40 {
+  color: $darker40;
+}
+
+.theme-lighter {
+  color: $lighter;
+}
+
+.theme-lightest {
+  color: $lightest;
+}
+
+.theme-link {
+  color: $link;
+}
+
+.theme-darkest-bg {
+  background-color: $darkest;
+}
+
+.theme-darker-bg {
+  background-color: $darker;
+}
+
+.theme-dark-bg {
+  background-color: $dark;
+}
+
+.theme-darkest50-bg {
+  background-color: $darkest50;
+}
+
+.theme-light-bg {
+  background-color: $light;
+}
+
+.theme-darker40-bg {
+  background-color: $darker40;
+}
+
+.theme-lighter-bg {
+  background-color: $lighter;
+}
+
+.theme-lightest-bg {
+  background-color: $lightest;
+}
+
+.theme-link-bg {
+  background-color: $link;
+}
+
+

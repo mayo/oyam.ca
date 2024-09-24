@@ -1,6 +1,9 @@
 ---
-type: link
-created: !!timestamp '2018-05-30 15:03:15 -7'
+date: 2018-05-30 15:03:15-07:00
+taxonomies:
+  type: [bookmark]
+extra:
+  href: https://warontherocks.com/2018/05/explaining-the-mystery-of-numbers-stations/
 ---
 [Explaining the ‘Mystery’ of Numbers Stations](https://warontherocks.com/2018/05/explaining-the-mystery-of-numbers-stations/)
 

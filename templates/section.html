@@ -1,0 +1,34 @@
+{% extends "page.html" %}
+
+{% block template_vars %}
+  {{super()}}
+  {% set page_title = macros::section_path_title(node=node) %}
+
+  {% if section.path is starting_with("/blog/") %}
+    {% set page_title = "Index: " ~ page_title %}
+  {% endif %}
+{% endblock template_vars %}
+
+{% block page_content %}
+
+{% set sort_attribute = "title" %}
+{% if section.path is starting_with("/blog/") %}
+  {% set sort_attribute = "date" %}
+  
+  {%- set is_blog_year_index = node.components | length == 2 -%}
+  {%- if is_blog_year_index %}
+  <dl class="key-value-twoline">
+    <dt>Index by month</dt>
+    <dd>
+    {% for month_section in node.subsections | sort %}
+      {% set month = get_section(path=month_section) %}
+      <a href="{{ month.path }}">{{ month.components[1] ~ "-" ~ month.components[2] ~ "-01" | date(format="%B") }}</a>
+    {% endfor %}
+    </dd>
+  </dl>
+  {%- endif -%}
+{% endif %}
+
+{{ macros::collection_list(collection=node.pages | sort(attribute=sort_attribute)) }}
+
+{% endblock page_content %}

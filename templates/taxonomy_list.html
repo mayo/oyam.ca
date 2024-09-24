@@ -1,0 +1,13 @@
+{% extends "page.html" %}
+{% block template_vars %}
+  {{super()}}
+  {% set page_title = taxonomy.name | title %}
+{% endblock template_vars %}
+
+{% block page_content %}
+<p class="taxonomy-term-list">
+  {% for term in terms | sort(attribute="name") %}
+  <a href="{{ term.path }}">{{ term.name }}</a>
+  {% endfor %}
+</p>
+{% endblock page_content %}

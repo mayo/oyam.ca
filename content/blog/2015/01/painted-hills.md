@@ -1,10 +1,14 @@
 ---
-type: post
 title: "Exploring Oregon: Painted Hills"
-created: !!timestamp '2015-01-31 18:57:00 -8'
-tags:
-  - travel
-header:
+date: 2015-01-31 18:57:00-08:00
+taxonomies:
+  tags:
+    - travel
+  categories:
+    - travel
+  type: [article]
+extra:
+  header:
     image: /media/images/photos/2015/01/painted-hills/sunrise.jpg
     image_position: "0 65%"
     color: white
@@ -75,6 +79,7 @@ It is worth noting that for photography, Painted Hills is an afternoon/sunset ki
 <figure>
   <img src="/media/images/photos/2015/01/painted-hills/alien-land.jpg" width="900"/>
 </figure>
+
 <figure>
   <img src="/media/images/photos/2015/01/painted-hills/hills.jpg" width="900"/>
 </figure>

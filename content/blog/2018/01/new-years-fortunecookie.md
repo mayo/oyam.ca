@@ -1,9 +1,10 @@
 ---
-type: post
 imported: "microblog"
-created: !!timestamp '2018-01-02 15:21:38 -7'
-tags:
+date: 2018-01-02 15:21:38-07:00
+taxonomies:
+  tags:
     - microblog
+  type: [note]
 guid: http://oyam.micro.blog/2018/01/02/my-new-years.html
 ---
 My New Year’s fortune cookie says:

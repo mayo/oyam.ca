@@ -1,0 +1,20 @@
+{% extends "blog/list.html" %}
+
+{% block content %}
+<div class="flex-item flex-item-100">
+    <h1>{{ node.title }}</h1>
+
+{% set archive_list = get_section(path="blog/_index.md", metadata_only=true) %}
+<ul class="collection-list li-icon-bullet">
+{% for year_section in archive_list.subsections | sort | reverse %}
+    {% set year_list = get_section(path=year_section, metadata_only=true) %}
+
+    {% for month_section in year_list.subsections | sort | reverse %}
+        {% set month_list = get_section(path=month_section) %}
+        {{ macros::collection_list(collection=month_list.pages | reverse, include_container=false) }}
+    {% endfor %}
+{% endfor %}
+</ul>
+</div>
+
+{% endblock %}

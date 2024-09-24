@@ -1,43 +1,62 @@
+{%- import "macros.html" as macros -%}
 <!DOCTYPE html>
-{% set page_id = page_id or page.page_id %}
+{%- block template_vars -%}
+  {# `node` is defined here as base, and used throughout all templates #}
+  {% set node = page | default(value=section | default(value="")) %}
+
+  {# setting page_title here makes it globally accessible and possible to override throughout template inheritance #}
+  {% set page_title = "" %}
+  {% if node and node != "" %}
+    {% set page_title = macros::get_page_title(page=node) %}
+  {% endif %}
+
+  {# `slides` used for slideshow on main page as well as building navigation menu #}
+  {% set slides = load_data(path="metadata/slides.json") %}
+
+  {% set page_id = page_id | default(value=node.extra.page_id | default(value="")) %}
+  {% set container_width = container_width | default(value=macros::node_container_width(node=node)) %}
+{% endblock template_vars %}
 <html class="no-js" lang="en">
   <head>
-    <title>{% block title %}{{ page.title or page.contents|striptags|truncate(280) }} | {% endblock %}Mayo Jordanov</title>
+    <title>{% block title %}{{ page_title }} | {% endblock %}{{ config.title }}</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-    <meta name="author" content="{{ site.author.name }} {{ site.author.email }}">
+    <meta name="author" content="{{ config.extra.author.name }} {{ config.extra.author.email }}">
 
-    {% if site.description %}
-    <meta name="description" content="{{site.description}}">
-    {% endif %}
-    {% if site.keywords %}
-    <meta name="keywords" content="{{site.keywords}}">
-    {% endif %}
+    {% if config.description -%}
+    <meta name="description" content="{{config.description}}">
+    {% endif -%}
+    {% if config.extra.site.keywords -%}
+    <meta name="keywords" content="{{config.extra.site.keywords}}">
+    {% endif -%}
 
-    {% if page_id == 'blog' %}
-    <meta property="og:title" content="{{ page.title or page.contents|striptags|truncate(280) }}">
-    <meta property="og:description" content="{{ page.excerpt|striptags or site.description }}">
-    {% endif %}
+    <meta property="og:title" content="{{ page_title }}">
+    {% if page.description -%}
+      {% set og_description = page.description -%}
+    {% elif page.content -%}
+      {% set og_description = macros::excerpt(content=page.content) -%}
+    {% else -%}
+      {% set og_description = config.description -%}
+    {% endif -%}
+    <meta property="og:description" content="{{ og_description | striptags }}">
 
     {% block css %}
-    <link rel="stylesheet" href="/media/css/normalize.css">
     <link rel="stylesheet" href="/media/css/default.css"/>
-    <link rel="stylesheet" href="/media/css/handheld.css" media="only screen"/>
+    <!-- <link rel="stylesheet" href="/media/css/handheld.css" media="only screen"/> -->
     {% endblock %}
 
-    <link rel="stylesheet" href="https://use.typekit.net/qjz6zho.css">
+    {% block rss %}
+      {% if config.generate_feed %}
+    <link rel="alternate" type="application/atom+xml" title="RSS" href="{{ get_url(path='/atom.xml') | safe }}">
+      {% endif %}
+    {% endblock rss %}
 
-    <link rel="alternate" type="application/atom+xml" href="/feed/atom.xml"/>
-
-    <link rel="me" href="https://keybase.io/mayo/"/>
-    <link rel="me" href="https://github.com/mayo"/>
-    <link rel="me" href="https://twitter.com/oyam"/>
-    <link rel="me" href="https://instagram.com/oyam.ca"/>
-    <link rel="me" href="https://micro.blog/oyam"/>
-    <link rel="me" href="mailto:mayo@oyam.ca"/>
-    <link rel="gpgkey" href="/gpg.txt"/>
+    {% for link, _ in config.extra.rel_me -%}
+    <link rel="me" href="{{ config.extra.links[link] | safe }}"/>
+    {% endfor -%}
+    <link rel="gpgkey" href="{{ config.extra.links.pubkey | safe }}"/>
 
     <link rel="micropub" href="https://api.oyam.ca/micropub">
     <link rel="microsub" href="https://api.oyam.ca/microsub">
@@ -45,17 +64,63 @@
     <link rel="authorization_endpoint" href="https://indieauth.com/auth"/>
     <link rel="token_endpoint" href="https://tokens.indieauth.com/token"/>
 
-    <link rel="icon" type="image/png" href="/favicon.png"/>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
-    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
-    <link rel="apple-itouch-icon" type="image/x-icon" href="/favicon.ico"/>
+    <link rel="icon" href="/favicon.svg"/>
+    <link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
 
-    {% block js %}
-    {% endblock %}
-
+    {%- block js -%}
+    {%- endblock %}
   </head>
-  <body class="{{background_class}}" {% if page_id -%}id="{{ page_id }}"{%- endif %}>
-    {% block body_container %}
+  <body {% if page_id -%}id="{{ page_id }}"{%- endif %}>
+  {% block body_container %}
+    {% block header_wrapper %}
+    {# header  id="mainhead" used to menu toggle button from default.scss.hugo #}
+    <header  class="content-container {{ container_width }}" id="mainhead">
+    {% block header_content %}
+      {% if not nav_id %}
+        {% set nav_id = "sitenav" %}
+      {% endif %}
+      {% include '_sitenav.html' %}
+    {% endblock header_content %}
+    </header>
     {% endblock %}
+  
+      <main>
+    {% block main_content %}
+      <div class="content-container {{ container_width }}">
+        {% block content %}{% endblock %}
+      </div>
+    {% endblock %}
+    </main>
+  
+    {% block footer_wrapper %}
+    <footer class="content-container {{ container_width }}">
+      {% block footer %}
+  
+        {% block footer_nav %}
+        <nav id="bottom-{{nav_id}}" class="menu bottom" role="menubar" aria-orientation="horizontal">
+          {% include "_nav_main.html" %}
+          {% include "_nav_extra.html" %}
+        </nav>
+        {% endblock %}
+  
+        {% block footer_content %}
+          {% for link, icon in config.extra.social_links %}
+          <a class="footer-item" href="{{ config.extra.links[link] | safe }}"><i class="fa {{ icon }}" title="{{ config.extra.services[link] }}"></i><span class="sr-only">{{ config.extra.services[link] }}</span></a>
+          {% endfor %}
+          {% if config.generate_feed %}
+          <a class="footer-item" href="{{ get_url(path='/atom.xml') | safe }}"><i class="fa fa-rss-square" title="RSS"></i><span class="sr-only">RSS</span></a>
+          {% endif %}
+          {% set h_card = "" %}
+          {% if node.extra.page_id | default(value="") != 'about' %}
+            {% set h_card = "h-card p-name u-url" %}
+          {% endif %}
+          <span class="copyright footer-item">Copyright &copy;{{ now() | date(format='%Y') }} <a class="{{h_card}}" href="{{ config.extra.base_url | safe }}{{ get_url(path='@/about/index.md') }}">{{ config.extra.author.name }}</a></span>
+        {% endblock %}
+  
+      {% endblock %}
+    </footer>
+    {% endblock footer_wrapper %}
+  {% endblock body_container %}
   </body>
 </html>

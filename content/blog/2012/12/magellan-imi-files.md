@@ -1,7 +1,8 @@
 ---
-type: post
+taxonomies:
+  type: [article]
 title: Decoding Magellan Map Files (Update)
-created: !!timestamp '2012-12-18 00:06:00 -8'
+date: 2012-12-18 00:06:00-08:00
 ---
 It's been a while since I have done this, but I still get the occasional request on the topic, so I decided to revisit. The old post was not complete, so here is a rewrite along with some new information I learned since. 
 
@@ -44,13 +45,13 @@ I got as far as parsing the database records (tables in SQL speak) and fields (c
 
 ## Notes
 
-The code is nowhere close to be consumed by public or documented. I'm sure those who are interested enough can get something out of it, so the code is posted in [imiexplorer] [imicode] repository at BitBucket.
+The code is nowhere close to be consumed by public or documented. I'm sure those who are interested enough can get something out of it, so the code is posted in [imiexplorer][imicode] repository at BitBucket.
 
-I could not find documentation for the older 4.5 Raima Database Manager system, but the [documentation] [raimadocs] for a more recent 8.1 system was quite helpful.
+I could not find documentation for the older 4.5 Raima Database Manager system, but the [documentation][raimadocs] for a more recent 8.1 system was quite helpful.
 
 If you have any ideas or suggestions, please let me know, but bear in mind I don't have a Magellan GPS unit anymore, so all I can work with is the old .imi files.
 
-The place aggregating the most information on this and other Magallan file-format information seems to be the [OpenStreetMap Wiki] [osm].
+The place aggregating the most information on this and other Magallan file-format information seems to be the [OpenStreetMap Wiki][osm].
 
 [imicode]: https://bitbucket.org/mayo/imiexplorer/src
 [raimadocs]: http://docs.raima.com/rdme/8_1/

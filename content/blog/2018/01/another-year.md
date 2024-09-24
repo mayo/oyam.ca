@@ -1,9 +1,10 @@
 ---
-type: post
 title: Another Year, Another Static Site Generator
-created: !!timestamp '2018-01-01 21:35:00 -8'
-tags:
-  - sitebuild
+date: 2018-01-01 21:35:00-08:00
+taxonomies:
+  tags:
+    - sitebuild
+  type: [article]
 ---
 Recently, I’ve switched this site Hana, a new static site generator I’m working on, instead of Metalsmith. Metalsmith worked well, but I’m getting tired of the constant `npm` package changes. I don’t touch the site for few months, go build, and suddenly some small non-critical `npm` package is renamed, missing, or no longer does what it used to. PITA.
 

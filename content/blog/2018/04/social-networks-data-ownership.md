@@ -1,9 +1,9 @@
 ---
-type: post
+taxonomies:
+  type: [article]
 title: Social Networks And Data Ownership
-created: !!timestamp '2018-04-12 21:43:00 -7'
+date: 2018-04-12 21:43:00-07:00
 ---
-
 Number of the questions to Mark Zuckerberg in the Senate testimony were asking about data ownership and were quick to point out that the users don't make any money off their data. Many people on social media were echoed the same. I believe these questions are short seighted and are looking at the problem from the wrong angle.
 
 > You said multiple times during this hearing that I own the data… That sounds good, but in practice you're making $40 billion a year. I'm not making money on it. It feels like you own the data. Could you give me some idea on how you can honestly say it's my data? — Sen. Jon Tester (D-Mont.) [Los Angeles Times][1]

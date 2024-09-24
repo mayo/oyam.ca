@@ -1,0 +1,1029 @@
+@import "base";
+@import "theme";
+
+* {
+  box-sizing: border-box;  
+}
+
+html {
+  font-size: 62.5%; /* 62.5 = 10px; */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 2.3rem;
+  line-height: 1.45;
+  background-color: $lighter;
+  color: $darker;
+}
+
+body,
+article.article .content,
+article.note .content,
+.font-serif {
+  /* Berling T is preferred, but not available on TypeKit */
+  font-family: $font-family-serif /*"freight-text-pro"*/;
+  font-weight: 450;
+}
+
+body.dark-bg,
+div.body.dark-bg {
+  background-color: $darkest;
+  color: $light;
+}
+
+h1, h2, h3, h4, h5, h6  {
+  font-family: $font-family-condensed /*"freight-sans-pro"*/;
+  font-weight: 600;
+}
+
+// article h1, article h2, article h3, article h4, article h5, article h6  {
+//   font-family: $font-family-condensed /*"freight-sans-compressed-pro"*/;
+//   font-weight: 600;
+
+// }
+
+footer,
+.post-time,
+figcaption,
+div.archive,
+div.blognav,
+.collection-list li.archive-link,
+.article-list .quote,
+.article-list .bookmark,
+.content-container .sidebar,
+#now .attribution,
+.font-sansserif {
+  font-family: $font-family-sans /*"freight-sans-pro"*/;
+  font-weight: 400;
+}
+
+pre,
+code,
+.font-code {
+  font-family: $font-family-mono /*"source-code-pro", monospace*/;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 1.414em 0 0.5em;
+  line-height: 1.2em;
+  color: $darker;
+}
+
+h1 {
+  font-size: 2.5em;
+  line-height: 1em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+.dark-bg h1,
+.dark-bg h2,
+.dark-bg h3,
+.dark-bg h4 {
+  color: $lighter;	
+}
+
+h1 {
+  margin-top: .5em;
+}
+
+p {
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-bottom: 1.3em;
+}
+
+a {
+  color: red;
+  text-decoration: underline;
+}
+
+.dark-bg a {
+  color: $link;
+}
+
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: bold;
+}
+
+small,
+.font-small,
+article footer,
+nav.page-nav,
+nav.menu,
+body > footer {
+  font-size: .8em;
+}
+
+dl {
+  // margin-block-start: 1em;
+  margin-block-end: 1em;
+}
+
+.content-container,
+.content-container.normal {
+  max-width: 100rem;
+}
+
+.content-container.full {
+  max-width: 100%;
+}
+
+.content-container.narrow {
+  max-width: 85rem;
+}
+
+/*
+  The flexbox switching between multi- and single- column based on viewport width
+  is based on [The Flexbox Holy Albatross Reincarnated](https://heydonworks.com/article/the-flexbox-holy-albatross-reincarnated).
+  It relies on setting flex-basis for each flex item such that it either falls at
+  the desired width (as specified by flex-grow) or 100% (--content-container-multiplier).
+*/
+.content-container {
+  /* 60rem is picked as arbitrary number when we consider the viewport too "narrow" */
+  --content-container-multiplier: calc(60rem - 100%);
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+
+  margin-left: auto;
+  margin-right: auto;
+  //pad so narrow viewport edges don't touch the content text.
+  //TODO: why isn't this part of <main>?
+  padding-left: .5em;
+  padding-right: .5em;
+}
+
+.content-container.columns {
+  --content-container-columns-column-gap: 3rem;
+  column-gap: var(--content-container-columns-column-gap);
+}
+
+body > footer.content-container {
+  justify-content: start;
+  column-gap: 1rem;
+}
+
+body > footer .footer-item {
+  // body > footer is context-container, which uses flex layout
+  flex-grow: 0;
+  flex-basis: min-content;
+}
+
+body > footer .footer-item.copyright {
+  flex: 1 1;
+  text-align: right;
+}
+
+#frontpage .content-container.columns .flex-item-50 {
+  min-width: calc(50% - var(--content-container-columns-column-gap));
+}
+
+.flex-item {
+  flex-basis: calc(var(--content-container-multiplier) * 999);
+  flex-grow: 1;
+  width: 100%; //needed for elements like <pre> to show scrollbars when needed
+}
+.flex-item-25 {
+  flex-grow: 2.5;
+}
+
+.flex-item-30 {
+  flex-grow: 3;
+}
+
+.flex-item-33 {
+  flex-grow: 3.33;
+}
+
+.flex-item-40 {
+  flex-grow: 4;
+}
+
+.flex-item-50 {
+  flex-grow: 5;
+}
+
+.flex-item-60 {
+  flex-grow: 6;
+}
+
+.flex-item-70 {
+  flex-grow: 7;
+}
+
+.flex-item-100 {
+  flex-grow: 10;
+  // without min-width, two .flex-item-100 will still live side-by-side?!?
+  min-width: 100%;
+}
+
+/* This makes lists generated from markdown behave as expected in blog posts, but
+   it doesn't for page content. */
+article li {
+  list-style-type: disc;
+}
+
+article ul {
+  padding-left: 1.2em;
+}
+
+/* TODO: this is not needed - used in WIP/demo pages */
+// .column img {
+//   width: 100%;
+//   height: auto;
+// }
+
+body > header {
+  padding-top: .5em;
+  padding-bottom: .5em;
+}
+
+body > footer {
+  margin: 3em 0 2em 0;
+  color: $light;
+}
+
+body.dark-bg > footer,
+div.body.dark-bg > footer {
+  color: $dark;
+}
+
+body > footer a,
+body.dark-bg > footer a,
+div.body.dark-bg > footer a {
+  color: inherit;
+}
+
+body > footer a:hover {
+  color: $darkest;
+}
+
+body.dark-bg > footer a:hover,
+div.body.dark-bg > footer a:hover {
+  color: $lightest;
+}
+
+body > footer {
+  border-top: 1px solid;
+  padding-top: 1em;
+}
+
+section {
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+  margin-top: 1em;
+}
+
+figure img {
+  width: 100%;
+  height: auto;
+}
+
+figure figcaption {
+  margin-top: -.3em;
+  font-style: italic;
+  font-size: .8em;
+  color: $dark;
+}
+
+.inline.icon {
+  width: 1em;
+  margin-right: .3em;
+  vertical-align: -.1em;
+}
+
+blockquote {
+  border-left: .3em solid $dark;
+
+  font-style: italic;
+  margin-left: .2em;
+  padding: .2em 0 .3em 1em;
+}
+
+blockquote p:first-child {
+  margin-top: 0;
+}
+
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+pre {
+  margin: 0 0 1em 0;
+}
+
+pre,
+code,
+pre code,
+textarea.pubkey {
+  font-size: .8em;
+}
+
+pre {
+  border: 1px dotted $darker;
+  padding: .4em .6em;
+  overflow: auto;
+  border-radius: .3em;
+  tab-size: 4;
+}
+
+pre::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+    height: 7px;
+}
+
+pre::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: $darkest50;
+}
+
+.fullpage .image,
+.banner .image,
+.banner picture img {
+  display: block;
+  opacity: 1;
+  z-index: -1;
+  
+  position: absolute;
+  left: 0px;
+  top: 0px;
+
+  width:100vw;
+  height: 100%;
+
+  background-size: cover; /* only applicable to .image */
+}
+
+.banner picture img {
+  object-fit: cover;
+  object-position: center center;
+}
+
+.banner {
+  position: relative;
+  height: 500px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.banner .head-title {
+  position: relative;
+  height: 100%;
+}
+
+.banner .head-title .title {
+  position: absolute;
+  bottom: 1em;
+}
+
+.banner .head-title h1 {
+  margin-bottom: 0;
+}
+
+.banner + .content-container p:first-child {
+  margin-top: 3em;
+}
+
+.content-container .sidebar {
+  color: $dark;
+  font-size: .8em;
+  line-height: 1.6em;
+}
+
+.content-container .sidebar a {
+  color: inherit;
+}
+
+.content-container .sidebar a:hover {
+  color: $darkest;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect($darkest,0);
+  border: 0;
+}
+
+.shell {
+  background-color: $darker;
+  color: $lighter;
+  white-space: pre-line;
+  display: block;
+  width: 100%;
+}
+
+.shell .shell-comment {
+  color: $light;
+}
+
+textarea.pubkey {
+  width: 100%;
+  display: block;
+  white-space: pre-line;
+  border-radius: .3em;
+  border: 1px dotted $darker;
+  padding: .4em .6em;
+  overflow: auto;
+}
+
+.taxonomy-term-list a {
+  margin-right: .5em;
+}
+
+// position the post type icon in negative margin like a bullet. It's the most
+// straight forward way of customizing bullets. width, margin-left, and
+// padding-right play together to make it work.
+li > .li-icon-bullet {
+  display: inline-block;
+  width: 1.8em;
+  margin-left: -1.93em;
+  text-align: right;
+  padding-right: .6em;
+}
+
+ul.li-icon-bullet {
+  margin-left: 1.2em; // bullet width 1.8 - padding-right .6
+}
+
+.collection-list li {
+  margin-bottom: .2em;
+}
+// Icon is always the first element. For expanded collection, metadata is
+// second and when it precedes the post, the margin is not desired.
+.collection-list .metadata:not(:nth-child(2)) {
+  margin-left: 1em;
+}
+
+.collection-list .post-type-icon,
+.collection-list .metadata {
+  font-size: .8em;
+  color: $dark;
+}
+
+.collection-list .metadata > * {
+  margin-right: .5em;
+}
+
+.collection-list li.archive-link {
+  margin-top: .7em;
+}
+
+/* TODO  */
+.null-icon {
+  background-color: red;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+}
+
+/* @group IndieWeb */
+
+article a.u-author {
+  display: hidden;
+}
+
+/* @end */
+
+/* @group Nav */
+
+nav.page-nav {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 0.4em;
+}
+
+.breadcrumbs,
+.menutoggle,
+.menutoggle::after {
+  font-family: $font-family-mono;
+}
+
+
+.breadcrumbs .logotype {
+  display: inline-block;
+  line-height: 1;
+  text-transform: uppercase;
+  color: $darkest;
+  //split from logo
+  margin-left: .2em;
+}
+
+.dark-bg .breadcrumbs .logotype,
+.breadcrumbs.dark-bg .logotype {
+  color: $lightest;
+}
+
+.breadcrumbs .crumb.root img.logo[src="/favicon.svg"] {
+  //NOTE: the object position and width are based on the favicon.svg file. If the file changes, this will have to be updated.
+  object-fit: contain;
+  object-position: -2.5px 3px;
+  width: 20px;
+}
+
+nav.page-nav .menutoggle,
+nav.page-nav .menutoggle a {
+  color: $darker;
+}
+
+.dark-bg nav.page-nav .menutoggle,
+nav.page-nav .menutoggle.dark-bg {
+  color: $lightest;
+}
+
+nav.page-nav input.menutoggle {
+  appearance: initial;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  width: 2rem;
+  z-index: 1;
+  text-align: center;
+  cursor: pointer;
+}
+
+nav.page-nav input.menutoggle::after {
+  content: "\2261";
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+nav.page-nav input.menutoggle:checked::after {
+  content: "\00d7";
+}
+
+nav.menu {
+  --nav-menu-gap: 2rem;
+  --nav-menu-display: flex;
+  display: var(--nav-menu-display);
+  flex-wrap: wrap;
+  gap: var(--nav-menu-gap);
+  width: 100%;
+  flex: 0 0 100%;
+  font-family: $font-family-mono;
+  font-size: 1em;
+}
+
+nav.menu.top {
+  padding-top: .5em;
+  // padding-bottom: 1em;
+  border-top: 1px solid $light;
+  // border-bottom: 1px solid $dark;
+  display: none;
+}
+
+.dark-bg nav.menu.top,
+.dark-bg nav.menu.top > a {
+  color: $lightest;
+}
+
+nav.page-nav input.menutoggle:checked ~ nav.menu.top {
+  display: var(--nav-menu-display);
+}
+
+nav.menu .nav-group {
+  flex-basis: calc(var(--content-container-multiplier) * 999);
+  flex-grow: 1;
+  max-width: max-content;
+  min-width: calc(20% - var(--nav-menu-gap));
+}
+
+nav.menu .nav-group.gallery {
+  min-width: calc(70% - var(--nav-menu-gap));
+  max-width: 100%;
+}
+nav.menu .nav-group.about {
+  min-width: calc(30% - var(--nav-menu-gap));
+  max-width: 100%;
+}
+
+nav.page-nav nav.menu {
+  margin-top: 1rem;
+}
+
+nav ul.nav-group {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav .nav-group {
+  display: block;
+}
+
+nav .nav-group > :first-child {
+  font-weight: bold;
+}
+
+nav .menu.top {
+  justify-content: right;
+}
+
+nav .menu.top .nav-group {
+  min-width: auto;
+}
+
+// Keep top nav thin?
+nav .top .nav-group > :first-child {
+  font-weight: inherit;
+  color: $darkest;
+}
+
+nav .top .nav-group,
+.dark-bg nav.menu.top .nav-group li a {
+  color: $lightest;
+}
+
+/* for devices that support hover, be a bit fancier */
+@media (hover: hover) {
+  nav.menu.top .nav-group li a {
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom-color 0.4s ease-in-out;
+  }
+
+  nav.menu.top .nav-group li a:hover {
+    border-bottom-color: white;
+  }
+}
+
+/* @end Nav */
+
+
+/* @group Error */
+
+#error .article-list article {
+  margin: 0;
+  margin-bottom: .6em;
+}
+
+#error .article-list h1,
+#error .article-list p {
+  display: inline;
+}
+
+#error .article-list h1 {
+  font-size: 1em;
+}
+
+#error .article-list .current + .archived {
+  margin-top: 2em;
+}
+
+/* @end */
+
+/* @group Slideshow */
+
+.slideshow .slide.hidden {
+  display: none;
+}
+
+.slideshow .controls button {
+  border: 0;
+  background: inherit;
+  padding: 0;
+  height: 1em;
+  font-size: 1.3em;
+}
+
+.slideshow .controls button + button {
+  margin-left: .1em;
+}
+
+.slideshow .controls:hover {
+  opacity: 1;
+}
+
+.dark-bg .slideshow .controls,
+.dark-bg .slideshow .controls button,
+.slideshow .dark-bg.controls,
+.slideshow .dark-bg.controls button {
+  color: $lightest;
+}
+
+.slideshow .slide .main {
+  position: absolute;
+  top: 5em;
+  right: 3em;
+  margin-left: 3em; /* for mobile devices */
+  max-width: 30em; /* max-width instead of width for mobile devices */
+  font-family: $font-family-sans /*"freight-sans-pro" */;
+  text-align: right;  
+  color: black;
+}
+
+// .slideshow .slide .main h1 {
+//   font-family: $font-family-condensed /*"freight-sans-compressed-pro"*/;
+// }
+
+.dark-bg .slideshow .slide .main,
+.dark-bg .slideshow .slide .main h1 {
+  color: $lightest;
+}
+
+/* @end */
+
+/* @group About */
+
+#about .contact-list,
+.sidebar-list {
+  padding: 0;
+}
+
+#about .contact-list li,
+.sidebar-list li {
+  list-style-type: none;
+  margin-bottom: .2em;
+}
+
+.no-bullets {
+  padding-left: 0;
+}
+
+.no-bullets li {
+  list-style-type: none;
+}
+
+.hex-string .word {
+  margin-right: .3em;
+}
+
+#about div.me
+{
+  background-color: $lighter;
+  border-radius: 10px;
+  margin-top: -8em;
+  height: 0;
+    
+  width: 80%;
+  padding-bottom: 80%;
+  
+  position: relative;
+}
+
+#about div.me img
+{
+  display: block;
+  width: 100%;
+  
+  border-radius: 10px;
+  
+  position: absolute;
+  
+  top: 50%;
+  left: 50%;
+  margin: -50% 0 0 -50%;  
+}
+
+#about .sidebar .name {
+  font-size: 1.3em;
+  display: block;
+  color: $dark;
+  text-decoration: none;
+}
+
+#about .sidebar .tag {
+  display: block;
+  font-style: italic;
+  margin-top: -1.6em;
+}
+
+#about .sidebar .social {
+  font-size: 1.2em;
+}
+
+/* @end About */
+
+/* @group Now */
+
+#now .attribution {
+  font-size: .5em;
+  font-size: .5em;
+  position: absolute;
+  bottom: .3em;
+  right: .3em;
+  background-color: $lightest50;
+  border-radius: .5em;
+  padding: .2em .5em;
+}
+
+#now .attribution,
+#now .attribution a {
+  color: $darkest;
+}
+
+#now .attribution .mapbox-logo {
+  vertical-align: middle;
+}
+
+/* @end Now */
+
+/* @group Blog */
+
+div.blognav {
+  margin-top: 2em;
+  width: 100%;
+}
+
+div.blognav .feedback,
+div.blognav .feedback a {
+  color: $light;
+}
+
+div.blognav .feedback {
+  font-style: italic;
+}
+
+div.blognav .fa-li {
+  text-align: left;
+  width: 1em;
+  margin: 0;
+  left: -1.6em;
+  top: 0.05em;
+
+}
+
+div.blognav .fa-ul {
+  margin: .5em 1.6em;
+}
+
+div.blognav,
+div.blognav a {
+  color: $darker;
+}
+
+div.blognav div.related {
+  margin-top: 2em;
+}
+
+article.quote div.content,
+.collection-list .post.quote,
+#frontpage .quote {
+  font-style: italic;
+  font-weight: 300;
+}
+
+article.quote p.author {
+  padding-left: 1.5em;
+}
+
+article {
+  width: 100%; //needed for elements like <pre> to show scrollbars when needed
+  margin-top: 0em;
+}
+
+article div.header-image {
+  height: 15em;
+  background-size: cover;
+  overflow: hidden;
+  content: "";
+  display: block;
+
+  border-radius: 1rem;
+  position: relative;
+  margin-bottom: 2em;
+}
+
+.article-list article h2 {
+  margin-top: 0;
+}
+
+.article-list article + article {
+  margin-top: 3em;
+}
+
+.article-list article div.header-image h2 {
+  position: absolute;
+  bottom: 0;
+  padding: 0 .5em;
+}
+
+.article-list article div.header-image {
+  height: 11em;
+}
+
+article h1 a,
+article h2 a {
+  color: inherit;
+}
+
+article h1 {
+  margin-bottom: 0;
+}
+
+article header {
+  margin-bottom: 3em;
+}
+
+.article-list article header {
+  margin-bottom: inherit;
+}
+
+article header a {
+  text-decoration: none;
+}
+
+article.quote blockquote {
+	border: none;
+	padding-left: inherit;
+}
+
+article.quote .content p:first-child:before,
+#frontpage .article-list .quote a:before {
+  content: open-quote;
+}
+
+article.quote .content p:last-child:after,
+#frontpage .article-list .quote a:after {
+  content: close-quote;
+}
+
+article .quote .author {
+  color: black;
+}
+
+article footer,
+article footer a {
+  color: $light;
+}
+
+article footer {
+  margin-top: 2em;
+}
+
+article footer p {
+  margin-bottom: .5em;
+  margin-top: 0em;
+}
+
+dl.key-value-table {
+  display: grid;
+  grid-template-columns: 1em auto;
+  gap: 0 .5em;
+  grid-auto-rows: auto;
+}
+
+dl.key-value-table dt {
+    grid-column-start: 1;
+}
+
+dl.key-value-table dd {
+  grid-column-start: 2;
+  margin-inline-start: 0px;
+
+  /*
+    long elements, like a tag with long non-breaking space, stretch the dd
+     element past side of page.
+  */
+  overflow: hidden;
+}
+
+dl.key-value-twoline dt {
+  color: $dark;
+}
+
+dl.key-value-twoline dd {
+  margin-inline-start: 0px;
+  margin-bottom: .5em;
+}
+
+dd a.extlink {
+  /* contrain .extlink to it's container size. This is to avoid long links from stretching the containing elements */
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* @end Blog */

@@ -1,9 +1,13 @@
 ---
-type: photo
 imported: "instagram"
-created: !!timestamp '2015-04-22 00:26:52 -7'
-tags:
+date: 2015-04-22 00:26:52-07:00
+taxonomies:
+  tags:
     - microblog
+  type: [photo]
 ---
-![Cerro Las Leñas](/media/images/photos/2015/04/2a489a17538d6e885af8097060c16a78.jpg)
+<figure>
+  <img src="/media/images/photos/2015/04/2a489a17538d6e885af8097060c16a78.jpg" title="Cerro Las Leñas"/>
+  <figcaption>Cerro Las Leñas</figcaption>
+</figure>
 

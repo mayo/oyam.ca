@@ -1,27 +1,28 @@
-{% extends "grid.html" %}
-
+{% extends 'base.html' %}
 {% block main_content %}
-  {% block banner %}
-<!--
-<div class="banner">
-  <div class="image" style="background-image: url('/media/images/about.jpg'); background-position: center;"></div>
 
-  <div class="head-title grid-container normal dark-bg">
-    <div class="title grid-100">
-      <h1 style="color: white">Mayo Jordanov</h1>
-    </div>
-  </div>
-</div>
--->
-  {% endblock %}
-
-<div class="grid-container {{ grid_container_class }}">
-  <div class="grid-65 mobile-grid-100">
-    {% block content %}{{ contents }}{% endblock %}
+{% block banner %}
+{% include '_banner.html' %}
+{% endblock banner %}
+<div class="content-container {{ container_width }}">
+  <div class="flex-item flex-item-100">
+    {% block page_content %}
+    {{ node.content | safe }}
+    {% endblock page_content %}
   </div>
 
-  <div class="grid-35 mobile-grid-100 sidebar">
-    {% block sidebar %}{% endblock %}
+  {% if node.extra.show_related %}
+    {% set_global related_pages = [] %}
+    {% for taxon in node.extra.show_related %}
+      {% set taxon_term = get_taxonomy_term(kind=taxon.kind, term=taxon.term) %}
+      {% set_global related_pages = related_pages | concat(with=taxon_term.pages) %}
+    {% endfor %}
+
+    {% if related_pages | length > 0 %}
+  <div class="flex-item flex-item-100 related-links">
+    <h2>Related</h2>
+    {{ macros::collection_list(collection=related_pages | sort(attribute="date")) }}
   </div>
-</div>
-{% endblock %}
+    {% endif %}
+  {% endif %}
+{% endblock main_content %}

@@ -1,5 +1,9 @@
 ---
-type: photo
-created: !!timestamp '2018-05-14 20:37:52 -7'
+taxonomies:
+  type: [photo]
+date: 2018-05-14 20:37:52-07:00
 ---
-![Darla](/media/images/photos/2018/05/darla.jpg)
+<figure>
+  <img src="/media/images/photos/2018/05/darla.jpg" title="Darla"/>
+  <figcaption>Darla</figcaption>
+</figure>

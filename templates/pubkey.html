@@ -1,0 +1,39 @@
+{% extends 'page-sidebar.html' %}
+
+{% block template_vars %}
+  {{ super() }}
+  {% set column_main_width = 60 %}
+  {% set column_sidebar_width = 40 %}
+{% endblock template_vars %}
+
+{% block page_content %}
+        <dl class="key-value-twoline">
+            <dt>Fingerprint</dt>
+            <dd><code class="hex-string">{{ macros::render_hex(value=config.extra.pubkey.fingerprint) }}</code></dd>
+
+            <dt>64 bit fingerprint</dt>
+            <dd><code class="hex-string">{{ macros::render_hex(value=config.extra.pubkey.fingerprint | slice(start=-4)) }}</code></dd>
+
+            <dt>Raw key</dt>
+            <dd><a href="{{ config.extra.base_url | safe }}{{ get_url(path=config.extra.links.pubkey) | safe }}">{{ config.extra.base_url | safe}}{{ get_url(path=config.extra.links.pubkey) }}</a></dd>
+        </dl>
+
+        <pre class="shell solarized">
+            <span class="shell-comment"># To import key into GPG:</span>
+            <span class="shell-command">curl {{ config.extra.base_url | safe }}{{ get_url(path=config.extra.links.pubkey) }} | gpg --import</span>
+        </pre>
+
+        <textarea class="font-code pubkey" readonly="true" rows="7">
+            {{ load_data(path="static" ~ config.extra.links.pubkey) }}
+        </textarea>
+{% endblock page_content %}
+
+{% block sidebar %}
+        <h2>Proofs</h2>
+        <dl class="key-value-table">
+            {% for service, link in config.extra.pubkey.proofs %}
+                <dt><i class="fa inline icon {{ config.extra.icons[service] |default(value="null-icon") }}" title="{{ config.extra.services[service] | default(value=service)}}"></i><span class="sr-only">{{ config.extra.services[service] | default(value=service) }}</span></dt>
+                <dd><a href="{{ link | default(value=config.extra.links[service]) }}">{{ config.extra.author[service] | default(value=config.extra.links[service]) | safe }}</a></dd>
+            {% endfor %}
+        </dl>
+{% endblock sidebar %}

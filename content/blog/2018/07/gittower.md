@@ -1,7 +1,8 @@
 ---
-type: post
+taxonomies:
+  type: [article]
 title: Bye, Bye, GitTower 3.x
-created: !!timestamp '2018-07-03 20:48:47 -7'
+date: 2018-07-03 20:48:47-07:00
 ---
 The new GitTower 3.x update is great, but unfortunately I can no longer recommend it as an alternative client. With the new release comes new subscription licensing -- Don't get me wrong, I'd be more than happy to pay for new versions or features, or even annualy, however, I can't get behind a subscription model that disables the software completely when I stop paying. I would have no problem if it froze in time and stopped getting updates, but not the licensing model fournova chose.
 

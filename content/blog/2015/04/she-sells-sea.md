@@ -1,9 +1,13 @@
 ---
-type: photo
 imported: "instagram"
-created: !!timestamp '2015-04-26 09:00:42 -7'
-tags:
+date: 2015-04-26 09:00:42-07:00
+taxonomies:
+  tags:
     - microblog
+  type: [photo]
 ---
-![She sells sea shells](/media/images/photos/2015/04/50279dfa29e4db11c0b96e16c1e60b69.jpg)
+<figure>
+  <img src="/media/images/photos/2015/04/50279dfa29e4db11c0b96e16c1e60b69.jpg" title="She sells sea shells"/>
+  <figcaption>She sells sea shells</figcaption>
+</figure>
 

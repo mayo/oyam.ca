@@ -1,27 +1,27 @@
 <div class="slideshow chameleon">
     <div class="controls bottomright">
-    <button class="previous fal fa-lg fa-chevron-circle-left" title="Previous"><span class="sr-only">previous</span></button>
-    <button class="next fal fa-lg fa-chevron-circle-right" title="Next"><span class="sr-only">next</span></button>
+    <button class="previous fa fa-chevron-circle-left" title="Previous"><span class="sr-only">previous</span></button>
+    <button class="next fa fa-chevron-circle-right" title="Next"><span class="sr-only">next</span></button>
   </div>
 
   <div class="slides">
     {% for slide in slides %}
 
-      {% set quadrants = [] %}
+      {% set_global quadrants = "" %}
 
-      {% if slide.dark_bg %}
-        {% do quadrants.append("data-darkbg") %}
+      {% if slide.dark_bg | default(value=false) %}
+        {% set_global quadrants = quadrants ~ " data-darkbg" %}
       {% endif %}
 
-      {% if slide.dark_bg_quadrants %}
-        {% for q, val in slide.dark_bg_quadrants.items() %}
-          {% if val %}
-            {% do quadrants.append(" data-darkbg-" + q) %}
+      {% if slide.dark_bg_quadrants | default(value=false) %}
+        {% for q, val in slide.dark_bg_quadrants %}
+          {% if val == true %}
+            {% set_global quadrants = quadrants ~ " data-darkbg-" ~ q %}
           {% endif %}
         {% endfor %}
       {% endif %}
 
-      <div class="slide fullpage" {{ quadrants|join(" ") }}>
+      <div class="slide fullpage" {{ quadrants }}>
         <div class="image" style="background-image: url('{{ slide.image }}'); background-position: {{ slide.image_position }};"></div>
 
         {% if not slide.hide_content %}
@@ -32,7 +32,7 @@
         {% endif %}
 
         <div class="caption bottomleft">
-          <div class="icon"><span class="fal fa-camera" aria-hidden></span></div>
+          <div class="icon"><span class="fa fa-camera" aria-hidden></span></div>
           <div class="description">{{ slide.caption }}</div>
         </div>
 

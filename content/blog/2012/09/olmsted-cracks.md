@@ -1,9 +1,13 @@
 ---
-type: photo
 imported: "instagram"
-created: !!timestamp '2012-09-29 11:51:01 -8'
-tags:
+date: 2012-09-29 11:51:01-08:00
+taxonomies:
+  tags:
     - microblog
+  type: [photo]
 ---
-![Olmsted Cracks](/media/images/photos/2012/09/c54e9d315741f053ca124f5a9807db4c.jpg)
+<figure>
+  <img src="/media/images/photos/2012/09/c54e9d315741f053ca124f5a9807db4c.jpg" title="Olmsted Cracks"/>
+  <figcaption>Olmsted Cracks</figcaption>
+</figure>
 

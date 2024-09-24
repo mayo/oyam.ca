@@ -1,7 +1,10 @@
 ---
-type: link
-imported: "twitter"
-created: !!timestamp '2012-10-15 21:14:47 -7'
+date: 2012-10-15 21:14:47-07:00
+imported: twitter
+taxonomies:
+  type: [bookmark]
+extra:
+  href: http://framework.latimes.com/2012/10/15/time-lapse-video-space-shuttle-endeavours-trek-across-l-a/
 ---
 [Time-lapse video: Space shuttle Endeavour’s trek across L.A.](http://framework.latimes.com/2012/10/15/time-lapse-video-space-shuttle-endeavours-trek-across-l-a/)
 

@@ -1,7 +1,8 @@
 ---
-type: post
+taxonomies:
+  type: [note]
 imported: "facebook"
-created: !!timestamp '2015-03-20 11:27:48 -7'
+date: 2015-03-20 11:27:48-07:00
 ---
 Wise words to live by:
 

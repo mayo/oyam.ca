@@ -1,0 +1,10 @@
+<ul class="nav-group gallery">
+    <li>Showing</li>
+    {% for slide in slides %}
+    <li><a href="/#slide{{ loop.index0 }}">{{ slide.title }}</a></li>
+    {% endfor %}
+</ul>
+<div class="nav-group about">
+    <span>{{ config.extra.author.name }}</span>
+    {% include "_personal_meta.html" %}
+  </div>

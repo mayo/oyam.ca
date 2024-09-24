@@ -1,15 +1,19 @@
 ---
-type: post
 title: Mobile Publishing Workflow with Metalsmith and Travis CI
-created: !!timestamp '2015-12-24 8:50:00 -8'
-tags:
-  - sitebuild
+date: 2015-12-24 08:50:00-08:00
+taxonomies:
+  tags:
+    - sitebuild
+  type: [article]
 ---
 I like the simplicity of having a static site — it reduces the overhead of maintaining the server and software running it, copes with larger loads better, and opens up a myriad options for hosting that would otherwise not be available. The drawback, however, is publishing on the go, especially if computer access is limited. My criteria for a mobile workflow are similar to one on a computer: being able to work offline and publish once online, use Git to maintain the site, avoid having to SSH to edit or publish, and limit manual interaction with remote services as much as possible. 
 
 This site is generated with [Metalsmith][metalsmith] and a few plugins, but this workflow is not specific to This tool. [Travis CI][travis] builds and deploys the site. All, of the source is maintained in Git, which is the first building block and the first hurdle in my workflow. [Working Copy][workingcopy], a full-fledged iOS Git client, to the rescue! This, combined with the inter-app sharing options introduced in iOS 8, makes for a smooth workflow that allows me to maintain my site just about everywhere.
 
-![Workflow diagram][diagram]
+<figure>
+  <img src="/media/images/blog/2015/12/mobile-workflow/diagram.png" title="Workflow diagram"/>
+  <figcaption>Workflow diagram</figcaption>
+</figure>
 
 The process usually starts with composing a markdown file using [iA Writer][writer]. Once finished writing, I go to Working Copy, update the repository for my site, and import the file from iA Writer including any photos or assets to the appropriate folders. Once done, I review everything, commit the change, and push to a `draft` branch. 
 
@@ -23,4 +27,3 @@ And there it is. Simple, fairly generic and relatively easy to adapt to differen
 [travis]: http://travis-ci.org
 [workingcopy]: http://workingcopyapp.com
 [writer]: https://ia.net/writer
-[diagram]: /media/images/blog/2015/12/mobile-workflow/diagram.png

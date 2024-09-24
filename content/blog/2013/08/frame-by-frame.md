@@ -1,7 +1,10 @@
 ---
-type: link
-imported: "twitter"
-created: !!timestamp '2013-08-02 21:14:47 -7'
+date: 2013-08-02 21:14:47-07:00
+imported: twitter
+taxonomies:
+  type: [bookmark]
+extra:
+  href: http://www.framebyframethefilm.com
 ---
 [Frame by Frame](http://www.framebyframethefilm.com)
 

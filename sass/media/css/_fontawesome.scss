@@ -1,0 +1,10 @@
+/* Customized FontAwesome font */
+$icomoon-font-path: "/media/fonts/fa" !default;
+
+.fa {
+    text-rendering: auto;
+    display: inline-block;
+    font-weight: 300;
+}
+
+@import "../../../depends/FontAwesome-subset/style.scss";
