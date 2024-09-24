@@ -15,7 +15,7 @@ permissions:
 
 env:
   AWS_REGION: us-east-1
-  S3_BUCKET: draft.oyam.ca
+  S3_BUCKET: oyam.ca
 
 concurrency:
   group: site-deploy-${{ github.ref_name }}
