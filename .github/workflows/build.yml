@@ -35,7 +35,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: build
-    environment: draft-env
+    environment: ${{ github.ref_name }}
     permissions:
       id-token: write
     steps:
@@ -71,7 +71,7 @@ jobs:
   purge-cache:
     runs-on: ubuntu-latest
     needs: deploy
-    environment: draft-env
+    environment: ${{ github.ref_name }}
     steps:
       - name: Download sync artifact
         uses: actions/download-artifact@v4
