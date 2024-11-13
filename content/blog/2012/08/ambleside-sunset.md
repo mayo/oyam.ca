@@ -1,6 +1,8 @@
 ---
 taxonomies:
   type: [photo]
+  tags:
+    - film
 imported: "facebook"
 date: 2012-08-25 20:08:45-07:00
 ---
