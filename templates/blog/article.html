@@ -105,7 +105,7 @@
 
     {% if related_pages | length > 0 %}
     <strong>Related Posts</strong>
-      {{ macros::collection_list(collection=related_pages | sort(attribute="date"), exclude=[page]) }}
+      {{ macros::collection_list(collection=related_pages | sort(attribute="date") | reverse, exclude=[page]) }}
     {% endif %}
   </div>
   {% endif %}

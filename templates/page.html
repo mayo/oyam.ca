@@ -21,7 +21,7 @@
     {% if related_pages | length > 0 %}
   <div class="flex-item flex-item-100 related-links">
     <h2>Related</h2>
-    {{ macros::collection_list(collection=related_pages | sort(attribute="date")) }}
+    {{ macros::collection_list(collection=related_pages | sort(attribute="date") | reverse) }}
   </div>
     {% endif %}
   {% endif %}
