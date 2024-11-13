@@ -1,6 +1,6 @@
 ---
 title: Yet Another Static Site Generator
-date: 2024-06-19 00:22:07-08:00
+date: 2024-10-02 23:22:07-08:00
 taxonomies:
   tags:
     - sitebuild
