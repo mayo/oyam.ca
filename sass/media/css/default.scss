@@ -101,7 +101,7 @@ p {
 }
 
 a {
-  color: red;
+  color: $link;
   text-decoration: underline;
 }
 
@@ -493,7 +493,7 @@ ul.li-icon-bullet {
 
 /* TODO  */
 .null-icon {
-  background-color: red;
+  background-color: $link;
   width: 1em;
   height: 1em;
   display: inline-block;
@@ -584,7 +584,7 @@ nav.page-nav input.menutoggle:checked::after {
 }
 
 nav.menu {
-  --nav-menu-gap: 2rem;
+  --nav-menu-gap: 3rem;
   --nav-menu-display: flex;
   display: var(--nav-menu-display);
   flex-wrap: wrap;
@@ -673,7 +673,7 @@ nav .top .nav-group,
   }
 
   nav.menu.top .nav-group li a:hover {
-    border-bottom-color: white;
+    border-bottom-color: inherit;
   }
 }
 
