@@ -2,11 +2,10 @@
 
 @font-face {
   font-family: '#{$icomoon-font-family}';
-  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?7fxu0h');
-  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?7fxu0h#iefix') format('embedded-opentype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?7fxu0h') format('truetype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?7fxu0h') format('woff'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?7fxu0h##{$icomoon-font-family}') format('svg');
+  src:
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?hiub9z') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?hiub9z') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?hiub9z##{$icomoon-font-family}') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -27,6 +26,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.fa-coffee {
+  &:before {
+    content: $fa-coffee; 
+  }
+}
 .fa-chevron-circle-left {
   &:before {
     content: $fa-chevron-circle-left; 
@@ -315,6 +319,21 @@
     content: $fa-quote-left-duotone-path2;  
     margin-left: -1em;  
     color: rgb(0, 0, 0);
+  }
+}
+.fa-code-branch {
+  &:before {
+    content: $fa-code-branch; 
+  }
+}
+.fa-code-merge {
+  &:before {
+    content: $fa-code-merge; 
+  }
+}
+.fa-code {
+  &:before {
+    content: $fa-code; 
   }
 }
 

@@ -1,10 +1,9 @@
 @font-face {
   font-family: 'FontAwesome-subset';
-  src:  url('fonts/FontAwesome-subset.eot?7fxu0h');
-  src:  url('fonts/FontAwesome-subset.eot?7fxu0h#iefix') format('embedded-opentype'),
-    url('fonts/FontAwesome-subset.ttf?7fxu0h') format('truetype'),
-    url('fonts/FontAwesome-subset.woff?7fxu0h') format('woff'),
-    url('fonts/FontAwesome-subset.svg?7fxu0h#FontAwesome-subset') format('svg');
+  src:
+    url('fonts/FontAwesome-subset.ttf?hiub9z') format('truetype'),
+    url('fonts/FontAwesome-subset.woff?hiub9z') format('woff'),
+    url('fonts/FontAwesome-subset.svg?hiub9z#FontAwesome-subset') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,6 +24,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.fa-coffee:before {
+  content: "\e936";
+}
 .fa-chevron-circle-left:before {
   content: "\e915";
 }
@@ -206,4 +208,13 @@
   content: "\e935";
   margin-left: -1em;
   color: rgb(0, 0, 0);
+}
+.fa-code-branch:before {
+  content: "\e937";
+}
+.fa-code-merge:before {
+  content: "\e938";
+}
+.fa-code:before {
+  content: "\e939";
 }
