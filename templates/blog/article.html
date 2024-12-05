@@ -59,18 +59,18 @@
     {% endif %}
 
     {% if article.taxonomies.tags %}
-    <dt><i class="fa fa-tags" title="Tags"></i><span class="sr-only">Tags</span></dt>
-    <dd>{% for tag in article.taxonomies.tags %}
+      <dt><i class="fa fa-tags" title="Tags"></i><span class="sr-only">Tags</span></dt>
+      <dd>{% for tag in article.taxonomies.tags %}
       <a href="{{ get_taxonomy_url(kind="tags", name=tag) }}" class="p-category">{{ tag }}</a>
       {% endfor %}</dd>
     {% endif %}
 
     {% if article.extra['syndicate-to'] %}
-    <dt><i class="fa fa-share-alt-square" title="Syndicated to"></i><span class="sr-only">Syndicated to</span></dt>
+      <dt><i class="fa fa-share-alt-square" title="Syndicated to"></i><span class="sr-only">Syndicated to</span></dt>
       {% for item in article.extra['syndicate-to'] %}
         {% set url = item.url | default(value=item) %}
         {% set name = item.name | default(value=url) %}
-    <dd><a href="{{ url }}" class="u-syndication">{{ name }}</a></dd>
+      <dd><a href="{{ url }}" class="u-syndication">{{ name }}</a></dd>
       {% endfor %}
     {% endif %}
     </dl>
