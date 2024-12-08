@@ -585,14 +585,20 @@ nav.page-nav input.menutoggle:checked::after {
 
 nav.menu {
   --nav-menu-gap: 3rem;
+  --nav-menu-row-gap: 1em;
   --nav-menu-display: flex;
   display: var(--nav-menu-display);
   flex-wrap: wrap;
-  gap: var(--nav-menu-gap);
+  column-gap: var(--nav-menu-gap);
+  row-gap: var(--nav-menu-row-gap);
   width: 100%;
   flex: 0 0 100%;
   font-family: $font-family-mono;
   font-size: 1em;
+}
+
+nav.menu.bottom {
+  margin-bottom: var(--nav-menu-row-gap);
 }
 
 nav.menu.top {
