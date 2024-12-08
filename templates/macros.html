@@ -86,7 +86,7 @@
         {%- set is_blog = item.path is starting_with("/blog/") -%}
 
         {%- set post_type_id = item.taxonomies.type.0 | default(value=item.extra.post_type) | default(value="_section") -%}   
-        {%- set post_type = config.extra.taxonomies.type | get(key=post_type_id) -%}
+        {%- set post_type = config.extra.post_types | get(key=post_type_id) -%}
         <li class="post {{ post_type_id }}">
             <span class="post-type-icon li-icon-bullet"><i class="fa {{ post_type | get(key="icon") }}" title="{{ post_type | get(key="name") }}"></i><span class="sr-only">{{ post_type | get(key="name") }} </span></span>
         {%- if is_blog and item.taxonomies and item.taxonomies.type and expand is containing(post_type_id) -%}

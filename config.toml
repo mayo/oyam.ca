@@ -38,13 +38,6 @@ source_dir = "content"
 # Contraty to the base_url in the root, this can be used to build full links.
 base_url = "https://oyam.ca"
 
-[extra.post_types]
-article = "article"
-note = "note"
-photo = "photo"
-bookmark = "bookmark"
-quote = "quote"
-
 #[[extra.slides]]
 #title = "Turning in for the night"
 #content = ""
@@ -166,37 +159,35 @@ mastodon = "https://social.oyam.ca/@mayo"
 # term_1 = "fa-x"
 # term_2 = "fa-y"
 
-# [extra.taxonomies.types]
-# title_s = "Post Type"
-# title_m = "Post Types"
-# #icon = "fa-tag"
+[extra.post_types]
 
-[extra.taxonomies.type.article]
+# defined via taxonomies.type.0 or extra.post_type
+[extra.post_types.article]
 name = "Article"
 icon = "fa-newspaper-light"
 
-[extra.taxonomies.type.note]
+[extra.post_types.note]
 name = "Note"
 icon = "fa-sticky-note-light"
 
-[extra.taxonomies.type.photo]
+[extra.post_types.photo]
 name = "Photo"
 icon = "fa-image-light"
 
-[extra.taxonomies.type.bookmark]
+[extra.post_types.bookmark]
 name = "Link"
 icon = "fa-external-link-square"
 
-[extra.taxonomies.type.quote]
+[extra.post_types.quote]
 name = "Quote"
 icon = "fa-quote-left-light"
 
 
-[extra.taxonomies.type.gallery]
+[extra.post_types.gallery]
 name = "Gallery"
 icon = "fa-images-light"
 
-[extra.taxonomies.type._section]
+[extra.post_types._section]
 # Generic Zola section. Used as fallback.
 name = "Section"
 icon = "fa-cabinet-filing-light"
