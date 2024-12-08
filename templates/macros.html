@@ -19,7 +19,7 @@
 
 {# Returns section title if defined. If undefined, returns blog years and months from path. #}
 {% macro section_path_title(node) -%}
-    {%- if node.title != "" -%}
+    {%- if node.title -%}
         {{ node.title }}
     {%- else -%}
         {%- set path = node.relative_path | split(pat="/") | slice(end=-1) -%}

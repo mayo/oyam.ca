@@ -288,6 +288,9 @@ section {
 figure {
   margin: 0;
   padding: 0;
+}
+
+article > figure {
   margin-top: 1em;
 }
 

@@ -1,0 +1,70 @@
+@import "theme";
+
+.gallery {
+  width: 100vw;
+  max-width: 100%; /* fixes width100vw with scrollbars */
+  height: 100vh;
+
+  position: relative;
+}
+
+.gallery .slides {
+  position: absolute;
+  width: 100%;
+  height: 100%
+}
+
+
+.gallery .slide.hidden {
+  display: none;
+}
+
+.gallery .controls button {
+  border: 0;
+  background: inherit;
+  padding: 0;
+  height: 1em;
+  font-size: 1.3em;
+}
+
+.gallery .controls button + button {
+  margin-left: .1em;
+}
+
+
+.image-gallery {
+  --image-gallery-column-gap: .5em;
+  columns: 3 320px;
+  column-gap: var(--image-gallery-column-gap);
+}
+
+.image-item {
+  break-inside: avoid-column;
+  margin-top: 0; /* remove margin set on <figure> */
+  padding-bottom: var(--image-gallery-column-gap); /* margin seems to wrap to next column sometimes, padding remains within box */
+
+  position: relative;
+}
+
+.image-single {
+
+}
+
+.image-item img {
+  width: 100%;
+  vertical-align: bottom;
+}
+
+.image-item figcaption {
+  opacity: 0;
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+  color: $lightest;
+  background-color: $link;
+  margin-bottom: calc(var(--image-gallery-column-gap) + 0.13em);
+}
+
+.image-item:hover figcaption {
+  opacity: 1;
+}

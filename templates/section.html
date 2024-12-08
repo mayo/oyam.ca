@@ -29,6 +29,10 @@
   {%- endif -%}
 {% endif %}
 
+{% if section.path is not starting_with("/blog/") and node.subsections %}
+  {{ macros::collection_list(collection=node.subsections) }}
+{% endif %}
+
 {{ macros::collection_list(collection=node.pages | sort(attribute=sort_attribute)) }}
 
 {% endblock page_content %}

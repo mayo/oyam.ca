@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block css %}
+  {{ super() }}
+<link rel="stylesheet" type="text/css" href="/media/css/gallery.css" />
+{% endblock %}
+
+{% block js %}
+  {{ super() }}
+  <script src="/media/js/microevent.js"></script>
+  <script src="/media/js/slideshow.js"></script>
+  <script src="/media/js/gallery.js"></script>
+{% endblock %}
+
+
+{% block main_content %}
+
+  {% block banner %}
+  {% include '_banner.html' %}
+  {% endblock banner %}
+
+  <div class="content-container {{ container_width }}">
+    <div class="flex-item flex-item-100">
+      {% block page_content %}
+      {{ node.content | safe }}
+      {% endblock page_content %}
+    </div>
+  </div>
+
+  <div class="content-container {{ container_width }}">
+    <div class="flex-item flex-item-100 image-gallery">
+    {% for slide in section.pages | sort(attribute="extra.index") %}
+        <a href="{{slide.path}}">
+      <figure class="image-item" data-title="{{ slide.title }}" data-caption="{{ slide.description | default(value="") }}" data-content="{{ slide.content | default(value="") }}">
+        <img src="{{ slide.extra.image }}" alt=""/>
+        <figcaption>{{ slide.title }}</figcaption>
+      </figure>
+    </a>
+    {% endfor %}
+    </div>
+  </div>
+{% endblock %}
+
