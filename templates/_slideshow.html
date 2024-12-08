@@ -9,12 +9,12 @@
 
       {% set_global quadrants = "" %}
 
-      {% if slide.dark_bg | default(value=false) %}
+      {% if slide.extra.dark_bg | default(value=false) %}
         {% set_global quadrants = quadrants ~ " data-darkbg" %}
       {% endif %}
 
       {% if slide.dark_bg_quadrants | default(value=false) %}
-        {% for q, val in slide.dark_bg_quadrants %}
+        {% for q, val in slide.extra.dark_bg_quadrants %}
           {% if val == true %}
             {% set_global quadrants = quadrants ~ " data-darkbg-" ~ q %}
           {% endif %}
@@ -22,9 +22,9 @@
       {% endif %}
 
       <div class="slide fullpage" {{ quadrants }}>
-        <div class="image" style="background-image: url('{{ slide.image }}'); background-position: {{ slide.image_position }};"></div>
+        <div class="image" style="background-image: url('{{ slide.extra.image }}'); background-position: {{ slide.extra.image_position }};"></div>
 
-        {% if not slide.hide_content %}
+        {% if not slide.extra.hide_content %}
         <div class="main">
           <h1>{{ slide.title }}</h1>
           <p>{{ slide.content }}</p>
@@ -33,7 +33,7 @@
 
         <div class="caption bottomleft">
           <div class="icon"><span class="fa fa-camera" aria-hidden></span></div>
-          <div class="description">{{ slide.caption }}</div>
+          <div class="description">{{ slide.description }}</div>
         </div>
 
       </div>

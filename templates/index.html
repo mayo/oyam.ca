@@ -18,6 +18,8 @@
 
 {% block main_content %}
   {% set container_width = "normal" %}
+  {%- set featured_gallery = get_section(path="gallery/featured/_index.md") -%}
+  {%- set slides = featured_gallery.pages | sort(attribute="extra.index") %}
   {{ macros::display_slideshow(slides=slides) }}
   {% set nav_id = "sitenav2" %}
   <div class="chameleon"><div class="scrolldown bottomright"><a href="#{{nav_id}}"><i class="fa fa-angle-down" aria-hidden></i><span class="sr-only">Scroll to content</span></a></div></div>

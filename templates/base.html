@@ -10,9 +10,6 @@
     {% set page_title = macros::get_page_title(page=node) %}
   {% endif %}
 
-  {# `slides` used for slideshow on main page as well as building navigation menu #}
-  {% set slides = load_data(path="metadata/slides.json") %}
-
   {% set page_id = page_id | default(value=node.extra.page_id | default(value="")) %}
   {% set container_width = container_width | default(value=macros::node_container_width(node=node)) %}
 {% endblock template_vars %}

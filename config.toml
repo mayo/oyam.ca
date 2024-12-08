@@ -190,3 +190,14 @@ icon = "fa-external-link-square"
 [extra.taxonomies.type.quote]
 name = "Quote"
 icon = "fa-quote-left-light"
+
+
+[extra.taxonomies.type.gallery]
+name = "Gallery"
+icon = "fa-images-light"
+
+[extra.taxonomies.type._section]
+# Generic Zola section. Used as fallback.
+name = "Section"
+icon = "fa-cabinet-filing-light"
+
