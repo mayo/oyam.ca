@@ -8,7 +8,7 @@ extra:
   image_position: "bottom"
   hide_content: true,
   dark_bg: true
-  dark_bg_quadrants":
+  dark_bg_quadrants:
     topleft: true
     topright: false
     bottomleft: true

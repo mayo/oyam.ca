@@ -6,6 +6,6 @@ extra:
   # link: "/blog/2014/09/tantalus/"
   image: /media/images/photos/showing/faint-memories-tantalus.jpg
   image_position: "top"
-  hide_content: true,
+  hide_content: true
   dark_bg: true
 ---
