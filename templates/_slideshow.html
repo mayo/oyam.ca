@@ -13,7 +13,7 @@
         {% set_global quadrants = quadrants ~ " data-darkbg" %}
       {% endif %}
 
-      {% if slide.dark_bg_quadrants | default(value=false) %}
+      {% if slide.extra.dark_bg_quadrants | default(value=false) %}
         {% for q, val in slide.extra.dark_bg_quadrants %}
           {% if val == true %}
             {% set_global quadrants = quadrants ~ " data-darkbg-" ~ q %}
