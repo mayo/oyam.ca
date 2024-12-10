@@ -21,13 +21,17 @@
         {% endfor %}
       {% endif %}
 
-      <div class="slide fullpage" {{ quadrants }}>
-        <div class="image" style="background-image: url('{{ slide.extra.image }}'); background-position: {{ slide.extra.image_position }};"></div>
+      <div class="slide fullpage {% if loop.first -%}current{% endif %}" {{ quadrants }}>
+        <div class="image" data-image-url="{{ slide.extra.image }}" data-image-position="{{ slide.extra.image_position }}"
+        {%- if loop.first -%}
+        style="background-image: url('{{ slide.extra.image }}'); background-position: {{ slide.extra.image_position }};"
+        {%- endif -%}
+        ></div>
 
         {% if not slide.extra.hide_content %}
         <div class="main">
           <h1>{{ slide.title }}</h1>
-          <p>{{ slide.content }}</p>
+          <p>{{ slide.content |safe }}</p>
         </div>
         {% endif %}
 

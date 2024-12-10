@@ -5,21 +5,47 @@ function Slideshow(selector) {
   var self = this;
 
   this.slides = document.querySelectorAll(selector);
+  // currentSlide and previousSlide should only be equal at the very beginning.
   this.currentSlide = 0;
+  this.previousSlide = 0;
+  this.direction = 0; // -1 going backward/"left", 1 going forward/"right"
 
   this.showSlide = function(index) {
+    self.previousSlide = self.currentSlide;
+    self.currentSlide = index;
+    self.direction = self.currentSlide - self.previousSlide;
+
     index = index < 0 ? 0 : index;
     index = index >= self.slides.length ? self.slides.length - 1 : index;
-    self.currentSlide = index;
+
+    indexNext = index + 1 * this.direction;
+    indexNext = indexNext < 0 ? self.slides.length - 1 : indexNext;
+    indexNext = indexNext >= self.slides.length ? 0 : indexNext;
 
     for (var i = 0; i < self.slides.length; i++) {
       var slide = self.slides[i];
+      var slideImage = slide.querySelector('.image');
 
       if (i == index) {
-        slide.classList.remove("hidden");
+        slide.classList.add("current");
+        slide.classList.remove("next");
+        
+        if (!slideImage.style.backgroundImage) {
+          slideImage.style.backgroundImage = "url('" + slideImage.getAttribute('data-image-url') + "')";
+          slideImage.style.backgroundPosition = slideImage.getAttribute('data-image-position');
+        }
+        
         self.trigger('advance', slide);
+      } else if (i == indexNext) {
+        slide.classList.add("next");
+        slide.classList.remove("current");
+
+        imgPreload = new Image();
+        imgPreload.src = slideImage.getAttribute('data-image-url');
       } else {
-        slide.classList.add("hidden");
+        // slide.classList.add("hidden");
+        slide.classList.remove("current");
+        slide.classList.remove("next");
       }
     }
   }
@@ -50,6 +76,15 @@ function Slideshow(selector) {
   this.start = function() {
     self.showSlide(self.currentSlide);
   }
+
+  // this.preload = function(slide) {
+  //   slideImage = document.querySelector(selector + '.next');
+  //   if (slideImage) {
+
+  //   }
+  // }
+
+  // self.bind('advance', this.preload);
 
   return this;
 

@@ -713,8 +713,13 @@ nav .top .nav-group,
 
 /* @group Slideshow */
 
-.slideshow .slide.hidden {
+.slideshow .slide,
+.slideshow .slide.next {
   display: none;
+}
+
+.slideshow .slide.current {
+  display: block;
 }
 
 .slideshow .controls button {
