@@ -1,6 +1,6 @@
 <ul class="nav-group gallery">
     <li>Showing</li>
-    {%- set featured_gallery = get_section(path="gallery/featured/_index.md") -%}
+    {%- set featured_gallery = get_section(path=config.extra.featured_gallery_path) -%}
     {% for slide in featured_gallery.pages | sort(attribute="extra.index") %}
     <li><a href="/#slide{{ slide.extra.index }}">{{ slide.title }}</a></li>
     {% endfor %}

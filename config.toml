@@ -38,14 +38,7 @@ source_dir = "content"
 # Contraty to the base_url in the root, this can be used to build full links.
 base_url = "https://oyam.ca"
 
-#[[extra.slides]]
-#title = "Turning in for the night"
-#content = ""
-#caption = "Hammocking under the stars near Coral Pink Sand Dunes, Utah"
-#image = "/media/images/photos/showing/sanddunes-hammock.jpg"
-#image_position = "bottom"
-#hide_content = true
-#dark_bg = true
+featured_gallery_path = "gallery/featured/_index.md"
 
 [extra.author]
 name = "Mayo Jordanov"

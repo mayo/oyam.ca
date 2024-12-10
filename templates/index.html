@@ -18,7 +18,7 @@
 
 {% block main_content %}
   {% set container_width = "normal" %}
-  {%- set featured_gallery = get_section(path="gallery/featured/_index.md") -%}
+  {%- set featured_gallery = get_section(path=config.extra.featured_gallery_path) -%}
   {%- set slides = featured_gallery.pages | sort(attribute="extra.index") %}
   {{ macros::display_slideshow(slides=slides) }}
   {% set nav_id = "sitenav2" %}
