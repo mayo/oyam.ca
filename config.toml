@@ -54,7 +54,6 @@ callsign = "VA7MYO"
 #  linkedin: mayoj
 #  mastodon: "@mayo@oyam.ca"
 #  mastodon_social: "@oyam@mastodon.social"
-#  twitter: "@oyam"
 
 [extra.site]
 keywords = "mayo jordanov software development photography adventure explore climbing running hiking consulting tech technology design"
@@ -77,7 +76,6 @@ linkedin = "https://www.linkedin.com/in/mayoj"
 mastodon = "https://social.oyam.ca/@mayo"
 mastodon_social = "https://mastodon.social/@oyam"
 microblog = "https://micro.blog/oyam"
-twitter = "https://twitter.com/oyam"
 
 # Secial link service to icon mapping
 [extra.social_links]
@@ -99,7 +97,6 @@ linkedin = "Linkedin"
 mastodon = "Mastodon"
 mastodon_social = "Mastodon"
 microblog = "Micro.blog"
-twitter = "Twitter"
 
 # Service ID to icon mapping
 [extra.icons]
@@ -114,13 +111,11 @@ linkedin = "fa-linkedin"
 mastodon = "fa-mastodon"
 mastodon_social = "fa-mastodon"
 microblog = "fa-microblog"
-#  twitter: twitter
 
 [extra.rel_me]
 # The keys index into `extra.links`, values index into `extra.icons`.
 keybase = "keybase"
 github = "fa-github-square"
-twitter = "twitter"
 instagram = "instagram"
 microblog = "microblog"
 email = "fa-envelope"
