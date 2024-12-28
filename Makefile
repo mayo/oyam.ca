@@ -36,7 +36,7 @@ copy-fa-fonts:
 	cp depends/FontAwesome-subset/fonts/* static/media/fonts/fa/
 
 copy-microevent-js:
-	cp depends/microevent.js/microevent.js static/media/js/microevent.js 
+	cp depends/microevent.js/microevent.js static/media/js/microevent.js
 
 
 # Tools
@@ -45,5 +45,5 @@ update-submodules:
 	git submodule update --recursive --init
 
 update-pubkey:
-	$(GPG_BIN) --export $(GPG_KEYID) > $(ZOLA_CONTENT_DIR)/.well-known/openpgpkey/hu/$(KEYOXIDE_WKD_HANDLE)
+	$(GPG_BIN) --export $(GPG_KEYID) > $(ZOLA_STATIC_DIR)/.well-known/openpgpkey/hu/$(KEYOXIDE_WKD_HANDLE)
 	$(GPG_BIN) --export --armor $(GPG_KEYID) > $(ZOLA_STATIC_DIR)/pubkey.txt
