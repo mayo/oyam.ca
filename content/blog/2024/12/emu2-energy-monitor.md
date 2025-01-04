@@ -4,6 +4,7 @@ date: 2024-12-28 00:13:00-08:00
 taxonomies:
   tags:
   - technology
+  - home automation
   categories:
   - work+play
   type: [article]
