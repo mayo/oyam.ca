@@ -965,6 +965,9 @@ article header {
 
 article header a {
   text-decoration: none;
+
+article.bookmark header a {
+    text-decoration: underline;
 }
 
 article.quote blockquote {

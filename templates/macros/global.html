@@ -85,7 +85,7 @@
 
         {%- set is_blog = item.path is starting_with("/blog/") -%}
 
-        {%- set post_type_id = item.taxonomies.type.0 | default(value=item.extra.post_type) | default(value="_section") -%}   
+        {%- set post_type_id = item.taxonomies.type.0 | default(value=item.extra.post_type) | default(value="_section") -%}
         {%- set post_type = config.extra.post_types | get(key=post_type_id) -%}
         <li class="post {{ post_type_id }}">
             <span class="post-type-icon li-icon-bullet"><i class="fa {{ post_type | get(key="icon") }}" title="{{ post_type | get(key="name") }}"></i><span class="sr-only">{{ post_type | get(key="name") }} </span></span>
@@ -95,7 +95,7 @@
             {%- endif -%}
 
             {%- set content = item.title | default(value=item.content) -%}
-            {%- if post_type_id == config.extra.post_types.photo -%}
+            {%- if post_type_id == config.extra.post_types.photo.id -%}
                 {%- set content = item.content -%}
             {%- endif -%}
             <a href="{{ item.path }}">{{ content | safe }}</a>
@@ -149,7 +149,7 @@
     {% endif %}
     <span class="crumb"><a href="{{ path | slice(start=0, end=depth+1) | join(sep="/") }}">{{ title }}</a></span>
     <span class="separator">/</span>
-    
+
     {% endif %}
 
     {% if depth < path_length -1 %}

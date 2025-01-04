@@ -6,16 +6,11 @@
 {% set article_type = article.taxonomies.type[0] %}
 
 <article class="{{ article_type }} h-entry">
-  {% set post_link = article.path %}
-  {% if article_type == config.extra.post_types.bookmark %}
-    {% set post_link = article.extra.href %}
-  {% endif %}
-
   <header>
     {% set header_style = [] %}
     {% if article.extra.header.image %}
       {% set header_style = header_style | concat(with="background-image: url('" ~ article.extra.header.image ~ "')") %}
-      
+
       {% if article.extra.header.image_position %}
         {% set header_style = header_style | concat(with="background-position: " ~ article.extra.header.image_position) %}
       {% endif %}
@@ -25,8 +20,16 @@
     <div class="header-image" style="{{ header_style | join(sep=";") }}"></div>
     {% endif %}
 
-    {% if article.title and not article_type == config.extra.post_types.quote %}
+    {% if article.title and not article_type == config.extra.post_types.quote.id %}
+
+        {% if article_type == config.extra.post_types.bookmark.id %}
+        <a href="{{ article.extra.href }}">
+        {% endif %}
     <h1 class="p-name">{{ article.title | safe }}</h1>
+
+        {% if article_type == config.extra.post_types.bookmark.id %}
+        </a>
+        {% endif %}
     {% endif %}
     <a class="u-author" href="/"></a>
   </header>
@@ -45,9 +48,8 @@
     <dl class="key-value-table">
       <dt><i class="fa fa-calendar-light" title="Published on"></i><span class="sr-only">Published on</span></dt>
       <dd><time class="post-time dt-published" datetime="{{ article.date | date(format='%Y-%m-%dT%H:%M:%SZ') }}">{{ article.date | date(format='%B %d, %Y') }}</time></dd>
-    {% if article_type == config.extra.post_types.bookmark or article_type == config.extra.post_types.note %}
-
-      {% if article_type == config.extra.post_types.bookmark %}
+    {% if article_type == config.extra.post_types.bookmark.id or article_type == config.extra.post_types.note.id %}
+      {% if article_type == config.extra.post_types.bookmark.id %}
       <dt><i class="fa fa-bookmark" title="Permalink"></i><span class="sr-only">Permalink</span></dt>
       <dd><a class="permalink" href="{{ article.path }}">Permalink</a></dd>
       {% endif %}
@@ -112,4 +114,3 @@
 </div>
 
 {% endblock %}
-

@@ -124,10 +124,21 @@ mastodon_social = "fa-mastodon"
 
 [extra.pubkey]
 # TODO: see obsidian://open?vault=Notes&file=Notes%2F2335723166
-fingerprint = ["50fe", "c3a3", "64b5", "9bee", "734d", "0e9b", "56a3", "789c", "ed4d", "2dd7"]
+fingerprint = [
+    "50fe",
+    "c3a3",
+    "64b5",
+    "9bee",
+    "734d",
+    "0e9b",
+    "56a3",
+    "789c",
+    "ed4d",
+    "2dd7",
+]
 
 [extra.pubkey.proofs]
-# email = 
+# email =
 github = "https://gist.github.com/mayo/54b058bd6421a5b1ef31ada68ba9c4e6"
 # microblog: microblog
 mastodon = "https://social.oyam.ca/@mayo"
@@ -151,32 +162,38 @@ mastodon = "https://social.oyam.ca/@mayo"
 
 # defined via taxonomies.type.0 or extra.post_type
 [extra.post_types.article]
+id = "article"
 name = "Article"
 icon = "fa-newspaper-light"
 
 [extra.post_types.note]
+id = "note"
 name = "Note"
 icon = "fa-sticky-note-light"
 
 [extra.post_types.photo]
+id = "photo"
 name = "Photo"
 icon = "fa-image-light"
 
 [extra.post_types.bookmark]
+id = "bookmark"
 name = "Link"
 icon = "fa-external-link-square"
 
 [extra.post_types.quote]
+id = "quote"
 name = "Quote"
 icon = "fa-quote-left-light"
 
 
 [extra.post_types.gallery]
+id = "gallery"
 name = "Gallery"
 icon = "fa-images-light"
 
 [extra.post_types._section]
 # Generic Zola section. Used as fallback.
+id = "_section"
 name = "Section"
 icon = "fa-cabinet-filing-light"
-
