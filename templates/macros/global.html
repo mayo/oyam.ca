@@ -8,7 +8,7 @@
         {% set page_title = page.content | striptags | truncate(length=280) | trim -%}
     {% endif -%}
     {% if not page_title and page.taxonomies.type -%}
-        {% set page_title = config.extra.post_types | get(key=page.taxonomies.type.0) -%}
+        {% set page_title = config.extra.post_types | get(key=page.taxonomies.type.0) | get(key="name") -%}
     {% endif -%}
     {{ page_title | safe }}
 {%- endmacro %}
